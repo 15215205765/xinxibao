@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "积分商城",
+  "usingComponents": {
+    "pop-view": "/components/template/PopManager",
+    "loadlogo": "/components/template/loadlogo",
+    "load-more": "/components/template/loadmore",
+    "tab-bars": "/components/template/tabBar",
+    "filtertab": "/components/template/filtertab",
+    "none-mores": "/components/template/nonemores"
+  }
+}

@@ -1,0 +1,65 @@
+.nav-item {
+	padding: 0 30rpx;
+	text-align: center;
+	display: inline-block;
+	text-align: center;
+	color: #333;
+	font-size: 28rpx;
+	height: 94%;
+	position: relative;
+}
+
+.nav .active{
+	color: rgb(253, 52, 52);
+}
+.nav .active:after {
+/* 	box-sizing: border-box;
+	border-bottom: 8rpx #fff solid;
+    border-radius: 4rpx; */
+		content: '';
+		width: 60%;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -30%;
+		height: 8rpx;
+		background:rgb(253, 52, 52);
+		border-radius: 4rpx;
+}
+.nav {
+	height: 80rpx;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	line-height: 80rpx;
+	white-space: nowrap;
+}
+/* 切换商品来源 */
+
+.shopType {
+	display: flex;
+	background: #fff;
+	box-shadow: 0px 3rpx 6rpx rgba(0, 0, 0, 0.16);
+	padding: 0rpx 20rpx;
+}
+
+.shopType span {
+	font-size: 26rpx;
+	color: #333;
+	display: inline;
+	padding: 30rpx 0;
+	width: 50%;
+	text-align: center;
+}
+
+.shopType .active {
+	color: #fd3434;
+}
+.header{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: #fff;
+}

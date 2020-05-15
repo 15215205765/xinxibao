@@ -1,0 +1,107 @@
+<block wx:if="{{loading==true}}">
+  <loadlogo vue-id="1" class="data-v-d6d9c3e8" bind:__l="__l"></loadlogo>
+</block>
+<block wx:else>
+  <view class="getMembership data-v-d6d9c3e8" style="{{'height:'+(phoneHight)+';'}}">
+    <scroll-view style="{{'height:'+(scollHeight)+';'}}" scroll-y="{{true}}" scroll-x="{{false}}" class="data-v-d6d9c3e8">
+      <block wx:if="{{payclose=='1'&&client=='3'&&model=='ios'}}">
+        <block class="data-v-d6d9c3e8"></block>
+      </block>
+      <block wx:else>
+        <view class="checkMemberMeal data-v-d6d9c3e8">
+          <view class="checkMemberMealPackage data-v-d6d9c3e8">
+            <view class="checkMemberTitle data-v-d6d9c3e8">
+              <image src="/static/images/merchant/Memship.png" class="data-v-d6d9c3e8"></image>
+              <label class="_span data-v-d6d9c3e8">{{halfcardtext+"会员专属充值"}}</label>
+            </view>
+            <view class="checkMemberBody data-v-d6d9c3e8">
+              <block wx:for="{{cardList.list}}" wx:for-item="item" wx:for-index="index">
+                <view data-event-opts="{{[['tap',[['checkMb',[index,'$0','$1','$2'],[[['cardList.list','',index,'price']],[['cardList.list','',index,'id']],[['cardList.list','',index,'detail']]]]]]]}}" class="{{['tcMb data-v-d6d9c3e8',mbChck==index?'tcMbCheck':'']}}"
+                  bindtap="__e">
+                  <view class="tcMbPackage data-v-d6d9c3e8">
+                    <view class="tcMbTitle data-v-d6d9c3e8">
+                      <label class="_span data-v-d6d9c3e8">{{item.name}}</label>
+                      <block wx:if="{{mbChck==index}}">
+                        <view class="yCheck data-v-d6d9c3e8">
+                          <image src="/static/images/merchant/membercheck.png" class="data-v-d6d9c3e8"></image>
+                        </view>
+                      </block>
+                      <block wx:else>
+                        <view class="nCheck data-v-d6d9c3e8"></view>
+                      </block>
+                    </view>
+                    <view class="tcMbFoot data-v-d6d9c3e8">
+                      <label class="_span data-v-d6d9c3e8">
+                        <label class="_span data-v-d6d9c3e8">¥</label>{{''+item.price+''}}
+                        <label class="_span data-v-d6d9c3e8">元</label>
+                      </label>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="detail data-v-d6d9c3e8">
+        <view class="detail-title data-v-d6d9c3e8">会员卡详细信息</view>
+        <scroll-view class="detail-de data-v-d6d9c3e8" scroll-y="{{true}}" scroll-x="{{false}}">{{''+vipDetail+''}}</scroll-view>
+      </view>
+      <block wx:if="{{cardList.activation_code==0}}">
+        <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="CDKEY data-v-d6d9c3e8" bindtap="__e">
+          <label class="_span data-v-d6d9c3e8">使用激活码激活会员</label>
+          <image src="/static/images/merchant/right.svg" class="data-v-d6d9c3e8"></image>
+        </view>
+      </block>
+      <view class="userInfoInput data-v-d6d9c3e8">
+        <view class="userInfoInputPackage data-v-d6d9c3e8">
+          <view class="userInfoInputTitle data-v-d6d9c3e8">
+            <view class="line data-v-d6d9c3e8"></view>
+            <label class="_span data-v-d6d9c3e8">个人信息</label>
+          </view>
+          <view class="userInput data-v-d6d9c3e8">
+            <view class="userName data-v-d6d9c3e8">
+              <label class="_span data-v-d6d9c3e8">姓名</label>
+              <input placeholder="请输入您的姓名" data-event-opts="{{[['input',[['__set_model',['','username','$event',[]]]]]]}}" value="{{username}}" bindinput="__e" class="data-v-d6d9c3e8" />
+            </view>
+            <view class="userName data-v-d6d9c3e8">
+              <label class="_span data-v-d6d9c3e8">联系电话</label>
+              <input placeholder="请输入联系电话" data-event-opts="{{[['input',[['__set_model',['','mobile','$event',[]]]]]]}}" value="{{mobile}}" bindinput="__e" class="data-v-d6d9c3e8" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="full data-v-d6d9c3e8"></view>
+    </scroll-view>
+    <block wx:if="{{payclose=='1'&&client=='3'&&model=='ios'}}">
+      <block class="data-v-d6d9c3e8"></block>
+    </block>
+    <block wx:else>
+      <view class="bottomView data-v-d6d9c3e8">
+        <block wx:if="{{cardList.list.length!==0}}">
+          <view data-event-opts="{{[['tap',[['halfcardOrder',['$event']]]]]}}" class="submitMembership data-v-d6d9c3e8" bindtap="__e">
+            <label class="_span data-v-d6d9c3e8">{{price+"元"+(card=='nhave'?'开通':'续费')+halfcardtext}}</label>
+          </view>
+        </block>
+      </view>
+    </block>
+    <pop-manager vue-id="2" show="{{show}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-d6d9c3e8" bind:__l="__l" vue-slots="{{['default']}}">
+      <view class="popCDKEY data-v-d6d9c3e8">
+        <view class="popCDKEYPackage data-v-d6d9c3e8">
+          <view class="popCDKEYTitle data-v-d6d9c3e8">
+            <label class="_span data-v-d6d9c3e8"></label>
+            <label class="_span data-v-d6d9c3e8">会员激活码</label>
+            <image src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" bindtap="__e" class="data-v-d6d9c3e8"></image>
+          </view>
+          <view class="popCDKEYInput data-v-d6d9c3e8">
+            <input placeholder="请输入会员激活码" data-event-opts="{{[['input',[['__set_model',['','cardpa','$event',[]]]]]]}}" value="{{cardpa}}" bindinput="__e" class="data-v-d6d9c3e8" />
+          </view>
+          <view data-event-opts="{{[['tap',[['activationHalfcard',['$event']]]]]}}" class="popCDKEYSubmit data-v-d6d9c3e8" bindtap="__e">
+            <label class="_span data-v-d6d9c3e8">确认激活</label>
+          </view>
+        </view>
+      </view>
+    </pop-manager>
+    <phone-mask vue-id="3" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-d6d9c3e8" bind:__l="__l"></phone-mask>
+  </view>
+</block>

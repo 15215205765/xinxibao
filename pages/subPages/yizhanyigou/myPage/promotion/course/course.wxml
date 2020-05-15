@@ -1,0 +1,9 @@
+<view class='list'>
+  <view class='item' wx:for="{{list}}" wx:key="{{item}}" >
+    <video id="video{{item.id}}" title='{{item.article_title}}' data-index="{{index}}" bindended='overVideo' bindplay="play" src="{{item.article_linkurl}}">
+   <cover-view class="controls" wx:if='{{item.videoMask}}' bindtap='videoPlay' data-index='{{index}}'>
+        <cover-image class="img" src="{{item.resp_img}}" />
+    </cover-view>
+    </video> 
+  </view>
+</view> 

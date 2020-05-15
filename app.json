@@ -1,0 +1,451 @@
+{
+  "pages": [
+    "pages/mainPages/index/index",
+    "pages/mainPages/index/diypage",
+    "pages/mainPages/memberCard/memberCard",
+    "pages/mainPages/pocketIInformant/pocketIInformant",
+    "pages/mainPages/postDetails/postDetails",
+    "pages/mainPages/userCenter/userCenter",
+    "pages/mainPages/econdaryClassification/econdaryClassification",
+    "pages/mainPages/store/index",
+    "pages/mainPages/Settled/Settled",
+    "pages/mainPages/postRelease/postRelease",
+    "pages/mainPages/sendInformation/sendInformation",
+    "pages/mainPages/payment/payment",
+    "pages/mainPages/memberCard/interests",
+    "pages/mainPages/express/express",
+    "pages/mainPages/userset/userset",
+    "pages/mainPages/agreement/agreement",
+    "pages/mainPages/payment/pay",
+    "pages/mainPages/headline/index",
+    "pages/mainPages/noticeDetail/noticeDetail",
+    "pages/mainPages/store/list",
+    "pages/mainPages/city/city",
+    "pages/mainPages/store/buyOrder",
+    "pages/mainPages/cashApplication/cashApplication",
+    "pages/mainPages/comment/comment",
+    "pages/mainPages/businessDetails/businessDetails",
+    "pages/mainPages/login/login",
+    "pages/mainPages/login/minLogin",
+    "pages/mainPages/forgetPassword/forgetPassword",
+    "pages/mainPages/register/register",
+    "pages/mainPages/registerSuses/registerSuses",
+    "pages/mainPages/memberCard/getMembership/getMembership",
+    "pages/mainPages/orderWrite/orderWrite",
+    "pages/mainPages/paySuccess/paySuccess",
+    "pages/mainPages/poster/poster",
+    "pages/mainPages/callpge/index",
+    "pages/mainPages/search/search",
+    "pages/mainPages/headline/message",
+    "pages/mainPages/headline/headlineDetail",
+    "pages/mainPages/city/selectAddress",
+    "pages/mainPages/successRelease/successRelease",
+    "pages/mainPages/realCard/realCard",
+    "pages/mainPages/notOpen/notOpen",
+    "pages/mainPages/userset/userInfo/userInfo"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/subPages/livePlayer",
+      "pages": [
+        "livePlayer"
+      ],
+      "name": "livePlayer",
+      "plugins": {
+        "live-player-plugin": {
+          "version": "1.0.7",
+          "provider": "wx2b03c6e691cd7370"
+        }
+      },
+      "usingComponents": {
+        "subscribe": "plugin-private://wx2b03c6e691cd7370/components/subscribe/subscribe"
+      }
+    },
+    {
+      "root": "pages/subPages/yizhanyigou/",
+      "name": "yizhanyigou",
+      "pages": [
+        "index/index",
+        "search/search",
+        "searchDetails/searchDetails",
+        "shopDetails/details",
+        "searchLive/search",
+        "searchDetailsLive/searchDetails",
+        "shopDetails/shopDetails",
+        "purchase/purchase",
+        "myPage/gains/all/all",
+        "myPage/gains/agent/agent",
+        "myPage/gains/commission/commission",
+        "myPage/gains/bill/bill",
+        "myPage/gains/month/month",
+        "myPage/gains/report/report",
+        "myPage/gains/explain/explain",
+        "myPage/other/set/binding/binding",
+        "myPage/other/set/replace/replace",
+        "myPage/other/set/set",
+        "myPage/other/set/replace/next/next",
+        "myPage/other/set/replace/lastReplace/replace",
+        "myPage/other/collection/collection",
+        "myPage/other/version/version",
+        "myPage/other/feedback/feedback",
+        "myPage/other/officialAnnouncement/officialAnnouncement",
+        "myPage/other/officialAnnouncement/details/details",
+        "myPage/promotion/team/team",
+        "myPage/promotion/course/course",
+        "myPage/promotion/team/member/member",
+        "myPage/promotion/poster/poster",
+        "myPage/promotion/invite/invite",
+        "myPage/promotion/contact/contact",
+        "myPage/withdraw/withdraw",
+        "myPage/withdraw/record/record",
+        "myPage/withdraw/cash/cash",
+        "myPage/order/order",
+        "myPage/level/level",
+        "myPage/message/message",
+        "myPage/personal/personal",
+        "myPage/agent/agent",
+        "myPage/service/service",
+        "myPage/service/solution/solution"
+      ]
+    },
+    {
+      "root": "live/",
+      "name": "lives",
+      "pages": [
+        "pages/bind_live/index",
+        "pages/live_list/index",
+        "pages/live_nostart/index",
+        "pages/live_list1/index",
+        "pages/live_room/index",
+        "pages/live_playback/index",
+        "pages/live_add/index",
+        "pages/anchor-apply/index",
+        "pages/anchor-inviation/index",
+        "pages/anchor-inviation-logs/index",
+        "pages/live_push/index",
+        "pages/live_homepage/index",
+        "pages/anchor-advance-notice/index",
+        "pages/anchor-goods/index",
+        "pages/live_room2/index",
+        "pages/live_end/index",
+        "pages/anchor-goods/search",
+        "pages/recharge/index"
+      ]
+    },
+    {
+      "root": "pages/subPages/dealer",
+      "pages": [
+        "apply/apply",
+        "index/index",
+        "withdraw/withdraw",
+        "setshop/setshop",
+        "client/client",
+        "gener/gener",
+        "level/level",
+        "earnings/earnings",
+        "contactway/contactway",
+        "rank/rank",
+        "withdraw/withdrawrecord",
+        "richtext/setrich",
+        "myStore/myStore",
+        "myStoreDetails/myStoreDetails"
+      ],
+      "name": "dealer"
+    },
+    {
+      "root": "pages/subPages/afterSale",
+      "pages": [
+        "index",
+        "afterDatli/afterDatli"
+      ],
+      "name": "afterSale"
+    },
+    {
+      "root": "pages/subPages/buyOrder",
+      "pages": [
+        "index"
+      ],
+      "name": "buyOrder"
+    },
+    {
+      "root": "pages/subPages/commentList",
+      "pages": [
+        "commentList"
+      ],
+      "name": "commentList"
+    },
+    {
+      "root": "pages/subPages/liveBack",
+      "pages": [
+        "liveBack"
+      ],
+      "name": "liveBack"
+    },
+    {
+      "root": "pages/subPages/submitOrder",
+      "pages": [
+        "submitOrder"
+      ],
+      "name": "submitOrder"
+    },
+    {
+      "root": "pages/subPages/redpacket",
+      "pages": [
+        "myredpacket",
+        "redsquare"
+      ],
+      "name": "redpacket"
+    },
+    {
+      "root": "pages/subPages/group",
+      "pages": [
+        "assemble/assemble"
+      ],
+      "name": "group"
+    },
+    {
+      "root": "pages/subPages/createCommodity",
+      "pages": [
+        "index"
+      ],
+      "name": "createCommodity"
+    },
+    {
+      "root": "pages/subPages/attestationCenter",
+      "pages": [
+        "index",
+        "personAttestation/personAttestation",
+        "enterpriseAttestation/enterpriseAttestation",
+        "bond/bond"
+      ],
+      "name": "attestationCenter"
+    },
+    {
+      "root": "pages/subPages/bargin",
+      "pages": [
+        "barginDetail/barginDetail",
+        "barginlist/barginlist"
+      ],
+      "name": "bargin"
+    },
+    {
+      "root": "pages/subPages/coupon",
+      "pages": [
+        "coupon",
+        "couponDetails/couponDetails"
+      ],
+      "name": "coupon"
+    },
+    {
+      "root": "pages/subPages/customer",
+      "pages": [
+        "customer"
+      ],
+      "name": "customer"
+    },
+    {
+      "root": "pages/subPages/webview",
+      "pages": [
+        "webview"
+      ],
+      "name": "webview"
+    },
+    {
+      "root": "pages/subPages/IntegralRecord",
+      "pages": [
+        "IntegralRecord"
+      ],
+      "name": "IntegralRecord"
+    },
+    {
+      "root": "pages/subPages/mineCollection",
+      "pages": [
+        "mineCollection"
+      ],
+      "name": "mineCollection"
+    },
+    {
+      "root": "pages/subPages/orderList",
+      "pages": [
+        "orderList",
+        "orderDetails/orderDetails",
+        "orderTakeout/orderTakeout",
+        "afterSale/afterSale"
+      ],
+      "name": "orderList"
+    },
+    {
+      "root": "pages/subPages/receivingAddress",
+      "pages": [
+        "receivingAddress",
+        "addReceivingAddress/addReceivingAddress"
+      ],
+      "name": "receivingAddress"
+    },
+    {
+      "root": "pages/subPages/special",
+      "pages": [
+        "rushspeci/rushspeci"
+      ],
+      "name": "special"
+    },
+    {
+      "root": "pages/subPages/consumptionRecords",
+      "pages": [
+        "consumptionRecords",
+        "details"
+      ],
+      "name": "consumptionRecords"
+    },
+    {
+      "root": "pages/subPages/integral",
+      "pages": [
+        "integralShop/integralShop"
+      ],
+      "name": "integralShop"
+    },
+    {
+      "root": "pages/subPages/shareMaterials",
+      "pages": [
+        "index"
+      ],
+      "name": "shareMaterials"
+    },
+    {
+      "root": "pages/subPages/homepage",
+      "pages": [
+        "homepage/homepage",
+        "private/private",
+        "chat/chat"
+      ],
+      "name": "homepage"
+    },
+    {
+      "root": "pages/subPages/signdesk",
+      "pages": [
+        "index/index",
+        "rank/rank",
+        "record/record"
+      ],
+      "name": "signdesk"
+    },
+    {
+      "root": "pages/subPages/balance",
+      "pages": [
+        "balance",
+        "cash/cash",
+        "balanceRecord/balanceRecord",
+        "newPage/newPage"
+      ],
+      "name": "balance"
+    },
+    {
+      "root": "pages/subPages/helpCenter",
+      "pages": [
+        "helpCenter",
+        "helpDetails/helpDetails",
+        "problemList/problemList"
+      ],
+      "name": "helpCenter"
+    },
+    {
+      "root": "pages/subPages/businesscard",
+      "pages": [
+        "mycard/mycard",
+        "carddetail/carddetail",
+        "carddetail/renewcarddetail",
+        "formcard/formcard",
+        "formcard/editformcard"
+      ],
+      "name": "businesscard"
+    },
+    {
+      "root": "pages/subPages/writeRecord",
+      "pages": [
+        "index"
+      ],
+      "name": "writeRecord"
+    },
+    {
+      "root": "pages/subPages/goods",
+      "pages": [
+        "index"
+      ],
+      "name": "index"
+    },
+    {
+      "root": "pages/subPages/myPost",
+      "pages": [
+        "myPost"
+      ],
+      "name": "myPost"
+    },
+    {
+      "root": "pages/subPages/live",
+      "pages": [
+        "index"
+      ],
+      "name": "live"
+    },
+    {
+      "root": "pages/subPages/merchant",
+      "pages": [
+        "merchantHome/merchantHome",
+        "merchantChangeShop/merchantChangeShop",
+        "merchantVerification/merchantVerification",
+        "merchantRecord/merchantRecord",
+        "merchantPayDetails/merchantPayDetails",
+        "merchantComment/merchantComment",
+        "merchantReply/merchantReply",
+        "merchantUerCenter/merchantUerCenter",
+        "merchantMsg/merchantMsg",
+        "merchantNotice/merchantNotice",
+        "merchantChat/merchantChat",
+        "merchantOrderList/merchantOrderList",
+        "merchantClerkList/merchantClerkList",
+        "merchantClerkEdit/merchantClerkEdit",
+        "merchantSuccess/merchantSuccess",
+        "merchantCash/merchantCash",
+        "set/set",
+        "merchantOrder/merchantOrder",
+        "dynamicList/dynamicList",
+        "sendDynamic/sendDynamic",
+        "merchantTips/merchantTips",
+        "storePcLogin/storePcLogin"
+      ],
+      "name": "merchant"
+    },
+    {
+      "root": "pages/subPages2/businessCenter",
+      "pages": [
+        "businessCenter",
+        "foodIntroduced/foodIntroduced",
+        "foodShopping/foodShopping",
+        "foodOrder/foodOrder",
+        "foodList/foodList"
+      ],
+      "name": "businessCenter"
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F7F7F7"
+  },
+  "networkTimeout": {
+    "request": 15000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx8f549e48eb3f2524",
+    "wx32540bd863b27570",
+    "wx13e41a437b8a1d2e"
+  ],
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

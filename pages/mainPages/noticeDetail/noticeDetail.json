@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "公告详情",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse"
+  }
+}

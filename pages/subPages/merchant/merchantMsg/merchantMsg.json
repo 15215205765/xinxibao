@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "消息",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "nav-bar": "/components/template/navBar",
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

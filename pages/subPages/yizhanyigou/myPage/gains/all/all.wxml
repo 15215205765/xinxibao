@@ -1,0 +1,179 @@
+<view class='page' style='padding-top:{{headerHeight}}px'>
+  <view class="header-box">
+    <view class='header'>
+      <view class='money'>
+        ￥
+        <view class='money-integer'>{{money[0]}}
+        </view>
+        <view class='money-decimal'>.{{money[1]}}</view>
+      </view>
+      <navigator url="../explain/explain?aid=14" class="explain">说明</navigator>
+      <navigator url="../bill/bill?pageType=1" class="bill">明细</navigator>
+    </view>
+
+    <view class="swiper-tab">
+      <view class="tab-item {{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">
+        <view class="gains-money {{currentTab==0 ? 'active' : ''}}">
+          ￥
+          <view class='money-integer'>{{ljsum[0]}}
+          </view>
+          <view class='money-decimal'>.{{ljsum[1]}}</view>
+        </view>
+        <view class="accumulative">佣金累计收益</view>
+      </view>
+      <view class="line"></view>
+      <strong></strong>
+      <view class="tab-item {{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">
+        <view class="gains-money {{currentTab==1 ? 'active' : ''}}">
+          ￥
+          <view class='money-integer'>{{record_total[0]}}
+          </view>
+          <view class='money-decimal'>.{{record_total[1]}}</view>
+        </view>
+        <view class="accumulative">其他累计收益</view>
+      </view>
+      <view class="line"></view>
+      <view class="tab-item {{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">
+        <view class="gains-money {{currentTab==2 ? 'active' : ''}}">
+          ￥
+          <view class='money-integer'>{{bonus_total[0]}}
+          </view>
+          <view class='money-decimal'>.{{bonus_total[1]}}</view>
+        </view>
+        <view class="accumulative">总代累计收益</view>
+      </view>
+    </view>
+  </view>
+  <swiper class="swiper" current="{{currentTab}}" duration="200" style="height:{{swiperHeight>500?swiperHeight+'px':'100%'}}" bindchange="swiperChange">
+    <!-- 佣金累计收益 -->
+    <swiper-item>
+      <view class='item-s'>
+        <view class="gains-list list">
+          <view class="gains-item item-one" wx:for="{{commission.list}}" wx:key="{{index}}">
+            <view class="gains-top">
+              <view class="gains-name">
+                {{item.month}}
+              </view>
+              <view class="right">
+                <view class="gains-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level[1]}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="gains-source">
+              <view class="gains-source-item">
+                <view class="gains-source-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level1[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level1[1]}}</view>
+                </view>
+                <view class="gains-source-name">自购佣金</view>
+              </view>
+              <view class="gains-source-line"></view>
+              <view class="gains-source-item">
+                <view class="gains-source-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level2[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level2[1]}}</view>
+                </view>
+                <view class="gains-source-name">一级佣金</view>
+              </view>
+              <view class="gains-source-line"></view>
+              <view class="gains-source-item">
+                <view class="gains-source-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level3[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level3[1]}}</view>
+                </view>
+                <view class="gains-source-name">二级佣金</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </swiper-item>
+    <!-- 其他累计收益 -->
+    <swiper-item>
+      <view class='item-s'>
+
+        <view class="gains-other gains-item list">
+          <view class="gains-top" bindtap="jumpBill" data-etime="{{item.etime}}" data-type="2" data-atime="{{item.atime}}" wx:for="{{other.list}}" wx:key="{{index}}">
+            <view class="gains-name">
+              {{item.month}}
+            </view>
+            <view class="right">
+              <view class="gains-money">
+                ￥
+                <view class='money-integer'>{{item.sum_level[0]}}
+                </view>
+                <view class='money-decimal'>.{{item.sum_level[1]}}</view>
+              </view>
+              <image src="/images/order-right.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </swiper-item>
+    <!-- 总代累计收益 -->
+    <swiper-item>
+      <view class='item-s'>
+        <view class="gains-list list" wx:if="{{agent.list}}">
+          <view class="gains-item" wx:for="{{agent.list}}" wx:key="{{index}}">
+            <view class="gains-top">
+              <view class="gains-name">
+                {{item.month}}
+              </view>
+              <view class="right">
+                <view class="gains-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level[1]}}</view>
+                </view>
+              </view>
+
+            </view>
+            <view class="gains-source">
+              <view class="gains-source-item" bindtap="jumpBill" data-etime="{{item.etime}}" data-type="3" data-atime="{{item.atime}}" style="width: 50%;">
+                <view class="gains-source-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level2[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level2[1]}}</view>
+                </view>
+                <view class="gains-source-name">区域佣金收益</view>
+                <image src="/images/order-right.png"></image>
+              </view>
+              <view class="gains-source-line"></view>
+              <view class="gains-source-item" bindtap="jumpBill" data-etime="{{item.etime}}" data-type="4" data-atime="{{item.atime}}" style="width: 50%;">
+                <view class="gains-source-money">
+                  ￥
+                  <view class='money-integer'>{{item.sum_level3[0]}}
+                  </view>
+                  <view class='money-decimal'>.{{item.sum_level3[1]}}</view>
+                </view>
+                <view class="gains-source-name">下级总代收益</view>
+                <image src="/images/order-right.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='empty' wx:else>
+          <image src='/images/pic_kb_tx@2x.png'></image>
+          <text>暂无数据</text>
+        </view>
+        <view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>

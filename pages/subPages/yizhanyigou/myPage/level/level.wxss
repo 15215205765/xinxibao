@@ -1,0 +1,29 @@
+page{
+	background: #333;
+}
+.page{
+	display: flex;
+	justify-content: center;
+	padding-top: 144rpx;
+}
+.page image{
+	width: 644rpx;
+}
+.fans{
+	
+	height: 388rpx;
+}
+.agent{
+	height: 567rpx;
+}
+.all{
+	height: 388rpx;
+}
+.bottom-image{
+width: 100% !important;
+position: fixed;
+bottom: 0;
+left: 0;
+height:229rpx;
+
+}

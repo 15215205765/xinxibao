@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "消费记录",
+  "usingComponents": {
+    "loadmore": "/components/template/loadmore",
+    "loadlogo": "/components/template/loadlogo"
+  }
+}

@@ -1,0 +1,49 @@
+page {
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.personal {
+  padding-top: 20rpx;
+}
+
+.personal .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 24rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.personal .item image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.personal .item:first-child {
+  margin-bottom: 20rpx;
+}
+
+
+.item .left {
+}
+
+.item .right {
+}
+
+.item .right input {
+  text-align: right;
+}
+
+.submit {
+  margin-top: 100rpx;
+  width: 600rpx;
+  height: 88rpx;
+  font-size: 34rpx;
+  background: rgba(253, 52, 52, 1);
+  border-radius: 44rpx;
+  color: #fff;
+}

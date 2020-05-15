@@ -1,0 +1,29 @@
+<view class="live-end-bg" style="height:{{screenTotalH}}rpx; background: url({{bgsrc}}) no-repeat;">
+    <view style="width:100%; height:{{navH}}rpx;"></view>
+    <view class="live-end-title">直播已结束</view>
+    <view class="live-end-font-01">
+        <view class="live-end-font-line"></view>
+        <view class="live-end-font-ctn">直播已结束</view>
+        <view class="live-end-font-line"></view>
+    </view>
+    <view class="live-end-font-02">{{live_time}}</view>
+   
+    <view class="live-end-info-list">
+        <view class="live-end-info-list-li">
+            <view>{{live_likes}}</view>
+            <view style="color:#aaa;">点赞次数</view>
+        </view>
+        <view class="live-end-info-list-li">
+            <view>{{live_follow}}</view>
+            <view style="color:#aaa;">新增粉丝</view>
+        </view>
+        <view class="live-end-info-list-li">
+            <view>{{live_shares}}</view>
+            <view style="color:#aaa;">分享次数</view>
+        </view>
+    </view>
+    <view class="live-end-info-button">
+        <button bindtap="goHome">返回首页</button>
+    </view>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

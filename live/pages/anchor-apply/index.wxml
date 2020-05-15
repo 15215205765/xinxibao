@@ -1,0 +1,25 @@
+<!-- <navbar parameter="{{parameter}}"></navbar> -->
+<view class="page register">
+    <view class="fui-content">
+        <template is="wxParse" data="{{wxParseData:apply_text.nodes}}"></template>
+    </view>
+    <view class="fui-button">
+        <view bindtap="pay_open" class="btn btn-danger block btn-submit" wx:if="{{applyInfo['apply_status']==-2}}">{{applyInfo['status_text']}}</view>
+        <view bindtap="show_form" class="btn btn-danger block btn-submit" wx:elif="{{applyInfo['apply_status']==-3}}">{{applyInfo['status_text']}}</view>
+        <view bindtap="submit" class="btn btn-danger block btn-submit" wx:elif="{{applyInfo['apply_status']==-1}}">{{applyInfo['status_text']}}</view>
+        <view wx:else>{{applyInfo['status_text']}}</view>
+    </view>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>
+<import src="/lib/wxParse/wxParse.wxml"></import>
+<van-dialog showCancelButton bind:cancel="goHome" bind:confirm="goPushLive" cancelButtonText="随便逛逛" confirmButtonText="立即直播" lang="zh_CN" message="恭喜你成为一名主播" show="{{isPaySuccess}}" title="开通主播权限成功"></van-dialog>
+<payment-anchor-apply bind:doPaySuccess="doPaySuccess" orderData="{{orderData}}" orderKey="{{orderKey}}" pay_close="{{pay_close}}" totalPrice="{{applyInfo['amount']}}" userInfo="{{userInfo}}"></payment-anchor-apply>
+<van-popup closeOnClickOverlay overlay round bind:close="onClose" position="bottom" show="{{show_form}}">
+    <form bindsubmit="formSubmit" reportSubmit="true">
+        <scroll-view scrollY class="addAddress">
+            <diy-form bind:getDiyFormData="getDiyFormData" fields="{{applyInfo['form_menu']}}" submit_close="{{show_form}}" userInfo="{{userInfo}}" wx:if="{{show_form}}"></diy-form>
+            <view class="keep-box"></view>
+            <button bindtap="formSubmit" class="keepBnt bg-color">立即保存</button>
+        </scroll-view>
+    </form>
+</van-popup>

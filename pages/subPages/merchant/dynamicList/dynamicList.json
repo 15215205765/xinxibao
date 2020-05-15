@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的动态",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

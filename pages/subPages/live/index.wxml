@@ -1,0 +1,24 @@
+<view class="container">
+  <block wx:if="{{!loadlogo}}">
+    <loadlogo vue-id="1" bind:__l="__l"></loadlogo>
+  </block>
+  <block wx:if="{{loadlogo}}">
+    <block>
+      <block wx:if="{{!!liveList&&liveList.length>0}}">
+        <block>
+          <live-componets vue-id="2" liveList="{{liveList}}" bind:__l="__l"></live-componets>
+          <view style="padding-bottom:10px;background-color:#F8F8F8;">
+            <load-more vue-id="3" isMore="{{loadingMore}}" bind:__l="__l"></load-more>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+        <block>
+          <block wx:if="{{liveList.length===0}}">
+            <nonemores vue-id="4" bind:__l="__l"></nonemores>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+</view>

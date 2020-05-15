@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "authorize": "/live/components/authorize/authorize",
+        "home": "/live/components/home/index",
+        "payment": "/live/components/payment/index"
+    },
+    "navigationBarTextStyle": "white"
+}

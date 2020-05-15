@@ -1,0 +1,54 @@
+<view class="page">
+
+
+
+	<!--顶部导航栏-->
+
+	<view class="swiper-tab">
+		<view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">官方客服</view>
+		<view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">常见问题</view>
+	</view>
+	<!--内容主体-->
+
+	<swiper class="swiper" current="{{currentTab}}" duration="200" bindanimationfinish="swiperChange" style="height:{{swiperHeight>500?swiperHeight+'px':'100%'}}">
+		<!-- 官方客服-->
+		<swiper-item>
+			<view class='item-s'>
+				<view class="customer-service">
+					<image src="/subPackages/myPage/images/pic_lxkf@2x.png" class="picture"></image>
+					<view class='contact-information'>
+						<view class='item'>
+							<image src='/subPackages/myPage/images/ic_kf_wx.png'></image>
+							<view>
+								客服微信
+							</view>
+							<button open-type="contact" session-from="weapp"></button>
+						</view>
+						<view class='item' bindtap='customerCopy' data-type='2'>
+							<image src='/subPackages/myPage/images/ic_kf_call.png'></image>
+							<view>
+								客服电话
+							</view>
+						</view>
+					</view>
+					<image src="/subPackages/myPage/images/pic_fwzx_bgimg@2x.png" class="bottom-picture"></image>
+				</view>
+			</view>
+		</swiper-item>
+
+		<!-- 常见问题 -->
+		<swiper-item>
+			<view class='item-s'>
+
+				<view class="question-list">
+					<view class="item" wx:for="{{questionList}}" wx:key="{{index}}" bindtap="jumpSolution" data-id="{{item.id}}">
+						{{item.article_title}}
+					</view>
+				</view>
+			</view>
+
+		</swiper-item>
+
+	</swiper>
+
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "砍价详情",
+  "usingComponents": {
+    "recommend-goods": "/components/page/pageComponents/Recommend_goods",
+    "loading": "/components/template/loadlogo",
+    "part-loading": "/components/template/PartLoading",
+    "follow": "/components/template/follow",
+    "phone-mask": "/components/template/PhoneMask"
+  }
+}

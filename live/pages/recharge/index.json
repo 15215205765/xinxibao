@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navbar": "/live/components/navbar/index",
+    "van-loading": "/live/vant/loading/index",
+    "bottom-tabbar": "/live/components/bottom-tabbar/index",
+    "tabBar": "/live/components/tabBar/index"
+  },
+  "navigationBarTitleText": "充值",
+  "navigationBarTextStyle": "black"
+}

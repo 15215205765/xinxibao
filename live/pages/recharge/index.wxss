@@ -1,0 +1,121 @@
+.payment {
+    width: 703rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin: 20rpx auto 0 auto;
+    padding: 25rpx;
+}
+
+.payment .nav {
+    height: 75rpx;
+    line-height: 75rpx;
+    padding: 0 100rpx;
+}
+
+.payment .nav .item {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.payment .nav .item.on {
+    font-weight: bold;
+    border-bottom: 4rpx solid #e83323;
+}
+
+.payment .tip {
+    font-size: 26rpx;
+    color: #888888;
+    text-align: center;
+    padding: 0 30rpx;
+    margin-top: 25rpx;
+}
+
+.payment .but {
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    height: 86rpx;
+    border-radius: 50rpx;
+    margin: 46rpx auto 0 auto;
+    line-height: 86rpx;
+  background: #ff4466;
+}
+.balance {
+    background: #ff4466;
+    height: 200rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.balance .num {
+    font-size: 70rpx;
+}
+
+.payment .title {
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.payment .send-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10rpx;
+}
+
+.payment .send-box .item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    width: 32%;
+    height: 150rpx;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    margin-left: 2%;
+}
+
+.payment .send-box .item.itemfirst {
+    margin-left: 0;
+}
+
+.payment .send-box .item.active {
+    color: #ff4466;
+    border: 1px solid #ff4466;
+}
+
+.payment .send-box .item .money {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.payment .send-box .item .send {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.payment .send-box .item.active .send {
+    color: #ff4466;
+}
+
+.payment input {
+    border: 1px solid #CCCCCC;
+    margin-top: 20px;
+    padding: 20rpx;
+    border-radius: 10rpx;
+}
+
+.rule-block {
+    margin-top: 80rpx;
+    margin-bottom: 20rpx;
+}
+
+.rule-block .rule {
+    color: #666666;
+    font-size: 26;
+    white-space: pre-wrap;
+}

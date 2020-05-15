@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "店铺中心",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "nav-bar": "/components/template/navBar",
+    "pop-view": "/components/template/PopManager"
+  }
+}

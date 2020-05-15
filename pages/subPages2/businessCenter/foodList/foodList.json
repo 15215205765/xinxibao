@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "商品列表",
+  "usingComponents": {
+    "tui-rate": "/components/template/rate",
+    "food-category": "/pages/subPages2/tamplate/foodCategory",
+    "shopping-fixation": "/pages/subPages2/tamplate/shoppingFixation",
+    "popup-view": "/components/template/PopManager",
+    "tui-numberbox": "/components/template/numberbox"
+  }
+}

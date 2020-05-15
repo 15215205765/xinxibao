@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "card-components": "/components/page/pageComponents/discountCard",
+    "giftbag-components": "/components/page/pageComponents/giftbag",
+    "citywide": "/components/page/pageComponents/citywide",
+    "integral": "/components/page/pageComponents/integral",
+    "goods-style": "/components/page/pageComponents/goodsStyle",
+    "load-more": "/components/template/loadmore"
+  }
+}

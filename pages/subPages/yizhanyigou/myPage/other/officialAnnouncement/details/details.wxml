@@ -1,0 +1,4 @@
+<view class="solutionImg" wx:if="{{announcementHTML}}">
+	<import src="../../../../../wxParse/wxParse.wxml" />
+	<template is='wxParse' data='{{wxParseData:announcementHTML.nodes}}' />
+</view>

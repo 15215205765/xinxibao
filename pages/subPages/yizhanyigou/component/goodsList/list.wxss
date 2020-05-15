@@ -1,0 +1,228 @@
+/* component/goodsList/list.wxss */
+.goods-list {
+	background: #F8F8F8;
+	padding-top: 14rpx;
+}
+
+.goods-list .goods-item {
+	display: flex;
+	align-items: center;
+	padding: 20rpx 27rpx 20rpx 20rpx;
+	background: #fff;
+	margin-bottom: 14rpx;
+	position: relative;
+}
+.collect-box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+z-index: 999;
+background:rgba(0,0,0,.7);
+}
+.collect-box .collect{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+.collect-box .collect image{
+	width: 84rpx;
+	height: 79rpx;
+}
+.collect-box .collect text{
+	color: #fff;
+	font-size:28rpx;
+}
+.collected{
+	color: #FD4934 !important;
+}
+ .longPress{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background:rgba(51,51,51,.83);
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.longPress .collection{
+	width: 81rpx;
+	height: 77rpx;
+	margin-right: 25rpx;
+}
+
+.longPress text{
+	font-size: 28rpx;
+	color: #fff;
+}
+.goods-list .goods-item .goods_left {
+	position: relative;
+}
+
+.goods_left .goods_medal {
+	width: 76rpx;
+	height: 113rpx;
+	position: absolute;
+	top: -9rpx;
+	left: -20rpx;
+}
+.goods_left .goods_other_medal{
+	width: 69rpx;
+	height: 90rpx;
+	position: absolute;
+	top: -9rpx;
+	left: -18rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.goods_left .goods_medal image,
+.goods_left .goods_other_medal image
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.goods_left .goods_medal view{
+	position: absolute;
+	font-size:26rpx;
+	top: 23rpx;
+	left: 50%;
+	color: #fff;
+	z-index: 20;
+	transform: translateX(-50%);
+}
+.goods_left .goods_other_medal view{
+	z-index: 6;
+	font-size:26rpx;
+	color: #fff;
+}
+
+.goods_left .goods_coverImg {
+	width: 226rpx;
+	height: 226rpx;
+}
+
+.goods_right {
+	margin-left: 20rpx;
+}
+
+.goods_right .goods_title {
+	font-size: 28rpx;
+	color: #333;
+	/* display: flex; */
+	width: 100%;
+	/* display: inline-flex; */
+}
+.goods_right .goods_title .goods_source_logo{
+	display: inline-block;
+	min-width: 40rpx;
+/* 	display: flex;
+	justify-content: center; */
+	padding-top: 10rpx;
+}
+.goods_right .goods_title .goods_source_logo image{
+		display: block;
+		margin: 0 auto;
+}
+.goods_title .goods_source_logo .jd{
+	width: 35rpx;
+	height: 27rpx;
+}
+.goods_title .pdd{
+	width: 34rpx;
+	height: 28rpx;
+}
+.goods_right .goods_right_center {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	margin-top: 12rpx;
+}
+
+.goods_right .goods_right_center .goods_coupon {
+	color: #FFF;
+	font-size: 20rpx;
+	position: relative;
+	height: 55rpx;
+	/* padding: 0 15rpx; */
+	width: 129rpx;
+	display: inline-block;
+	text-align: center;
+	line-height: 55rpx;
+	margin-right: 35rpx;
+}
+.goods_right .goods_right_center .goods_coupon view{
+	position: relative;
+	z-index: 20;
+}
+.goods_right .goods_right_center .goods_coupon image {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	height: 100%;
+	z-index: 10;
+}
+
+.goods_right .goods_right_center .goods_sales {
+	font-size: 22rpx;
+	color: #6B6A6A;
+}
+
+.goods_right .goods_right_bottom {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 18rpx;
+}
+
+.goods_right .goods_right_bottom .goods_discount {
+	display: flex;
+	color: #E52437;
+	font-size: 26rpx;
+	align-items: center;
+}
+
+.goods_right .goods_right_bottom .goods_discount .number{
+	font-size:36rpx;
+}
+
+.goods_right .goods_right_bottom .goods_share {
+	width: 180rpx;
+	height: 61rpx;
+	font-size: 24rpx;
+	color: #fff;
+	background: linear-gradient(to right, #FD6934, #FD3A34);
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8rpx;
+}
+
+.goods_orgin_price{
+	text-decoration:line-through;
+	margin-right: 18rpx;
+}
+.twoLine {
+ display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}

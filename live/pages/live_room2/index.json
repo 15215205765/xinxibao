@@ -1,0 +1,8 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize",
+        "scroll-video": "/live/components/video-lists/index"
+    },
+    "navigationBarTextStyle": "white"
+}

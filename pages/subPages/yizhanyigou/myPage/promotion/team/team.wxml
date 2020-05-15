@@ -1,0 +1,132 @@
+<view class="page">
+	<!--顶部导航栏-->
+	<view class="swiper-tab">
+		<view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
+			一级代理商
+			<view class='view'>({{teamData.level1}})</view>
+		</view>
+		<view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">
+			二级代理商
+			<view class='view'>({{teamData.level2_fan}})</view>
+		</view>
+		<view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" catchtap="swichNav">
+			粉丝
+			<view class='view'>({{teamData.level2_fan}})</view>
+		</view>
+	</view>
+	<!--内容主体-->
+	<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{swiperHeight>500?swiperHeight+'px':'100%'}}">
+		<!-- 全部 -->
+		<swiper-item>
+			<view class="item-s">
+				<view class="list" wx:if="{{agent1.list[0]}}">
+					<view class="item" wx:for="{{agent1.list}}" wx:key="{{index}}" data-id="{{item.id}}" data-name="{{item.nickname}}"
+					 bindtap="jumpMember">
+						<view class="left">
+							<image src="{{item.avatar}}" class="head"></image>
+							<view class="information">
+								<view class="name">
+									{{item.nickname}}
+									<view class="grade">{{item.levelname}}</view>
+								</view>
+								<view class="phone">
+									<image class="icon" src="/images/ic_sj@2x.png"></image>
+									<view>{{item.mobile!==''?item.mobile:'无'}}</view>
+									<view class="copy" wx:if="{{item.mobile!==''}}"  catchtap="copy" data-phone="{{item.mobile}}">复制</view>
+								</view>
+								<view class="time">
+									<image class="icon" src="/images/ic_time@2x.png"></image>
+									{{item.agenttime}}
+								</view>
+							</view>
+						</view>
+						<view class="right">
+							<view class="information-right">
+									<view>本月消费：￥{{item.moneycount}}</view>
+								<view class="team">累计消费：￥{{item.month_moneycount}}</view>
+								<view class="team">{{item.agentcount}}个成员</view>
+							</view>
+							<image src="/images/order-right.png"></image>
+						</view>
+					</view>
+				</view>
+				<view class='empty' wx:else>
+					<image src='/images/pic_kb_td@2x.png'></image>
+					<text>暂无团队成员，快去邀请吧！</text>
+					<navigator url="../invite/invite" class='invite'>邀请好友</navigator>
+				</view>
+			</view>
+		</swiper-item>
+		<!-- 已付款 -->
+		<swiper-item>
+			<view class="item-s">
+				<view class="list" wx:if="{{agent2.list[0]}}">
+					<view class="item" wx:for="{{agent2.list}}" wx:key="{{index}}">
+						<view class="left">
+							<image src="{{item.avatar}}" class="head"></image>
+							<view class="information">
+								<view class="name">
+									{{item.nickname}}
+									<view class="grade">{{item.levelname}}</view>
+								</view>
+								<view class="time">
+									<image class="icon" src="/images/ic_time@2x.png"></image>
+									{{item.agenttime}}
+								</view>
+							</view>
+						</view>
+						<view class="right">
+							<view class="information-right">
+								<view>本月消费：￥{{item.moneycount}}</view>
+								<view class="team">累计消费：￥{{item.month_moneycount}}</view>
+								<view class="team">{{item.agentcount}}个成员</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class='empty' wx:else>
+					<image src='/images/pic_kb_td@2x.png'></image>
+					<text>暂无团队成员，快去邀请吧！</text>
+					<navigator  url="../invite/invite" class='invite'>邀请好友</navigator>
+				</view>
+			</view>
+		</swiper-item>
+		<!-- 已结算 -->
+		<swiper-item>
+			<view class="item-s">
+				<view class="list" wx:if="{{agent3.list[0]}}">
+					<view class="item" wx:for="{{agent3.list}}" wx:key="{{index}}">
+						<view class="left">
+							<image src="{{item.avatar}}" class="head"></image>
+							<view class="information">
+								<view class="name">
+									{{item.nickname}}
+								</view>
+								<view class="phone">
+									<image class="icon" src="/images/ic_sj@2x.png"></image>
+									{{item.mobile!==''?item.mobile:'无'}}
+								</view>
+								<view class="time">
+									<image class="icon" src="/images/ic_time@2x.png"></image>
+									{{item.agenttime}}
+								</view>
+							</view>
+						</view>
+						<view class="right">
+							<view class="information-right">
+								<view class="team">推荐人</view>
+								<view class="team">{{item.agent_nickname}}个成员</view>
+							</view>
+							<image src="/images/order-right.png"></image>
+						</view>
+					</view>
+				</view>
+				<view class='empty' wx:else>
+					<image src='/images/pic_kb_td@2x.png'></image>
+					<text>暂无团队成员，快去邀请吧！</text>
+					<navigator  url="../invite/invite" class='invite'>邀请好友</navigator>
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>

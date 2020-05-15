@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "popup-view": "/components/template/PopManager",
+    "food-comment": "/pages/subPages2/tamplate/foodComment",
+    "shopping-fixation": "/pages/subPages2/tamplate/shoppingFixation",
+    "u-parse": "/components/gaoyia-parse/parse",
+    "tui-numberbox": "/components/template/numberbox",
+    "jump-ball": "/components/hx-jump-ball/hx-jump-ball"
+  }
+}

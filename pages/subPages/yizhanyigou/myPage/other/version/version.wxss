@@ -1,0 +1,43 @@
+.information{
+  text-align: center;
+  padding-top:74rpx; 
+}
+.information image{
+  width: 240rpx;
+  height: 204rpx;
+  margin: 0 auto;
+}
+
+.information .text{
+  font-size: 36rpx;
+  color: #666;
+  margin-top: 62rpx;
+}
+.information .line{
+  width:612rpx;
+height:0px;
+border:1rpx solid rgba(220,220,220,1);
+margin:0 auto;
+margin-top: 26rpx;
+}
+.information .version-number{
+  font-size: 28rpx;
+  color: #666;
+margin-top: 50rpx;
+}
+.bottom{
+  position:fixed;
+  bottom:50rpx;
+  width: 100%;
+  text-align: center;
+}
+.bottom text{
+  font-size: 28rpx;
+  color: #666;
+}
+.bottom navigator{
+  font-size: 28rpx;
+  color: #34C7FD;
+margin-top: 32rpx;
+text-decoration: underline;
+}

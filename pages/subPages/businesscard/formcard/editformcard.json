@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "编辑名片",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "pop-manager": "/components/template/PopManager"
+  }
+}

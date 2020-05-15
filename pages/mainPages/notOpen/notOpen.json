@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "城市代理",
+  "usingComponents": {
+    "diypages": "/components/template/diypages"
+  }
+}

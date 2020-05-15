@@ -1,0 +1,244 @@
+<view class='page'>
+	<wxs module="gains" src="../../../filter/gains.wxs"></wxs>
+	<view class="withdrawal-money-box">
+		<view class="withdrawal-money">
+			<!-- 可提现余额: <text>￥{{information.commission_ok}}</text> -->
+			<text  wx:if="{{display}}">￥{{information.sum_ok}}</text>
+			<image wx:else src="/images/img-yczf@2x.png" class="hidden-img"></image>
+			<view class="hidden-box" bindtap="changeDisplay" >
+				<image wx:if="{{display}}"  src="/images/line.png" class="hidden- line"></image>
+				<image src="/images/eyes.png"  class="hidden-eyes"></image>
+			</view>
+		</view>
+		<text>我通过一站易购累计赚了</text>
+		<image src="/images/ic-wt@2x.png" class="question-mark" bindtap="jumpExplain"></image>
+	</view>
+	<view class="withdrawal-branch">
+		<view class="item">
+			<view>￥<text>{{gains.integer(gainsDetails.today.sum_price)}}</text>{{gains.decimal(gainsDetails.today.sum_price)}}</view>
+			<text>今日预估</text>
+		</view>
+		<view class="line"></view>
+		<view class="item">
+			<view>￥<text>{{gains.integer(gainsDetails.month.sum_price)}}</text>{{gains.decimal(gainsDetails.month.sum_price)}}</view>
+			<text>本月预估</text>
+		</view>
+		<view class="line"></view>
+		<view class="item">
+			<view>￥<text>{{gains.integer(gainsDetails.last_month.sum_price)}}</text>{{gains.decimal(gainsDetails.last_month.sum_price)}}</view>
+			<text>上月收益</text>
+		</view>
+	</view>
+	<view class="main" wx:if="{{gainsDetails}}">
+		<view class="gains-list">
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background:#FD7234;"></view>
+						今日
+					</view>
+					<view class="right" bindtap="jumpCommission">
+						<!-- <view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.today.commission.commission_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.today.commission.commission_lock)}}</view>
+						</view> 
+						<image src="/images/order-right.png"></image>-->
+					</view>
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.today.commission.commission_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.today.commission.commission_lock)}}</view>
+						</view>
+						<view class="gains-source-name">佣金预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.today.abonus.abonus_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.today.abonus.abonus_lock)}}</view>
+						</view>
+						<view class="gains-source-name">总代预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.today.record.record_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.today.record.record_sum)}}</view>
+						</view>
+						<view class="gains-source-name">预估奖励</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							{{gainsDetails.today.order.order_sum}}
+						</view>
+						<view class="gains-source-name">订单量</view>
+					</view>
+				</view>
+			</view>
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background:#34C7FD;"></view>
+						昨日
+					</view>
+					<view class="right" bindtap="jumpCommission">
+					<!-- 	<view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level_sum)}}</view>
+						</view> 
+						<image src="/images/order-right.png"></image>-->
+					</view>
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.day.commission.commission_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.day.commission.commission_lock)}}</view>
+						</view>
+						<view class="gains-source-name">佣金预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.day.abonus.abonus_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.day.abonus.abonus_lock)}}</view>
+						</view>
+						<view class="gains-source-name">总代预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.day.record.record_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.day.record.record_sum)}}</view>
+						</view>
+						<view class="gains-source-name">预估奖励</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							{{gainsDetails.day.order.order_sum}}
+						</view>
+						<view class="gains-source-name">订单量</view>
+					</view>
+				</view>
+			</view>
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background:#E8C949;"></view>
+						本周
+					</view>
+					<view class="right" bindtap="jumpCommission">
+					<!-- 	<view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level_sum)}}</view>
+						</view> 
+						<image src="/images/order-right.png"></image>-->
+					</view>
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.week.commission.commission_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.week.commission.commission_lock)}}</view>
+						</view>
+						<view class="gains-source-name">佣金预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.week.abonus.abonus_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.week.abonus.abonus_lock)}}</view>
+						</view>
+						<view class="gains-source-name">总代预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.week.record.record_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.week.record.record_sum)}}</view>
+						</view>
+						<view class="gains-source-name">预估奖励</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							{{gainsDetails.week.order.order_sum}}
+						</view>
+						<view class="gains-source-name">订单量</view>
+					</view>
+				</view>
+			</view>
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background:#8EE849;"></view>
+						上周
+					</view>
+					<view class="right" bindtap="jumpCommission">
+					<!-- 	<view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level_sum)}}</view>
+						</view> 
+						<image src="/images/order-right.png"></image>-->
+					</view>
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.last_week.commission.commission_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.last_week.commission.commission_lock)}}</view>
+						</view>
+						<view class="gains-source-name">佣金预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.last_week.abonus.abonus_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.last_week.abonus.abonus_lock)}}</view>
+						</view>
+						<view class="gains-source-name">总代预估</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.last_week.record.record_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.last_week.record.record_sum)}}</view>
+						</view>
+						<view class="gains-source-name">预估奖励</view>
+					</view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							{{gainsDetails.last_week.order.order_sum}}
+						</view>
+						<view class="gains-source-name">订单量</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

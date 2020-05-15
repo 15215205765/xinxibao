@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/gaoyia-parse/components/wxParseTemplate9"],{"04dc":function(e,n,t){"use strict";t.r(n);var a=t("9213"),r=t("a7e2");for(var o in r)"default"!==o&&function(e){t.d(n,e,function(){return r[e]})}(o);var u,s=t("f0c5"),i=Object(s["a"])(r["default"],a["b"],a["c"],!1,null,null,null,!1,a["a"],u);n["default"]=i.exports},9213:function(e,n,t){"use strict";var a,r=function(){var e=this,n=e.$createElement;e._self._c},o=[];t.d(n,"b",function(){return r}),t.d(n,"c",function(){return o}),t.d(n,"a",function(){return a})},a7e2:function(e,n,t){"use strict";t.r(n);var a=t("a938"),r=t.n(a);for(var o in a)"default"!==o&&function(e){t.d(n,e,function(){return a[e]})}(o);n["default"]=r.a},a938:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=void 0;var a=function(){return t.e("components/gaoyia-parse/components/wxParseTemplate10").then(t.bind(null,"9a928"))},r=function(){return t.e("components/gaoyia-parse/components/wxParseImg").then(t.bind(null,"9f36"))},o=function(){return t.e("components/gaoyia-parse/components/wxParseVideo").then(t.bind(null,"c19a"))},u=function(){return t.e("components/gaoyia-parse/components/wxParseAudio").then(t.bind(null,"842d"))},s=function(){return t.e("components/gaoyia-parse/components/wxParseTable").then(t.bind(null,"7463"))},i={name:"wxParseTemplate9",props:{node:{}},components:{wxParseTemplate:a,wxParseImg:r,wxParseVideo:o,wxParseAudio:u,wxParseTable:s},methods:{wxParseATap:function(e,n){var t=n.currentTarget.dataset.href;if(t){var a=this.$parent;while(!a.preview||"function"!==typeof a.preview)a=a.$parent;a.navigate(t,n,e)}}}};n.default=i}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/gaoyia-parse/components/wxParseTemplate9-create-component',
+    {
+        'components/gaoyia-parse/components/wxParseTemplate9-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('543d')['createComponent'](__webpack_require__("04dc"))
+        })
+    },
+    [['components/gaoyia-parse/components/wxParseTemplate9-create-component']]
+]);

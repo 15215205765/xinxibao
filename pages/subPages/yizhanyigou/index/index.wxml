@@ -1,0 +1,157 @@
+<!--引入骨架屏模版 -->
+<view class='container'>
+	<view class='header-box' bindtap="copy" style="padding-top:{{statusBarHeight}}px" id=''>
+		<!-- <image class='header-bg' src='/images/bg_img1.png'></image> -->
+		<view class="header">
+			<!-- <view class='header-title'  style="height: {{capsuleHeight}}px;">
+				<image class="font" src='/pages/subPages/yizhanyigou/images/act_font.png'></image>
+			</view> -->
+			<view class='search-box'>
+				<view class='header-search' bindtap='jump'>
+					<image src='/pages/subPages/yizhanyigou/images/sousuo@2x.png'></image>
+					<text>复制商品标题、搜隐藏优惠券</text>
+				</view>
+			</view>
+		</view>
+		<!-- tab导航栏 -->
+		<!-- scroll-left属性可以控制滚动条位置 -->
+		<!-- scroll-with-animation滚动添加动画过渡 -->
+		<view id="navTop" class='navSkeleton'>
+			<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+				<block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+					<view class="nav-item {{currentTab == idx ?'active':''}}" data-type='{{navItem.main_name}}' data-current="{{idx}}"
+					 bindtap="switchNav">{{navItem.main_name}} 
+					 </view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+	
+	<view>
+		<view style='height:{{statusBarHeight}}px'></view>
+		<view class="header">
+			<view class='header-title' style="height: {{capsuleHeight}}px;">
+			</view>
+			<view class='search-box'>
+			</view>
+		</view>
+		<view class="nav">
+		</view>
+	</view>
+	
+	<!-- 精选推荐 -->
+	<view wx:if="{{currentTab===0}}">
+		<!-- 推荐 京东 拼多多 -->
+		<view class="c-source" style="top: {{headerBoxHeight}}px;">
+			<view class="item {{selectType==='A'?'active':''}}" bindtap="selectChangeType" data-type="A" >推荐</view>
+			<view class="item {{selectType==='J'?'active':''}}" bindtap="selectChangeType"  data-type="J">京东</view>
+			<view class="item {{selectType==='P'?'active':''}}" bindtap="selectChangeType"  data-type="P">拼多多</view>
+		</view>
+		<!-- 商品列表 -->
+		<goodsList isIndex="{{true}}" bind:myevent="getIndex" bind:collectGoods="collectGoods" goodsList="{{recommendList}}" class="goodsSkeleton" skeletonFlag="{{false}}"></goodsList>
+	</view>
+	<view class="main" hidden="{{currentTab===0}}">
+		<!-- 分类列表 -->
+		<view class='classify skeleton'>
+			<block wx:for="{{showSkeleton?10:classifyList}}" wx:for-index="index" wx:for-item="classifyItem" wx:key="index">
+				<view class='classify-item' data-type='{{index}}' bindtap="jumpClassifyDetails">
+					<image class="skeleton-radius" src='{{showSkeleton?"":classifyItem.imgurl}}'></image>
+					<text style="width: {{showSkeleton?70:100}}%; height: 32rpx;" class="skeleton-rect">{{showSkeleton?"":classifyItem.son_name}}</text>
+				</view>
+			</block>
+			<view class='classify-item' wx-if="{{!showSkeleton}}" bindtap="jumpClassifyDetails" data-type="999">
+				<view class='more'>
+					<image src='/pages/subPages/yizhanyigou/images/more.png'></image>
+				</view>
+				<text>查看全部</text>
+			</view>
+		</view>
+		<!-- 切换商品来源  京东-->
+		<view class="shopType"  hidden="{{currentTab===0}}" id="shopTop" animation="{{animation}}" style="top:{{headerBoxHeight-shopHeight}}px;left:0;width:100%;z-index:999;position:fixed;">
+			<span wx:for='{{shopTypeList}}' bindtap="changeType" data-type='{{shopTypeItem.type }}' class="{{shopTypeItem.type == shopType ?'active':''}}"
+			 wx:for-item='shopTypeItem' wx:key='{{index}}'>
+				{{shopTypeItem.name}}
+			</span>
+		</view>
+		
+		<view class="shopType" id="shopType">
+			<span wx:for='{{shopTypeList}}' bindtap="changeType" data-type='{{shopTypeItem.type }}' class="{{shopTypeItem.type == shopType ?'active':''}}"
+			 wx:for-item='shopTypeItem' wx:key='{{index}}'>
+				{{shopTypeItem.name}}
+			</span>
+		</view>
+		
+		<!-- 商品列表 -->
+		<view class='shopList shopSkeleton'>
+			<view wx:for='{{shopSkeleton?6:shopList}}' data-id='{{shopItem.itemid}}' data-type='{{shopItem.shoptype}}'
+			 data-is_yxk="{{shopItem.is_yxk}}" data-activityid="{{shopItem.activityid}}" bindtap='jumpDetails' wx:for-item='shopItem'
+			 wx:key='{{index}}' class='shopList-item'>
+				<view class="shopVideo shopSkeleton-rect">
+					<image src="{{shopItem.itempic}}" alt=""></image>
+				</view>
+				
+				<view wx:if="{{shopSkeleton}}">
+					<view class="shopSkeleton-rect" style="width: 80%;margin-top: 10rpx; height: 20rpx;"></view>
+					<view class="shopSkeleton-rect" style="width: 60%; margin-top: 10rpx; height: 20rpx;"></view>
+					<view class="shopSkeleton-rect" style="width: 40%; margin-top: 10rpx; height: 20rpx;"></view>
+				</view>
+				
+				<view wx:else>
+					<view class="shopItem-title">
+						<view class='shopSkeleton-rect'>
+							<view class="shopIcon">
+								<image wx:if="{{shopItem.shoptype==='P'}}" src='/pages/subPages/yizhanyigou/images/pdd.png'></image>
+								<image wx:if="{{shopItem.shoptype==='J'}}" src='/pages/subPages/yizhanyigou/images/jingdong.png'></image>
+							</view>
+							{{shopItem.itemtitle}}
+						</view>
+					</view>
+					<view class="shop-price shopSkeleton-rect">
+						<view>                                             
+							{{shopItem.shoptype==='J'?'京东价':'拼多多价'}}￥{{shopItem.itemprice}}
+						</view>
+						<view>
+							<text>已售:</text>
+							<span>{{shopItem.itemsale}}</span>
+						</view>
+					</view>
+					<view class="shopItem-coupon">
+						优惠券
+						<view>
+							<image src='/pages/subPages/yizhanyigou/images/bg_juan.png'></image>
+							<view class='coupon-price'>{{shopItem.couponmoney}}元券</view>
+						</view>
+					</view>
+					<view class="shop-discount-price">
+						<view class=''>券后价￥{{shopItem.itemendprice}}</view>
+						<!-- <p>券后再省￥{{shopItem.tkmoney}}</p> -->
+					</view>
+				</view>
+				<!-- <view class="tag" data-shopID='22' data-shopType='{{shopItem.shoptype}}' data-shopName='{{shopItem.itemshorttitle}}'
+					 catchtap='jumpSimilar'>同款推荐</view> -->
+			</view>
+		</view>
+		<image class='backTop' bindtap='goTop' hidden='{{backTop}}' src='/pages/subPages/yizhanyigou/images/pic_top@2x.png'></image>
+	</view>
+	
+	<view class='most'>
+		{{moreText}}
+	</view>
+	
+	<!-- 智能搜索弹窗 -->
+	<view class="model"  catchtouchmove='ture'  wx:if="{{searchBox}}">
+		<view class="mask"></view>
+		<view class="box">
+			<image class="box-bg" src="/pages/subPages/yizhanyigou/images/img-tc@2x.png"></image>
+			<div class="content">
+				<text>{{searchContent}}</text>
+				<image bindtap="confirmSearch" src="/pages/subPages/yizhanyigou/images/btm_ss@2x.png"></image>
+			</div>
+			<image bindtap="cancelSearch" class="remove" src="/pages/subPages/yizhanyigou/images/btm-gb@2x.png"></image>
+		</view>
+	</view>
+</view>
+<view wx:if="{{currentTab!==0}}">
+	<skeleton wx:if="{{showSkeleton}}"></skeleton>
+	<skeleton wx:if="{{shopSkeleton}}" selector="shopSkeleton"></skeleton>
+</view>

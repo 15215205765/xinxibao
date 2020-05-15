@@ -1,0 +1,1 @@
+.ask_header.data-v-071af825{margin-top:15vh;width:100%}.ask_header>image.data-v-071af825{width:280rpx;height:280rpx;border-radius:50%}.ask_button.data-v-071af825{position:fixed;bottom:5vh;padding:32rpx;width:calc(100% - 64rpx)}.ask_button>view.data-v-071af825{padding:20rpx}.ask_button>.yes_login.data-v-071af825{background-color:#ef573c}

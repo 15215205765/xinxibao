@@ -1,0 +1,114 @@
+/* pages/search/serach.js.wxss */
+.searchFunction{
+	width:622rpx;
+height:60rpx;
+background:rgba(248,248,248,1);
+border-radius:30rpx;
+padding-left: 22rpx;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60rpx;
+overflow: hidden;
+margin: 0 auto;
+}
+.searchFunction image{
+	height: 38rpx;
+	width: 38rpx;
+}
+.searchFunction input{
+	height: 100%;
+	font-size: 24rpx;
+	color: #999;
+	width: 80%;
+	margin-left: 14px;
+}
+.searchFunction button{
+	height: 100%;
+	background: #FD3434;
+	color: #fff;
+	font-size: 28rpx;
+	line-height: 60rpx;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+}
+.searchFunction .left{
+	display: flex;
+	align-items: center;
+	width: 80%;
+}
+/* 查看教程 */
+.searchInformation{
+	padding: 20rpx;
+}
+.searchInformation .title{
+	display: flex;
+	justify-content: space-between;
+}
+.searchInformation .title text{
+	color: #333;
+	font-size: 28rpx;
+}
+.searchInformation .seeCourse{
+	font-size: 24rpx;
+color: #FD3434;
+display: flex;
+align-items: center;
+}
+.searchInformation .seeCourse image{
+	width: 11rpx;
+	height: 20rpx;
+	margin-left: 10rpx;
+}
+.process{
+	display: flex;
+	margin-top: 36rpx;
+	justify-content: center;
+	/* align-items: center; */
+}
+.process .process-icon{
+		width: 150rpx;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+}
+.process .process-icon image{
+	height: 80rpx;
+	width: 80rpx;
+}
+.process .process-icon text{
+	font-size: 20rpx;
+	line-height: 28rpx;
+	margin-top: 18rpx;
+	color: #333;
+}
+.process .process-line{
+width:152rpx;
+height:0px;
+margin-top: 40rpx;
+margin-bottom: 40rpx;
+border:1px solid rgba(253,52,52,1);
+}
+/* 热门搜索 */
+.hot-search{
+	padding:38rpx 20rpx 0 20rpx;
+}
+.hot-search>.title{
+	color: #999;
+	font-size: 28rpx;
+}
+.hot-search>.list{
+	margin-top: 20rpx;
+	display: flex;
+	flex-wrap: wrap;
+}
+.hot-search .list .list-item{
+	padding: 20rpx 40rpx;
+	font-size: 28rpx;
+	color: #666;
+	margin-top: 30rpx;
+	border-radius:8px;
+	background:rgba(242,242,242,1);
+	margin-right: 20rpx;
+}

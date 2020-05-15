@@ -1,0 +1,7 @@
+/* pages/myPage/service/solution/solution.wxss */
+.solutionImg{
+	width: 100%;
+}
+.solutionImg image{
+	width: 100%;
+}

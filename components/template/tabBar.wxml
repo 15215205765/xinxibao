@@ -1,0 +1,27 @@
+<block wx:if="{{!!TabBarsData}}">
+  <view class="data-v-7c500e40">
+    <view class="diy-tabbar border-line border-top data-v-7c500e40" style="{{'background:'+(TabBarsData?TabBarsData.style.bgcolor:'#ffffff')+';'+('padding-bottom:'+(isPadding?'20px':'')+';')}}">
+      <block wx:for="{{TabBarsData.data}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view data-event-opts="{{[['tap',[['onTabItem',['$0','$1',index],[[['TabBarsData.data','',index,'linkurl']],[['TabBarsData.data','',index,'name']]]]]]]}}" class="tabbar-item data-v-7c500e40" bindtap="__e">
+          <block wx:if="{{TabBarsData.params.navstyle==='1'}}">
+            <view class="data-v-7c500e40">
+              <image class="image data-v-7c500e40" src="{{item.imgurl}}"></image>
+            </view>
+          </block>
+          <block wx:if="{{TabBarsData.params.navstyle==='0'}}">
+            <view class="data-v-7c500e40">
+              <view class="{{['i icon iconfont tabbar-item-icon data-v-7c500e40',item.iconclass]}}" style="{{(current===index?'color:'+TabBarsData.style.iconcoloron:'color:'+TabBarsData.style.iconcolor)}}"></view>
+              <view class="f-24 data-v-7c500e40" style="{{(current===index?'color:'+TabBarsData.style.textcoloron:'color:'+TabBarsData.style.textcolor)}}">{{item.text}}</view>
+            </view>
+          </block>
+          <block wx:if="{{TabBarsData.params.navstyle==='2'}}">
+            <view class="navstyle-3-item data-v-7c500e40">
+              <view class="navstyle-image data-v-7c500e40" style="{{'background-image:'+(current===index?'url('+item.select_img+')':'url('+item.default_img+')')+';'}}"></view>
+              <view class="f-24 t-c data-v-7c500e40" style="{{(current===index?'color:'+TabBarsData.style.textcoloron:'color:'+TabBarsData.style.textcolor)}}">{{item.text}}</view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>

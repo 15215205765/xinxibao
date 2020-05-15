@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "bubble": "./../bubble/index",
+        "product-window": "./../product-window/index"
+    }
+}

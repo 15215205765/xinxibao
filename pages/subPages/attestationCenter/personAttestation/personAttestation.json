@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "个人认证",
+  "usingComponents": {
+    "pop-agreement": "/components/template/popAgreement"
+  }
+}

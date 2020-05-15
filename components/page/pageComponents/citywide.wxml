@@ -1,0 +1,1 @@
+<view class="container data-v-b3bd34f2"><block wx:for="{{citywideList}}" wx:for-item="item" wx:for-index="index"><post-list vue-id="{{'1-'+index}}" itemInfo="{{item}}" indexNumber="{{index}}" indexShow="{{indexShow}}" data-event-opts="{{[['^operationShow',[['operationShow']]]]}}" bind:operationShow="__e" class="data-v-b3bd34f2" bind:__l="__l"></post-list></block></view>

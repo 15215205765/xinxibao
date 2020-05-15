@@ -1,0 +1,21 @@
+<view class="page">
+	<view class="list">
+		<view  bindtap="jumpReplace" class="item">
+			<text>手机号</text>
+			<view class="right">
+				{{phoneNumber !==''?phoneNumber:'绑定手机号'}}
+				<image src="/images/order-right.png"></image>
+			</view>
+		</view>
+		<view bindtap="jumpAlipay"  class="item">
+			<text>支付宝</text>
+			<view class="right">
+				{{alipayAccount!==''?alipayAccount:'绑定支付宝账号'}}
+				<image src="/images/order-right.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="logout" bindtap="logout">	
+		退出登录
+	</view>
+</view>

@@ -1,0 +1,279 @@
+.page {
+	height: 100%;
+}
+
+page {
+	height: 100%;
+	background: #F8F8F8;
+}
+
+.swiper-tab {
+	display: flex;
+	flex-direction: row;
+	line-height: 88rpx;
+	border-top: 1px solid #eee;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	/* border-bottom: 2rpx solid #777; */
+	z-index: 999;
+	background: #fff;
+	width: 100%;
+}
+
+.tab-item {
+	width: 25%;
+	text-align: center;
+	font-size: 28rpx;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+}
+.tab-item .badge{
+	font-size: 20rpx;
+	color: #fff;
+	height: 30rpx;
+	width: 30rpx;
+	border-radius:50%;
+background: #FD4634;
+margin-bottom: 14rpx;
+margin-left: -10rpx;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.swiper {
+	/* height: 1100px; */
+	/* background: #dfdfdf; */
+	height: 100%;
+}
+
+.on::after {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 30%;
+	height: 8rpx;
+	background: rgba(253, 52, 52, 1);
+	border-radius: 8rpx;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.on {
+	font-weight: bold;
+}
+
+.empty {
+	padding-top: 200rpx;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.empty image {
+	width: 426rpx;
+	height: 255rpx;
+}
+
+.empty text {
+	margin-top: 30rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+
+/* 订单列表 */
+.list {
+	padding: 0 20rpx;
+
+}
+
+.item {
+	padding: 20rpx 0;
+	padding-left: 20rpx;
+	background: #fff;
+	margin-top: 20rpx;
+}
+
+.item .item-top {
+	display: flex;
+	padding-right: 20rpx;
+	justify-content: space-between;
+	padding-bottom: 30rpx;
+	border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+.item .item-top .left{
+	display: flex;
+	align-items: center;
+}
+.item .item-top .left .info{
+	margin-left: 40rpx;
+}
+.item .item-top .left .info .h2{
+	font-size:28rpx;
+	color:rgba(51,51,51,1);
+}
+.item .item-top .left  text{
+	font-size:28rpx;
+	color:rgba(170,170,170,1);
+}
+.item .item-top .left image{
+	width: 74rpx;
+	height: 74rpx;
+}
+
+.item .item-top .item-state {
+	font-size: 24rpx;
+	color: #FF9800;
+	padding: 0rpx 14rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	/* border:1px solid #FF9800; */
+	border-radius: 4rpx;
+}
+
+.item-content {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+	padding: 24rpx 0;
+	border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+.item-image {
+	width: 163rpx;
+	height: 164rpx;
+	background: #000;
+}
+
+.item-information {
+	width: 70%;
+	margin-left: 20rpx;
+
+}
+.item-info-money{
+	display: flex;
+	margin-top: 30rpx;
+	align-items: center;
+	justify-content: space-between;
+}
+.item-info-money .item-pay{
+	color: #666;
+}
+.item-info-money .item-earn{
+	color: #FD3B34;
+}
+.item-content .item-name {
+	font-size: 28rpx;
+	color: #333;
+	line-height: 56rpx;
+	/* overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap; */
+}
+.item-content .item-time {
+	font-size: 28rpx;
+	color: #999;
+	margin-top: 14rpx;
+}
+.item-info-money{
+	display: flex;
+	font-size:28rpx;
+}
+.item-money {
+	display: flex;
+	justify-content:space-between;
+	padding-top: 22rpx;
+	font-size: 28rpx;
+	/* color: #999; */
+	padding-right: 20rpx;
+}
+.item-money .item-number {
+	color: #AAA;
+}
+.item-money image{
+		width: 102rpx;
+		height: 38rpx;
+}
+.item-money .item-copy{
+	
+}
+.header {
+	width: 100%;
+	height: 198rpx;
+	z-index: 9999;
+	text-align: center;
+	padding-top: 24rpx;
+}
+
+.header .header-bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.header-remove {
+	position: absolute;
+	top: 32rpx;
+	right: 36rpx;
+	height: 27rpx;
+	width: 27rpx;
+	z-index: 30;
+}
+
+.header text {
+	font-size: 32rpx;
+	color: #fff;
+}
+
+.header .money {
+	font-size: 66rpx;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	color: #fff;
+	margin-top: 30rpx;
+	font-weight: bold;
+}
+
+.header .money view {
+	font-size: 28rpx;
+	margin-bottom: 10rpx;
+	margin-left: 5rpx;
+	font-weight: normal;
+}
+
+.header-box {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+  z-index: 9999;
+}
+.input{
+display: flex;
+justify-content: center;
+padding: 28rpx 0;
+background: #fff;
+}
+.input input{
+  height: 88rpx;
+  box-sizing: border-box;
+  width: 504rpx;
+  border: 1rpx solid #DCDCDC;
+  border-radius: 44rpx 0 0 44rpx;
+  font-size: 28rpx;
+  color: #707070;
+  padding-left: 46rpx;
+}
+.input image{
+  width: 132rpx;
+  height: 88rpx;
+}

@@ -1,0 +1,26 @@
+<view class="bill-list" wx:if="{{billList[0]}}">
+	<view class="bill-list-item" wx:for="{{billList}}" wx:key="{{index}}">
+		<view class="item-top item">
+			<view class="title">{{item.note_str}}
+				<view wx:if="{{item.type_note}}" class="note">{{item.type_note}}</view>
+			</view>
+			<view class="gains-money">
+				￥
+				<view class='money-integer'>{{item.commission[0]}}
+				</view>
+				<view class='money-decimal'>.{{item.commission[1]}}</view>
+			</view>
+		</view>
+		<view class="item-bottom item">
+			<view class="title" wx:if="{{pageType==='1'||pageType==='3'}}">下单时间 {{item.createtime}}</view>
+			<view class="title" wx:if="{{pageType==='2'||pageType==='5'}}">{{item.createtime}}</view>
+			<view class="title" wx:if="{{pageType==='4'}}">{{item.aagentareas_last}}</view>
+			<view class="state" wx:if="{{pageType ==='2' || pageType==='1'||pageType==='5'}}">{{item.status}}</view>
+		</view>
+	</view>
+</view>
+
+<view class='empty' wx:else>
+	<image src='/images/pic_kb_tx@2x.png'></image>
+	<text>暂无数据</text>
+</view>

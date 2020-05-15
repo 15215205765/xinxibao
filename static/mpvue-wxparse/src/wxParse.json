@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "weixin-parse-template": "/static/mpvue-wxparse/src/components/wxParseTemplate"
+  }
+}

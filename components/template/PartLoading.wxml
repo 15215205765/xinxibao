@@ -1,0 +1,1 @@
+<block wx:if="{{isShow}}"><view class="part-loading data-v-418d6841" style="{{(backgroundType==='goods'?'':'background-color:#FFFFFF;')}}"><view class="data-load data-v-418d6841"></view></view></block>

@@ -1,0 +1,82 @@
+/* pages/myPage/promotion/poster/poster.wxss */
+.page{
+  padding-top: 44rpx;
+  padding-bottom: 100rpx;
+}
+.title {
+  display: block;
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+
+.swiper {
+  height: 928rpx;
+  margin-top: 20rpx;
+}
+
+.swiper .item {
+  height: 100%;
+  position: relative;
+}
+
+.box {
+  width: 96%;
+  height: 100%;
+}
+
+.avtive {
+  transform: none !important;
+  transition: all 0.2s ease-out 0s;
+}
+
+.button {
+  font-size: 26rpx;
+  color: #fff;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(253, 52, 52, 1);
+  opacity: 1;
+}
+
+.item-box {
+  height: 100%;
+  width: 100%;
+  transform: scale(0.86);
+  transition: all 0.1s ease-out 0s;
+  position: relative;
+}
+
+.item-box .item-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.code{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.code image{
+  height: 148rpx;
+  width:148rpx;
+
+}
+.code text{ 
+  margin-top: 10rpx;
+  font-size: 22rpx;
+
+}

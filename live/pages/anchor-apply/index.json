@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "authorize": "/live/components/authorize/authorize",
+        "payment-anchor-apply": "/live/components/payment-anchor-apply/index",
+        "van-dialog": "/live/vant/dialog/index",
+        "diy-form": "/live/components/diy-form/index",
+        "van-popup": "/live/vant/popup/index"
+    },
+    "navigationBarTitleText": "主播申请",
+    "navigationBarTextStyle": "black"
+}

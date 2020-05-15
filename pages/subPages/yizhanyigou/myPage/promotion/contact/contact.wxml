@@ -1,0 +1,51 @@
+<view class='page'>
+	<image class='bg' src='/images/pic_lxsj@2x.png'></image>
+	<view class='content'>
+		<view class='have' wx:if="{{mobile}}">
+			<view class='title'>上级联系方式</view>
+			<view class='have-item'>
+				<view class='left'>
+					<image src='/images/contact_phone.png'></image>
+					{{mobile}}
+				</view>
+				<view class='copy' wx:if='{{mobile}}' bindtap='customerCopy' data-type='3'>
+					复制
+				</view>
+				<view class='copy copyNo ' wx:else>
+					复制
+				</view>
+			</view>
+			<view class='have-item '>
+				<view class='left '>
+					<image src='/images/contact_wechat.png '></image>
+					{{weChat?weChat:'无 '}}
+				</view>
+				<view class='copy' wx:if='{{weChat}}' bindtap='customerCopy' data-type='4'>
+					复制
+				</view>
+				<view class='copy copyNo' wx:else>
+					复制
+				</view>
+			</view>
+		</view>
+		<view class='no' wx:else>
+			<input placeholder='输入上级邀请码或手机号' bindinput='changePhone'></input>
+			<view class='confirm' bindtap='binding'>确认</view>
+		</view>
+	</view>
+	<view class='contact-information'>
+		<view class='item' data-type='1'>
+			<image src='/images/ic_kf_wx.png'></image>
+			<view>
+				客服微信
+			</view>
+			<button open-type="contact" session-from="weapp"></button>
+		</view>
+		<view class='item' bindtap='customerCopy' data-type='2'>
+			<image src='/images/ic_kf_call.png'></image>
+			<view>
+				客服电话
+			</view>
+		</view>
+	</view>
+</view>

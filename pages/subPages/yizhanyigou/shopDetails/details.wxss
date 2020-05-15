@@ -1,0 +1,274 @@
+/* pages/shopDetails/details.wxss */
+.shop-swiper {
+	position: relative;
+	
+}
+.shopDetails-back{
+	position: fixed;
+	left: 20rpx;
+	display: flex;
+	align-items: center;
+	z-index: 9999;
+}
+.shopDetails-back image{
+	height: 60rpx;
+	width: 60rpx;
+}
+.shop-swiper .imageCount{
+	position: absolute;
+	bottom: 20rpx;
+	right: 20rpx;
+	 width: 72rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    padding: 4rpx 10rpx;
+    box-sizing: content-box;
+    border-radius: 18rpx;
+	text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+}
+.shopDetails {
+	background: #F8F8F8;
+	padding-bottom: 98rpx;
+}
+
+.shop-swiper .swiper {
+	width: 100%;
+	height: 800rpx;
+}
+
+.shop-swiper .swiper image {
+	height: 100%;
+	width: 100%;
+}
+
+/* 商品详情信息 */
+.information {
+	padding: 20rpx;
+	padding-bottom: 0;
+	background: #fff;
+}
+
+.information .top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 24px;
+	color: #333;
+}
+
+.information .top .left {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 24rpx;
+}
+
+.top .left .msg-1 {
+	color: #999999;
+}
+
+.top .left .msg-2 {
+	color: #eb1818;
+	margin-top: 16rpx;
+}
+
+.information .coupon {
+	width: 216rpx;
+	height: 74rpx;
+	font-size: 34rpx;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 32rpx;
+	color: #fff;
+	position: relative;
+}
+
+.information .coupon span {
+	z-index: 2;
+}
+
+.information .coupon image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 216rpx;
+	height: 74rpx;
+	z-index: 1;
+}
+
+.information .top .right {
+	font-size: 24rpx;
+	color: #333;
+}
+
+.Commission {
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+	margin-top: 20rpx;
+}
+
+.Commission .left {
+	display: flex;
+	align-items: center;
+}
+
+.Commission .left .p {
+	font-size: 28rpx;
+	color: #333
+}
+
+.Commission .left .p span {
+	color: #eb1818;
+}
+
+.Commission .left .span {
+	font-size: 10px;
+	color: #999999;
+	margin-left: 30rpx;
+}
+
+.information .notice image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.information .notice-box {
+	/* padding:0 20rpx; */
+}
+
+.notice-box .notice {
+	width: 100%;
+	padding: 80rpx 0rpx 20rpx 40rpx;
+	margin-top: 40rpx;
+	position: relative;
+}
+
+.notice-box .notice view {
+	font-size: 24rpx;
+	color: #333;
+	line-height: 40rpx;
+}
+
+.notice-box .notice .allow {
+	position: absolute;
+	width: 20rpx;
+	height: 18rpx;
+	top: -24rpx;
+	left: 50%;
+	transform: translateX(50%);
+}
+
+.information .messages {
+	padding: 20rpx;
+	background: #fff;
+}
+
+.information .messages .p {
+	font-size: 34rpx;
+	line-height: 48rpx;
+}
+
+.information .messages .p image {
+	display: inline-block;
+	height: 30rpx;
+	width: 40rpx;
+}
+
+.information .messages .h2 {
+	display: flex;
+	align-items: center;
+	font-size: 36rpx;
+	margin-top: 28rpx;
+}
+
+.information .messages .h2 image {
+	width: 92rpx;
+	height: 96rpx;
+}
+
+.details {
+	background: #fff;
+	margin-top: 20rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+.details .h2 {
+	width: 310rpx;
+	height: 44rpx;
+	margin: 40rpx 0;
+}
+
+.details .detailsImg {
+	width: 100%;
+}
+
+.details .detailsImg image {
+	width: 100%;
+	height: auto;
+}
+
+.have {
+	width: 217rpx;
+	height: 75rpx;
+	margin-left: 20rpx;
+}
+.love{
+	padding-top: 20rpx;
+}
+.love .title{
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 20rpx 0;
+}
+.love .title image{
+	width: 236rpx;
+	height: 60rpx;
+}
+.shopDetails-bottom{
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	left: 0;
+	height: 98rpx;
+	width: 100%;
+	background:#fff;
+	z-index: 999;
+}
+.shopDetails-bottom .left{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	width: 246rpx;
+}
+.shopDetails-bottom .left image{
+	width: 45rpx;
+	height: 48rpx;
+}
+.shopDetails-bottom .left text{
+	font-size: 28rpx;
+	color: #666;
+}
+.shopDetails-bottom .right{
+	width: 504rpx;
+	font-size: 28rpx;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #FD3434;
+}

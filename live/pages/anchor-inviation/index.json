@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "authorize": "/live/components/authorize/authorize",
+        "payment-anchor-apply": "/live/components/payment-anchor-apply/index"
+    },
+    "navigationBarTitleText": "邀请主播",
+    "navigationBarTextStyle": "black"
+}

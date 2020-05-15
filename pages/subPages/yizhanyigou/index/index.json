@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "skeleton": "../component/skeleton/skeleton",
+	  "goodsList":"../component/goodsList/list"
+  },
+  "navigationBarTitleText": "商城",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,66 @@
+<view style="padding-top: {{headerHeight}}px;">
+	<!-- tab导航栏 -->
+	<!-- scroll-left属性可以控制滚动条位置 -->
+	<!-- scroll-with-animation滚动添加动画过渡 -->
+<view class="header">
+			<view id="navTop">
+			<scroll-view scroll-x="true" class="nav"  scroll-left="{{navScrollLeft}}"  scroll-with-animation="{{true}}">
+				<block wx:for="{{classList}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+					<view class="nav-item  {{currentTab == idx ?'active':''}}" data-type='{{navItem.son_name}}' data-current="{{idx}}"
+					 bindtap="switchNav">{{navItem.son_name}} </view>
+				</block>
+			</scroll-view>
+		</view>
+		<!-- 切换商场来源 -->
+		<view class="shopType">
+			<span wx:for='{{navbarList}}' bindtap="changeType" data-type='{{shopTypeItem.type }}' class="{{shopTypeItem.type == shopType ?'active':''}}"
+			 wx:for-item='shopTypeItem' wx:key='{{index}}'>
+				{{shopTypeItem.name}}
+			</span>
+			<span bindtap="onlyCoupon" class="{{coupon===1?'active':''}}">只看有券商品</span>
+		</view>
+	</view>
+	<!-- 商品列表 -->
+	<view class='shopList'>
+		<view wx:for='{{shopList}}' data-id='{{shopItem.itemid}}' data-type='{{shopItem.shoptype}}' bindtap='jumpDetails'
+		 wx:for-item='shopItem' wx:key='{{index}}' class='shopList-item'>
+			<view class="shopVideo">
+				<image wx:if="{{shopItem.shoptype==='C'||shopItem.shoptype==='B'}}" src="{{shopItem.itempic}}_310x310.jpg" alt></image>
+				<image wx:else src="{{shopItem.itempic}}" alt=""></image>
+				<view wx:if="{{shopItem.videoid!='0'}}" class="video">
+					<image src='../images/shipin@2x.png'></image>
+				</view>
+			</view>
+			<view class="shopItem-title">
+				<view class="shopIcon">
+					<image wx:if="{{shopItem.shoptype==='P'}}" src='../images/pdd.png'></image>
+					<image wx:if="{{shopItem.shoptype==='J'}}" src='../images/jingdong.png'></image>
+				</view>
+				{{shopItem.itemtitle}}
+			</view>
+			<view class="shop-price">
+				<view>
+					{{shopItem.shoptype==='J'?'京东价':''}} {{shopItem.shoptype==='P'?'拼多多价':''}} ￥{{shopItem.itemprice}}
+				</view>
+				<view>
+					<text>已售:</text>
+					<span>{{shopItem.itemsale}}</span>
+				</view>
+			</view>
+			<view class="shopItem-coupon">
+				优惠券
+				<view>
+					<image src='../images/bg_juan.png'></image>
+					<view class='coupon-price'>{{shopItem.couponmoney}}元券</view>
+				</view>
+			</view>
+			<view class="shop-discount-price">
+				<view>券后价￥{{shopItem.itemendprice}}</view>
+				<!-- <p>券后再省￥{{shopItem.tkmoney}}</p> -->
+			</view>
+			<!-- <view class="tag" data-shopID='22' data-shopType='{{shopItem.shoptype}}' data-shopName='{{shopItem.itemshorttitle}}'
+				 catchtap='jumpSimilar'>同款推荐</view> -->
+		</view>
+	</view>
+	<image class='backTop' bindtap='goTop' hidden='{{backTop}}' src='../images/pic_top@2x.png'></image>
+</view>

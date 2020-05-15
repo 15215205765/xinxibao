@@ -1,0 +1,5 @@
+<view class="video_container" wx:if="{{videoList.length>0}}">
+    <scroll-video bind:sharePoster="sharePoster" bind:swipeDown="swipeDown" bind:swipeToEnd="swipeToEnd" bind:swipeToStart="swipeToStart" bind:swipeUpper="swipeUpper" fitType="{{fitType}}" id="scrollvideo" playerType="{{playerType}}" videoList="{{videoList}}"></scroll-video>
+    <canvas canvasId="myCanvas" class="canvas" wx:if="{{canvasStatus}}"></canvas>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

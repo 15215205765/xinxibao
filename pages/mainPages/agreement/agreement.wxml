@@ -1,0 +1,1 @@
+<view class="agreement data-v-0d8b3a86"><block wx:if="{{!loadlogo}}"><loadlogo vue-id="1" class="data-v-0d8b3a86" bind:__l="__l"></loadlogo></block><block wx:if="{{loadlogo}}"><view class="agreementPackage data-v-0d8b3a86"><view class="data-v-0d8b3a86"><rich-text nodes="{{agreementMain}}"></rich-text></view></view></block></view>

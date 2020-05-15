@@ -1,0 +1,260 @@
+<block wx:if="{{loading==true}}">
+  <loadlogo vue-id="1" class="data-v-54e16dbe" bind:__l="__l"></loadlogo>
+</block>
+<block wx:else>
+  <view class="orderList data-v-54e16dbe">
+    <view class="topNav data-v-54e16dbe">
+      <block wx:if="{{type==10}}">
+        <view class="check data-v-54e16dbe">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">全部</label>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view data-event-opts="{{[['tap',[['changType',[10]]]]]}}" class="all data-v-54e16dbe" bindtap="__e">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">全部</label>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{type==0}}">
+        <view class="check data-v-54e16dbe">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待付款</label>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view data-event-opts="{{[['tap',[['changType',[0]]]]]}}" class="payment data-v-54e16dbe" bindtap="__e">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待付款</label>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{type==1}}">
+        <view class="check data-v-54e16dbe">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">{{"待"+(changeflag===1?'发货':'使用')}}</label>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view data-event-opts="{{[['tap',[['changType',[1]]]]]}}" class="use data-v-54e16dbe" bindtap="__e">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">{{"待"+(changeflag===1?'发货':'使用')}}</label>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{type==4}}">
+        <view class="check data-v-54e16dbe">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待收货</label>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view data-event-opts="{{[['tap',[['changType',[4]]]]]}}" class="receiving data-v-54e16dbe" bindtap="__e">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待收货</label>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{type==2}}">
+        <view class="check data-v-54e16dbe">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待评价</label>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view data-event-opts="{{[['tap',[['changType',[2]]]]]}}" class="evaluate data-v-54e16dbe" bindtap="__e">
+          <view class="data-v-54e16dbe">
+            <label class="_span data-v-54e16dbe">待评价</label>
+          </view>
+        </view>
+      </block>
+    </view>
+    <scroll-view class="orderLists data-v-54e16dbe" style="{{'height:'+(phoneHight)+';'}}" scroll-y="true" lower-threshold="0" show-scrollbar="true" scroll-top="{{scrollTop}}" data-event-opts="{{[['scrolltolower',[['downLoading',['$event']]]],['scroll',[['scrollyTop',['$event']]]]]}}"
+      bindscrolltolower="__e" bindscroll="__e">
+      <block wx:if="{{!!orderList&&orderList.length>0}}">
+        <block class="data-v-54e16dbe">
+          <block wx:for="{{orderList}}" wx:for-item="item" wx:for-index="index">
+            <view class="orderListsMb data-v-54e16dbe">
+              <view class="mbPackage data-v-54e16dbe">
+                <view data-event-opts="{{[['tap',[['goOrderDetails',['$0','$1','$2','$3','$4','$5','$6'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'status']],[['orderList','',index,'activityid']],[['orderList','',index,'fightstatus']],[['orderList','',index,'groupstatus']],[['orderList','',index]]]]]]]}}"
+                  class="orderListsMbTitle diy-nav-list border-line border-bottom data-v-54e16dbe" bindtap="__e">
+                  <view class="data-v-54e16dbe">
+                    <block wx:if="{{!!item.shop_img}}">
+                      <view class="data-v-54e16dbe">
+                        <image src="{{item.shop_img}}" class="data-v-54e16dbe"></image>
+                      </view>
+                    </block>
+                    <block wx:else>
+                      <view class="data-v-54e16dbe"></view>
+                    </block>
+                    <label class="_span data-v-54e16dbe">{{item.storename}}</label>
+                  </view>
+                  <label class="_span data-v-54e16dbe">{{item.statusName==undefined?item.status:item.statusName}}</label>
+                </view>
+                <view data-event-opts="{{[['tap',[['goOrderDetails',['$0','$1','$2','$3','$4','$5','$6'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'status']],[['orderList','',index,'activityid']],[['orderList','',index,'fightstatus']],[['orderList','',index,'groupstatus']],[['orderList','',index]]]]]]]}}"
+                  class="orderListsMbBody diy-nav-list border-line border-bottom data-v-54e16dbe" bindtap="__e">
+                  <view class="orderListsImg data-v-54e16dbe">
+                    <image src="{{item.goodsimg}}" class="data-v-54e16dbe"></image>
+                  </view>
+                  <view class="orderListsInfo data-v-54e16dbe">
+                    <view class="data-v-54e16dbe">
+                      <label class="_span data-v-54e16dbe">{{item.goodsname}}</label>
+                    </view>
+                    <view class="data-v-54e16dbe">
+                      <label class="_span data-v-54e16dbe">{{item.optionname}}</label>
+                    </view>
+                    <view class="data-v-54e16dbe">
+                      <label class="_span data-v-54e16dbe">{{"￥"+item.goodsprice}}</label>
+                    </view>
+                  </view>
+                </view>
+                <view class="orderListsMbFoot data-v-54e16dbe">
+                  <view class="orderListsPrice data-v-54e16dbe">
+                    <view class="data-v-54e16dbe"></view>
+                    <view class="data-v-54e16dbe">
+                      <block wx:if="{{item.plugin=='rush'||item.plugin=='groupon'||item.plugin=='coupon'||item.plugin=='wlfightgroup'||item.plugin=='bargain'}}">
+                        <label class="_span data-v-54e16dbe">{{'共'+item.num+'件商品'}}</label>
+                      </block>
+                      <label class="_span data-v-54e16dbe">合计：
+                        <label class="_span data-v-54e16dbe">{{"￥"+item.price}}</label>
+                      </label>
+                    </view>
+                  </view>
+                  <view class="orderListsButton data-v-54e16dbe">
+                    <view class="data-v-54e16dbe"></view>
+                    <block wx:if="{{item.status=='待付款'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <view data-event-opts="{{[['tap',[['cancelOrder',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                          <label class="_span data-v-54e16dbe">取消订单</label>
+                        </view>
+                        <view data-event-opts="{{[['tap',[['goPayment',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']]]]]]]}}" class="buttonRed data-v-54e16dbe" bindtap="__e">
+                          <label class="_span data-v-54e16dbe">去付款</label>
+                        </view>
+                      </view>
+                    </block>
+                    <block wx:if="{{item.status=='待使用'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <block wx:if="{{item.fightstatus=='1'&&item.plugin!='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['goZt',['$0','$1','$2'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看组团</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.surerefund=='1'&&item.plugin!='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['goAfterSale',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">申请退款</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.groupstatus!='1'&&item.groupstatus!='3'&&item.plugin!='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['goCouponDetails',['$0','$1','$2','$3','$4','$5'],[[['orderList','',index,'id']],[['orderList','',index,'recordid']],[['orderList','',index,'plugin']],[['orderList','',index,'status']],[['orderList','',index,'fightstatus']],[['orderList','',index,'groupstatus']]]]]]]}}"
+                            class="buttonRed data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">电子凭证</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin=='citydelivery'&&item.surerefund==0}}">
+                          <view data-event-opts="{{[['tap',[['accomplish',['$0'],[[['orderList','',index]]]]]]]}}" class="buttonRed data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">完成</label>
+                          </view>
+                        </block>
+                      </view>
+                    </block>
+                    <block wx:if="{{item.status=='待发货'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <block wx:if="{{item.surerefund=='1'}}">
+                          <view data-event-opts="{{[['tap',[['goAfterSale',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']]]]]]]}}" class="buttonRed data-v-54e16dbe" style="margin:0 10px 0 0;" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">申请退款</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.fightstatus=='1'}}">
+                          <view data-event-opts="{{[['tap',[['goZt',['$0','$1','$2'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看组团</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{!item.isRemind}}">
+                          <view data-event-opts="{{[['tap',[['remindSend',['$0','$1','$2','$3'],[[['orderList','',index]],[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'goodsname']]]]]]]}}" class="buttonWhite data-v-54e16dbe"
+                            bindtap="__e">
+                            <label class="_span data-v-54e16dbe">提醒发货</label>
+                          </view>
+                        </block>
+                      </view>
+                    </block>
+                    <block wx:if="{{item.status=='待收货'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <block wx:if="{{item.fightstatus=='1'&&item.plugin!=='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['goZt',['$0','$1','$2'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看组团</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin!=='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['logistics',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'a']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看物流</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin=='citydelivery'&&item.surerefund==0}}">
+                          <view data-event-opts="{{[['tap',[['accomplish',['$0'],[[['orderList','',index]]]]]]]}}" class="buttonRed data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">完成</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin!=='citydelivery'}}">
+                          <view data-event-opts="{{[['tap',[['sureReceive',['$0','$1'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']]]]]]]}}" class="buttonRed data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">确认收货</label>
+                          </view>
+                        </block>
+                      </view>
+                    </block>
+                    <block wx:if="{{item.status=='待评价'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <block wx:if="{{item.fightstatus=='1'}}">
+                          <view data-event-opts="{{[['tap',[['goZt',['$0','$1','$2'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看组团</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin=='rush'||item.plugin=='coupon'||item.plugin=='wlfightgroup'||item.plugin=='groupon'}}">
+                          <view data-event-opts="{{[['tap',[['goGoodDetails',['$0','$1','$2'],[[['orderList','',index,'plugin']],[['orderList','',index,'typeid']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">再来一单</label>
+                          </view>
+                        </block>
+                        <view data-event-opts="{{[['tap',[['goPl',['$0','$1','$2','$3','$4'],[[['orderList','',index,'activityid']],[['orderList','',index,'id']],[['orderList','',index,'typeid']],[['orderList','',index,'a']],[['orderList','',index]]]]]]]}}"
+                          class="buttonRed data-v-54e16dbe" bindtap="__e">
+                          <label class="_span data-v-54e16dbe">评价</label>
+                        </view>
+                      </view>
+                    </block>
+                    <block wx:if="{{item.status=='已完成'}}">
+                      <view class="viewButon data-v-54e16dbe">
+                        <block wx:if="{{item.fightstatus=='1'}}">
+                          <view data-event-opts="{{[['tap',[['goZt',['$0','$1','$2'],[[['orderList','',index,'id']],[['orderList','',index,'plugin']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">查看组团</label>
+                          </view>
+                        </block>
+                        <block wx:if="{{item.plugin=='rush'||item.plugin=='coupon'||item.plugin=='wlfightgroup'||item.plugin=='groupon'}}">
+                          <view data-event-opts="{{[['tap',[['goGoodDetails',['$0','$1','$2'],[[['orderList','',index,'plugin']],[['orderList','',index,'typeid']],[['orderList','',index,'activityid']]]]]]]}}" class="buttonWhite data-v-54e16dbe" bindtap="__e">
+                            <label class="_span data-v-54e16dbe">再来一单</label>
+                          </view>
+                        </block>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="full data-v-54e16dbe">
+            <loadmore vue-id="2" isMore="{{isMore}}" class="data-v-54e16dbe" bind:__l="__l"></loadmore>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+        <block class="data-v-54e16dbe">
+          <none-mores vue-id="3" class="data-v-54e16dbe" bind:__l="__l"></none-mores>
+        </block>
+      </block>
+    </scroll-view>
+    <view class="topFull data-v-54e16dbe"></view>
+  </view>
+</block>

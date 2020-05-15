@@ -1,0 +1,122 @@
+<view class="container data-v-15b92f90">
+  <!-- <loadlogo bind:__l="__l" class="data-v-15b92f90" vueId="1" wx:if="{{!loadlogo}}"></loadlogo> -->
+  <view class="page-search data-v-15b92f90">
+    <view class="search-h data-v-15b92f90">
+      <view class="search-h-t1 data-v-15b92f90">
+        <view class="search-h-t1-l data-v-15b92f90">
+          <view class="search-h-t1-l-lab data-v-15b92f90">
+            <view class="i icon iconfont icon-search data-v-15b92f90"></view>
+            <input bindinput="input" class="search-txt data-v-15b92f90" focus="ture" placeholder="商品" type="text" value="{{keywords}}"></input>
+          </view>
+        </view>
+        <view bindtap="search" class="search-h-t1-r data-v-15b92f90">
+          <view class="search-h-t1-r-lk weui-grid data-v-15b92f90">搜索</view>
+        </view>
+      </view>
+      <!-- <view class="search-h-t2 data-v-15b92f90" wx:if="{{!ishotSearch}}">
+                <view bindtap="__e" class="{{['i data-v-15b92f90',listAct==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'listActDo',[0,'goodsList'] ] ] ] ]}}">{{'商品('+(!!searchData&&!!searchData.count?searchData.count.goodsList:0)+')'}}</view>
+                <view bindtap="__e" class="{{['i data-v-15b92f90',listAct==1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'listActDo',[1,'headlineList'] ] ] ] ]}}">{{'头条('+(!!searchData&&!!searchData.count?searchData.count.headlineList:0)+')'}}</view>
+                <view bindtap="__e" class="{{['i data-v-15b92f90',listAct==2?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'listActDo',[2,'shopList'] ] ] ] ]}}">{{'店铺('+(!!searchData&&!!searchData.count?searchData.count.shopList:0)+')'}}</view>
+            </view> -->
+    </view>
+    <!-- <view class="search-t1 data-v-15b92f90" wx:if="{{ishotSearch}}">
+            <view class="search-t1-t data-v-15b92f90">热门搜索</view>
+            <view class="search-t1-b data-v-15b92f90">
+                <view bindtap="__e" class="i data-v-15b92f90" data-event-opts="{{[ [ 'tap',[ [ 'hotItemSearch',['$0'],[ [ ['hotSearchData','',index] ] ] ] ] ] ]}}" wx:for="{{hotSearchData}}">{{item}}</view>
+            </view>
+        </view> -->
+    <view bindtap="livechoose" data-array='{{goodsItem}}' data-index="{{index}}" data-type="kanjia" class="{{['goods-box b-f dis-flex m-btm20 p-r',!isdiyPage?'bor-radius-10upx':'']}}"  style="{{'padding:'+(!isdiyPage?'20rpx':isdiyPageStyle.padding*2+'rpx')+';'}}" wx:for="{{kanjia}}" wx:for-item="goodsItem" wx:key="index">
+            <view class="goodsBox-left m-right20" style="{{'background-image:'+'url('+goodsItem.thumb+')'+';'}}"></view>
+            <view class="goodsBox-right dis-flex flex-box flex-dir-column flex-x-between">
+                <view class="goods-title col-3 f-26 goods-title-twoList twolist-hidden">{{goodsItem.name}}</view>
+                <!-- <view class="dis-flex flex-y-center flex-x-between m-btm10">
+                    <view class="f-24 col-9">{{goodsItem.storename}}</view>
+                    <view class="f-24 col-9">{{goodsItem.distance}}</view>
+                </view> -->
+                <view class="groupon-price-box dis-flex flex-y-center">
+                    <view class="col-f4 f-36">
+                        <text class="f-24">¥</text>{{goodsItem.price}}</view>
+                    <!-- <view class="groupon-vip t-c f-24">会员</view>
+                    <view class="col-9 f-24">{{'优惠'+goodsItem.discount_price+'元'}}</view> -->
+                </view>
+                <view class="col-9 f-24">{{'原价：¥'+goodsItem.oldprice}}</view>
+            </view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#eee;" wx:if="{{goodsItem.yixuanze==1}}">已选择</view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#FF4444;" wx:else>选择</view>
+        </view>
+
+           <view bindtap="livechoose" data-array='{{goodsItem}}' data-index="{{index}}" data-type="pintuan" class="{{['goods-box b-f dis-flex m-btm20 p-r',!isdiyPage?'bor-radius-10upx':'']}}"  style="{{'padding:'+(!isdiyPage?'20rpx':isdiyPageStyle.padding*2+'rpx')+';'}}" wx:for="{{pintuan}}" wx:for-item="goodsItem" wx:key="index">
+            <view class="goodsBox-left m-right20" style="{{'background-image:'+'url('+goodsItem.logo+')'+';'}}"></view>
+            <view class="goodsBox-right dis-flex flex-box flex-dir-column flex-x-between">
+                <view class="goods-title col-3 f-26 goods-title-twoList twolist-hidden">{{goodsItem.name}}</view>
+                <!-- <view class="dis-flex flex-y-center flex-x-between m-btm10">
+                    <view class="f-24 col-9">{{goodsItem.storename}}</view>
+                    <view class="f-24 col-9">{{goodsItem.distance}}</view>
+                </view> -->
+                <view class="groupon-price-box dis-flex flex-y-center">
+                    <view class="col-f4 f-36">
+                        <text class="f-24">¥</text>{{goodsItem.price}}</view>
+                    <!-- <view class="groupon-vip t-c f-24">会员</view>
+                    <view class="col-9 f-24">{{'优惠'+goodsItem.discount_price+'元'}}</view> -->
+                </view>
+                <view class="col-9 f-24">{{'原价：¥'+goodsItem.oldprice}}</view>
+            </view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#eee;" wx:if="{{goodsItem.yixuanze==1}}">已选择</view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#FF4444;" wx:else>选择</view>
+        </view>
+
+
+
+        <view bindtap="livechoose" data-array='{{goodsItem}}' data-index="{{index}}" data-type="qianggou" class="{{['goods-box b-f dis-flex m-btm20 p-r',!isdiyPage?'bor-radius-10upx':'']}}"  style="{{'padding:'+(!isdiyPage?'20rpx':isdiyPageStyle.padding*2+'rpx')+';'}}" wx:for="{{qianggou}}" wx:for-item="goodsItem" wx:key="index">
+            <view class="goodsBox-left m-right20" style="{{'background-image:'+'url('+goodsItem.thumb+')'+';'}}"></view>
+            <view class="goodsBox-right dis-flex flex-box flex-dir-column flex-x-between">
+                <view class="goods-title col-3 f-26 goods-title-twoList twolist-hidden">{{goodsItem.name}}</view>
+                <!-- <view class="dis-flex flex-y-center flex-x-between m-btm10">
+                    <view class="f-24 col-9">{{goodsItem.storename}}</view>
+                    <view class="f-24 col-9">{{goodsItem.distance}}</view>
+                </view> -->
+                <view class="groupon-price-box dis-flex flex-y-center">
+                    <view class="col-f4 f-36">
+                        <text class="f-24">¥</text>{{goodsItem.price}}</view>
+                    <!-- <view class="groupon-vip t-c f-24">会员</view>
+                    <view class="col-9 f-24">{{'优惠'+goodsItem.discount_price+'元'}}</view> -->
+                </view>
+                <view class="col-9 f-24">{{'原价：¥'+goodsItem.oldprice}}</view>
+            </view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#eee;" wx:if="{{goodsItem.yixuanze==1}}">已选择</view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#FF4444;" wx:else>选择</view>
+        </view>
+
+
+         <view bindtap="livechoose" data-array='{{goodsItem}}' data-index="{{index}}" data-type="tuangou" class="{{['goods-box b-f dis-flex m-btm20 p-r',!isdiyPage?'bor-radius-10upx':'']}}"  style="{{'padding:'+(!isdiyPage?'20rpx':isdiyPageStyle.padding*2+'rpx')+';'}}" wx:for="{{tuangou}}" wx:for-item="goodsItem" wx:key="index">
+            <view class="goodsBox-left m-right20" style="{{'background-image:'+'url('+goodsItem.thumb+')'+';'}}"></view>
+            <view class="goodsBox-right dis-flex flex-box flex-dir-column flex-x-between">
+                <view class="goods-title col-3 f-26 goods-title-twoList twolist-hidden">{{goodsItem.name}}</view>
+                <!-- <view class="dis-flex flex-y-center flex-x-between m-btm10">
+                    <view class="f-24 col-9">{{goodsItem.storename}}</view>
+                    <view class="f-24 col-9">{{goodsItem.distance}}</view>
+                </view> -->
+                <view class="groupon-price-box dis-flex flex-y-center">
+                    <view class="col-f4 f-36">
+                        <text class="f-24">¥</text>{{goodsItem.price}}</view>
+                    <!-- <view class="groupon-vip t-c f-24">会员</view>
+                    <view class="col-9 f-24">{{'优惠'+goodsItem.discount_price+'元'}}</view> -->
+                </view>
+                <view class="col-9 f-24">{{'原价：¥'+goodsItem.oldprice}}</view>
+            </view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#eee;" wx:if="{{goodsItem.yixuanze==1}}">已选择</view>
+            <view class="coupon-btn coupon-btnBtm col-f f-24 t-c" style="background-color:#FF4444;" wx:else>选择</view>
+        </view>
+
+
+
+
+    <view class="search-nothing data-v-15b92f90" wx:if="{{searchNothing&&!ishotSearch}}">
+      <view class="h1 data-v-15b92f90">
+        <image class="image data-v-15b92f90" mode="aspectFill" src="https://zb.xinxibao.vip/addons/weliam_smartcity/h5/static/images/search_nothing.png"></image>
+      </view>
+      <view class="p data-v-15b92f90">暂无搜索结果</view>
+    </view>
+    <!-- <loooading bind:__l="__l" class="data-v-15b92f90" vueId="5" wx:if="{{!loading&&!searchNothing}}"></loooading> -->
+  </view>
+</view>

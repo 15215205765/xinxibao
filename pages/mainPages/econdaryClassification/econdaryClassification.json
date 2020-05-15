@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "帖子二级列表",
+  "usingComponents": {
+    "filtertab": "/components/template/filtertab",
+    "post-list": "/components/template/postList",
+    "nonemores": "/components/template/nonemores",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

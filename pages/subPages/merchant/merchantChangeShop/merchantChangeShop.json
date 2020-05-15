@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "切换店铺",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

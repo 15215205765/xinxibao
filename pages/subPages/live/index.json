@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "直播列表",
+  "usingComponents": {
+    "live-componets": "/components/template/live",
+    "load-more": "/components/template/loadmore",
+    "loadlogo": "/components/template/loadlogo",
+    "nonemores": "/components/template/nonemores"
+  }
+}

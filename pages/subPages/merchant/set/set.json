@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "编辑店铺",
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager",
+    "w-picker": "/pages/subPages2/tamplate/w-picker/w-picker",
+    "w-pickera": "/pages/subPages2/tamplate/w-picker/w-pickera"
+  }
+}

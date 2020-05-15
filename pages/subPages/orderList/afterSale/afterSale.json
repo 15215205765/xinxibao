@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "售后",
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager"
+  }
+}

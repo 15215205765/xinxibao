@@ -1,0 +1,550 @@
+<scroll-view class="createCommodity" style="{{'height:'+(phoneHight)+';'}}" scroll-y="{{true}}" scroll-x="{{false}}">
+  <view class="main">
+    <view class="mianPackage">
+      <picker mode="selector" value="{{type}}" range="{{typeList}}" range-key="name" disabled="{{slectDis}}" data-event-opts="{{[['change',[['changeType',['$event']]]]]}}" bindchange="__e">
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">商品类型</text>
+          </view>
+          <block wx:if="{{!!typeList[type]&&!!typeList[type].name}}">
+            <view>
+              <text class="contentTetx verMid">{{typeList[type].name}}</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </block>
+        </view>
+      </picker>
+      <view data-event-opts="{{[['tap',[['showInput',['商品名称']]]]]}}" class="dis-flex inputView diy-nav-list border-line border-bottom" bindtap="__e">
+        <view>
+          <text class="titleTetx">商品名称<text class="colorRed">*</text></text>
+        </view>
+        <view>
+          <text class="contentTetx verMid">{{goodsNameText}}</text>
+          <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+        </view>
+      </view>
+      <picker mode="selector" value="{{cate}}" range="{{cateList}}" range-key="name" data-event-opts="{{[['change',[['changeCate',['$event']]]]]}}" bindchange="__e">
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">商品分类</text>
+          </view>
+          <view>
+            <text class="contentTetx verMid">{{cateText}}</text>
+            <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+          </view>
+        </view>
+      </picker>
+      <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+        <view>
+          <text class="titleTetx">活动开始时间</text>
+        </view>
+        <view>
+          <view data-event-opts="{{[['tap',[['dataTimeShow1',['$event']]]]]}}" class="pickerPackage" bindtap="__e">
+            <text class="contentTetx verMid">{{starttimeText}}</text>
+          </view>
+          <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+        </view>
+      </view>
+      <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+        <view>
+          <text class="titleTetx">活动结束时间</text>
+        </view>
+        <view>
+          <view data-event-opts="{{[['tap',[['dataTimeShow2',['$event']]]]]}}" class="pickerPackage" bindtap="__e">
+            <text class="contentTetx verMid">{{endtimeText}}</text>
+          </view>
+          <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+        </view>
+      </view>
+      <view class="uploadView diy-nav-list border-line border-bottom">
+        <view>
+          <text class="uploadTetx verMid">缩略图</text>
+        </view>
+        <view class="verMid uploadButton">
+          <block wx:if="{{thumb!=''}}">
+            <view class="imgPreview">
+              <image src="{{thumb}}"></image>
+              <image class="close" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closeImg',[1]]]]]}}" bindtap="__e"></image>
+            </view>
+          </block>
+          <block wx:else>
+            <view data-event-opts="{{[['tap',[['updataImg',[1]]]]]}}" class="userImgUpdata" bindtap="__e">
+              <image src="/static/images/merchant/addImg.svg"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="uploadView">
+        <view>
+          <text class="uploadTetx verMid">轮播图</text>
+        </view>
+        <view class="verMid uploadButton">
+          <block wx:for="{{thumbs}}" wx:for-item="item" wx:for-index="index">
+            <block class="verMid">
+              <block wx:if="{{thumbs.length!='0'}}">
+                <view class="imgPreview verMid">
+                  <image src="{{item}}"></image>
+                  <image class="close" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closeImg',[2,index]]]]]}}" bindtap="__e"></image>
+                </view>
+              </block>
+            </block>
+          </block>
+          <block wx:if="{{thumbs.length<7}}">
+            <view data-event-opts="{{[['tap',[['updataImg',[2]]]]]}}" class="userImgUpdata verMid" bindtap="__e">
+              <image src="/static/images/merchant/addImg.svg"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{!isSpecBox}}">
+    <view class="main marT20">
+      <view class="mianPackage">
+        <block wx:if="{{!!typeList[type]&&typeList[type].value!='bargain'}}">
+          <view data-event-opts="{{[['tap',[['specsPopShow',['$event']]]]]}}" class="dis-flex inputView diy-nav-list border-line border-bottom" bindtap="__e">
+            <view>
+              <text class="titleTetx">商品规格</text>
+            </view>
+            <view>
+              <text class="contentTetx verMid">{{specsText}}</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{goodsInfo.goods.optionstatus!='0'&&!!typeList[type]&&typeList[type].value!='bargain'}}">
+          <view data-event-opts="{{[['tap',[['optionsPopShow',['$event']]]]]}}" class="dis-flex inputView diy-nav-list border-line border-bottom" bindtap="__e">
+            <view>
+              <text class="titleTetx">子规格详情</text>
+            </view>
+            <view>
+              <text class="contentTetx verMid">价格，库存</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </view>
+        </block>
+        <view data-event-opts="{{[['tap',[['showPresettagsPop',['$event']]]]]}}" class="dis-flex inputView diy-nav-list border-line border-bottom" bindtap="__e">
+          <view>
+            <text class="titleTetx">商品标签</text>
+          </view>
+          <view>
+            <text class="contentTetx verMid">{{presettagsText}}</text>
+            <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+          </view>
+        </view>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='bargain'}}">
+          <view data-event-opts="{{[['tap',[['rulePopShow',['$event']]]]]}}" class="dis-flex inputView diy-nav-list border-line border-bottom" bindtap="__e">
+            <view>
+              <text class="titleTetx">砍价规则</text>
+            </view>
+            <view>
+              <text class="contentTetx verMid">请添加砍价规则</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </view>
+        </block>
+        <picker mode="selector" value="{{goodsInfo.goods.usestatus}}" range="{{usestatusList}}" range-key="name" data-event-opts="{{[['change',[['changeUsestatus',['$event']]]]]}}" bindchange="__e">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">消费方式</text>
+            </view>
+            <view>
+              <text class="contentTetx verMid">{{usestatusText}}</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </view>
+        </picker>
+        <block wx:if="{{goodsInfo.goods.usestatus=='1'||goodsInfo.goods.usestatus=='2'}}">
+          <picker mode="selector" value="{{express}}" range="{{expressList}}" range-key="name" data-event-opts="{{[['change',[['changeExpress',['$event']]]]]}}" bindchange="__e">
+            <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+              <view>
+                <text class="titleTetx">快递模板</text>
+              </view>
+              <view>
+                <text class="contentTetx verMid">{{expresseText}}</text>
+                <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+              </view>
+            </view>
+          </picker>
+        </block>
+        <block wx:if="{{goodsInfo.goods.usestatus=='0'||goodsInfo.goods.usestatus=='2'}}">
+          <picker mode="selector" value="{{cutoffstatus}}" range="{{cutoffstatusList}}" range-key="name" data-event-opts="{{[['change',[['changeCutoffstatus',['$event']]]]]}}" bindchange="__e">
+            <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+              <view>
+                <text class="titleTetx">截止时间类型</text>
+              </view>
+              <view>
+                <text class="contentTetx verMid">{{cutoffstatusText}}</text>
+                <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+              </view>
+            </view>
+          </picker>
+        </block>
+        <block wx:if="{{goodsInfo.goods.cutoffstatus=='1'&&(goodsInfo.goods.usestatus=='0'||goodsInfo.goods.usestatus=='2')}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">购买后有效天数</text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入购买后有效天数(天)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','cutoffday','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.cutoffday}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{goodsInfo.goods.cutoffstatus=='0'&&(goodsInfo.goods.usestatus=='0'||goodsInfo.goods.usestatus=='2')}}">
+          <view data-event-opts="{{[['tap',[['dataTimeShow3',['$event']]]]]}}" class="dis-flex inputView" bindtap="__e">
+            <view>
+              <text class="titleTetx">消费截止时间</text>
+            </view>
+            <view>
+              <text class="contentTetx verMid">{{closetimeText}}</text>
+              <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+            </view>
+          </view>
+        </block>
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">{{''+priceText+''}}<text class="colorRed">*</text></text>
+          </view>
+          <view>
+            <input class="inputMain" cursor-spacing="160" placeholder="请输入价格(元)" type="digit" data-event-opts="{{[['blur',[['handleprice',['$event']]]],['input',[['__set_model',['$0','price','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.price}}"
+              bindblur="__e" bindinput="__e" />
+          </view>
+        </view>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='fightgroup'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">单购价<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入价格(元)" type="digit" data-event-opts="{{[['blur',[['handlealoneprice',['$event']]]],['input',[['__set_model',['$0','aloneprice','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.aloneprice}}"
+                bindblur="__e" bindinput="__e" />
+            </view>
+          </view>
+        </block>
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">商品原价<text class="colorRed">*</text></text>
+          </view>
+          <view>
+            <input class="inputMain" placeholder="请输入商品原价(元)" cursor-spacing="140" type="digit" data-event-opts="{{[['blur',[['handleoldprice',['$event']]]],['input',[['__set_model',['$0','oldprice','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.oldprice}}"
+              bindblur="__e" bindinput="__e" />
+          </view>
+        </view>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value!='bargain'&&typeList[type].value!='fightgroup'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">核销尾款</text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="120" placeholder="请输入核销尾款(元)" type="digit" data-event-opts="{{[['blur',[['handleretainage',['$event']]]],['input',[['__set_model',['$0','retainage','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.retainage}}"
+                bindblur="__e" bindinput="__e" />
+            </view>
+          </view>
+        </block>
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">预约时间</text>
+          </view>
+          <view>
+            <input class="inputMain" cursor-spacing="160" placeholder="请输入预约时间(时)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','appointment','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.appointment}}" bindinput="__e"
+            />
+          </view>
+        </view>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value!='bargain'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">单人限购</text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入单人限购(次)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','op_one_limit','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.op_one_limit}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+          <view>
+            <text class="titleTetx">商品库存<text class="colorRed">*</text></text>
+          </view>
+          <view>
+            <input class="inputMain" cursor-spacing="160" placeholder="请输入商品库存" type="number" data-event-opts="{{[['input',[['__set_model',['$0','num','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.num}}" bindinput="__e" />
+          </view>
+        </view>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='fightgroup'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">组团人数<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入组团人数(人)" type="number" data-event-opts="{{[['blur',[['handlepeoplenum',['$event']]]],['input',[['__set_model',['$0','peoplenum','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.peoplenum}}"
+                bindblur="__e" bindinput="__e" />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='fightgroup'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">组团时间<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入组团时间(小时)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','grouptime','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.grouptime}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='bargain'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">好友帮砍限制数量<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入好友帮砍限制数量(人)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','helplimit','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.helplimit}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='bargain'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">每天帮砍人数限制<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入每天帮砍好友人数限制(人)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','dayhelpcount','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.dayhelpcount}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='bargain'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">每人可砍价次数<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入每人可砍价次数(次)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','onlytimes','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.onlytimes}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!!typeList[type]&&typeList[type].value=='bargain'}}">
+          <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+            <view>
+              <text class="titleTetx">允许参与人数<text class="colorRed">*</text></text>
+            </view>
+            <view>
+              <input class="inputMain" cursor-spacing="160" placeholder="请输入允许参与人数(人)" type="number" data-event-opts="{{[['input',[['__set_model',['$0','joinlimit','$event',[]],['goodsInfo.goods']]]]]}}" value="{{goodsInfo.goods.joinlimit}}" bindinput="__e"
+              />
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <view class="main marT20">
+    <view class="mianPackage">
+      <picker mode="selector" value="{{status}}" range="{{statusList}}" range-key="name" data-event-opts="{{[['change',[['changeStatus',['$event']]]]]}}" bindchange="__e">
+        <view class="dis-flex inputView">
+          <view>
+            <text class="titleTetx">商品状态</text>
+          </view>
+          <view>
+            <text class="contentTetx verMid">{{statusText}}</text>
+            <image class="rightImg verMid" src="/static/images/merchant/right.svg"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <block wx:if="{{bengF==0}}">
+    <view data-event-opts="{{[['tap',[['saveGoods',['$event']]]]]}}" class="{{['submitButton marT20Auto',submitType==1?'pointerNone;':'']}}" bindtap="__e">
+      <text>提交</text>
+    </view>
+  </block>
+  <block wx:if="{{bengF==1}}">
+    <view class="{{['submitButton marT20Auto',submitType==1?'pointerNone;':'']}}">
+      <text>提交</text>
+    </view>
+  </block>
+  <view class="full"></view>
+  <input-pop vue-id="1" inputShow="{{inputShow}}" titleText="{{showTitleText}}" texts="{{goodsInfo.goods.name}}" data-event-opts="{{[['^closeInputPop',[['closeInputPop']]],['^returnText',[['returnText']]]]}}" bind:closeInputPop="__e" bind:returnText="__e"
+    bind:__l="__l"></input-pop>
+  <pop-manager vue-id="2" show="{{presettagsShow}}" type="{{presettagsType}}" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="presettagsView" style="{{'height:'+(phoneHight)+';'}}">
+      <view class="presettagsView_body">
+        <block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index">
+          <view data-event-opts="{{[['tap',[['checkPresettags',['$0'],[[['presettagsList','',index]]]]]]]}}" class="{{[item.g0!=-1?'presettagsCMb':'presettagsMb']}}" bindtap="__e">
+            <text>{{item.$orig.title}}</text>
+          </view>
+        </block>
+      </view>
+      <view data-event-opts="{{[['tap',[['closePresettags',['$event']]]]]}}" class="submitSpecs iy-nav-list border-line border-top" bindtap="__e">
+        <text>确定</text>
+      </view>
+    </view>
+  </pop-manager>
+  <pop-manager vue-id="3" show="{{ruleShow}}" type="{{presettagsType}}" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="ruleView" style="{{'height:'+(phoneHight)+';'}}">
+      <view class="presettagsView_title dis-flex">
+        <view></view>
+        <view data-event-opts="{{[['tap',[['closeRule',['$event']]]]]}}" class="closePresettags" bindtap="__e">
+          <image src="/static/images/merchant/close.png"></image>
+        </view>
+      </view>
+      <view class="presettagsView_Tips">
+        <view class="tipsPackage">
+          <view>
+            <text>规则说明:</text>
+          </view>
+          <view>
+            <text class="ruleTitle">1.价格大于栏请<text class="colorRed">从大到小</text>设置</text>
+          </view>
+          <view>
+            <text class="ruleTitle">2.砍价范围请按照<text class="colorRed">第一个空小于第二个空</text>设置</text>
+          </view>
+          <view>
+            <text class="ruleTitle">例：设置的两条规则为：100,5,10和50,2,3。当商品当前金额大于100元时，每个好友砍价金额为5-10的随机数；当商品金额被砍到100元以下50元以上时，每个好友砍价金额为2-3的随机数；当商品金额被砍到50元以下时，未找到匹配的规则项，每个好友砍价金额为会按照默认的0.5-1元取随机数。</text>
+          </view>
+        </view>
+      </view>
+      <view class="ruleView_body">
+        <view class="rulePackage">
+          <scroll-view class="mbView" scroll-y scroll-x="{{false}}">
+            <block wx:for="{{goodsInfo.goods.rules}}" wx:for-item="item" wx:for-index="index">
+              <view class="ruleMb">
+                <view class="ruleMbPackage">
+                  <view>
+                    <view class="disInline verMid ruleTitle">
+                      <text>当前价格大于</text>
+                    </view>
+                    <input class="disInline ruleInput verMid" cursor-spacing="160" placeholder="请输入" type="number" data-event-opts="{{[['input',[['__set_model',['$0','rule_pice','$event',[]],[[['goodsInfo.goods.rules','',index]]]]]]]}}" value="{{item.rule_pice}}"
+                      bindinput="__e" />
+                  </view>
+                  <view>
+                    <view class="disInline verMid ruleTitle">
+                      <text>砍价范围从</text>
+                    </view>
+                    <input class="disInline ruleInput verMid" cursor-spacing="160" placeholder="请输入" type="number" data-event-opts="{{[['input',[['__set_model',['$0','rule_start','$event',[]],[[['goodsInfo.goods.rules','',index]]]]]]]}}" value="{{item.rule_start}}"
+                      bindinput="__e" />
+                  </view>
+                  <view>
+                    <view class="disInline verMid ruleTitle">
+                      <text>到</text>
+                    </view>
+                    <input class="disInline ruleInput verMid" cursor-spacing="160" placeholder="请输入" type="number" data-event-opts="{{[['input',[['__set_model',['$0','rule_end','$event',[]],[[['goodsInfo.goods.rules','',index]]]]]]]}}" value="{{item.rule_end}}"
+                      bindinput="__e" />
+                  </view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+          <view data-event-opts="{{[['tap',[['pushRule',['$event']]]]]}}" class="addRuleButton" bindtap="__e">
+            <text>添加一条规则 +</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </pop-manager>
+  <block wx:if="{{specsShow}}">
+    <view class="specsView" style="{{'height:'+(phoneHight)+';'}}">
+      <view class="presettagsView_title dis-flex">
+        <view></view>
+        <view data-event-opts="{{[['tap',[['closeSpecs',['$event']]]]]}}" class="closePresettags" bindtap="__e">
+          <image src="/static/images/merchant/close.png"></image>
+        </view>
+      </view>
+      <scroll-view style="{{'height:'+(secollSpecHeight)+';'}}" scroll-y="{{true}}">
+        <block wx:for="{{specList}}" wx:for-item="item" wx:for-index="index">
+          <view class="specsMb">
+            <view class="specsMbPackage">
+              <view class="specsMbTitle dis-flex iy-nav-list border-line border-bottom">
+                <view>
+                  <image class="verMid specImg" src="/static/images/centerMerchant/clerkjian.png" data-event-opts="{{[['tap',[['cleanSpecs',[index,'$0'],['undefined']]]]]}}" bindtap="__e"></image>
+                  <text class="titleTetx verMid marL10">规格名称</text>
+                </view>
+                <view>
+                  <input class="specInput textRight" cursor-spacing="160" placeholder="请输入规格名称" data-event-opts="{{[['input',[['__set_model',['$0','title','$event',[]],[[['specList','',index]]]]]]]}}" value="{{item.title}}" bindinput="__e" />
+                </view>
+              </view>
+              <block wx:for="{{item.items}}" wx:for-item="itemss" wx:for-index="indexss">
+                <view class="addBranchMb">
+                  <view class="addBranchMbPackage dis-flex iy-nav-list border-line border-bottom">
+                    <view>
+                      <image class="verMid specImg" src="/static/images/centerMerchant/clerkjian.png" data-event-opts="{{[['tap',[['cleanSpecs',[index,indexss]]]]]}}" bindtap="__e"></image>
+                      <text class="titleTetx verMid marL10">规格名称</text>
+                    </view>
+                    <view>
+                      <input class="specInput textRight" cursor-spacing="160" placeholder="请输入规格名称" data-event-opts="{{[['input',[['__set_model',['$0','title','$event',[]],[[['specList','',index],['items','',indexss]]]]]]]}}" value="{{itemss.title}}" bindinput="__e"
+                      />
+                    </view>
+                  </view>
+                </view>
+              </block>
+              <view data-event-opts="{{[['tap',[['addBranchSpecs',[index]]]]]}}" class="addBranchButton" bindtap="__e">
+                <view class="addBranchPackage">
+                  <text>+ 添加子规格</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      <block wx:if="{{specList.length<6}}">
+        <view data-event-opts="{{[['tap',[['addSpecs',['$event']]]]]}}" class="specsAddButton marT20" bindtap="__e">
+          <text>+ 添加规格</text>
+        </view>
+      </block>
+      <view data-event-opts="{{[['tap',[['submitSpecs',['$event']]]]]}}" class="submitSpecs iy-nav-list border-line border-top" bindtap="__e">
+        <text>确定</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{optionsShow}}">
+    <view class="specsView" style="{{'height:'+(phoneHight)+';'}}">
+      <view class="presettagsView_title dis-flex">
+        <view></view>
+        <view data-event-opts="{{[['tap',[['closeOptions',['$event']]]]]}}" class="closePresettags" bindtap="__e">
+          <image src="/static/images/merchant/close.png"></image>
+        </view>
+      </view>
+      <scroll-view style="{{'height:'+(scrollHeight)+';'}}" scroll-y="{{true}}">
+        <block wx:for="{{goodsInfo.goods.options}}" wx:for-item="item" wx:for-index="index">
+          <view class="optionsMb">
+            <view class="optionsMbPackage">
+              <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+                <view>
+                  <text class="titleTetx">规格</text>
+                </view>
+                <view>
+                  <text class="contentTetx verMid">{{item.title}}</text>
+                </view>
+              </view>
+              <view class="dis-flex inputView diy-nav-list border-line border-bottom">
+                <view>
+                  <text class="titleTetx">价格</text>
+                </view>
+                <view>
+                  <input class="inputMain" cursor-spacing="160" placeholder="请输入" type="number" data-event-opts="{{[['input',[['__set_model',['$0','price','$event',[]],[[['goodsInfo.goods.options','',index]]]]]]]}}" value="{{item.price}}" bindinput="__e"
+                  />
+                </view>
+              </view>
+              <view class="dis-flex inputView ">
+                <view>
+                  <text class="titleTetx">库存</text>
+                </view>
+                <view>
+                  <input class="inputMain" cursor-spacing="160" placeholder="请输入" type="number" data-event-opts="{{[['input',[['__set_model',['$0','stock','$event',[]],[[['goodsInfo.goods.options','',index]]]]]]]}}" value="{{item.stock}}" bindinput="__e"
+                  />
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      <view data-event-opts="{{[['tap',[['closeOptions',['$event']]]]]}}" class="submitSpecs iy-nav-list border-line border-top" bindtap="__e">
+        <text>确定</text>
+      </view>
+    </view>
+  </block>
+  <w-picker class="vue-ref" vue-id="4" mode="dateTime" startYear="2019" endYear="2030" step="1" current="{{true}}" data-ref="dateTime" data-event-opts="{{[['^confirm',[['checkStar']]]]}}" bind:confirm="__e" bind:__l="__l"></w-picker>
+  <w-picker class="vue-ref" vue-id="5" mode="dateTime" startYear="2019" endYear="2030" step="1" current="{{true}}" data-ref="dateTime1" data-event-opts="{{[['^confirm',[['checkEnd']]]]}}" bind:confirm="__e" bind:__l="__l"></w-picker>
+  <w-picker class="vue-ref" vue-id="6" mode="dateTime" startYear="2019" endYear="2030" step="1" current="{{true}}" data-ref="dateTime2" data-event-opts="{{[['^confirm',[['checkClose']]]]}}" bind:confirm="__e" bind:__l="__l"></w-picker>
+</scroll-view>

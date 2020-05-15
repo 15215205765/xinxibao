@@ -1,0 +1,45 @@
+/* pages/myPage/promotion/invite/invite.wxss */
+.share{
+  position: relative;
+  height:390rpx;
+  display: flex;
+  /* justify-content: center; */
+  padding-top: 52rpx;
+  flex-flow: column;
+  align-items: center;
+}
+.share-bg{
+  width:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  height:390rpx;
+  z-index: -1;
+}
+.share-item{
+  position: relative;
+  width: 598rpx;
+  height:104rpx;
+}
+.share-button{
+  height: 100%;
+  width:100%;
+}
+.share-item button{
+  position: absolute;
+top:0;
+left:0;
+opacity: 0;
+  height:100%;
+  width:100%;
+}
+.share-item:last-child{
+  margin-top: 40rpx;
+}
+.explan{
+  padding: 10rpx 0;
+}
+.explan image{
+  width:100%;
+  height:790rpx;
+}

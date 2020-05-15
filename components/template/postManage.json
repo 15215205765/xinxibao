@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager",
+    "loadlogo": "/components/template/loadlogo",
+    "loadmore": "/components/template/loadmore"
+  }
+}

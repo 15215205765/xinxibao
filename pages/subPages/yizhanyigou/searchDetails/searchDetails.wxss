@@ -1,0 +1,230 @@
+.searchFunction {
+	width: 622rpx;
+	height: 60rpx;
+	background: rgba(248, 248, 248, 1);
+	border-radius: 30rpx;
+	padding-left: 22rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60rpx;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.searchBox{
+padding-top: 154rpx;	
+}
+.searchFunction image {
+	height: 38rpx;
+	width: 38rpx;
+}
+
+.searchFunction input {
+	height: 100%;
+	font-size: 24rpx;
+	color: #999;
+	width: 80%;
+	margin-left: 14px;
+}
+
+.searchFunction button {
+	height: 100%;
+	background: #FD3434;
+	color: #fff;
+	font-size: 28rpx;
+	line-height: 60rpx;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+}
+
+.searchFunction .left {
+	display: flex;
+	align-items: center;
+	width: 80%;
+}
+
+/* 切换商品来源 */
+
+.shopType {
+	display: flex;
+	background: #fff;
+	box-shadow: 0px 3rpx 6rpx rgba(0, 0, 0, 0.16);
+	padding: 0rpx 20rpx;
+}
+
+.shopType span {
+	font-size: 26rpx;
+	color: #333;
+	display: inline;
+	padding: 30rpx 0;
+	width: 50%;
+	text-align: center;
+}
+
+.shopType .active {
+	color: #fd3434;
+}
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	z-index: 30;
+}
+.shopList-s {
+	padding: 20rpx 20rpx;
+	background: #f8f8f8;
+}
+
+.shopList-item-s {
+	width: 100%;
+	margin-top: 20rpx;
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+}
+
+.shopList-item-s:first-child {
+	margin-top: 0;
+}
+
+.shopList-img {
+	height: 256rpx;
+	width: 256rpx;
+}
+
+.shopList-img image {
+	width: 100%;
+	height: 100%;
+}
+
+.shopList-msg {
+	width: 438rpx;
+	padding-right: 14rpx;
+	padding-top: 10rpx;
+}
+
+.shopList-msg .h2 {
+	font-size: 28rpx;
+	color: #333;
+	line-height: 34rpx;
+	text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.shopList-img .h2 span {
+	display: inline-block;
+	width: 28rpx;
+	height: 28rpx;
+	background-size: 28rpx !important;
+}
+
+.shopList-original-price {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	font-size: 16rpx;
+	margin-top: 16rpx;
+}
+
+.shopList-original-price view {
+	color: #333;
+}
+
+.shopList-original-price view:last-child {
+	color: #999999;
+
+}
+
+.shopList-coupon {
+	display: flex;
+	width: 100%;
+	color: #eb1818;
+	font-size: 16rpx;
+	padding: 20rpx 0;
+	align-items: center;
+	justify-content: space-between;
+
+}
+.shopList-coupon .shopCoupon {
+		display: inline-block;
+		height: 36rpx;
+		width: 107rpx;
+		text-align: center;
+		line-height: 36rpx;
+		font-size: 20rpx;
+		color: #fff;
+		/* background: url("@/assets/img/bg_juan.png") no-repeat 0 0; */
+		background-size: 100% 36rpx;
+		position: relative;
+		margin-left: 5rpx;
+		z-index: 2;
+}
+.shopList-coupon .shopCoupon image{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 107rpx;
+		height: 36rpx;
+}
+.shopList-coupon .shopCoupon .text{
+	z-index: 2;
+}
+.shopList-coupon 	.havePrice {
+		margin-left: 5rpx;
+		display: inline-block;
+		height: 38rpx;
+		width: 118rpx;
+		/* background: url("@/assets/img/havePrice.png") no-repeat 0 0; */
+		background-size: 100%;
+		text-align: center;
+		line-height: 38rpx;
+		font-size: 20rpx;
+		color: #eb1818;
+}
+
+.shopList-shopName {
+	border-top: 1px solid #eee;
+	font-size: 24rpx;
+	padding: 19rpx 0;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	/* background: url("@/assets/img/shopName.png") no-repeat 0 center; */
+	background-size: 40rpx;
+}
+.shopList-shopName image{
+	height: 40rpx;
+	width: 40rpx;
+	margin-right: 10rpx;
+}
+
+.havePrice{
+	position: relative;
+	margin-left: 10rpx;
+	width: 118rpx;
+font-size: 20rpx;
+display: flex;
+align-items: center;
+color: #EB1818;
+z-index: 2;
+}
+.havePrice image{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.havePrice view{
+	z-index: 2;
+}

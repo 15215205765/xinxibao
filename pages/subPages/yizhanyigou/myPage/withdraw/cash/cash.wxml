@@ -1,0 +1,64 @@
+<view class='page'>
+	<view class="withdrawal-money-box">
+		<view class="withdrawal-money">
+			可提现余额: <text>￥{{information.commission_ok}}</text>
+		</view>
+	</view>
+	<view class="withdrawal-branch">
+		<view class="item">
+			<view>￥<text>{{amount.set_commission.money[0]}}</text>.{{amount.set_commission.money[1]}}</view>
+			<text>佣金</text>
+		</view>
+		<view class="line"></view>
+		<view class="item">
+			<view>￥<text>{{amount.set_abonus.money[0]}}</text>.{{amount.set_abonus.money[1]}}</view>
+			<text>总代分成</text>
+		</view>
+		<view class="line"></view>
+		<view class="item">
+			<view>￥<text>{{amount.set_shop.money[0]}}</text>.{{amount.set_shop.money[1]}}</view>
+			<text>推广奖励和其他</text>
+		</view>
+	</view>
+	<view class="support-title" >目前支持支付宝提现</view>
+	<view class='personal'>
+		<view class='item'>
+			<view class='left'>支付宝账户</view>
+			<view class='right'>
+				<input  value="{{allpayAccount}}" disabled="true"  placeholder-style="color:#999" placeholder='请输入支付宝账户'></input>
+			</view>
+		</view>
+		<view class='item'>
+			<view class='left'>手机号</view>
+			<view class='right'>
+				<input value='{{phone}}' disabled="true" placeholder-style="color:#999"></input>
+			</view>
+		</view>
+		<view class='item'>
+			<view class='left'>提现金额</view>
+			<view class='right'>
+				<input value='{{information.commission_ok}}' disabled="true" placeholder-style="color:#999" placeholder="请输入你要提现的金额"></input>
+			</view>
+		</view>
+		<view class='item'>
+			<view class='left' bindtap='getCode'>验证码</view>
+			<view class='right code-box'>
+				<input maxlength="4" type="number" bindinput='change' placeholder='输入验证码' placeholder-style="color:#999"></input>
+				<view class="code {{!reset?'active':''}}" bindtap="getCode">{{codeText}}</view>
+			</view>
+		</view>
+		<button class='submit' bindtap='submit'>确定提现</button>
+	</view>
+	<!--温馨提示 -->
+	<view class="tips">
+		<view class="top">
+			<view class="title">说明</view>
+			<!-- <view class="line"></view> -->
+		</view>
+		<view class="content">
+			<view>1、根据相关政策规定，需要填写支付宝绑定的真实姓名 </view>
+			<view>1、最低提现金额1元 </view>
+			<view>2、每月25号可提现上月已结算的佣金</view>
+		</view>
+	</view>
+</view>

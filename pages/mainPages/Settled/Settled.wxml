@@ -1,0 +1,311 @@
+<view class="data-v-63e86b14">
+  <block wx:if="{{!isWxaudit}}">
+    <loadlogo vue-id="1" class="data-v-63e86b14" bind:__l="__l"></loadlogo>
+  </block>
+  <block wx:else>
+    <block class="data-v-63e86b14">
+      <block wx:if="{{userInfo.havestore==1&&page==1}}">
+        <scroll-view class="scoll_view data-v-63e86b14" style="{{'height:'+(phoneHeight)+';'}}" scroll-x="{{false}}" scroll-y>
+          <view class="icon_view data-v-63e86b14">
+            <text class="iconfont icon-check data-v-63e86b14"></text>
+          </view>
+          <view class="tips_view data-v-63e86b14">
+            <text class="tips_text data-v-63e86b14">恭喜您,入驻成功</text>
+          </view>
+          <view class="tips_view1 data-v-63e86b14">
+            <text class="tips_text1 data-v-63e86b14">您可以在手机端管理您的店铺</text>
+          </view>
+          <view class="button_package data-v-63e86b14">
+            <view data-event-opts="{{[['tap',[['goStoreList',['$event']]]]]}}" class="bittons color49BA64 textWhite data-v-63e86b14" bindtap="__e">
+              <text class="data-v-63e86b14">管理店铺</text>
+            </view>
+            <!-- <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="bittons colorWhite data-v-63e86b14" bindtap="__e">
+              <text class="data-v-63e86b14">商户入驻</text>
+            </view> -->
+          </view>
+          <view class="page-footer data-v-63e86b14">
+            <tab-bars vue-id="2" tabBarAct="{{0}}" class="data-v-63e86b14" bind:__l="__l"></tab-bars>
+          </view>
+        </scroll-view>
+      </block>
+      <block wx:else>
+        <view class="demo data-v-63e86b14">
+          <block wx:if="{{page==1}}">
+            <view class="pagesOne data-v-63e86b14">
+              <view class="backImages data-v-63e86b14" style="{{'background-image:'+('url('+backImages+')')+';'}}">
+                <view class="main data-v-63e86b14">
+                  <view class="mainPackage data-v-63e86b14">
+                    <view class="userInfo data-v-63e86b14">
+                      <view class="userInfoPackage data-v-63e86b14">
+                        <view class="firstTitle data-v-63e86b14">
+                          <view class="firstTitleName data-v-63e86b14">
+                            <view class="line data-v-63e86b14"></view>
+                            <label class="_span data-v-63e86b14">请填写店铺信息</label>
+                          </view>
+                          <view data-event-opts="{{[['tap',[['kfPhone',['$event']]]]]}}" class="firstTitleTips data-v-63e86b14" bindtap="__e">
+                            <label class="_span data-v-63e86b14">直接联系客服</label>
+                            <image src="/static/images/merchant/right.svg" class="data-v-63e86b14"></image>
+                          </view>
+                        </view>
+                        <view class="userInfoInput data-v-63e86b14">
+                          <view class="userInfoInputPackage data-v-63e86b14">
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label style="color:red;width:10rpx;" class="_span data-v-63e86b14">*</label>
+                              <label class="_span data-v-63e86b14">店铺名称</label>
+                              <input placeholder="请输入店铺名称" data-event-opts="{{[['input',[['__set_model',['$0','storename','$event',[]],['userInfo']]]]]}}" value="{{userInfo.storename}}" bindinput="__e" class="data-v-63e86b14" />
+                            </view>
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label style="color:red;width:10rpx;" class="_span data-v-63e86b14">*</label>
+                              <label class="_span data-v-63e86b14">姓名</label>
+                              <input placeholder="请输入姓名" data-event-opts="{{[['input',[['__set_model',['$0','name','$event',[]],['userInfo']]]]]}}" value="{{userInfo.name}}" bindinput="__e" class="data-v-63e86b14" />
+                            </view>
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label style="color:red;width:10rpx;" class="_span data-v-63e86b14">*</label>
+                              <label class="_span data-v-63e86b14">电话</label>
+                              <input placeholder="请输入联系电话" type="number" data-event-opts="{{[['input',[['__set_model',['$0','mobile','$event',[]],['userInfo']]]]]}}" value="{{userInfo.mobile}}" bindinput="__e" class="data-v-63e86b14" />
+                            </view>
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label class="_span data-v-63e86b14">所在地区</label>
+                              <view class="timePickerView data-v-63e86b14">
+                                <picker class="dataPicker data-v-63e86b14" mode="multiSelector" range="{{citylist}}" value="{{cityIndex}}" range-key="name" data-event-opts="{{[['change',[['checkCity',['$event']]]],['columnchange',[['changeCity',['$event']]]]]}}"
+                                  bindchange="__e" bindcolumnchange="__e">
+                                  <view class="uni-input data-v-63e86b14">{{provinceidName+" "+areaidName+" "+distidName}}</view>
+                                </picker>
+                                <label class="_span data-v-63e86b14"></label>
+                              </view>
+                              <image src="/static/images/merchant/right.svg" class="data-v-63e86b14"></image>
+                            </view>
+                            <view class="userInfoInputMain dire data-v-63e86b14">
+                              <label style="color:red;width:6rpx;" class="_span data-v-63e86b14">*</label>
+                              <label class="_span data-v-63e86b14">详细地址</label>
+                              <input placeholder="请输入详细地址" data-event-opts="{{[['input',[['__set_model',['$0','address','$event',[]],['userInfo']]]]]}}" value="{{userInfo.address}}" bindinput="__e" class="data-v-63e86b14" />
+                              <view data-event-opts="{{[['tap',[['getLocation',['$event']]]]]}}" bindtap="__e" class="data-v-63e86b14">
+                                <image src="/static/images/merchant/where.svg" class="data-v-63e86b14"></image>
+                                <label class="_span data-v-63e86b14">定位</label>
+                              </view>
+                            </view>
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label class="_span data-v-63e86b14">行业分类</label>
+                              <view data-event-opts="{{[['tap',[['showThePic',['$event']]]]]}}" class="timePickerView data-v-63e86b14" bindtap="__e">
+                                <block wx:if="{{hangYe}}">
+                                  <view class="uni-input twoLevelList data-v-63e86b14">请选择行业分类</view>
+                                </block>
+                                <block wx:else>
+                                  <view class="uni-input twoLevelList data-v-63e86b14">{{twoLevelList}}</view>
+                                </block>
+                                <label class="_span data-v-63e86b14"></label>
+                              </view>
+                              <image src="/static/images/merchant/right.svg" class="data-v-63e86b14"></image>
+                            </view>
+                            <view class="userInfoInputMain data-v-63e86b14">
+                              <label class="_span data-v-63e86b14">营业时间</label>
+                              <view class="timePickerView data-v-63e86b14">
+                                <view class="titleButton data-v-63e86b14" style="{{'width:'+(postType==3||postType==4||postType==6||postType==7?'33%':'50%')+';'}}">
+                                  <picker class="dataPicker1 data-v-63e86b14" mode="time" value="{{userInfo.startTime}}" start="00:00" end="23:59" data-event-opts="{{[['change',[['bindTimeChangeStar',['$event']]]]]}}" bindchange="__e">
+                                    <view class="uni-input data-v-63e86b14">
+                                      <label class="_span data-v-63e86b14">{{userInfo.startTime}}</label>
+                                    </view>
+                                  </picker>
+                                  <label class="_span data-v-63e86b14">-</label>
+                                  <picker class="dataPicker1 data-v-63e86b14" mode="time" value="{{userInfo.endTime}}" start="00:00" end="23:59" data-event-opts="{{[['change',[['bindTimeChangeEnd',['$event']]]]]}}" bindchange="__e">
+                                    <view class="uni-input data-v-63e86b14">{{userInfo.endTime}}</view>
+                                  </picker>
+                                </view>
+                              </view>
+                              <image src="/static/images/merchant/right.svg" class="data-v-63e86b14"></image>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="userImg data-v-63e86b14">
+                      <view class="userInfoPackage data-v-63e86b14">
+                        <view class="firstTitle data-v-63e86b14">
+                          <view class="firstTitleName data-v-63e86b14">
+                            <view class="line data-v-63e86b14"></view>
+                            <label class="_span data-v-63e86b14">店铺图片</label>
+                          </view>
+                          <view class="firstTitleTips data-v-63e86b14"></view>
+                        </view>
+                        <view class="twiceTitle1 data-v-63e86b14">
+                          <label class="_span data-v-63e86b14">店铺LOGO(200X200)</label>
+                          <view class="data-v-63e86b14">
+                            <block wx:if="{{type1Url!==''}}">
+                              <view class="imgPreview data-v-63e86b14">
+                                <image src="{{type1Url}}" class="data-v-63e86b14"></image>
+                                <image class="close data-v-63e86b14" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closeLogo',['$event']]]]]}}" bindtap="__e"></image>
+                              </view>
+                            </block>
+                            <block wx:if="{{type1Url==''}}">
+                              <view data-event-opts="{{[['tap',[['uploadFiles',[1,1]]]]]}}" class="userImgUpdata data-v-63e86b14" bindtap="__e">
+                                <image src="/static/images/merchant/addImg.svg" class="data-v-63e86b14"></image>
+                              </view>
+                            </block>
+                          </view>
+                        </view>
+                        <view class="twiceTitle data-v-63e86b14">
+                          <label class="_span data-v-63e86b14">店铺幻灯片(750X560)</label>
+                          <view class="data-v-63e86b14">
+                            <block wx:for="{{type2Url}}" wx:for-item="item" wx:for-index="index">
+                              <view class="imgPreview data-v-63e86b14">
+                                <image src="{{item}}" class="data-v-63e86b14"></image>
+                                <image class="close data-v-63e86b14" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePreview',[2,'$0'],[[['type2Url','',index]]]]]]]}}" bindtap="__e"></image>
+                              </view>
+                            </block>
+                            <view data-event-opts="{{[['tap',[['uploadFiles',[2,6]]]]]}}" class="userImgUpdata data-v-63e86b14" bindtap="__e">
+                              <image src="/static/images/merchant/addImg.svg" class="data-v-63e86b14"></image>
+                            </view>
+                          </view>
+                        </view>
+                        <view class="twiceTitle data-v-63e86b14">
+                          <label class="_span data-v-63e86b14">店铺相册(320X320)</label>
+                          <view class="data-v-63e86b14">
+                            <block wx:for="{{type3Url}}" wx:for-item="item" wx:for-index="index">
+                              <view class="imgPreview data-v-63e86b14">
+                                <image src="{{item}}" class="data-v-63e86b14"></image>
+                                <image class="close data-v-63e86b14" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePreview',[3,'$0'],[[['type3Url','',index]]]]]]]}}" bindtap="__e"></image>
+                              </view>
+                            </block>
+                            <view data-event-opts="{{[['tap',[['uploadFiles',[3,6]]]]]}}" class="userImgUpdata data-v-63e86b14" bindtap="__e">
+                              <image src="/static/images/merchant/addImg.svg" class="data-v-63e86b14"></image>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="userIntroduce data-v-63e86b14">
+                      <view class="userInfoPackage data-v-63e86b14">
+                        <view class="firstTitle data-v-63e86b14">
+                          <view class="firstTitleName data-v-63e86b14">
+                            <view class="line data-v-63e86b14"></view>
+                            <label style="color:red;width:10rpx;" class="_span data-v-63e86b14">*</label>
+                            <label class="_span data-v-63e86b14">店铺介绍</label>
+                          </view>
+                          <view class="firstTitleTips data-v-63e86b14"></view>
+                        </view>
+                        <view class="userIntroduceInput data-v-63e86b14">
+                          <view class="userIntroduceInputPackage data-v-63e86b14">
+                            <textarea placeholder="请输入店铺介绍文本" data-event-opts="{{[['input',[['__set_model',['$0','introduction','$event',[]],['userInfo']]]]]}}" value="{{userInfo.introduction}}" bindinput="__e" class="data-v-63e86b14"></textarea>
+                          </view>
+                        </view>
+                        <view class="userIntroduceUpdata data-v-63e86b14">
+                          <block wx:for="{{type5Url}}" wx:for-item="item" wx:for-index="index">
+                            <view class="imgPreview data-v-63e86b14">
+                              <image src="{{item}}" class="data-v-63e86b14"></image>
+                              <image class="close data-v-63e86b14" src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePreview',[5,'$0'],[[['type5Url','',index]]]]]]]}}" bindtap="__e"></image>
+                            </view>
+                          </block>
+                          <view data-event-opts="{{[['tap',[['uploadFiles',[5,6]]]]]}}" class="userImgUpdata data-v-63e86b14" bindtap="__e">
+                            <image src="/static/images/merchant/addImg.svg" class="data-v-63e86b14"></image>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view data-event-opts="{{[['tap',[['toLoginAgreement',['store']]]]]}}" class="agreement1 data-v-63e86b14" bindtap="__e">
+                      <label class="radio data-v-63e86b14">
+                        <image src="/static/images/merchant/checked.svg" class="data-v-63e86b14"></image>
+                        <label class="_span data-v-63e86b14">阅读并同意
+                          <label class="_span data-v-63e86b14">《商家入驻相关条款》</label>
+                        </label>
+                      </label>
+                    </view>
+                    <block wx:if="{{userInfo.chargestatus==0}}">
+                      <view data-event-opts="{{[['tap',[['saveUserInfo',['$event']]]]]}}" class="submitButtom data-v-63e86b14" bindtap="__e">
+                        <label class="_span data-v-63e86b14">提交申请</label>
+                      </view>
+                    </block>
+                    <block wx:else>
+                      <view data-event-opts="{{[['tap',[['saveUserInfo',['$event']]]]]}}" class="submitButtom data-v-63e86b14" bindtap="__e">
+                        <label class="_span data-v-63e86b14">下一步</label>
+                      </view>
+                    </block>
+                    <view class="full data-v-63e86b14"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{page==2}}">
+            <scroll-view class="pageTwo data-v-63e86b14" style="{{'height:'+(phoneHeight)+';'}}" scroll-y="{{true}}">
+              <view class="mainTwo data-v-63e86b14">
+                <view class="userImg data-v-63e86b14">
+                  <view class="userInfoPackage data-v-63e86b14">
+                    <view class="twoPageTitle data-v-63e86b14">
+                      <view class="twoPageTitleLeft data-v-63e86b14">
+                        <view class="line data-v-63e86b14"></view>
+                        <label class="_span data-v-63e86b14">付费入驻</label>
+                      </view>
+                      <view data-event-opts="{{[['tap',[['toLoginAgreement',['ff']]]]]}}" class="twoPageTitleRight data-v-63e86b14" bindtap="__e">
+                        <label class="_span data-v-63e86b14">付费说明</label>
+                      </view>
+                    </view>
+                    <view class="checkType data-v-63e86b14">
+                      <radio-group data-event-opts="{{[['change',[['radioChange',['$event']]]]]}}" class="checkBox data-v-63e86b14" bindchange="__e">
+                        <block wx:for="{{chargeList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+                          <label class="radio data-v-63e86b14">
+                            <radio value="{{item.id}}" color="#FF4444" checked="{{index===current}}" class="data-v-63e86b14"></radio>
+                            <label class="_span data-v-63e86b14">{{item.name+"("+item.days+"天/"+item.price+")"}}</label>
+                          </label>
+                        </block>
+                      </radio-group>
+                    </view>
+                  </view>
+                </view>
+                <view data-event-opts="{{[['tap',[['toLoginAgreement',['store']]]]]}}" class="agreement data-v-63e86b14" bindtap="__e">
+                  <label class="radio data-v-63e86b14">
+                    <image src="/static/images/merchant/checked.svg" class="data-v-63e86b14"></image>
+                    <label class="_span data-v-63e86b14">阅读并同意
+                      <label class="_span data-v-63e86b14">《商家入驻相关条款》</label>
+                    </label>
+                  </label>
+                </view>
+                <view data-event-opts="{{[['tap',[['createChargeOrder',['$event']]]]]}}" class="submitButtom data-v-63e86b14" bindtap="__e">
+                  <label class="_span data-v-63e86b14">提交申请</label>
+                </view>
+              </view>
+              <view class="full data-v-63e86b14"></view>
+            </scroll-view>
+          </block>
+          <view class="page-footer data-v-63e86b14">
+            <tab-bars vue-id="3" tabBarAct="{{0}}" class="data-v-63e86b14" bind:__l="__l"></tab-bars>
+          </view>
+          <follow vue-id="4" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+            bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-63e86b14" bind:__l="__l"></follow>
+        </view>
+      </block>
+    </block>
+  </block>
+  <phone-mask vue-id="5" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-63e86b14" bind:__l="__l"></phone-mask>
+  <block wx:if="{{showP}}">
+    <view class="showPic data-v-63e86b14">
+      <view data-event-opts="{{[['tap',[['closeMo',['$event']]]]]}}" class="showOne data-v-63e86b14" bindtap="__e"></view>
+      <view class="showTwo data-v-63e86b14">
+        <scroll-view style="height:360rpx;width:300rpx;margin-top:50rpx;" scroll-y="true" class="data-v-63e86b14">
+          <block wx:for="{{typelist[0]}}" wx:for-item="picItem" wx:for-index="index">
+            <block :key="{{index}}" class="data-v-63e86b14">
+              <view style="display:flex;flex-wrap:wrap;" class="data-v-63e86b14">
+                <view data-event-opts="{{[['tap',[['picCli',[index,'$0'],[[['typelist.__$n0','',index,'id']]]]]]]}}" class="picName data-v-63e86b14" bindtap="__e">{{picItem.name}}</view>
+                <block wx:if="{{picItem.twotype.length>0}}">
+                  <text class="iconfont icon-right data-v-63e86b14" style="margin-top:30rpx;"></text>
+                </block>
+              </view>
+            </block>
+          </block>
+        </scroll-view>
+        <block wx:if="{{!showPicTwo}}">
+          <view style="height:300rpx;width:300rpx;margin-top:50rpx;" class="data-v-63e86b14"></view>
+        </block>
+        <block wx:if="{{showPicTwo}}">
+          <scroll-view style="height:360rpx;width:300rpx;margin-top:50rpx;" scroll-y="true" class="data-v-63e86b14">
+            <block wx:for="{{typelist[0][indexPic].twotype}}" wx:for-item="picItem1" wx:for-index="index1" wx:key="index1">
+              <view style="display:flex;flex-wrap:wrap;" class="data-v-63e86b14">
+                <view data-event-opts="{{[['tap',[['picCli1',[index1,'$0','$1'],[[['typelist.__$n0.'+indexPic+'.twotype','',index1,'id']],[['typelist.__$n0.'+indexPic+'.twotype','',index1]]]]]]]}}" class="{{['picName data-v-63e86b14',picItem1.checked?'noCheckedPic':'checkedPic']}}"
+                  bindtap="__e">{{picItem1.name}}</view>
+              </view>
+            </block>
+          </scroll-view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

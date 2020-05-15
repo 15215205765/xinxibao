@@ -1,0 +1,202 @@
+<view class="page" style="padding-top: {{headerHidden?'440':'232'}}rpx;">
+	<view class="header-box">
+		<view class="header" wx:if="{{headerHidden}}">
+			<image class="header-bg" src="/pages/subPages/yizhanyigou/myPage/images/ordet_bg.png"></image>
+			<text>一站易购已累计为您节省</text>
+			<view class="money">{{money}}
+				<view>元</view>
+			</view>
+			<image bindtap="hiddenHeader" class="header-remove" src="/pages/subPages/yizhanyigou/myPage/images/order_remove.png"></image>
+		</view>
+		<view class='input'>
+			<input placeholder='请输入或粘贴订单编号' bindinput='change' type='number'></input>
+			<image bindtap='query' src='/pages/subPages/yizhanyigou/myPage/images/find_order.png'></image>
+		</view>
+		<!--顶部导航栏-->
+		<view class="swiper-tab">
+			<view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+			<view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已付款
+				<view class="badge" wx:if="{{data.status1_total}}">{{data.status1_total}}</view>
+			</view>
+			<view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已结算
+				<view class="badge" wx:if="{{data.status2_total}}">{{data.status2_total}}</view>
+			</view>
+			<view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">失效
+				<view class="badge" wx:if="{{data.status3_total}}">{{data.status3_total}}</view>
+			</view>
+		</view>
+	</view>
+	
+	<!--内容主体-->
+	<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{swiperHeight>400?swiperHeight+'px':'100%'}}">
+		<!-- 全部 -->
+		<swiper-item>
+			<view class='item-s'>
+				<view wx:if="{{allList[0]}}" class='list'>
+					<view class="item {{index===0?'item-one':''}}"  wx:for="{{allList}}" wx-item="{{item}}" wx:key="{{index}}">
+						<view class='item-top'>
+							<view class="left">
+								<!-- <image bindtap='query'   src='{{information.avatar}}'></image>
+								<view class="info">
+									<view class="name">{{information.nickname}}</view>
+									<text>下单时间:{{item.createtime}}</text>
+								</view> -->
+                	<text>下单时间:{{item.createtime}}</text>
+							</view>
+							<text class='item-state'>{{item.orderzt}}</text>
+						</view>
+						<view class='item-content'>
+							<image src='{{item.picurl}}' binderror="errImg" data-type="0" data-index="{{index}}" class='item-image'>
+							</image>
+							<view class='item-information'>
+								<view class='item-name twoLine'>
+									{{item.title}}
+								</view>
+								<view class="item-info-money">
+									<view class="item-pay">付款金额:￥{{item.fkprice}}</view>
+									<view class="item-earn">预估赚:￥{{item.dlyj}}</view>
+								</view>
+							</view>
+						</view>
+						<view class='item-money'>
+							<view class='item-number'>订单号:{{item.orderid}}</view>
+							<image src='/pages/subPages/yizhanyigou/myPage/images/ic-fz@2x.png' data-text="{{item.orderid}}" bindtap="copyNumber"></image>
+						</view>
+					</view>
+				</view>
+
+				<view class='empty' wx:else>
+					<image src='/pages/subPages/yizhanyigou/myPage/images/pic_kb_tx@2x.png'></image>
+					<text>暂无数据</text>
+				</view>
+			</view>
+		</swiper-item>
+		<!-- 已付款 -->
+		<swiper-item>
+			<view class='item-s'>
+				<view wx:if="{{paymentList[0]}}" class='list'>
+					<view class='item' wx:for="{{paymentList}}" wx-item="{{item}}" wx:key="{{index}}">
+						<view class='item-top'>
+							<view class="left">
+								<!-- <image bindtap='query' src='{{information.avatar}}'></image>
+								<view class="info">
+									<view class="name">{{information.nickname}}</view>
+								</view> -->
+									<text>下单时间:{{item.createtime}}</text>
+							</view>
+							<text class='item-state'>{{item.orderzt}}</text>
+						</view>
+						<view class='item-content'>
+							<image src='{{item.picurl}}' binderror="errImg" data-type="1" data-index="{{index}}" class='item-image'>
+							</image>
+							<view class='item-information'>
+								<view class='item-name twoLine'>
+									{{item.title}}
+								</view>
+									<view class="item-info-money">
+									<view class="item-pay">付款金额:￥{{item.fkprice}}</view>
+									<view class="item-earn">预估赚:￥{{item.dlyj}}</view>
+								</view>
+							</view>
+						</view>
+						<view class='item-money'>
+							<view class='item-number'>订单号:{{item.orderid}}</view>
+							<image src='/pages/subPages/yizhanyigou/myPage/images/ic-fz@2x.png' data-text="{{item.orderid}}" bindtap="copyNumber"></image>
+						</view>
+					</view>
+				</view>
+				<view class='empty' wx:else>
+					<image src='/pages/subPages/yizhanyigou/myPage/images/pic_kb_tx@2x.png'></image>
+					<text>暂无数据</text>
+				</view>
+			</view>
+
+		</swiper-item>
+		<!-- 已结算 -->
+		<swiper-item>
+			<view class='item-s'>
+				<view wx:if="{{statementList[0]}}" class='list'>
+					<view class='item' wx:for="{{statementList}}" wx-item="{{item}}" wx:key="{{index}}">
+						<view class='item-top'>
+							<view class="left">
+								<!-- <image bindtap='query' binderror="errImg" data-type="2" data-index="{{index}}" src='{{information.avatar}}'></image>
+								<view class="info">
+									<view class="name">{{information.nickname}}</view>
+								</view> -->
+									<text>下单时间:{{item.createtime}}</text>
+							</view>
+							<text class='item-state'>{{item.orderzt}}</text>
+						</view>
+						<view class='item-content'>
+							<image src='{{item.picurl}}' class='item-image'>
+							</image>
+							<view class='item-information'>
+								<view class='item-name twoLine'>
+									{{item.title}}
+								</view>
+								<view class="item-info-money">
+									<view class="item-pay">付款金额:￥{{item.fkprice}}</view>
+									<view class="item-earn">预估赚:￥{{item.dlyj}}</view>
+								</view>
+							</view>
+						</view>
+						<view class='item-money'>
+							<view class='item-number'>订单号:{{item.orderid}}</view>
+							<image src='/pages/subPages/yizhanyigou/myPage/images/ic-fz@2x.png' data-text="{{item.orderid}}" bindtap="copyNumber"></image>
+						</view>
+					</view>
+				</view>
+
+				<view class='empty' wx:else>
+					<image src='/pages/subPages/yizhanyigou/myPage/images/pic_kb_tx@2x.png'></image>
+					<text>暂无数据</text>
+				</view>
+			</view>
+
+		</swiper-item>
+		<!-- 失效 -->
+		<swiper-item>
+			<view class='item-s'>
+				<view wx:if="{{invalidList[0]}}" class='list'>
+					<view class='item' wx:for="{{invalidList}}" wx-item="{{item}}" wx:key="{{index}}">
+						<view class='item-top'>
+							<view class="left">
+								<!-- <image bindtap='query' binderror="errImg" data-type="3" data-index="{{index}}" src='{{information.avatar}}'></image>
+								<view class="info">
+									<view class="name">{{information.nickname}}</view>
+								</view> -->
+									<text>下单时间:{{item.createtime}}</text>
+							</view>
+							<text class='item-state'>{{item.orderzt}}</text>
+						</view>
+						<view class='item-content'>
+							<image src='{{item.picurl}}' class='item-image'></image>
+							<view class='item-information'>
+								<view class='item-name twoLine'>
+									{{item.title}}
+								</view>
+								<view class="item-info-money">
+									<view class="item-pay">付款金额:￥{{item.fkprice}}</view>
+									<view class="item-earn">预估赚:￥{{item.dlyj}}</view>
+								</view>
+								<!-- <view class='item-time'>
+							{{item.createtime}}
+						</view> -->
+							</view>
+						</view>
+						<view class='item-money'>
+							<view class='item-number'>订单号:{{item.orderid}}</view>
+							<image src='/pages/subPages/yizhanyigou/myPage/images/ic-fz@2x.png' data-text="{{item.orderid}}" bindtap="copyNumber"></image>
+						</view>
+					</view>
+				</view>
+
+				<view class='empty' wx:else>
+					<image src='/pages/subPages/yizhanyigou/myPage/images/pic_kb_tx@2x.png'></image>
+					<text>暂无数据</text>
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+
+</view>

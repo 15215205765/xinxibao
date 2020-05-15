@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "签到首页",
+  "usingComponents": {
+    "popup-view": "/components/template/PopManager",
+    "tab-bars": "/components/template/tabBar",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "follow": "/components/template/follow"
+  }
+}

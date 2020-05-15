@@ -1,0 +1,20 @@
+{
+  "component": true,
+  "usingComponents": {
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "goodslist": "/components/template/goodslist",
+    "imgswipertwo": "/components/template/imgswipertwo",
+    "publicgoodstwo": "/components/template/publicgoodstwo",
+    "haodiantoutiao": "/components/template/haodiantoutiao",
+    "goods-components": "/components/page/pageComponents/goods",
+    "giftbag-components": "/components/page/pageComponents/giftbag",
+    "card-components": "/components/page/pageComponents/discountCard",
+    "region": "/components/page/pageComponents/region",
+    "tab-contro": "/components/page/pageComponents/tabContro",
+    "shop-info": "/components/page/pageComponents/shopInfo",
+    "shop-enter": "/components/page/pageComponents/shopEnter",
+    "popup-view": "/components/template/PopManager",
+    "goods-style": "/components/page/pageComponents/goodsStyle",
+    "tab-menu": "/components/page/pageComponents/tabMenu"
+  }
+}

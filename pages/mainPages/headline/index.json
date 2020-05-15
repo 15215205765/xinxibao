@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "好店头条",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "loooading": "/components/template/loading",
+    "tab-bars": "/components/template/tabBar",
+    "swiper-banner": "/components/template/Swiper"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "抢购专题",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "popup-view": "/components/template/PopManager",
+    "goods-style": "/components/page/pageComponents/goodsStyle"
+  }
+}

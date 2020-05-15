@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "diypages": "/components/template/diypages",
+    "advert": "/components/template/advert",
+    "tab-bars": "/components/template/tabBar",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "recommend-goods": "/components/page/pageComponents/Recommend_goods",
+    "follow": "/components/template/follow",
+    "red-packet": "/components/template/redpacket"
+  }
+}

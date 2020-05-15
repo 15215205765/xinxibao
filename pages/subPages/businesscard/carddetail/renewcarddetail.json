@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "名片",
+  "usingComponents": {
+    "share-bottom": "/components/template/shareBottom",
+    "pop-manager": "/components/template/PopManager",
+    "loadlogo": "/components/template/loadlogo",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

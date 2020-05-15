@@ -1,0 +1,67 @@
+<!-- <navbar parameter="{{parameter}}"></navbar> -->
+<view>
+    <view class="cover">
+        <view bind:tap="previewCover" class="cover__image" mode="aspectFill" style="background-image: url('{{live.cover}}')">
+            <view class="watch-number">{{wantLook}} 想看</view>
+        </view>
+        <view class="cover--end" wx:if="{{live.live_status==3}}">
+            <view class="cover--end__head">
+                <view class="cover--end__title">本场直播已结束</view>
+                <view class="cover--end__time" wx:if="{{live.end_at}}">({{live.end_at}})</view>
+            </view>
+            <view class="button-group">
+                <van-button round bind:tap="openPlayBack" customClass="button-group__btn">看回放</van-button>
+                <van-button round bind:tap="openHome" customClass="button-group__btn">逛商品</van-button>
+            </view>
+            <view round bind:tap="openHome" class="home-btn">
+                <image class="btn-icon" mode="widthFix" src="https://img.yzcdn.cn/guang/icon-home-0726.png" width="16"></image>
+                <view>首页</view>
+            </view>
+        </view>
+    </view>
+    <view class="live-title">
+        {{live.title}}
+        <view bindtap="goPoster" class="share">
+            <view class="share-text">分享</view>
+        </view>
+    </view>
+    <view class="player-info">
+        <image bind:tap="openShopHome" class="logo" src="{{live.anchor.avatar}}"></image>
+        <view bind:tap="openShopHome" class="name">{{live.anchor.nickname}}</view>
+        <view bind:tap="follow" class="player-info__btn follow" wx:if="{{!is_follow}}">关注</view>
+        <view bind:tap="follow" class="player-info__btn" wx:if="{{is_follow}}">已关注</view>
+    </view>
+    <view class="intro van-hairline--bottom">{{live.intro}}</view>
+    <view class="goods-title" wx:if="{{goods.length}}">
+        <text>本场直播商品</text>
+    </view>
+    ﻿<view class="container van-clearfix">
+        <view bindtap="joinCart"  data-id="{{item.goods_id}}" data-invite_code="{{item.invite_code}}" data-type="{{item.type}}" class="goods" wx:for="{{goods}}">
+            <view class="thumb" style="background-image: url('{{item.image}}')"></view>
+            <view class="title van-multi-ellipsis--l2">
+                    {{item.title}}
+                </view>
+            <view class="price-tag" style="font-size: {{priceTag.fontSize}}px">
+                    {{item.price}}元
+                </view>
+        </view>
+    </view>
+    <view class="placeholder {{deviceType?'placeholder--'+deviceType:''}}"></view>
+    <view class="bar van-hairline--top {{deviceType?'bar--'+deviceType:''}}" wx:if="1">
+        <van-count-down format="DD 天 HH 时 mm 分 ss 秒" time="{{startedAt}}"></van-count-down>
+        <van-button round bind:tap="goLivePages" customClass="info-button info-button--active" type="default" wx:if="{{startedAt<=0}}">
+                进入直播间
+            </van-button>
+        <van-button round bind:tap="toggleSubscribe" customClass="info-button {{isSubscribedCurrentLive?'info-button--inactive':'info-button--active'}}" loading="{{subscribing}}" type="{{isSubscribedCurrentLive?'default':'danger'}}" wx:else>
+                {{isSubscribedCurrentLive?'取消提醒':'开播提醒'}}
+            </van-button>
+    </view>
+</view>
+<view class="poster-pop" wx:if="{{posterImageStatus}}">
+    <image bindtap="posterImageClose" class="close" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/newLive/poster-close.png"></image>
+    <image bindtap="savePosterPath" src="{{posterImage}}"></image>
+    <view bindtap="savePosterPath" class="save-poster">保存到手机</view>
+</view>
+<view class="mask" wx:if="{{posterImageStatus}}"></view>
+<canvas canvasId="myCanvas" class="canvas" wx:if="{{canvasStatus}}"></canvas>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

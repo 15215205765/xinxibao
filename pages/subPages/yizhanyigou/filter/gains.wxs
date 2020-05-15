@@ -1,0 +1,16 @@
+
+var gains = {
+  integer:function(res){
+    return parseInt(res)
+	// return parseInt(res)
+  },
+  decimal:function(res='1.00'){
+    var last  = res.length
+    var index = res.indexOf('.')
+    return res.substring(index,last)
+  }
+}
+module.exports={
+  integer: gains.integer,
+  decimal:gains.decimal
+}

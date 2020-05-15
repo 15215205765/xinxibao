@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的私信",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "loading": "/components/template/loading",
+    "none-mores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

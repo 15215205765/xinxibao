@@ -1,0 +1,15 @@
+<view class='page'>
+	<view class='box'>
+		<view class="phone-number">
+			<text>原手机号</text>
+			<view>{{phoneNumber}}</view>
+		</view>
+		<view class="code">
+			<input type="text" value="{{code}}" maxlength="4" type="number" bindinput="assignmentCode" placeholder="四位验证码"/>
+			<view class="get-code" bindtap="getCode">{{codeText}}</view>
+		</view>
+	</view>
+	<view class="next {{inputSwitch?'click':''}}" bindtap="next">
+		下一步
+	</view>
+</view>

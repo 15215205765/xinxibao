@@ -1,0 +1,50 @@
+<van-dialog id="van-dialog"></van-dialog>
+<!-- <navbar parameter="{{parameter}}"></navbar> -->
+<view class="addAddress">
+  <view class="list">
+    <view class="item acea-row row-between-wrapper">
+      <view class="name">直播间标题</view>
+      <input bindinput="getNameValue" placeholder="请输入直播间标题" placeholderClass="placeholder" type="text" value="{{formData.title}}"></input>
+    </view>
+    <view class="item acea-row row-between-wrapper">
+      <view class="name">预告封面</view>
+      <view class="img-box">
+        <view class="van-uploader">
+          <view class="van-uploader__wrapper">
+              <view bind:tap="startUpload" class="van-uploader__slot">
+                <slot></slot>
+              </view>
+              <view bind:tap="startUpload" class="van-uploader__upload" style="width: {{utils.addUnit(previewSize)}}; height: {{utils.addUnit(previewSize)}};">               
+              <view><image style="width:50px;height:50px;" wx:if="{{formData.cover}}" src="{{formData.cover}}"></image></view>
+                <van-icon class="van-uploader__upload-icon" name="plus" wx:if="{{!formData.cover}}"></van-icon>
+                <text class="van-uploader__upload-text" wx:if="{{uploadText}}">{{uploadText}}</text>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item acea-row row-between-wrapper">
+      <view class="name">开播时间</view>
+      <input disabled bindtap="onDataShow" name="sdsd" placeholder="请选择开播时间" type="text" value="{{formData.start_at}}"></input>
+    </view>
+    <view class="item acea-row row-between-wrapper">
+      <view class="name">选择类型</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range-key="name" range="{{livetype}}" style="height:90rpx;line-height:90rpx;">
+          <view class="picker">
+            {{livetype[index].name}}
+          </view>
+        </picker>
+    </view>
+    <view class="item acea-row row-between-wrapper">
+      <view class="name">本场介绍</view>
+      <textarea bindinput="getIntroValue" placeholder="请填写预告介绍" placeholderClass="placeholder" value="{{formData.intro}}"></textarea>
+    </view>
+  </view>
+</view>
+<view class="fui-button">
+  <view bindtap="submit_notice" class="btn btn-danger block btn-submit">创建预告</view>
+</view>
+<van-popup bind:close="onDateClose" position="bottom" show="{{data_show}}">
+  <van-datetime-picker bind:cancel="onCancelDate" bind:confirm="onConfirmDate" minDate="{{minData}}" type="datetime"></van-datetime-picker>
+</van-popup>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

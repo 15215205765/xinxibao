@@ -1,0 +1,1 @@
+<view class="data-v-b6537ace"><view data-event-opts="{{[['tap',[['goShopping',['$event']]]]]}}" class="iconfont icon-gouwuche t-c shopping data-v-b6537ace" bindtap="__e"></view><block wx:if="{{shopNum>0}}"><view class="f-28 f-w t-c shopnums data-v-b6537ace">{{''+shopNum+''}}</view></block></view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的名片",
+  "usingComponents": {
+    "business-card": "/components/page/pageComponents/businessCard",
+    "none-mores": "/components/template/nonemores",
+    "loadlogo": "/components/template/loadlogo",
+    "load-more": "/components/template/loadmore",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

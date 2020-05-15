@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "authorize": "/live/components/authorize/authorize"
+    },
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+}

@@ -1,0 +1,69 @@
+<view class='page'>
+  <view class="shopList-s" wx:if="{{collection[0]}}">
+    <view class='shopList-item-s' bindlongpress="openRemove" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindtap='jumpDetails' data-id='{{shopItem.json_datas.itemid}}' data-type='{{shopItem.json_datas.shoptype}}'  wx:for="{{collection}}" wx:for-item='shopItem' wx:key="{{index}}">
+      <view class="shopList-img">
+        <image class='bg' src="{{shopItem.json_datas.itempic}}" alt></image>
+				<view class="remove-mask" wx:if="{{removeSwitch}}" catchtap="changeRemove" data-index="{{index}}">
+						<view hidden="{{shopItem.removeSwitch}}"></view>
+						<image hidden="{{!shopItem.removeSwitch}}" src="/subPackages/mypage/images/moren_select@2x.png"></image>
+				</view>
+        <view class='bg-coupon'>
+          <image src='/subPackages/mypage/images/collection_coupon.png'></image>
+          <view>券{{shopItem.json_datas.couponmoney}}</view>
+        </view>
+      </view>
+      <view class="shopList-msg">
+        <view class="h2">
+          <view class="shopIcon">
+            <image wx:if="{{shopItem.json_datas.shoptype==='P'}}" src='/images/pdd.png'></image>
+            <image wx:if="{{shopItem.json_datas.shoptype==='J'}}" src='/images/jingdong.png'></image>
+          </view>
+          {{shopItem.json_datas.itemtitle}}
+        </view>
+        <view class="shopList-original-price">
+          <view>
+            券后价 <view class='color'>￥{{shopItem.json_datas.itemendprice}}</view>
+          </view>
+          <view> {{shopItem.json_datas.shoptype==='J'?'京东价':''}} {{shopItem.json_datas.shoptype==='P'?'拼多多价':''}}
+            <view class='del'>
+              ￥{{shopItem.json_datas.itemprice}}
+            </view>
+          </view>
+        </view>
+        <view class="shopList-coupon">
+        <view class='left'>
+          <image src='/images/ic_zhuan@2x.png'></image>
+          ￥{{shopItem.json_datas.tkmoney}}
+        </view>
+          <view class='right'>{{shopItem.json_datas.itemsale}}人已购买</view>
+        </view>
+        <view class="shopList-shopName">
+          <image src="/images/shopName.png"></image>
+          {{shopItem.json_datas.sellernick}}
+        </view>
+      </view>
+    </view>
+    <view class='tips'>长按收藏商品删除</view>
+  </view>
+  <view class='empty' wx:else>
+    <image src="/subPackages/mypage/images/pic_kb_sc@2x.png"></image>
+    <text>暂无收藏，快去逛逛吧！</text>
+    <!-- <navigator  class='invite' url='/pages/index/index'>去逛逛</navigator> -->
+    <view bindtap='jumpIndex' class='invite'>去逛逛</view>
+  </view>
+  <view class='removeGoods' hidden="{{!removeSwitch}}">
+      <view class="select-all" bindtap="selectAll">
+				<view wx:if="{{!selectAll}}"></view>
+				<image wx:else src="/subPackages/mypage/images/moren_select@2x.png"></image>
+				<text>全选</text>
+			</view>
+			<view class="right">
+				<view class="over" bindtap="overRemove">
+					完成
+				</view>
+				<view class="remove" bindtap="removeGoods">
+					删除
+				</view>
+			</view>
+  </view>
+</view>

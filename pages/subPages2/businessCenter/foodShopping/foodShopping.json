@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "evan-radio": "/pages/subPages2/tamplate/evan-radio/evan-radio",
+    "evan-radio-group": "/pages/subPages2/tamplate/evan-radio/evan-radio-group",
+    "uni-icons": "/pages/subPages2/tamplate/uni-icons/uni-icons",
+    "tui-numberbox": "/components/template/numberbox"
+  }
+}

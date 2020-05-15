@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "消费详情",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo"
+  }
+}

@@ -1,0 +1,1 @@
+<view><subscribe vue-id="1" room-id="{{room_id}}" bind:__l="__l"></subscribe></view>

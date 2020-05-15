@@ -1,0 +1,45 @@
+<view class="searchBox">
+	<!-- 搜索框 -->
+	<view class="searchFunction">
+		<view class="left">
+			<image src='../images/ic_shou@2x.png'></image>
+			<input bindinput='getValue' type="text" value="{{searchContent}}" placeholder="请输入商品名称"></input>
+		</view>
+		<button bindtap='jumpSearchDetails'>搜索</button>
+	</view>
+	<!-- 教程流程 -->
+	<view class="searchInformation">
+		<view class="title">
+			<text>三步轻松获取优惠券</text>
+			<view class="seeCourse" bindtap='jumpCourse'>
+				查看教程
+				<image src="../images/ic_right@2x1.png"></image>
+			</view>
+		</view>
+		<view class="process">
+			<view class="process-icon">
+				<image src="../images/ic_tb@2x.png"></image>
+				<text>1、在京东等平台 复制商品标题</text>
+			</view>
+			<view class="process-line"></view>
+			<view class="process-icon">
+				<image src="../images/ic_yg@2x.png"></image>
+				<text>2、在一站易购 搜索优惠券</text>
+			</view>
+			<view class="process-line"></view>
+			<view class="process-icon">
+				<image src="../images/ic_gm@2x.png"></image>
+				<text>3、领券购买</text>
+			</view>
+		</view>
+	</view>
+	<!-- 热门搜索 -->
+	<view class="hot-search">
+		<view class="title">
+			热门搜索
+		</view>
+		<view class="list">
+			<view class="list-item" bindtap='jumpSearchDetails' data-name='{{item.keyword}}' wx:for="{{hotSearchList}}" wx:key="{{index}}">{{item.keyword}}</view>
+		</view>
+	</view>
+</view>

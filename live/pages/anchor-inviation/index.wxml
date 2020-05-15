@@ -1,0 +1,19 @@
+<!-- <navbar parameter="{{parameter}}"></navbar> -->
+<view class="page register" wx:if="{{applyInfo}}">
+    <view class="fui-content">
+       <image src="{{posterImage}}" style="width:100%;" mode="widthFix"></image>
+    </view>
+    <view class="fui-button">
+        <view bindtap="goLogs" class="inviation-logs block btn-submit">邀请记录</view>
+        <view bindtap="goPoster" class="inviation-code block btn-submit">邀请海报</view>
+    </view>
+</view>
+<view class="poster-pop" wx:if="{{posterImageStatus}}">
+    <image bindtap="posterImageClose" class="close" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/newLive/poster-close.png"></image>
+    <image src="{{posterImage}}"></image>
+    <view bindtap="savePosterPath" class="save-poster">保存到手机</view>
+</view>
+<view class="mask" wx:if="{{posterImageStatus}}"></view>
+<canvas canvasId="myCanvas" class="canvas" wx:if="{{canvasStatus}}"></canvas>
+<authorize bind:onLoadFun="onLoadFun"></authorize>
+<import src="../../lib/wxParse/wxParse.wxml"></import>

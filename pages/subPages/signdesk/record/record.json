@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "签到记录",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "loading": "/components/template/loading",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

@@ -1,0 +1,6 @@
+<view class="page">
+	<image wx:if="{{level==='3'}}" class="agent"  src="/subPackages/myPage/images/explain_agent.png"></image>
+	<image wx:elif="{{level==='5'}}" class="all"  src="/subPackages/myPage/images/explain_all.png"></image>
+	<image wx:else class="fans" src="/subPackages/myPage/images/explain_fans.png"></image>
+	<image class="bottom-image" src="/subPackages/myPage/images/pic_fwzx_bgimg@2x.png"></image>
+</view>

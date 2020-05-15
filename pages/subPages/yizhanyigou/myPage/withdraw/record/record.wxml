@@ -1,0 +1,44 @@
+<view class="page">
+
+	<!--顶部导航栏-->
+
+	<view class="swiper-tab">
+		<view class="tab-item {{type==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">佣金</view>
+		<view class="tab-item {{type==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">总代收益 </view>
+		<view class="tab-item {{type==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">奖励其他提现</view>
+		<!-- <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">无效</view> -->
+	</view>
+	<view class='empty' wx:if="{{!recordList[0]&&!loading}}">
+		<image src='/images/pic_kb_tx@2x.png'></image>
+		<text>暂无数据</text>
+	</view>
+	<view class="list" wx:else>
+		<view class="item" wx:for="{{recordList}}"  wx:key="{{index}}">
+			<view class="item-amount">
+				<view class="item-cash-amount">
+					提现金额￥{{item.money}}
+				</view>
+				<view class="beacause"></view>p
+				<view class="item-amount-right">
+					<view>到账金额￥{{item.money}}</view>
+					<view class="item-cash-state">
+						{{item.statusstr}}
+					</view>
+				</view>
+			</view>
+			<view class="item">
+				<!-- seems li record database file nam runtime vire tool helpn edit choose eklce jump relase -->
+				<!-- just little angry huagner  brid brise -->
+			</view>
+			<view class="line"></view>
+			<view class="item-info">
+				<view class="item-fee">
+					提现手续费 <text>￥1</text>
+				</view>
+				<view class="item-cash-time">
+					提现时间：{{item.dealtime}}
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

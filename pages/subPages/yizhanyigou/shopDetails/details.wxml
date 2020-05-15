@@ -1,0 +1,156 @@
+<view class="shopDetails">
+	<view class="shop-swiper">
+		<swiper class="swiper"  bindchange='swiperChange'circular="true" autoplay="3000" :interval="interval" :duration="duration">
+			<block wx:for="{{bannerList}}" wx:for-index="index" wx:for-item="item" wx:key='index'>
+				<swiper-item>
+					<image src='{{item}}'></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		 <view class="imageCount">{{current+1}} / {{bannerList.length}}</view>
+	</view>
+	<view class="shopDetails-back" bindtap='back' style="top:{{statusBarHeight}}px;height: {{capsuleHeight}}px;">
+		<image src="../images/ic_fh_1@2x.png"></image>
+	</view>
+	<view class="main">
+		<view class="information">
+			<view class="top">
+				<view class="left">
+					<view class="msg">
+						<view class="msg-1" wx:if='{{shopDetails.shoptype==="J"}}'>
+							京东价￥{{shopDetails.itemprice}}
+						</view>
+						<view class="msg-1" wx:else>
+							拼多多价￥{{shopDetails.itemprice}}
+						</view>
+						<view class="msg-2">
+							券后价
+							￥{{shopDetails.itemendprice}}
+						</view>
+					</view>
+					<view>
+						<view wx:if="{{shopDetails.couponmoney!==0}}" class="coupon">
+							<image src="../images/jian.png" alt></image>
+							<span>
+								{{shopDetails.couponmoney}}元券
+							</span>
+						</view>
+						<image wx:else class="have" src="../images/have.png" alt></image>
+					</view>
+				</view>
+				<view class="right">已售{{shopDetails.itemsale}}件</view>
+			</view>
+			<view wx:if="{{shopDetails.couponmoney===0}}" class="Commission">
+				<view class="left">
+					<view class="p">
+						商品佣金:
+						<span>￥{{shopDetails.tkmoney}}</span>
+					</view>
+					<span class="span">自购则省 分享则赚</span>
+				</view>
+				<!-- <view :class="$style.right">立即分享</view> -->
+			</view>
+			<view class="notice-box">
+				<view class="notice">
+					<view>1、点下方领券会自动跳转至京东或拼多多平台;</view>
+					<view>2、该优惠券无使用门槛，并且优惠力度更大;</view>
+					<view>3、付款、发货、售后等，是由京东和拼多多负责，安全放心;</view>
+					<view>4、收藏本链接，下次领券更方便。</view>
+					<image src="../images/con_yjsm.png"></image>
+				</view>
+				<!-- <view wx:else class="notice">
+					<view>1、在您下单后5-10分钟左右，商品佣金会返到您的账户，过 了退货期后可提现到支付宝。</view>
+					<view>2、如果您将商品分享给好友购买，您也可以得到这笔佣金。</view>
+					<image src="../images/con_yjsm@2x.png"></image>
+					<image class="allow" src="../images/downAllow.png" alt></image>
+				</view> -->
+			</view>
+			<view class="messages">
+				<view class="p">
+					<image mode="widthFix" wx:if="{{shopDetails.shoptype==='P'}}" src="../images/d_p.png" alt></image>
+					<image mode="widthFix" wx:if="{{shopDetails.shoptype==='C'}}" src="../images/d_c.png" alt></image>
+					<image mode="widthFix" wx:if="{{shopDetails.shoptype==='B'}}" src="../images/d_b.png" alt></image>
+					<image mode="widthFix" wx:if="{{shopDetails.shoptype==='J'}}" src="../images/d_j.png" alt></image>
+					{{shopDetails.itemtitle}}
+				</view>
+				<view class="h2">
+					<image wx:if="{{shopDetails.shoptype==='P'}}" src="../images/d_p2.png" alt></image>
+					<image wx:if="{{shopDetails.shoptype==='B'}}" src="../images/d_b2.png" alt></image>
+					<image wx:if="{{shopDetails.shoptype==='C'}}" src="../images/d_c2.png" alt></image>
+					<image wx:if="{{shopDetails.shoptype==='J'}}" src="../images/d_j2.png" alt></image>
+					{{shopDetails.sellernick}}
+				</view>
+			</view>
+		</view>
+		<!-- 商品详情图片 -->
+		<view class="details">
+			<image class="h2" src="../images/con_spxq@2x.png"></image>
+			<!-- 淘宝商品详情图片 -->
+			<view class="detailsImg" wx:if="{{imgDetails}}">
+				<import src="../wxParse/wxParse.wxml" />
+				<template is='wxParse' data='{{wxParseData:imgHTML.nodes}}' />
+			</view>
+			<!-- 京东商品详情图片 -->
+			<view class="detailsImg" wx:else>
+				<image src="{{item}}" wx:for="{{imgHTML}}" mode="widthFix" wx:key="index" alt></image>
+			</view>
+		</view>
+		<!-- 猜你喜欢 -->
+		<view class="love">
+		<view class="title">
+			<image src="../images/pic_cnxh@2x.png"></image>
+		</view>
+			<view class='shopList'>
+				<view wx:for='{{shopList}}' data-id='{{shopItem.itemid}}' data-type='{{shopItem.shoptype}}' bindtap='jumpDetails'
+				 wx:for-item='shopItem' wx:key='{{index}}' class='shopList-item'>
+					<view class="shopVideo">
+						<image wx:if="{{shopItem.shoptype==='C'||shopItem.shoptype==='B'}}" src="{{shopItem.itempic}}_310x310.jpg" alt></image>
+						<image wx:else src="{{shopItem.itempic}}" alt=""></image>
+						<view wx:if="{{shopItem.videoid!='0'}}" class="video">
+							<image src='../images/shipin@2x.png'></image>
+						</view>
+					</view>
+					<view class="shopItem-title">
+						<!-- <span class="{{shopIcon:true}},{{tianmao:shopItem.shoptype==='B'}},{{pdd:shopItem.shoptype==='P'}},{{jingdong:shopItem.shoptype==='J'}},{{taobaoshopItem.shoptype==='C'}}"></span> -->
+						<view class="shopIcon">
+							<image wx:if="{{shopItem.shoptype==='P'}}" src='../images/pdd.png'></image>
+							<image wx:if="{{shopItem.shoptype==='B'}}" src='../images/tianmao.png'></image>
+							<image wx:if="{{shopItem.shoptype==='J'}}" src='../images/jingdong.png'></image>
+							<image wx:if="{{shopItem.shoptype==='C'}}" src='../images/taobao.png'></image>
+						</view>
+						{{shopItem.itemtitle}}
+					</view>
+					<view class="shop-price">
+						<view>
+							{{shopItem.shoptype==='B'?'天猫价':''}} {{shopItem.shoptype==='C'?'淘宝价':''}} {{shopItem.shoptype==='J'?'京东价':''}}
+							{{shopItem.shoptype==='P'?'拼多多价':''}} ￥{{shopItem.itemprice}}
+						</view>
+						<view>
+							<text>已售:</text>
+							<span>{{shopItem.itemsale}}</span>
+						</view>
+					</view>
+					<view class="shopItem-coupon">
+						优惠券
+						<view>
+							<image src='../images/bg_juan.png'></image>
+							<view class='coupon-price'>{{shopItem.couponmoney}}元券</view>
+						</view>
+					</view>
+					<view class="shop-discount-price">
+						<view>券后价￥{{shopItem.itemendprice}}</view>
+						<!-- <p>券后再省￥{{shopItem.tkmoney}}</p> -->
+					</view>
+					<view class="tag">同款推荐</view>
+				</view>
+			</view>
+		</view>
+		<view class="shopDetails-bottom">
+			<view class="left" bindtap='backHome'>
+				<image src="../images/home.png"></image>
+				<text>首页</text>
+			</view>
+			<view class="right" bindtap="jumpPurchase">{{purchaseText}}</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "tab-bars": "/components/template/tabBar",
+    "loadlogo": "/components/template/loadlogo",
+    "follow": "/components/template/follow",
+    "phone-mask": "/components/template/PhoneMask"
+  }
+}

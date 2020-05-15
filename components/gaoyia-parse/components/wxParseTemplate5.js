@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/gaoyia-parse/components/wxParseTemplate5"],{"370b":function(e,n,t){"use strict";var a,r=function(){var e=this,n=e.$createElement;e._self._c},o=[];t.d(n,"b",function(){return r}),t.d(n,"c",function(){return o}),t.d(n,"a",function(){return a})},"42ae":function(e,n,t){"use strict";t.r(n);var a=t("370b"),r=t("9e9c");for(var o in r)"default"!==o&&function(e){t.d(n,e,function(){return r[e]})}(o);var u,s=t("f0c5"),c=Object(s["a"])(r["default"],a["b"],a["c"],!1,null,null,null,!1,a["a"],u);n["default"]=c.exports},"9e9c":function(e,n,t){"use strict";t.r(n);var a=t("e6a4"),r=t.n(a);for(var o in a)"default"!==o&&function(e){t.d(n,e,function(){return a[e]})}(o);n["default"]=r.a},e6a4:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=void 0;var a=function(){return t.e("components/gaoyia-parse/components/wxParseTemplate6").then(t.bind(null,"89feb"))},r=function(){return t.e("components/gaoyia-parse/components/wxParseImg").then(t.bind(null,"9f36"))},o=function(){return t.e("components/gaoyia-parse/components/wxParseVideo").then(t.bind(null,"c19a"))},u=function(){return t.e("components/gaoyia-parse/components/wxParseAudio").then(t.bind(null,"842d"))},s=function(){return t.e("components/gaoyia-parse/components/wxParseTable").then(t.bind(null,"7463"))},c={name:"wxParseTemplate5",props:{node:{}},components:{wxParseTemplate:a,wxParseImg:r,wxParseVideo:o,wxParseAudio:u,wxParseTable:s},methods:{wxParseATap:function(e,n){var t=n.currentTarget.dataset.href;if(t){var a=this.$parent;while(!a.preview||"function"!==typeof a.preview)a=a.$parent;a.navigate(t,n,e)}}}};n.default=c}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/gaoyia-parse/components/wxParseTemplate5-create-component',
+    {
+        'components/gaoyia-parse/components/wxParseTemplate5-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('543d')['createComponent'](__webpack_require__("42ae"))
+        })
+    },
+    [['components/gaoyia-parse/components/wxParseTemplate5-create-component']]
+]);

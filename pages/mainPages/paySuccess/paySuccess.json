@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "支付成功",
+  "usingComponents": {
+    "recommend-goods": "/components/page/pageComponents/Recommend_goods",
+    "tab-contro": "/components/page/pageComponents/tabContro"
+  }
+}

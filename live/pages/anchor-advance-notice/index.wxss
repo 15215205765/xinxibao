@@ -1,0 +1,155 @@
+.addAddress {
+    max-height: 800rpx;
+    overflow-y: scroll;
+}
+
+.addAddress .list .item {
+    padding: 0 30rpx;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.addAddress .list .item .name {
+    width: 195rpx;
+    font-size: 30rpx;
+    color: #333;
+    min-height: 90rpx;
+    display: flex;
+    align-items: center;
+}
+
+.addAddress .list .item textarea {
+    margin-top: 25rpx;
+    width: 180px;
+}
+
+.addAddress .list .item input {
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.img-box {
+    width: 480rpx;
+    margin: 20rpx 0 0;
+}
+
+.fui-button {
+    font-size: 30rpx;
+    background: #5fa63e;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100rpx;
+    align-items: center;
+    color: #fff;
+}
+
+.fui-button view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.van-uploader {
+    position: relative;
+    display: inline-block;
+}
+
+.van-uploader__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.van-uploader__slot:empty {
+    display: none;
+}
+
+.van-uploader__slot:not(:empty)+.van-uploader__upload {
+    display: none!important;
+}
+
+.van-uploader__upload {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    margin: 0 8px 8px 0;
+    background-color: #fff;
+    border: 1px dashed #ebedf0;
+    border-radius: 4px;
+}
+
+.van-uploader__upload-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #969799;
+    font-size: 24px;
+}
+
+.van-uploader__upload-text {
+    margin-top: 8px;
+    color: #969799;
+    font-size: 12px;
+}
+
+.van-uploader__preview {
+    position: relative;
+    margin: 0 8px 8px 0;
+}
+
+.van-uploader__preview-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+
+.van-uploader__preview-delete {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    color: #969799;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.van-uploader__file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #f7f8fa;
+    border-radius: 4px;
+}
+
+.van-uploader__file-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #646566;
+    font-size: 20px;
+}
+
+.van-uploader__file-name {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 5px;
+    color: #646566;
+    font-size: 12px;
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+<view class='page'>
+  <text class='title'>将海报分享给好友 推荐关系自动绑定 </text>
+  <swiper previous-margin="100rpx" next-margin="100rpx" bing class='swiper' bindchange='change' current='{{current}}'>
+    <block wx:for="{{posterList}}" wx:key="{{index}}">
+      <swiper-item class="item ">
+        <view class="item-box {{current===index?'avtive':''}}">
+          <image src="{{item}}" class="item-bg" />
+          <view class='code'>
+            <image src='{{codeImg}}'></image>
+            <text>邀请码:{{code}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <image src="{{codeImg}}"></image> -->
+ <canvas style="width:264px; height:464px;" hidden='{{true}}'  canvas-id="firstCanvas"></canvas>
+  <view class='button' bindtap='savePoster'>
+    保存海报到相册
+  </view>
+</view>
+ 

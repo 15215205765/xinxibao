@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "卡券详情",
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager"
+  }
+}

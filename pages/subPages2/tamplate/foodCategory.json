@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tui-numberbox": "/components/template/numberbox",
+    "popup-view": "/components/template/PopManager",
+    "jump-ball": "/components/hx-jump-ball/hx-jump-ball"
+  }
+}

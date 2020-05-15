@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "authorize": "/live/components/authorize/authorize",
+        "van-icon": "/live/vant/icon/index",
+        "van-count-down": "/live/vant/count-down/index",
+        "van-button": "/live/vant/button/index"
+    },
+    "disableScroll": true,
+    "navigationBarTitleText": "直播预告",
+    "navigationBarTextStyle": "black"
+}

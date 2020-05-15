@@ -1,0 +1,348 @@
+<block wx:if="{{aa}}">
+  <web-view class="webView data-v-3e529fd3" src="{{kfInfo.url}}"></web-view>
+</block>
+<block wx:else>
+  <view class="data-v-3e529fd3">
+    <block wx:if="{{loading==true}}">
+      <loadlogo vue-id="1" class="data-v-3e529fd3" bind:__l="__l"></loadlogo>
+    </block>
+    <block wx:else>
+      <scroll-view class="userCenter data-v-3e529fd3" style="{{'height:'+(phoneHeight)+';'}}" scroll-y scroll-x="{{false}}">
+        <view class="userCenterPackage data-v-3e529fd3">
+          <view class="userCenterMain data-v-3e529fd3">
+            <view class="userCenterInfo data-v-3e529fd3" style="{{'background-image:'+('url('+memberInfo.bgimg+')')+';'}}">
+              <view class="userCenterInfoTitle data-v-3e529fd3">
+                <view class="userInfoHeader data-v-3e529fd3">
+                  <image src="{{memberInfo.avatar}}" class="data-v-3e529fd3"></image>
+                </view>
+                <view class="userInfoName data-v-3e529fd3">
+                  <block wx:if="{{login==false}}">
+                    <label data-event-opts="{{[['tap',[['goAppLogin',['$event']]]]]}}" class="loginN _span data-v-3e529fd3" bindtap="__e">去登陆 ></label>
+                  </block>
+                  <block wx:if="{{login==true}}">
+                    <label class="nickname_text _span data-v-3e529fd3">{{memberInfo.nickname}}</label>
+                  </block>
+                  <block wx:if="{{login==true}}">
+                    <view class="userInfoPhone data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/phone.png" class="data-v-3e529fd3"></image>
+                      <block wx:if="{{!!memberInfo.mobile}}">
+                        <label class="_span data-v-3e529fd3">{{memberInfo.mobile}}</label>
+                      </block>
+                      <block wx:else>
+                        <label class="_span data-v-3e529fd3">未绑定手机</label>
+                      </block>
+                    </view>
+                  </block>
+                </view>
+              </view>
+              <view class="userCenterInfoBody data-v-3e529fd3">
+                <view data-event-opts="{{[['tap',[['gobalance',['$event']]]]]}}" class="userCenterMoney data-v-3e529fd3" bindtap="__e">
+                  <view class="data-v-3e529fd3">{{memberInfo.credit2}}</view>
+                  <view class="userCenterMoneyTitle data-v-3e529fd3">{{textList.moneytext}}</view>
+                </view>
+                <view class="line data-v-3e529fd3"></view>
+                <view data-event-opts="{{[['tap',[['goIntegralRecord',['$event']]]]]}}" class="userCenterMoney data-v-3e529fd3" bindtap="__e">
+                  <view class="data-v-3e529fd3">{{memberInfo.credit1}}</view>
+                  <view class="userCenterMoneyTitle data-v-3e529fd3">{{textList.credittext}}</view>
+                </view>
+                <view class="line data-v-3e529fd3"></view>
+                <view data-event-opts="{{[['tap',[['goCollection',['$event']]]]]}}" class="userCenterMoney data-v-3e529fd3" bindtap="__e">
+                  <view class="data-v-3e529fd3">{{memberInfo.collectnum}}</view>
+                  <view class="userCenterMoneyTitle data-v-3e529fd3">收藏</view>
+                </view>
+                <view class="line data-v-3e529fd3"></view>
+                <view data-event-opts="{{[['tap',[['goPrivate',['$event']]]]]}}" class="userCenterMoney data-v-3e529fd3" bindtap="__e">
+                  <view class="data-v-3e529fd3">{{memberInfo.news_total}}</view>
+                  <view class="userCenterMoneyTitle data-v-3e529fd3">消息</view>
+                </view>
+              </view>
+              <view class="userCenterInfoFoot data-v-3e529fd3">
+                <block wx:if="{{memberInfo.halfcardstatus=='1'}}">
+                  <view class="data-v-3e529fd3">
+                    <view style="padding:4rpx 4rpx 4rpx 4rpx;" class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/member.png" class="data-v-3e529fd3"></image>
+                      <label class="_span data-v-3e529fd3">{{textList.halfcardtext}}</label>
+                      <view class="memberLine data-v-3e529fd3"></view>
+                      <block wx:if="{{memberInfo.halfcardflag==0}}">
+                        <label class="_span data-v-3e529fd3">{{"开通"+textList.halfcardtext+"，立享优惠折扣"}}</label>
+                      </block>
+                      <block wx:else>
+                        <label class="_span data-v-3e529fd3">{{"已为您节省"+memberInfo.ellipsismoney+"元"}}</label>
+                      </block>
+                    </view>
+                    <view data-event-opts="{{[['tap',[['goMemberCard',['$event']]]]]}}" class="goButton data-v-3e529fd3" bindtap="__e">
+                      <block wx:if="{{memberInfo.halfcardflag==0}}">
+                        <label class="_span data-v-3e529fd3">立即开通</label>
+                      </block>
+                      <block wx:else>
+                        <label class="_span data-v-3e529fd3">立即续费</label>
+                      </block>
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/right.svg" class="data-v-3e529fd3"></image>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <block wx:if="{{login&&memberInfo.signstatus==='1'}}">
+              <view data-event-opts="{{[['tap',[['goSigndesk',['$event']]]]]}}" class="signIn data-v-3e529fd3" bindtap="__e">
+                <image class="signInLeft data-v-3e529fd3" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/signInLogo.png"></image>
+                <label class="_span data-v-3e529fd3">{{textList.credittext+"签到"}}</label>
+                <image class="signInRight data-v-3e529fd3" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/rightWhite.png"></image>
+              </view>
+            </block>
+            <view class="mineOrder data-v-3e529fd3">
+              <view class="mineOrderTitle border-line diy-nav-list border-bottom data-v-3e529fd3">
+                <view class="mineOrderTitlePackage data-v-3e529fd3">
+                  <label class="_span data-v-3e529fd3">我的订单</label>
+                  <view data-event-opts="{{[['tap',[['orderList',[10]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <label class="_span data-v-3e529fd3">查看全部</label>
+                    <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/right.svg" class="data-v-3e529fd3"></image>
+                  </view>
+                </view>
+              </view>
+              <view class="{{['data-v-3e529fd3',memberInfo.mobile==undefined?'mineOrderBody border-line diy-nav-list border-bottom':'mineOrderBody']}}">
+                <view class="mineOrderBodyPackage data-v-3e529fd3">
+                  <view data-event-opts="{{[['tap',[['orderList',[0]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <view class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/paymentNo.png" class="data-v-3e529fd3"></image>
+                    </view>
+                    <label class="_span data-v-3e529fd3">待付款</label>
+                    <view class="dis-flx data-v-3e529fd3">
+                      <view class="data-v-3e529fd3"></view>
+                      <block wx:if="{{memberInfo.ordernum1!==undefined&&memberInfo.ordernum1!==0}}">
+                        <view class="numberMessage data-v-3e529fd3">
+                          <label class="_span data-v-3e529fd3">{{memberInfo.ordernum1}}</label>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                  <view data-event-opts="{{[['tap',[['orderList',[1]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <view class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/useNo.png" class="data-v-3e529fd3"></image>
+                    </view>
+                    <label class="_span data-v-3e529fd3">{{"待"+(memberInfo.changeflag===1?'发货':'使用')}}</label>
+                    <view class="dis-flx data-v-3e529fd3">
+                      <view class="data-v-3e529fd3"></view>
+                      <block wx:if="{{memberInfo.ordernum2!==undefined&&memberInfo.ordernum2!==0}}">
+                        <view class="numberMessage data-v-3e529fd3">
+                          <label class="_span data-v-3e529fd3">{{memberInfo.ordernum2}}</label>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                  <view data-event-opts="{{[['tap',[['orderList',[4]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <view class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/dsh.png" class="data-v-3e529fd3"></image>
+                    </view>
+                    <label class="_span data-v-3e529fd3">待收货</label>
+                    <view class="dis-flx data-v-3e529fd3">
+                      <view class="data-v-3e529fd3"></view>
+                      <block wx:if="{{memberInfo.ordernum4!==undefined&&memberInfo.ordernum4!==0}}">
+                        <view class="numberMessage data-v-3e529fd3">
+                          <label class="_span data-v-3e529fd3">{{memberInfo.ordernum4}}</label>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                  <view data-event-opts="{{[['tap',[['orderList',[2]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <view class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/evaluateNo.png" class="data-v-3e529fd3"></image>
+                    </view>
+                    <label class="_span data-v-3e529fd3">待评价</label>
+                    <view class="dis-flx data-v-3e529fd3">
+                      <view class="data-v-3e529fd3"></view>
+                      <block wx:if="{{memberInfo.ordernum3!==undefined&&memberInfo.ordernum3!==0}}">
+                        <view class="numberMessage data-v-3e529fd3">
+                          <label class="_span data-v-3e529fd3">{{memberInfo.ordernum3}}</label>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                  <view data-event-opts="{{[['tap',[['afterSale',['$event']]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                    <view class="data-v-3e529fd3">
+                      <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/merchant/refunNo.png" class="data-v-3e529fd3"></image>
+                    </view>
+                    <label class="_span data-v-3e529fd3">退款/售后</label>
+                    <view class="dis-flx data-v-3e529fd3">
+                      <view class="data-v-3e529fd3"></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <block wx:if="{{mobilediv==1}}">
+                <view class="mineOrderFoot data-v-3e529fd3">
+                  <label class="_span data-v-3e529fd3">找不到订单和优惠券？绑定手机号试试</label>
+                  <view class="data-v-3e529fd3">
+                    <block wx:if="{{ptType==1}}">
+                      <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                        <label class="_span data-v-3e529fd3">立即绑定</label>
+                      </view>
+                    </block>
+                    <block wx:if="{{ptType==2}}">
+                      <button class="getPhone data-v-3e529fd3" open-type="getPhoneNumber" data-event-opts="{{[['getphonenumber',[['getPhoneNumber',['$event']]]]]}}" bindgetphonenumber="__e">立即绑定</button>
+                    </block>
+                  </view>
+                </view>
+              </block>
+            </view>
+
+
+             <!-- 直播 -->
+        <view class="mineOrder data-v-3e529fd3">
+          <view class="mineOrderTitle border-line diy-nav-list border-bottom data-v-3e529fd3">
+            <view class="mineOrderTitlePackage data-v-3e529fd3">
+              <label class="_span data-v-3e529fd3">直播</label>
+              <view  class="data-v-3e529fd3" wx:if="{{userInfo.id}}">
+                <label class="_span data-v-3e529fd3">粉丝 {{userInfo.follower_num}} 关注 {{userInfo.follow_num}}</label>
+               
+              </view>
+            </view>
+          </view>
+          <view class="{{['data-v-3e529fd3',memberInfo.mobile==undefined?'mineOrderBody border-line diy-nav-list border-bottom':'mineOrderBody']}}">
+            <view class="mineOrderBodyPackage data-v-3e529fd3">
+              <view bindtap="__e" class="data-v-3e529fd3" data-event-opts="{{[ [ 'tap',[ [ 'go',['live/pages/anchor-inviation/index'] ] ] ] ]}}">
+                <view class="data-v-3e529fd3">
+                  <image class="data-v-3e529fd3" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/user/center/b11.png"></image>
+                </view>
+                <label class="_span data-v-3e529fd3">邀请主播</label>
+                <view class="dis-flx data-v-3e529fd3">
+                  <view class="data-v-3e529fd3"></view>
+                </view>
+              </view>
+              <view bindtap="__e" class="data-v-3e529fd3" data-event-opts="{{[ [ 'tap',[ [ 'go',['live/pages/anchor-advance-notice/index'] ] ] ] ]}}">
+                <view class="data-v-3e529fd3">
+                  <image class="data-v-3e529fd3" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/user/center/b33.png"></image>
+                </view>
+                <label class="_span data-v-3e529fd3">直播预告</label>
+                <view class="dis-flx data-v-3e529fd3">
+                  <view class="data-v-3e529fd3"></view>
+                </view>
+              </view>
+              <view bindtap="__e" class="data-v-3e529fd3" data-event-opts="{{[ [ 'tap',[ [ 'go',['live/pages/anchor-goods/index'] ] ] ] ]}}">
+                <view class="data-v-3e529fd3">
+                  <image class="data-v-3e529fd3" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/user/center/a33.png"></image>
+                </view>
+                <label class="_span data-v-3e529fd3">直播商品</label>
+                <view class="dis-flx data-v-3e529fd3">
+                  <view class="data-v-3e529fd3"></view>
+                  
+                </view>
+              </view>
+              <view bindtap="__e" class="data-v-3e529fd3" data-event-opts="{{[ [ 'tap',[ [ 'go',['live/pages/live_add/index'] ] ] ] ]}}">
+                <view class="data-v-3e529fd3">
+                  <image class="data-v-3e529fd3" src="https://zb.xinxibao.vip/addons/shimmer_liveshop/static/wxapp/user/center/z11.png"></image>
+                </view>
+                <label class="_span data-v-3e529fd3">开始直播</label>
+                <view class="dis-flx data-v-3e529fd3">
+                  <view class="data-v-3e529fd3"></view>
+                  
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+
+
+
+
+
+        <!-- 一站易购 -->
+
+        <view class="header-money">
+          <view class="header-money-top">
+            <view class="left">
+              <view class="cash-money" style="font-size:30rpx;color:#333;font-weight:bold;">
+                优惠券商城
+              </view>
+            </view>
+            <navigator url='/pages/subPages/yizhanyigou/myPage/order/order' class="right-title">
+              查看订单
+              <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money_right@2x.png"></image>
+            </navigator>
+          </view>
+          <image class="money-bg" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money-bg.png"></image>
+          <view class="header-money-top" style="border-top:1px solid rgba(131,52,3,0.28);padding-top:10px;">
+            <view class="left">
+              <view class="cash-money">
+                可提现金额
+                <text>￥{{information?information.sum_ok:'0.00'}}</text>
+              </view>
+              <text class="msg">{{gainsExplan}}</text>
+            </view>
+            <navigator url='/pages/subPages/yizhanyigou/myPage/withdraw/withdraw' class="right">
+              提现
+            </navigator>
+          </view>
+          <view class="header-money-bottom">
+            <view class="item">
+              <navigator url='/pages/subPages/yizhanyigou/myPage/gains/report/report' class="item-msg">
+                <text>￥{{information?information.today_yg_sum:'0.00'}}</text>
+                <view class="item-title">
+                  今日收益
+                  <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money_right@2x.png"></image>
+                </view>
+              </navigator>
+              <view class="line"></view>
+              <navigator url='/pages/subPages/yizhanyigou/myPage/gains/report/report' class="item-msg">
+                <text>￥{{information?information.month_yg_sum:'0.00'}}</text>
+                <view class="item-title">
+                  本月收益
+                  <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money_right@2x.png"></image>
+                </view>
+              </navigator>
+            </view>
+            <view class="item item-border">
+              <navigator class="item-msg" url='/pages/subPages/yizhanyigou/myPage/gains/report/report'>
+                <text>￥{{information?information.upmonth_yg_sum:'0.00'}}</text>
+                <view class="item-title">
+                  上月收益
+                  <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money_right@2x.png"></image>
+                </view>
+              </navigator>
+              <view class="line"></view>
+              <navigator class="item-msg" url='/pages/subPages/yizhanyigou/myPage/gains/report/report'>
+                <text>￥{{information?information.sum_total:'0.00'}}</text>
+                <view class="item-title">
+                  累积收益
+                  <image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/money_right@2x.png"></image>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+
+
+            <block wx:if="{{!!memberInfo.user_set&&memberInfo.user_set.length>0}}">
+              <view class="mineTool data-v-3e529fd3">
+                <view class="mineToolTitle border-line diy-nav-list border-bottom data-v-3e529fd3">
+                  <label class="_span data-v-3e529fd3">我的工具</label>
+                </view>
+                <view class="mineToolBody  data-v-3e529fd3">
+                  <view class="mineToolBodyPackage data-v-3e529fd3">
+                    <block wx:for="{{memberInfo.user_set}}" wx:for-item="userTabItem" wx:for-index="index" wx:key="index">
+                      <view data-event-opts="{{[['tap',[['go',['$0'],[[['memberInfo.user_set','',index,'link']]]]]]]}}" bindtap="__e" class="data-v-3e529fd3">
+                        <view class="data-v-3e529fd3">
+                          <image src="{{userTabItem.icon}}" class="data-v-3e529fd3"></image>
+                        </view>
+                        <label class="_span data-v-3e529fd3">{{userTabItem.title}}</label>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <view class="full data-v-3e529fd3"></view>
+            <view class="page-footer data-v-3e529fd3">
+              <tab-bars vue-id="2" tabBarAct="{{0}}" class="data-v-3e529fd3" bind:__l="__l"></tab-bars>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </block>
+    <follow vue-id="3" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+      bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-3e529fd3" bind:__l="__l"></follow>
+    <phone-mask vue-id="4" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-3e529fd3" bind:__l="__l"></phone-mask>
+  </view>
+</block>

@@ -1,0 +1,130 @@
+<view class='page'>
+	<wxs module="gains" src="../../../filter/gains.wxs"></wxs>
+	<view class='header'>
+		<view class='money' wx:if="{{gainsDetails.sum_price}}">
+			￥
+			<view class='money-integer'>{{gains.integer(gainsDetails.sum_price)}}
+			</view>
+			<view class='money-decimal'>{{gains.decimal(gainsDetails.sum_price)}}</view>
+		</view>
+		<view class='money' wx:else>
+			￥
+			<view class='money-integer'>0
+			</view>
+			<view class='money-decimal'>.00</view>
+		</view>
+		<view class="explain" bindtap="jumpExplain">说明</view>
+
+		<view class="text">{{gainsExplan}}</view>
+	</view>
+	<view class="main" wx:if="{{gainsDetails.tbk}}">
+		<view class="gains-list">
+			<!-- 佣金收益 -->
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background: #34C7FD;"></view>
+						佣金收益
+					</view>
+					<view class="right" bindtap="jumpCommission">
+						<view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level_sum)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level_sum)}}</view>
+						</view>
+						<image src="/images/order-right.png"></image>
+					</view>
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level)}}</view>
+						</view>
+						<view class="gains-source-name">自购佣金</view>
+					</view>
+					<view class="gains-source-line"></view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level1)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level1)}}</view>
+						</view>
+						<view class="gains-source-name">一级佣金</view>
+					</view>
+					<view class="gains-source-line"></view>
+					<view class="gains-source-item" bindtap="jumpCommission" data-type="2">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.tbk.tbk_level2)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.tbk.tbk_level2)}}</view>
+						</view>
+						<view class="gains-source-name">二级佣金</view>
+					</view>
+				</view>
+			</view>
+			<!-- 总代收益 -->
+			<view class="gains-item">
+				<view class="gains-top">
+					<view class="gains-name">
+						<view class="raduis" style="background: #FD7234;"></view>
+						总代收益
+					</view>
+					<view class="right" bindtap="jumpAgent">
+						<view class="gains-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.abonus.abonus_lock)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.abonus.abonus_lock)}}</view>
+						</view>
+						<image src="/images/order-right.png"></image>
+					</view>
+
+				</view>
+				<view class="gains-source">
+					<view class="gains-source-item all" bindtap="jumpAgent" data-type="0">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.abonus.abonus_jsbonus)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.abonus.abonus_jsbonus)}}</view>
+						</view>
+						<view class="gains-source-name">区域佣金收益</view>
+					</view>
+					<view class="gains-source-line"></view>
+					<view class="gains-source-item all" bindtap="jumpAgent" data-type="1">
+						<view class="gains-source-money">
+							￥
+							<view class='money-integer'>{{gains.integer(gainsDetails.abonus.abonus_lock4)}}
+							</view>
+							<view class='money-decimal'>{{gains.decimal(gainsDetails.abonus.abonus_lock4)}}</view>
+						</view>
+						<view class="gains-source-name">下级总代收益</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="gains-item">
+			<view class="gains-top" bindtap='jumpBill' style="border-bottom: 1px solid #DCDCDC;">
+				<view class="gains-name">
+					<view class="raduis" style="background: #E8C949;"></view>
+					其他收益
+				</view>
+				<view class="right">
+					<view class="gains-money">
+						￥
+						<view class='money-integer'>{{gains.integer(gainsDetails.record.record_sum)}}
+						</view>
+						<view class='money-decimal'>{{gains.decimal(gainsDetails.record.record_sum)}}</view>
+					</view>
+					<image src="/images/order-right.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "核销记录",
+  "usingComponents": {
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore",
+    "pop-manager": "/components/template/PopManager"
+  }
+}

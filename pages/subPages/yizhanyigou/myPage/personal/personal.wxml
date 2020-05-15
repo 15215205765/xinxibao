@@ -1,0 +1,21 @@
+<view class='personal'>
+  <view class='item'>
+    <view class='left'>头像</view>
+    <view class='right'>
+      <image src='{{information.avatar}}' mode="aspectFill" bindtap='changeHead'></image>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>昵称</view>
+    <view class='right'>
+      <input value='{{information.nickname}}' bindinput='changeName' placeholder='取一个有意思的名字吧!'></input>
+    </view>
+  </view>
+<!--  <view class='item'>
+    <view class='left'>微信号</view>
+    <view class='right'>
+      <input placeholder="请输入微信号"></input>
+    </view>
+  </view> -->
+  <button class='submit' bindtap='modifyPersonal'>保存</button>
+</view>

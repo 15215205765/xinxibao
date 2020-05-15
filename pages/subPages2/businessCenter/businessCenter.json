@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商铺列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "choose-lits": "/pages/subPages2/tamplate/choose-Cade/choose-Cade",
+    "tui-rate": "/components/template/rate",
+    "loadlogo": "/components/template/loadlogo",
+    "load-more": "/components/template/loadmore",
+    "shop-ping": "/pages/subPages2/tamplate/shopPing",
+    "shop-enter": "/components/page/pageComponents/shopEnter",
+    "popup-view": "/components/template/PopManager"
+  }
+}

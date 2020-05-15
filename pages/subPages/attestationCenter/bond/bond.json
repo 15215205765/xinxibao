@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "诚信保证金",
+  "usingComponents": {
+    "pop-agreement": "/components/template/popAgreement"
+  }
+}

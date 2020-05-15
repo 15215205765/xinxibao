@@ -1,0 +1,54 @@
+
+<van-dialog id="van-dialog"></van-dialog>
+<view class="page page--{{deviceType}} goods-list">
+<view class="search">
+  <view class="search-left">
+    <input placeholder="输入关键词搜索" bindinput="inInput"></input>
+  </view>
+  <view class="search-right" bindtap="search">搜索</view>
+</view>
+<view class="swiper-tab {{isScorll?'swiper-tab-scroll':''}}">
+<view bindtap="clickTab" class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" >
+           首页
+        </view>
+    <view bindtap="clickTab" class="swiper-tab-item {{currentTab==cate.id?'active':''}}" data-current="{{cate.id}}" wx:for="{{categories}}" wx:for-item="cate" wx:key="cate_key">
+            {{cate.name}}
+        </view>
+</view>
+    <view class="index-bg" wx:if="{{banners.length>0}}">
+        <swiper autoplay="{{autoplay}}" circular="{{circular}}" duration="100" indicatorActiveColor="#fe6c9c" indicatorColor="rgba(255, 255, 255, 0.5)" indicatorDots="true" interval="{{interval}}" style="">
+            <swiper-item>
+                <navigator class="slide-navigator acea-row row-between-wrapper" hoverClass="none" url="{{item.wxappurl}}" wx:for="{{banners}}">
+                    <image class="slide-image" mode="aspectFill" src="{{item.pic}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <collect-tip></collect-tip>
+    <!-- <view class="single-live" wx:for="{{lives}}" wx:key="live_index"> -->
+        <!-- <live-preview live="{{item}}" wx:if="{{index===0}}"></live-preview>
+        <single-live live="{{item}}" wx:else></single-live> -->
+    <!-- </view -->
+      <view class="live-content">
+        <navigator url="{{item.live.live_status==1 ? '/live/pages/live_nostart/index?live_id='+item.live.id : '/live/pages/live_room2/index?live_id='+item.live.id }}" class="live-list" style="background:url({{item.live.cover}}) no-repeat; background-size:100% 100%;" wx:for="{{lives}}" wx:key="live_index" >
+            <view class="live-status">
+                <view class="status"><image src="/live/resource/img/zhibozhong.png" mode="widthFix"></image></view>
+                <text>{{item.live.real_num}}人观看</text>
+            </view>
+            <view class="zhubo">
+              <view class="zhubo-touxiang"><image src="{{item.user.avatar}}"></image></view>
+              <view class="nicheng">{{item.user.nickname}}</view>
+            </view>
+            <view class="live-footer">{{item.live.title}}</view>
+        </navigator>
+    </view>
+    <view class="lives-empty" wx:if="{{!loading&&lives.length==0}}">
+    拉到底了哦
+  </view>
+    <view class="lives-loadend" wx:if="{{!loading&&lives.length>=limit}}">
+    {{loadTitle}}
+  </view>
+    <view class="loading" hidden="{{!loading}}">
+        <van-loading size="22px" type="spinner">加载中...</van-loading>
+    </view>
+</view>

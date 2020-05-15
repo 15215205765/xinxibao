@@ -1,0 +1,122 @@
+/* pages/myPage/promotion/contact/contact.wxss */
+
+.page {
+  display: flex;
+  /* justify-content: center; */
+  flex-flow: column;
+  align-items: center;
+}
+
+.bg {
+  width: 100%;
+  height: 466rpx;
+}
+
+.content {
+  width: 554rpx;
+  height: 260rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.16);
+  margin-top: -44rpx;
+  border-radius: 12rpx;
+}
+
+.contact-information {
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.item:first-child {
+  margin-right: 130rpx;
+  position: relative;
+}
+
+.item image {
+  height: 112rpx;
+  width: 112rpx;
+}
+
+.item view {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.content {
+  padding: 24rpx 0;
+}
+
+.have .title {
+  color: #fd3434;
+  font-size: 28rpx;
+  border-left: 6rpx solid #fd3434;
+  padding-left: 14rpx;
+}
+
+.have-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+}
+
+.have-item image {
+  height: 48rpx;
+  width: 48rpx;
+  margin-right: 20rpx;
+}
+.have-item .left{
+  display: flex;
+}
+.have-item .copy {
+  font-size: 22rpx;
+  color: #fd3434;
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44rpx;
+  border: 1px solid rgba(253, 52, 52, 1);
+  opacity: 1;
+  border-radius: 18px;
+}
+.no{
+  padding: 20rpx;
+  height: 100%;
+  display: flex;
+ flex-flow: column;
+ justify-content: center;
+ align-items: center;
+}
+.no input{
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom:1px solid #DCDCDC;
+  width: 100%;
+  height: 70rpx;
+}
+.no .confirm{
+  margin-top: 22rpx;
+  width:130rpx;
+height:44rpx;
+background:rgba(253,52,52,1);
+border-radius:22px;
+font-size: 28rpx;
+text-align: center;
+line-height: 44rpx;
+color: #fff;
+}
+.copyNo{
+ border: 1px solid #999999 !important;
+ color: #999999 !important;
+}
+.item button{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+opacity: 0;
+top: 0;
+left: 0;
+}

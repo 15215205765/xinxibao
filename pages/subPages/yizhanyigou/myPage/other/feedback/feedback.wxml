@@ -1,0 +1,40 @@
+<view class='page'>
+	<view class="type">
+		<h2>意见类型(必填)</h2>
+		<view class="list">
+			<view class="item {{item.index===currentType?'active':''}}" bindtap="changeType" data-index="{{item.index}}" wx:for="{{typeList}}"
+			 wx:key="{{index}}">{{item.name}}</view>
+		</view>
+	</view>
+	<view class="form">
+		<view class="content">
+			<textarea placeholder="亲爱的用户，感谢您的支持，请输入您要反馈的意见或问题~" maxlength="300" bindinput='changeContent' placeholder-style="color:#999999">
+			
+			</textarea>
+			<view class="tips">300字以内</view>
+		</view>
+		<view class="upPicture">
+			<h2>上传图片</h2>
+			<view class="list-img">
+				<view class="choose" wx:if="{{!full}}" bindtap='chooseImage'>
+					<image  src="/images/camera.png"></image>
+				</view>
+				<view class="item" wx:for="{{pictureList}}" wx:key="{{index}}" >
+					<image  src='{{item}}'></image>
+				</view>
+			</view>
+		<!-- 	<view class="choose" bindtap='chooseImage'>
+				<image  src="/images/camera.png"></image>
+			</view> -->
+			<!-- <image wx:if="{{!full}}" bindtap='chooseImage' src="/images/feedback.png"></image> -->
+		</view>
+		<!--   <view class="contactPhone">
+      联系电话
+      <input type="view" bindinput='changePhone' maxlength='11' type='number' placeholder="请输入您的联系电话" placeholder-style="color:#999999" />
+    </view> -->
+	</view>
+	<!-- <view class="submit {{content!==''?'active':''}}" bindtap='postFeedback'> -->
+	<view class="submit" bindtap='postFeedback'>
+		提交
+	</view>
+</view>

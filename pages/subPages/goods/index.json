@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager",
+    "follow": "/components/template/follow",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "goods-header-title": "/components/template/goodsHeaderTitle",
+    "recommend-goods": "/components/page/pageComponents/Recommend_goods",
+    "popup-view": "/components/template/PopManager",
+    "loading": "/components/template/loadlogo",
+    "goods-buy-menu": "/components/template/GoodsBuyMenu",
+    "part-loading": "/components/template/PartLoading",
+    "share-bottom": "/components/template/shareBottom",
+    "u-parse": "/components/gaoyia-parse/parse",
+    "phone-mask": "/components/template/PhoneMask"
+  }
+}

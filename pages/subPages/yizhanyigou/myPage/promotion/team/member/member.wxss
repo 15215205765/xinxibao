@@ -1,0 +1,117 @@
+/* 订单列表 */
+.list {
+	padding: 0 48rpx;
+
+}
+
+.item {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+	padding: 32rpx 0;
+	border-bottom: 1px solid #DCDCDC;
+	margin-top: 20rpx;
+}
+
+.item .left {
+	display: flex;
+	align-items: center;
+}
+
+.left .head {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	margin-right: 28rpx;
+}
+
+.information .name {
+	font-size: 28rpx;
+	color: #333;
+	font-weight: bold;
+}
+
+.information .icon {
+	height: 24rpx;
+	width: 24rpx;
+	margin-right: 5rpx;
+}
+
+.information .phone,
+.information .time {
+	display: flex;
+	font-size: 20rpx;
+	color: #999;
+	margin-top: 10rpx;
+}
+
+.copy {
+	width: 76rpx;
+	height: 28rpx;
+	border: 1px solid rgba(253, 52, 52, 1);
+	opacity: 1;
+	border-radius: 14rpx;
+	font-size: 18rpx;
+	color: rgba(253, 52, 52, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 12rpx;
+
+}
+
+.information .phone image {}
+
+.item .right {
+	display: flex;
+	align-items: center;
+}
+
+.information-right {
+	display: flex;
+	flex-flow: column;
+	align-items: flex-end;
+}
+
+.information-right .grade {
+	width: 100rpx;
+	text-align: center;
+	padding: 6rpx 0;
+	color: #fff;
+	font-size: 18rpx;
+	border-radius: 16rpx;
+	background: #FD3434;
+}
+
+.information-right .speed,
+.information-right .team {
+	font-size: 20rpx;
+	color: #333;
+	margin-top: 10rpx;
+}
+
+.right image {
+	width: 11rpx;
+	height: 20rpx;
+	margin-left: 32rpx;
+}
+.empty {
+	padding-top: 200rpx;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.empty image {
+	width: 426rpx;
+	height: 279rpx;
+}
+
+.empty text {
+	margin-top: 30rpx;
+	font-size: 28rpx;
+	color: #666;
+}

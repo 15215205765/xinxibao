@@ -1,0 +1,100 @@
+<view class="page">
+
+	<!--顶部导航栏-->
+
+	<view class="swiper-tab">
+		<view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">自购佣金</view>
+		<view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">一级佣金</view>
+		<view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">二级佣金</view>
+	</view>
+	<!--内容主体-->
+
+	<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{swiperHeight>500?swiperHeight+'px':'100%'}}">
+		<!-- 自购佣金 -->
+		<swiper-item>
+    <view class='item-s'>
+			<view class="bill-list" wx:if="{{commission0.list[0]}}">
+				<view class="bill-list-item " wx:for="{{commission0.list}}" wx:key="{{index}}">
+					<view class="item-top item">
+						<view class="title">{{item.note_str}}
+							<view wx:if="{{item.type_note}}" class="note">{{item.type_note}}</view>
+						</view>
+						<view class="gains-money">
+							￥
+							<view class='money-integer'>{{item.commission[0]}}
+							</view>
+							<view class='money-decimal'>.{{item.commission[1]}}</view>
+						</view>
+					</view>
+					<view class="item-bottom item">
+						<view class="title">下单时间 {{item.createtime}}</view>
+					</view>
+				</view>
+			</view>
+			<view class='empty' wx:else>
+				<image src='/images/pic_kb_tx@2x.png'></image>
+				<text>暂无数据</text>
+			</view>
+    </view>
+
+		</swiper-item>
+		<!-- 一级佣金 -->
+		<swiper-item>
+    <view class='item-s'>
+  
+			<view class="bill-list" wx:if="{{commission1.list[0]}}">
+				<view class="bill-list-item " wx:for="{{commission0.list}}" wx:key="{{index}}">
+					<view class="item-top item">
+						<view class="title">{{item.note_str}}
+							<view wx:if="{{item.type_note}}" class="note">{{item.type_note}}</view>
+						</view>
+						<view class="gains-money">
+							￥
+							<view class='money-integer'>{{item.commission[0]}}
+							</view>
+							<view class='money-decimal'>.{{item.commission[1]}}</view>
+						</view>
+					</view>
+					<view class="item-bottom item">
+						<view class="title" wx:if="{{pageType==='1'||pageType==='3'}}">下单时间 {{item.createtime}}</view>
+					</view>
+				</view>
+			</view>
+
+			<view class='empty' wx:else>
+				<image src='/images/pic_kb_tx@2x.png'></image>
+				<text>暂无数据</text>
+			</view>
+			</view>
+
+		</swiper-item>
+		<!-- 二级佣金 -->
+		<swiper-item>
+    <view class='item-s'>
+
+			<view class="bill-list" wx:if="{{commission2.list[0]}}">
+				<view class="bill-list-item " wx:for="{{commission0.list}}" wx:key="{{index}}">
+					<view class="item-top item">
+						<view class="title">{{item.note_str}}
+							<view wx:if="{{item.type_note}}" class="note">{{item.type_note}}</view>
+						</view>
+						<view class="gains-money">
+							￥
+							<view class='money-integer'>{{item.commission[0]}}
+							</view>
+							<view class='money-decimal'>.{{item.commission[1]}}</view>
+						</view>
+					</view>
+					<view class="item-bottom item">
+						<view class="title" wx:if="{{pageType==='1'||pageType==='3'}}">下单时间 {{item.createtime}}</view>
+					</view>
+				</view>
+			</view>
+			<view class='empty' wx:else>
+				<image src='/images/pic_kb_tx@2x.png'></image>
+				<text>暂无数据</text>
+			</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>

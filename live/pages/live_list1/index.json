@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "navbar": "/live/components/navbar/index",
+        "van-icon": "/live/vant/icon/index",
+        "van-loading": "/live/vant/loading/index",
+        "tabBar": "/live/components/tabBar/index",
+        "live-preview": "/live/components/live-preview/index",
+        "bottom-tabbar": "/live/components/bottom-tabbar/index",
+        "single-live": "/live/components/single-live/index",
+        "tab-bars": "/components/template/tabBar"
+    },
+    "navigationBarTitleText": "直播",
+    "navigationBarTextStyle": "black"
+}

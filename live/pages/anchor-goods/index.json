@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize",
+        "navbar": "/live/components/navbar/index",
+        "van-dialog": "/live/vant/dialog/index",
+        "van-popup": "/live/vant/popup/index"
+    },
+    "navigationBarTitleText": "直播间商品",
+    "navigationBarTextStyle": "black"
+}

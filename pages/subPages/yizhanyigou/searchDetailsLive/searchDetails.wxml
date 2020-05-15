@@ -1,0 +1,120 @@
+<view class="searchBox">
+	<!-- 搜索框 -->
+	<view class="header">
+		<view class="searchFunction">
+			<view class="left">
+				<image src='../images/ic_shou@2x.png'></image>
+				<input bindinput='getValue' type="text" value="{{shopName}}" placeholder="{{shopName}}"></input>
+			</view>
+			<button bindtap='searchContent'>搜索</button>
+		</view>
+		<view>{{javaUrl}}</view>
+		<!-- 切换商场来源 -->
+		<view class="shopType">
+			<span wx:for='{{navbarList}}' bindtap="changeType" data-type='{{shopTypeItem.type }}' class="{{shopTypeItem.type == shopType ?'active':''}}"
+			 wx:for-item='shopTypeItem' wx:key='{{index}}'>
+				{{shopTypeItem.name}}
+			</span>
+			<span bindtap="onlyCoupon" class="{{coupon===1?'active':''}}">只看有券商品</span>
+		</view>
+	</view>
+	<!-- 商品列表 -->
+	<view class="shopList-s">
+		<scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+    <block  wx:for="{{shopList}}" wx:for-item='shopItem' wx:key="index">
+			<view   class="shopList-item-s" wx:if="{{shopItem.yixuanze==1}}">
+				<view class="shopList-img">
+					<image src="{{shopItem.itempic}}" alt></image>
+				</view>
+				<view class="shopList-msg">
+					<view class="h2">
+						<view class="shopIcon">
+							<image wx:if="{{shopItem.shoptype==='P'}}" src='../images/pdd.png'></image>
+							<image wx:if="{{shopItem.shoptype==='J'}}" src='../images/jingdong.png'></image>
+						</view>
+						{{shopItem.itemtitle}}
+					</view>
+					<view class="shopList-original-price">
+						<view>
+							{{shopItem.shoptype==='J'?'京东价':''}}
+							{{shopItem.shoptype==='P'?'拼多多价':''}}
+							￥{{shopItem.itemprice}}
+						</view>
+						<view>已售:{{shopItem.itemsale}}</view>
+					</view>
+					<view class="shopList-coupon">
+						<view>
+							券后价￥{{shopItem.itemendprice}}
+							<view class="shopCoupon" wx:if="{{shopItem.couponmoney!==0}}">
+								<image src="../images/bg_juan.png"></image>
+								<view class="text">
+									{{shopItem.couponmoney}}元
+								</view>
+							</view>
+							<view class="havePrice" wx:else>
+								<image src="../images/havePrice.png"></image>
+								<view>
+									有佣金
+								</view>
+							</view>
+						</view>
+						<view>佣金￥{{shopItem.tkmoney}}</view>
+					</view>
+					<view class="shopList-shopName">
+						<image src="../images/shopName.png"></image>
+						{{shopItem.sellernick}}
+           
+            <button class="live-goods-choose" style="background:#ddd;">已选择</button>
+					</view>
+				</view>
+			</view>
+      <view bindtap="livechoose" data-array="{{shopItem}}" data-index="{{index}}"   class="shopList-item-s" wx:else>
+				<view class="shopList-img">
+					<image src="{{shopItem.itempic}}" alt></image>
+				</view>
+				<view class="shopList-msg">
+					<view class="h2">
+						<view class="shopIcon">
+							<image wx:if="{{shopItem.shoptype==='P'}}" src='../images/pdd.png'></image>
+							<image wx:if="{{shopItem.shoptype==='J'}}" src='../images/jingdong.png'></image>
+						</view>
+						{{shopItem.itemtitle}}
+					</view>
+					<view class="shopList-original-price">
+						<view>
+							{{shopItem.shoptype==='J'?'京东价':''}}
+							{{shopItem.shoptype==='P'?'拼多多价':''}}
+							￥{{shopItem.itemprice}}
+						</view>
+						<view>已售:{{shopItem.itemsale}}</view>
+					</view>
+					<view class="shopList-coupon">
+						<view>
+							券后价￥{{shopItem.itemendprice}}
+							<view class="shopCoupon" wx:if="{{shopItem.couponmoney!==0}}">
+								<image src="../images/bg_juan.png"></image>
+								<view class="text">
+									{{shopItem.couponmoney}}元
+								</view>
+							</view>
+							<view class="havePrice" wx:else>
+								<image src="../images/havePrice.png"></image>
+								<view>
+									有佣金
+								</view>
+							</view>
+						</view>
+						<view>佣金￥{{shopItem.tkmoney}}</view>
+					</view>
+					<view class="shopList-shopName">
+						<image src="../images/shopName.png"></image>
+						{{shopItem.sellernick}}
+             <button class="live-goods-choose">选择</button>
+					</view>
+				</view>
+			</view>
+      </block>
+		</scroll-view>
+	</view>
+		<image class='backTop' bindtap='goTop' hidden='{{backTop}}' src='../images/pic_top@2x.png'></image>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "系统通知",
+  "usingComponents": {
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

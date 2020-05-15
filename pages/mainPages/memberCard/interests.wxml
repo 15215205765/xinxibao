@@ -1,0 +1,1 @@
+<view><block wx:if="{{!loadlogo}}"><loadlogo vue-id="1" bind:__l="__l"></loadlogo></block><block wx:if="{{loadlogo}}"><view class="content"><weixin-parse vue-id="2" content="{{wxContent}}" bind:__l="__l"></weixin-parse></view></block></view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "操作成功",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize",
+        "bubble": "/live/components/bubble/index",
+        "product-window": "/live/components/product-window/index",
+        "van-action-sheet": "/live/vant/action-sheet/index",
+        "player-icons": "/live/components/player-icons/index"
+    },
+    "disableScroll": true,
+    "navigationBarTextStyle": "white"
+}

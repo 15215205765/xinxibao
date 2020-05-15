@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "van-row": "/live/vant/row/index",
+        "van-col": "/live/vant/col/index",
+        "van-cell": "/live/vant/cell/index",
+        "navbar": "/live/components/navbar/index"
+    },
+    "navigationBarTitleText": "邀请记录",
+    "navigationBarTextStyle": "black"
+}

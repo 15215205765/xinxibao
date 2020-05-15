@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "添加商品",
+  "usingComponents": {
+    "input-pop": "/components/template/inputPop",
+    "pop-manager": "/components/template/PopManager",
+    "w-picker": "/pages/subPages/createCommodity/w-picker/w-picker"
+  }
+}

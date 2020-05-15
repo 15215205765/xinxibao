@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "调用首页",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "diypages": "/components/template/diypages",
+    "advert": "/components/template/advert",
+    "tab-bars": "/components/template/tabBar",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse"
+  }
+}

@@ -1,0 +1,115 @@
+.page {
+	padding-top: 88rpx;
+	height: 100%;
+}
+
+page {
+	height: 100%;
+	background: #F8F8F8;
+}
+
+.swiper-tab {
+	display: flex;
+	flex-direction: row;
+	line-height: 88rpx;
+	border-top: 1px solid #eee;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	/* border-bottom: 2rpx solid #777; */
+	position: fixed;
+	z-index: 999;
+	background: #fff;
+	top: 0;
+	width: 100%;
+}
+
+.tab-item {
+	width: 33.33%;
+	text-align: center;
+	font-size: 28rpx;
+	position: relative;
+	color: #333;
+	background: #FEF3EF;
+}
+
+.swiper {
+	/* height: 1100px; */
+	/* background: #dfdfdf; */
+	height: 100%;
+}
+
+.on {
+	background: linear-gradient(to right, #FD3F34, #FD6934);
+	color: #fff;
+}
+
+.on {
+	font-weight: bold;
+}
+
+.empty {
+	padding-top: 200rpx;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.empty image {
+	width: 426rpx;
+	height: 255rpx;
+}
+
+.empty text {
+	margin-top: 30rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+
+.list {
+	padding: 20rpx;
+}
+
+.list .item {
+	background: #fff;
+	padding: 30rpx 20rpx;
+	margin-bottom: 20rpx;
+}
+.list .item:last-child{
+	margin-bottom: 0;
+}
+.list .item .line{
+	height:0px;
+	width: 100%;
+	border-bottom:1rpx solid rgba(112,112,112,0.4);
+	margin: 22rpx 0;
+}
+.item-amount {
+	display: flex;
+	justify-content: space-between;
+	font-size: 28rpx;
+}
+
+.item-amount .item-cash-amount {}
+
+.item-amount-right {
+	display: flex;
+	align-items: cneter;
+}
+
+.item-amount-right .item-cash-state {
+	color: #FF9800;
+	font-size: 24rpx;
+	margin-left: 48rpx;
+}
+
+.item-info {
+	display: flex;
+	justify-content: space-between;
+	color: #AAA;
+	font-size: 24rpx;
+}
+
+.item-info .item-fee text {
+	text-decoration: line-through;
+}

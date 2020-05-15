@@ -1,0 +1,26 @@
+<view class="list" wx:if="{{teamList.list[0]}}">
+	<view class="item" wx:for="{{teamList.list}}" wx:key="{{index}}">
+		<view class="left">
+			<image src="{{item.avatar}}" class="head"></image>
+			<view class="information">
+				<view class="name">
+					{{item.nickname}}
+				</view>
+				<view class="time">
+					<image class="icon" src="/images/ic_time@2x.png"></image>
+				{{item.agenttime}}
+				</view>
+			</view>
+		</view>
+		<view class="right">
+			<view class="information-right">
+				<view class="grade">{{item.levelname}}</view>
+				<view class="team">{{item.agentcount}}个成员</view>
+			</view>
+		</view>
+	</view>
+</view>
+	<view class='empty' wx:else>
+		<image src='/images/pic_kb_td@2x.png'></image>
+		<text>暂无团队成员</text>
+	</view>

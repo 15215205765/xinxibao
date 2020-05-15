@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize",
+        "van-dialog": "/live/vant/dialog/index",
+        "navbar": "/live/components/navbar/index",
+        "van-popup": "/live/vant/popup/index",
+        "van-uploader": "/live/vant/uploader/index",
+        "van-icon": "/live/vant/icon/index",
+        "van-datetime-picker": "/live/vant/datetime-picker/index"
+    },
+    "navigationBarTitleText": "直播预告",
+    "navigationBarTextStyle": "black"
+}

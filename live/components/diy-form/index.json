@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "van-picker": "/live/vant/picker/index",
+        "van-popup": "/live/vant/popup/index",
+        "van-uploader": "/live/vant/uploader/index",
+        "van-datetime-picker": "/live/vant/datetime-picker/index",
+        "van-area": "/live/vant/area/index"
+    },
+    "component": true,
+    "navigationBarTextStyle": "white"
+}

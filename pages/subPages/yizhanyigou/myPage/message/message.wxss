@@ -1,0 +1,49 @@
+.list{
+  padding: 0 20rpx;
+}
+.list .list-item{
+  padding-top: 20rpx;
+}
+.list .list-item .list-item-time{
+  font-size: 24rpx;
+  text-align: center;
+  color: #999;
+}
+.list .list-item .list-item-content{
+  background: #fff;
+margin-top: 20rpx;
+  padding: 16rpx;
+  font-size: 26rpx;
+  color: #999;
+border-radius:10rpx;
+line-height: 40rpx;
+}
+.message{
+
+width: 100%;
+background: #F8F8F8;
+padding-bottom: 20rpx;
+}
+page{
+  height: 100%;
+  width: 100%;
+background: #F8F8F8;
+}
+.empty{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+background: #F8F8F8;
+
+}
+.empty image{
+  width: 426rpx;
+  height: 291rpx;
+}
+.empty text{
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 16rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "编辑店员",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "tab-bars": "/components/template/tabBar",
+    "pop-manager": "/components/template/PopManager"
+  }
+}

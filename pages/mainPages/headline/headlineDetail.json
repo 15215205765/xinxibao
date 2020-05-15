@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "头条详情",
+  "usingComponents": {
+    "foooter": "/components/template/footer",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "loadlogo": "/components/template/loadlogo",
+    "u-parse": "/components/gaoyia-parse/parse"
+  }
+}

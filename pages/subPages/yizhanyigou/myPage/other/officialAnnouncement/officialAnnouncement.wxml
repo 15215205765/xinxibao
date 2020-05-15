@@ -1,0 +1,27 @@
+<view class='page'>
+  <view class='message' wx:if='{{meassagesList}}'>
+    <view class='list'>
+      <view class='list-item' wx:for="{{meassagesList.list}}" wx:key="{{index}}">
+        <view class='list-item-time'>{{item.createtime}}</view>
+    <view class="list-item-content">
+							<view class='list-item-title'>
+						{{item.title}}
+					</view>
+					<view class="text">
+						{{item.resp_desc}}
+					</view>
+					<view class="list-item-see" bindtap="jumpDetails" data-id="{{item.id}}">
+						<view>
+							查看详情
+						</view>
+							<image src="/images/official.png"></image>
+					</view>
+				</view>
+      </view>
+    </view>
+  </view>
+  <view class='empty' wx:else>
+    <image src='/images/pic_kb_xx@2x.png'></image>
+    <text>暂无公告</text>
+  </view>
+</view>

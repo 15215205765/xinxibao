@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "掌上信息",
+  "usingComponents": {
+    "post-list": "/components/template/postList",
+    "tab-bars": "/components/template/tabBar",
+    "search-view": "/components/template/searchView",
+    "loadlogo": "/components/template/loadlogo",
+    "loadmore": "/components/template/loadmore",
+    "none-mores": "/components/template/nonemores"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "个人主页",
+  "usingComponents": {
+    "post-list": "/components/template/postList",
+    "part-loading": "/components/template/PartLoading",
+    "loading": "/components/template/loading",
+    "tab-bars": "/components/template/tabBar",
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

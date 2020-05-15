@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的帖子",
+  "usingComponents": {
+    "post-manage": "/components/template/postManage",
+    "tab-bars": "/components/template/tabBar",
+    "none-mores": "/components/template/nonemores"
+  }
+}

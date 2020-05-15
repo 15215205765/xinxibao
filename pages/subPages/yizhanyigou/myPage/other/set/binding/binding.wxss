@@ -1,0 +1,64 @@
+page {
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.personal {
+  padding-top: 20rpx;
+}
+
+.personal .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 24rpx 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  border-bottom: 1px solid #ececec;
+}
+
+
+
+
+.item .left {
+}
+
+.item .right {
+	display: flex;
+	align-items: center;
+}
+.item .right .code{
+	width: 200rpx;
+	height: 48rpx;
+	color: #fff;
+	border-radius:24rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid #efefef;
+	margin-left: 10rpx;
+	background: linear-gradient(to right,#FD3D34,#FD6534);
+}
+
+.code-box input{
+	text-align: right;
+}
+.code-box .active{
+	color: rgba(253, 52, 52, 1);
+}
+.item .right input {
+  text-align: right;
+  color: #999999;
+  margin-right: 30rpx;
+}
+
+.submit {
+  margin-top: 100rpx;
+  width: 600rpx;
+  height: 88rpx;
+  font-size: 34rpx;
+  background: #FF9800;
+  color: #fff;
+}

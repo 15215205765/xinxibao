@@ -1,0 +1,33 @@
+<view class="container data-v-37143f1b">
+  <block wx:if="{{!loadlogo}}">
+    <loadlogo vue-id="1" class="data-v-37143f1b" bind:__l="__l"></loadlogo>
+  </block>
+  <block wx:if="{{loadlogo}}">
+    <view class="{{['page-index data-v-37143f1b',!!bottomMenu?'bottomPadding':'']}}" style="{{('background-color: '+datas.page.background)}}">
+      <block wx:if="{{!!datas.adv}}">
+        <advert class="advert data-v-37143f1b" vue-id="2" advertData="{{datas.adv}}" bind:__l="__l"></advert>
+      </block>
+      <diypages vue-id="3" diypagesData="{{diypagesData}}" pageData="{{datas.page}}" btngroupData="{{btngroup}}" data-ref="diypages" class="data-v-37143f1b vue-ref" bind:__l="__l"></diypages>
+      <view class="full data-v-37143f1b"></view>
+      <block wx:if="{{isTabbars}}">
+        <view class="page-footer data-v-37143f1b">
+          <tab-bars vue-id="4" tabBarAct="{{0}}" tabBarData="{{bottomMenu}}" TabBarsType="{{datas.page.type}}" class="data-v-37143f1b" bind:__l="__l"></tab-bars>
+        </view>
+      </block>
+      <block wx:if="{{!!pageInfo.music}}">
+        <view data-event-opts="{{[['tap',[['playAudio',['$event']]]]]}}" class="audio-main data-v-37143f1b" bindtap="__e">
+          <view class="{{['audio-bg data-v-37143f1b',(!play_Audio)?'stop-audio':'']}}">
+            <view class="audio-gif data-v-37143f1b" style="{{'background-image:'+('url('+imageRoot+'musicgif.gif)')+';'}}">
+              <view class="audio-png data-v-37143f1b" style="{{'background-image:'+('url('+imageRoot+'music.png)')+';'}}"></view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <follow vue-id="5" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+    bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-37143f1b" bind:__l="__l"></follow>
+  <block wx:if="{{pageInfo.redpackflag===1}}">
+    <red-packet vue-id="6" class="data-v-37143f1b" bind:__l="__l"></red-packet>
+  </block>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "签到排行",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "part-loading": "/components/template/PartLoading",
+    "tab-bars": "/components/template/tabBar"
+  }
+}

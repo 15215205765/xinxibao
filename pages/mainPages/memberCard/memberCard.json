@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "会员中心",
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager",
+    "search-view": "/components/template/searchView",
+    "tab-bars": "/components/template/tabBar",
+    "barrage": "/components/template/barrage",
+    "loadmore": "/components/template/loadmore",
+    "loadlogo": "/components/template/loadlogo",
+    "follow": "/components/template/follow"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "time-picker": "/pages/subPages2/tamplate/w-picker/time-pickera"
+  }
+}

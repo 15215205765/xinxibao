@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会员权益",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse"
+  }
+}

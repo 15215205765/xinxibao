@@ -1,0 +1,14 @@
+<view class="page">
+	<view class='information'>
+		<view>
+			<image src='/images/ic_yg_logo@2x.png'></image>
+		</view>
+		<view class='text'>分享购物赚佣金 一站易购最省心</view>
+		<view class='line'></view>
+		<view class='version-number'>当前版本 {{versionNumber}}</view>
+	</view>
+	<view class='bottom'>
+		<text>Copyright@2019</text>
+		<navigator url="/pages/login/agreement/agreement">用户协议</navigator>
+	</view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "累计收益",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "loading": "/components/template/loading"
+  }
+}

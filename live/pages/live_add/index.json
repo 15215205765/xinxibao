@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize"
+    },
+    "navigationBarTextStyle": "white",
+    "disableScroll": true,
+    "navigationStyle": "custom"
+}

@@ -1,0 +1,15 @@
+<view class='page'>
+  <view class='share'>
+    <image class='share-bg' src='/images/bg_yq@2x.png'></image>
+    <view class="share-item">
+      <image class='share-button' src='/images/link_invite.png' bindtap='onShareAppMessage'></image>
+      <button open-type='share'></button>
+    </view>
+    <view  class="share-item" bindtap='jumpPoster'>
+      <image class='share-button' src='/images/poster_invite.png'></image>
+    </view>
+  </view>
+  <view class='explan'>
+    <image src='/images/pic_img@2x.png'></image>
+  </view>
+</view>

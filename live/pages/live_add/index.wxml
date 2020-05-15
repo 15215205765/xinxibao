@@ -1,0 +1,45 @@
+<view class="livePlayer-wrap" style="height:{{isHeight?screenTotalH-100:screenTotalH}}rpx;" wx:if="{{!typeStatus}}">
+    <camera class="live-room-player" devicePosition="front" flash="off" style="width:{{winW}}px; height:{{isHeight?screenTotalH-100:screenTotalH}}rpx; margin-left:0px">
+        <cover-view class="livePlayer-ctn-box">
+            <cover-view class="livePlayer-navBar-box" style="height:{{navH}}rpx;">
+                <cover-view class="livePlayer-navBar">
+                    <cover-image bindtap="liveBack" class="livePlayer-back" src="../../resource/img/room-back.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <cover-view class="live-player-add" style="top:{{navH+40}}rpx">
+                <cover-view class="live-player-add-title">发起直播</cover-view>
+                <cover-view class="live-player-add-info">
+                    <cover-view bindtap="uploadpic" class="live-player-add-info-left">
+                        <cover-image src="{{live_cover}}" wx:if="{{live_cover}}"></cover-image>
+                        <cover-view class="live-player-add-info-left-font">更换封面</cover-view>
+                    </cover-view>
+                    <cover-view bindtap="getInput" class="live-player-add-info-right">{{placeholder}}</cover-view>
+                    <cover-view bindtap="getPicker" class="live-player-add-info-right">直播类型：{{cate}}</cover-view>
+                </cover-view>
+                
+            </cover-view>
+            <cover-view bindtap="goLivePush" class="live-player-add-btn" hoverClass="live-player-add-btn-hover">发起直播</cover-view>
+            
+        </cover-view>
+        <cover-view bindtap="closeInput" class="popPay-bg" style="background:none;" wx:if="{{isInput}}"></cover-view>
+    </camera>
+</view>
+<view class="root" wx:if="{{isInput}}">
+    <view class="field">
+        <input bindinput="onInputChange" class="van-field__input" cursor="-1" cursorSpacing="8" focus="{{isInput}}" maxlength="60" placeholder="好的标题能吸引更多粉丝哦！" placeholderClass="van-field__placeholder" selectionEnd="-1" selectionStart="-1" type="text"></input>
+    </view>
+</view>
+<!-- <view  wx:if="{{isPicker}}">
+    <view>
+         <picker bindchange="bindPickerChange" value="{{index}}" range-key="name" range="{{livetype}}" style="height:90rpx;line-height:90rpx;">
+          <view style="text-align:center;">
+            {{livetype[index].name}}
+          </view>
+        </picker>
+      </view>
+</view> -->
+<view class="type-view" wx:if="{{typeStatus}}">
+  <view wx:for="{{livetype}}" wx:for-index="v" bindtap="typeChoose" data-index="{{v}}" class="type-list {{v==index ? 'type-active' : ''}}">{{item.name}}</view>
+  <view class="type-submit" bindtap="typeSubmit">确认</view>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

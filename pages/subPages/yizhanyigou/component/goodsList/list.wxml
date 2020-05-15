@@ -1,0 +1,62 @@
+<!--component/goodsList/list.wxml-->
+<view class="goods-list">
+		<view class="goods-item" data-id='{{item.itemid}}' data-type='{{item.shoptype}}' bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd"
+			 data-is_yxk="{{item.is_yxk}}" data-activityid="{{item.activityid}}" data-index="{{index}}" bindlongpress="openCollectBox" bindtap='jumpDetails' wx:for="{{goodsList[0]?goodsList:6}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+			<view class="goods_left goodsSkeleton-rect">
+					<view class="{{index<3?'goods_medal':'goods_other_medal'}}" wx:if="{{!isIndex&&goodsList[0]}}">
+						<image wx-if="{{index===0}}" src="/pages/subPages/yizhanyigou/images/gold_medal.png"></image>
+						<image wx-if="{{index===1}}" src="/pages/subPages/yizhanyigou/images/silver_medal.png"></image>
+						<image wx-if="{{index===2}}" src="/pages/subPages/yizhanyigou/images/bronze_medal.png"></image>
+						<image  wx-if="{{index>2}}" src="/pages/subPages/yizhanyigou/images/red_medal.png"></image>
+						<view>{{index+1}}</view>
+					</view>
+				<image lazy-load="{{true}}" class="goods_coverImg" src="{{item.itempic}}"></image>
+			</view>
+			<view wx:if="{{goodsList[0]}}" class="goods_right">
+				<view class="goods_title twoLine">
+					<!-- <image  class="pdd" src="/images/commend_pdd.png"></image> -->
+					<view class="goods_source_logo "  wx:if="{{isIndex}}">
+						<image wx:if="{{item.shoptype==='J'}}" class="jd" src="/pages/subPages/yizhanyigou/images/commend_jd.png"></image>
+						<image wx:else class="pdd" src="/pages/subPages/yizhanyigou/images/commend_pdd.png"></image>
+					</view>
+					{{item.itemtitle}}
+				</view>
+				<view class="goods_right_center">
+					<view class="goods_coupon">
+						<image src="/pages/subPages/yizhanyigou/images/coupon_bg.png"></image>
+						<view wx:if="{{item.couponmoney!=0}}">券￥{{item.couponmoney}}</view>
+						<view wx:else>暂无优惠券</view>
+					</view>
+					<view wx:if="{{isIndex}}" class="goods_sales goods_orgin_price">原价￥{{item.itemprice}}</view>
+					<view class="goods_sales">销量{{item.itemsale}}单</view>
+				</view>
+				<view catchtap class="goods_right_bottom">
+					<view class="goods_discount">
+						券后价：
+						<view class="number">¥{{item.itemendprice}}</view>
+					</view>
+					<button open-type="share" data-title="{{item.itemtitle}}" data-imgUrl="{{item.itempic}}" data-activityid="{{item.activityid}}" data-id="{{item.itemid}}" data-is_yxk="{{item.is_yxk}}"  data-type="{{item.shoptype}}" class="goods_share">{{ isIndex?'再省':'分享赚'}}￥{{item.tkmoney}}</button>
+				</view>
+			</view>
+			<view  wx:else class="goods_right" style="width: 400rpx;">
+					<view class="goods_title goodsSkeleton-rect">
+						<text style="opacity: 0;">q</text>
+					</view>
+					<view class="goods_right_center goodsSkeleton-rect">
+					<text style="opacity: 0;">q</text>
+					</view>
+					<view class="goods_right_bottom goodsSkeleton-rect">
+						<text style="opacity: 0;">q</text>
+					</view>
+			</view>
+			<view class="collect-box" catchtap="collectGoods" data-index="{{index}}"  wx:if="{{item.collect&&flag}}">
+				<view class="collect">
+					<image wx:if="{{item.collected}}" src="/pages/subPages/yizhanyigou/images/shoucang2@2x.png"></image>
+					<image wx:else src="/pages/subPages/yizhanyigou/images/shoucang@2x.png"></image>
+					<text class="{{item.collected?'collected':''}}">收藏</text>
+				</view>
+			</view>
+			
+		</view>
+	</view>
+	<skeleton wx:if="{{!goodsList[0]}}" selector="goodsSkeleton"></skeleton>

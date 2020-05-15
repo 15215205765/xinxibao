@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "等级说明",
+  "usingComponents": {
+    "part-loading": "/components/template/PartLoading",
+    "loadlogo": "/components/template/loadlogo"
+  }
+}

@@ -1,0 +1,21 @@
+<view class="searchBox">
+	<!-- 搜索框 -->
+	<view class="searchFunction">
+		<view class="left">
+			<image src='../images/ic_shou@2x.png'></image>
+			<input bindinput='getValue' type="text" value="{{searchContent}}" placeholder="请输入商品名称"></input>
+		</view>
+		<button bindtap='jumpSearchDetails'>搜索</button>
+	</view>
+	<!-- 教程流程 -->
+
+	<!-- 热门搜索 -->
+	<view class="hot-search">
+		<view class="title">
+			热门搜索
+		</view>
+		<view class="list">
+			<view class="list-item" bindtap='jumpSearchDetails' data-name='{{item.keyword}}' wx:for="{{hotSearchList}}" wx:key="{{index}}">{{item.keyword}}</view>
+		</view>
+	</view>
+</view>

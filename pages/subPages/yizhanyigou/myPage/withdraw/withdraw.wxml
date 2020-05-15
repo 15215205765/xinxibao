@@ -1,0 +1,72 @@
+<view class="page">
+	<!-- 佣金提现 -->
+	<view class="item">
+		<view class="top">
+			<view class="left">
+				<view class="title">
+					佣金可提
+				</view>
+				<view class="money">
+					￥{{withdraw.set_commission.money}}
+				</view>
+			</view>
+			<view class="right {{withdraw.set_commission.status===1?'active':''}}" data-type='1' data-have="{{withdraw.set_commission.status===1?true:false}}" bindtap="jumpCash">提现</view>
+		</view>
+		<view class="bottom">
+			<view class="left">
+				手续费：1.0元/笔
+			</view>
+			<navigator url="./record/record?type=2" class="right">
+				<view class="">提现记录</view>
+				<image src="/pages/subPages/yizhanyigou/images/order-right.png"></image>
+			</navigator>
+		</view>
+	</view>
+	<!-- 其他可提 -->
+	<view class="item">
+		<view class="top">
+			<view class="left">
+				<view class="title">
+					其他可提
+				</view>
+				<view class="money">
+					￥{{withdraw.set_shop.money}}
+				</view>
+			</view>
+			<view class="right {{withdraw.set_shop.status===1?'active':''}}" data-type='2' data-have="{{withdraw.set_shop.status===1?true:false}}" bindtap="jumpCash">提现</view>
+		</view>
+		<view class="bottom">
+			<view class="left">
+				手续费：1.0元/笔
+			</view>
+			<navigator url="./record/record?type=1" class="right">
+				<view class="">提现记录</view>
+				<image src="/pages/subPages/yizhanyigou/images/order-right.png"></image>
+			</navigator>
+		</view>
+	</view>
+	<!-- 总代分红可提-->
+	<view class="item">
+		<view class="top">
+			<view class="left">
+				<view class="title">
+					总代分红可提
+				</view>
+				<view class="money">
+					￥{{withdraw.set_abonus.money}}
+				</view>
+			</view>
+			<view class="right {{withdraw.set_abonus.status===1?'active':''}}" data-type='3' data-have="{{withdraw.set_abonus.status===1?true:false}}" bindtap="jumpCash">提现</view>
+		</view>
+		<view class="bottom">
+			<view class="left">
+				手续费：1.0元/笔
+			</view>
+			<navigator url="./record/record?type=3" class="right">
+				<view class="">提现记录</view>
+				<image src="/pages/subPages/yizhanyigou/images/order-right.png"></image>
+			</navigator>
+		</view>
+	</view>
+	<image class="bottom-bg" src="/pages/subPages/yizhanyigou/images/pic_fwzx_bgimg@2x.png"></image>
+</view>

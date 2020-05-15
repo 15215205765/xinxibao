@@ -1,0 +1,58 @@
+/* pages/myPage/agent/agent.wxss */
+.agent{
+  padding: 40rpx;
+  background: #333;
+}
+.agent-explain{
+  /* padding: 0 40rpx; */
+  width: 100%;
+}
+.agent-explain image{
+  width: 100%;
+  height: 1836rpx;
+}
+.agent-form{
+
+}
+.agent-form .item{
+	font-size: 28rpx;
+	color: #FFE0BC;
+}
+.agent-form .item text{
+	
+}
+.agent-form .item input{
+	margin-top: 20rpx;
+	height:80rpx;
+border:2px solid rgba(92,81,68,1);
+/* text-indent: 2em; */
+padding-left: 32rpx;
+}
+.agent-form .item textarea{
+	box-sizing: border-box;
+	margin-top: 20rpx;
+	width: 100%;
+	/* text-indent: 2em; */
+	border:2px solid rgba(92,81,68,1);
+	line-height:48rpx;
+	padding: 20rpx;
+}
+.submit{
+	width:600rpx;
+height:88rpx;
+font-size:36rpx;
+margin-top: 40rpx;
+color:rgba(51,51,51,1);
+background:rgba(255,199,134,1);
+border-radius:44rpx;
+}
+.address{
+  position: relative
+}
+.address .box{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+}

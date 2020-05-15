@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的客户",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "tab-bars": "/components/template/tabBar",
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore"
+  }
+}

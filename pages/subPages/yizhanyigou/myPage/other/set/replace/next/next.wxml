@@ -1,0 +1,5 @@
+<view class='page'>
+  <text class="title">{{phoneText}}</text>
+  <input type='number' maxlength='11' placeholder="请输入手机号"  bindinput='assignmentCode'></input>
+  <view class='code {{inputSwitch?"click":""}}' bindtap="getCode">获取验证码</view>
+</view>

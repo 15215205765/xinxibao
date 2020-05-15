@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商铺详情",
+  "usingComponents": {
+    "share-bottom": "/components/template/shareBottom",
+    "diy-video": "/components/page/pageComponents/Video",
+    "store-goods": "/components/template/storeGoods",
+    "store-comment": "/components/template/storeComment",
+    "store-dynamic": "/components/template/storeDynamic",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "loading": "/components/template/loadlogo",
+    "pop-manager": "/components/template/PopManager"
+  }
+}

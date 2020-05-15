@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "名片",
+  "usingComponents": {
+    "post-list": "/components/template/postList",
+    "loadlogo": "/components/template/loadlogo",
+    "nonemores": "/components/template/nonemores",
+    "loadmore": "/components/template/loadmore",
+    "share-bottom": "/components/template/shareBottom"
+  }
+}

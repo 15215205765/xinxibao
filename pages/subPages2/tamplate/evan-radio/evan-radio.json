@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-icons": "/pages/subPages2/tamplate/uni-icons/uni-icons"
+  }
+}

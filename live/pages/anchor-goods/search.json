@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "goodslist": "/components/template/goodslist",
+    "toplist": "/components/template/toplist",
+    "storelist": "/components/template/storelist",
+    "loooading": "/components/template/loading",
+    "loadlogo": "/components/template/loadlogo"
+  }
+}

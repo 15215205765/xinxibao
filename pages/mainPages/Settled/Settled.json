@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商铺入驻",
+  "usingComponents": {
+    "uni-select": "/components/template/lee-select",
+    "tab-bars": "/components/template/tabBar",
+    "follow": "/components/template/follow",
+    "pop-manager": "/components/template/PopManager",
+    "loadlogo": "/components/template/loadlogo",
+    "w-picker": "/pages/subPages2/tamplate/w-picker/w-picker",
+    "w-pickera": "/pages/subPages2/tamplate/w-picker/w-pickera",
+    "phone-mask": "/components/template/PhoneMask"
+  }
+}

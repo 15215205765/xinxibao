@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "在线买单",
+  "usingComponents": {
+    "loading": "/components/template/loadlogo",
+    "pop-manager": "/components/template/PopManager",
+    "loadlogo": "/components/template/loadlogo",
+    "follow": "/components/template/follow",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse"
+  }
+}

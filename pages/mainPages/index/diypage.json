@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "diypages": "/components/template/diypages",
+    "advert": "/components/template/advert",
+    "tab-bars": "/components/template/tabBar",
+    "weixin-parse": "/static/mpvue-wxparse/src/wxParse",
+    "follow": "/components/template/follow",
+    "filtertab": "/components/template/filtertab",
+    "business-card": "/components/page/pageComponents/businessCard",
+    "load-more": "/components/template/loadmore",
+    "none-mores": "/components/template/nonemores"
+  }
+}

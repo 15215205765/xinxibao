@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "pop-manager": "/components/template/PopManager",
+    "evan-radio": "/pages/subPages2/tamplate/evan-radio/evan-radio",
+    "evan-radio-group": "/pages/subPages2/tamplate/evan-radio/evan-radio-group"
+  }
+}

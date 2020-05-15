@@ -1,0 +1,18 @@
+{
+    "usingComponents": {
+        "authorize": "/live/components/authorize/authorize",
+        "van-dialog": "/live/vant/dialog/index",
+        "van-popup": "/live/vant/popup/index",
+        "van-cell": "/live/vant/cell/index",
+        "van-cell-group": "/live/vant/cell-group/index",
+        "van-switch": "/live/vant/switch/index",
+        "van-slider": "/live/vant/slider/index",
+        "van-icon": "/live/vant/icon/index"
+    },
+    "navigationBarTitleText": "推流工具",
+    "backgroundColor": "#000",
+    "backgroundTextStyle": "light",
+    "disableScroll": true,
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+}

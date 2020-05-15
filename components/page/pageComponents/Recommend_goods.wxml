@@ -1,0 +1,1 @@
+<view class="container data-v-250bdb30"><goods-style vue-id="1" goodsStyleType="rush2" goodslistData="{{goodslist}}" class="data-v-250bdb30" bind:__l="__l"></goods-style></view>

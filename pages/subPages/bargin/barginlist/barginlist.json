@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "砍价列表",
+  "usingComponents": {
+    "loadlogo": "/components/template/loadlogo",
+    "none-mores": "/components/template/nonemores"
+  }
+}
