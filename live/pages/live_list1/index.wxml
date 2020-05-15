@@ -32,7 +32,7 @@
       <view class="live-content">
         <navigator url="{{item.live.live_status==1 ? '/live/pages/live_nostart/index?live_id='+item.live.id : '/live/pages/live_room2/index?live_id='+item.live.id }}" class="live-list" style="background:url({{item.live.cover}}) no-repeat; background-size:100% 100%;" wx:for="{{lives}}" wx:key="live_index" >
             <view class="live-status">
-                <view class="status"><image src="/live/resource/img/zhibozhong.png" mode="widthFix"></image></view>
+                <view class="status"><image src="/live/resource/img/yugao.png" mode="widthFix" wx:if="{{item.live.live_status==1}}"></image><image src="/live/resource/img/zhibozhong.png" mode="widthFix" wx:elif="{{item.live.live_status==2}}"></image><image src="/live/resource/img/huibo.png" mode="widthFix" wx:else></image></view>
                 <text>{{item.live.real_num}}人观看</text>
             </view>
             <view class="zhubo">
