@@ -1,1 +1,145 @@
-<view class="postManage data-v-4b937693"><scroll-view style="{{'height:'+(scollHeight)+';'}}" scroll-y="{{true}}" lower-threshold="{{0}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e" class="data-v-4b937693"><block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['goPostDetails',['$0'],[[['postList','',index,'id']]]]]]]}}" class="pmMb data-v-4b937693" bindtap="__e"><view class="pmMbPackage data-v-4b937693"><view class="pmMbTitle data-v-4b937693"><view class="pmMbTitleLeft data-v-4b937693"><view class="userImg data-v-4b937693"><image src="{{item.$orig.avatar}}" class="data-v-4b937693"></image></view><label class="_span data-v-4b937693">{{item.$orig.nickname}}</label><block wx:if="{{item.$orig.package!=='0'}}"><view class="isRed data-v-4b937693"><label class="_span data-v-4b937693">红包</label></view></block></view><view class="pmMbTitleRight data-v-4b937693"><label class="_span data-v-4b937693">{{item.$orig.onetype}}</label></view></view><block wx:if="{{item.$orig.top==1}}"><view class="pmMbTips data-v-4b937693"><image src="/static/images/merchant/zd.png" class="data-v-4b937693"></image></view></block><block wx:else><view class="pmMbTips data-v-4b937693"></view></block><block wx:if="{{item.$orig.keyword&&item.$orig.keyword.length>0}}"><view class="postTips data-v-4b937693"><block wx:for="{{item.$orig.keyword}}" wx:for-item="items" wx:for-index="indexs"><view style="{{'color:'+(textTip_color[indexs%textTip_color.length].color)+';'+('border:'+(textTip_color[indexs%textTip_color.length].border)+';')}}" class="data-v-4b937693"><text class="data-v-4b937693">{{items}}</text></view></block></view></block><view class="{{['pmMbMain data-v-4b937693',item.g0!==-1?'fullText':'postListTextMain']}}"><label class="_span data-v-4b937693">{{item.$orig.content}}</label></view><block wx:if="{{item.$orig.content.length>50}}"><view data-event-opts="{{[['tap',[['fullText',[index]]]]]}}" class="zsQw data-v-4b937693" catchtap="__e"><label class="_span data-v-4b937693">{{item.g1!==-1?'':''}}</label></view></block><view class="postImg data-v-4b937693"><block wx:for="{{item.$orig.img}}" wx:for-item="items" wx:for-index="indexs"><view class="data-v-4b937693"><image src="{{items}}" class="data-v-4b937693"></image></view></block><block wx:if="{{!!item.$orig.video_link&&item.$orig.img.length!=0}}"><video class="postListMbImgShow data-v-4b937693" src="{{item.$orig.video_link}}"></video></block></view><block wx:if="{{!!item.$orig.video_link&&item.$orig.img.length==0}}"><view data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e" class="data-v-4b937693"><video class="videoPlay data-v-4b937693" src="{{item.$orig.video_link}}" id="videoPlay"></video></view></block><view class="pmMbFoot data-v-4b937693"><view class="pmMbFootLeft data-v-4b937693"><label class="_span data-v-4b937693">{{"阅读 "+item.$orig.look}}</label><label class="_span data-v-4b937693">{{"分享 "+item.$orig.share}}</label><label class="_span data-v-4b937693">{{item.$orig.createtime+"发布"}}</label></view><block wx:if="{{source==1}}"><view data-event-opts="{{[['tap',[['openPop',['$0'],[[['postList','',index]]]]]]]}}" class="pmMbFootRight data-v-4b937693" catchtap="__e"><label class="_span data-v-4b937693">管理</label></view></block><block wx:if="{{source==2}}"><view data-event-opts="{{[['tap',[['postCollection',['$0'],[[['postList','',index,'id']]]]]]]}}" class="pmMbFootRight1 data-v-4b937693" catchtap="__e"><label class="_span data-v-4b937693">取消收藏</label></view></block></view></view></view></block><view class="bottomFull data-v-4b937693"><loadmore vue-id="1" isMore="{{isMore}}" class="data-v-4b937693" bind:__l="__l"></loadmore></view></scroll-view><pop-manager vue-id="2" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}"><view class="operateView data-v-4b937693"><view class="operateViewTop data-v-4b937693"><block wx:if="{{!!extension.set&&extension.set.is_openRed=='1'&&items.package==0}}"><view data-event-opts="{{[['tap',[['hbPopShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693"><label class="_span data-v-4b937693">红包推广</label></view></block><view data-event-opts="{{[['tap',[['zdPopShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693"><label class="_span data-v-4b937693">置顶推广</label></view><view class="sharGj data-v-4b937693"><label class="_span data-v-4b937693">分享帖子</label><button class="openShare data-v-4b937693" open-type="share"></button></view><view data-event-opts="{{[['tap',[['goSuccessRelease',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693"><label class="_span data-v-4b937693">编辑帖子</label></view><view data-event-opts="{{[['tap',[['deleShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693"><label class="_span data-v-4b937693">删除帖子</label></view><view data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e"><label class="_span data-v-4b937693">关闭</label></view></view></view></pop-manager><pop-manager vue-id="3" show="{{hbShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeHbPop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}"><view class="operateView data-v-4b937693"><view class="operateViewTop data-v-4b937693"><scroll-view class="operateScroll data-v-4b937693" scroll-y="{{true}}"><block wx:for="{{extension.red_list}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['createOrder',['$0','$1',3],[[['extension.red_list','',index,'red_price']],[['extension.red_list','',index,'num']]]]]]]}}" class="scrollList data-v-4b937693" bindtap="__e"><label class="_span data-v-4b937693">{{item.red_price+"元红包分"+item.num+"个"}}</label></view></block></scroll-view><view data-event-opts="{{[['tap',[['closeHbPop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e"><label class="_span data-v-4b937693">关闭</label></view></view></view></pop-manager><pop-manager vue-id="4" show="{{zdShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeZdPop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}"><view class="operateView data-v-4b937693"><view class="operateViewTop data-v-4b937693"><scroll-view class="operateScroll data-v-4b937693" scroll-y="{{true}}"><block wx:for="{{extension.list}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['createOrder',['','$0',2],[[['extension.list','',index,'day']]]]]]]}}" class="scrollList data-v-4b937693" bindtap="__e"><label class="_span data-v-4b937693">{{"置顶"+item.day+"天(收费"+item.price+"元)"}}</label></view></block></scroll-view><view data-event-opts="{{[['tap',[['closeZdPop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e"><label class="_span data-v-4b937693">关闭</label></view></view></view></pop-manager></view>
+<view class="postManage data-v-4b937693">
+  <scroll-view style="{{'height:'+(scollHeight)+';'}}" scroll-y="{{true}}" lower-threshold="{{0}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e" class="data-v-4b937693">
+    <block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index">
+      <view data-event-opts="{{[['tap',[['goPostDetails',['$0'],[[['postList','',index,'id']]]]]]]}}" class="pmMb data-v-4b937693" bindtap="__e">
+        <view class="pmMbPackage data-v-4b937693">
+          <view class="pmMbTitle data-v-4b937693">
+            <view class="pmMbTitleLeft data-v-4b937693">
+              <view class="userImg data-v-4b937693">
+                <image src="{{item.$orig.avatar}}" class="data-v-4b937693"></image>
+              </view>
+              <label class="_span data-v-4b937693">{{item.$orig.nickname}}</label>
+              <block wx:if="{{item.$orig.package!=='0'}}">
+                <view class="isRed data-v-4b937693">
+                  <label class="_span data-v-4b937693">红包</label>
+                </view>
+              </block>
+            </view>
+            <view class="pmMbTitleRight data-v-4b937693">
+              <label class="_span data-v-4b937693">{{item.$orig.onetype}}</label>
+            </view>
+          </view>
+          <block wx:if="{{item.$orig.top==1}}">
+            <view class="pmMbTips data-v-4b937693">
+              <image src="{{imageRoot}}/static/images/merchant/zd.png" class="data-v-4b937693"></image>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="pmMbTips data-v-4b937693"></view>
+          </block>
+          <block wx:if="{{item.$orig.keyword&&item.$orig.keyword.length>0}}">
+            <view class="postTips data-v-4b937693">
+              <block wx:for="{{item.$orig.keyword}}" wx:for-item="items" wx:for-index="indexs">
+                <view style="{{'color:'+(textTip_color[indexs%textTip_color.length].color)+';'+('border:'+(textTip_color[indexs%textTip_color.length].border)+';')}}" class="data-v-4b937693">
+                  <text class="data-v-4b937693">{{items}}</text>
+                </view>
+              </block>
+            </view>
+          </block>
+          <view class="{{['pmMbMain data-v-4b937693',item.g0!==-1?'fullText':'postListTextMain']}}">
+            <label class="_span data-v-4b937693">{{item.$orig.content}}</label>
+          </view>
+          <block wx:if="{{item.$orig.content.length>50}}">
+            <view data-event-opts="{{[['tap',[['fullText',[index]]]]]}}" class="zsQw data-v-4b937693" catchtap="__e">
+              <label class="_span data-v-4b937693">{{item.g1!==-1?'':''}}</label>
+            </view>
+          </block>
+          <view class="postImg data-v-4b937693">
+            <block wx:for="{{item.$orig.img}}" wx:for-item="items" wx:for-index="indexs">
+              <view class="data-v-4b937693">
+                <image src="{{items}}" class="data-v-4b937693"></image>
+              </view>
+            </block>
+            <block wx:if="{{!!item.$orig.video_link&&item.$orig.img.length!=0}}">
+              <video class="postListMbImgShow data-v-4b937693" src="{{item.$orig.video_link}}"></video>
+            </block>
+          </view>
+          <block wx:if="{{!!item.$orig.video_link&&item.$orig.img.length==0}}">
+            <view data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e" class="data-v-4b937693">
+              <video class="videoPlay data-v-4b937693" src="{{item.$orig.video_link}}" id="videoPlay"></video>
+            </view>
+          </block>
+          <view class="pmMbFoot data-v-4b937693">
+            <view class="pmMbFootLeft data-v-4b937693">
+              <label class="_span data-v-4b937693">{{"阅读 "+item.$orig.look}}</label>
+              <label class="_span data-v-4b937693">{{"分享 "+item.$orig.share}}</label>
+              <label class="_span data-v-4b937693">{{item.$orig.createtime+"发布"}}</label>
+            </view>
+            <block wx:if="{{source==1}}">
+              <view data-event-opts="{{[['tap',[['openPop',['$0'],[[['postList','',index]]]]]]]}}" class="pmMbFootRight data-v-4b937693" catchtap="__e">
+                <label class="_span data-v-4b937693">管理</label>
+              </view>
+            </block>
+            <block wx:if="{{source==2}}">
+              <view data-event-opts="{{[['tap',[['postCollection',['$0'],[[['postList','',index,'id']]]]]]]}}" class="pmMbFootRight1 data-v-4b937693" catchtap="__e">
+                <label class="_span data-v-4b937693">取消收藏</label>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="bottomFull data-v-4b937693">
+      <loadmore vue-id="1" isMore="{{isMore}}" class="data-v-4b937693" bind:__l="__l"></loadmore>
+    </view>
+  </scroll-view>
+  <pop-manager vue-id="2" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="operateView data-v-4b937693">
+      <view class="operateViewTop data-v-4b937693">
+        <block wx:if="{{!!extension.set&&extension.set.is_openRed=='1'&&items.package==0}}">
+          <view data-event-opts="{{[['tap',[['hbPopShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693">
+            <label class="_span data-v-4b937693">红包推广</label>
+          </view>
+        </block>
+        <view data-event-opts="{{[['tap',[['zdPopShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693">
+          <label class="_span data-v-4b937693">置顶推广</label>
+        </view>
+        <view class="sharGj data-v-4b937693">
+          <label class="_span data-v-4b937693">分享帖子</label>
+          <button class="openShare data-v-4b937693" open-type="share"></button>
+        </view>
+        <view data-event-opts="{{[['tap',[['goSuccessRelease',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693">
+          <label class="_span data-v-4b937693">编辑帖子</label>
+        </view>
+        <view data-event-opts="{{[['tap',[['deleShow',['$event']]]]]}}" bindtap="__e" class="data-v-4b937693">
+          <label class="_span data-v-4b937693">删除帖子</label>
+        </view>
+        <view data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e">
+          <label class="_span data-v-4b937693">关闭</label>
+        </view>
+      </view>
+    </view>
+  </pop-manager>
+  <pop-manager vue-id="3" show="{{hbShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeHbPop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="operateView data-v-4b937693">
+      <view class="operateViewTop data-v-4b937693">
+        <scroll-view class="operateScroll data-v-4b937693" scroll-y="{{true}}">
+          <block wx:for="{{extension.red_list}}" wx:for-item="item" wx:for-index="index">
+            <view data-event-opts="{{[['tap',[['createOrder',['$0','$1',3],[[['extension.red_list','',index,'red_price']],[['extension.red_list','',index,'num']]]]]]]}}" class="scrollList data-v-4b937693" bindtap="__e">
+              <label class="_span data-v-4b937693">{{item.red_price+"元红包分"+item.num+"个"}}</label>
+            </view>
+          </block>
+        </scroll-view>
+        <view data-event-opts="{{[['tap',[['closeHbPop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e">
+          <label class="_span data-v-4b937693">关闭</label>
+        </view>
+      </view>
+    </view>
+  </pop-manager>
+  <pop-manager vue-id="4" show="{{zdShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeZdPop']]]]}}" bind:clickmask="__e" class="data-v-4b937693" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="operateView data-v-4b937693">
+      <view class="operateViewTop data-v-4b937693">
+        <scroll-view class="operateScroll data-v-4b937693" scroll-y="{{true}}">
+          <block wx:for="{{extension.list}}" wx:for-item="item" wx:for-index="index">
+            <view data-event-opts="{{[['tap',[['createOrder',['','$0',2],[[['extension.list','',index,'day']]]]]]]}}" class="scrollList data-v-4b937693" bindtap="__e">
+              <label class="_span data-v-4b937693">{{"置顶"+item.day+"天(收费"+item.price+"元)"}}</label>
+            </view>
+          </block>
+        </scroll-view>
+        <view data-event-opts="{{[['tap',[['closeZdPop',['$event']]]]]}}" class="close data-v-4b937693" bindtap="__e">
+          <label class="_span data-v-4b937693">关闭</label>
+        </view>
+      </view>
+    </view>
+  </pop-manager>
+</view>

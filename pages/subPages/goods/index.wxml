@@ -1,1 +1,875 @@
-<view class="data-v-7b3eebdb"><block wx:if="{{loadlogo}}"><loading vue-id="1" class="data-v-7b3eebdb" bind:__l="__l"></loading></block><block wx:if="{{!loadlogo}}"><view class="container data-v-7b3eebdb" style="overflow:hidden !important;padding-bottom:20px;"><block wx:if="{{goodsType!=='integral'}}"><block class="data-v-7b3eebdb"><block wx:if="{{barrageList.length>0}}"><block class="data-v-7b3eebdb"><view class="{{['success-tips dis-flex flex-y-center data-v-7b3eebdb',(showTips)?'show':'']}}"><image class="success-avatar data-v-7b3eebdb" src="{{barrageList[tipsIndex]?barrageList[tipsIndex]['avatar']:''}}"></image><view class="onelist-hidden success-goods f-24 col-f m-left12 data-v-7b3eebdb">{{(barrageList[tipsIndex]?barrageList[tipsIndex]['nickname']:'')+"\n\t\t\t\t\t\t刚刚"+(goodsType==='7'?'为本商品砍价'+barrageList[tipsIndex]['bargainprice']+'元':goodsType==='5'?dataInfo.is_charge==='1'?'购买了此卡券':'领取了此卡券':'购买了此商品')+''}}</view></view></block></block><block wx:if="{{goodsType==='5'&&dataInfo['logo'].length!=0||goodsType!=='5'&&dataInfo['thumbs'].length!=0}}"><view class="goods-header data-v-7b3eebdb"><block wx:if="{{goodsType==='5'}}"><block class="data-v-7b3eebdb"><image class="coupon-Image data-v-7b3eebdb" src="{{dataInfo['logo']}}"></image></block></block><block wx:else><block class="data-v-7b3eebdb"><swiper class="goods-swiper data-v-7b3eebdb" style="{{'height:'+(bannerHeightList[currentBannerHeight]+'rpx')+';'}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" data-event-opts="{{[['change',[['bindchange',['$event']]]]]}}" bindchange="__e"><block wx:for="{{dataInfo['thumbs']}}" wx:for-item="banner_item" wx:for-index="index" wx:key="index"><swiper-item class="swiper-item data-v-7b3eebdb"><image src="{{banner_item}}" data-id="{{index}}" data-event-opts="{{[['load',[['imageLoad',['$event']]]]]}}" bindload="__e" class="data-v-7b3eebdb"></image></swiper-item></block></swiper></block></block><view class="goods-viewed data-v-7b3eebdb">{{dataInfo['pv']+"人喜欢"}}</view></view></block><block wx:if="{{goodsType==='7'}}"><block class="data-v-7b3eebdb"><view class="bargain-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(' url('+imageRoot+'bargain_bg.png)')+';'}}"><view class="bargain-countdown-content dis-flex flex-x-between flex-y-center flex-box data-v-7b3eebdb"><view class="bargain-countdown-content-left data-v-7b3eebdb"><view class="bargain-label dis-flex flex-y-center data-v-7b3eebdb"><view class="bargain-countdown-nowPrice f-44 col-f m-right30 data-v-7b3eebdb"><text class="col-f f-24 data-v-7b3eebdb">¥</text>{{''+(dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price'])+''}}</view><view class="bargain-label-box dis-flex b-f p-r data-v-7b3eebdb"><image src="/static/images/goods/bargin_count_bg.png" mode class="data-v-7b3eebdb"></image><view class="f-24  data-v-7b3eebdb">砍价享</view><view class="bargain-label-icon bargain-label-icon-bargin iconfont icon-triangledownfill data-v-7b3eebdb"></view></view></view><view class="bargain-countdown-oldPrice f-24 col-f data-v-7b3eebdb">原价<text class="data-v-7b3eebdb">{{"¥"+dataInfo['oldprice']}}</text></view></view><view class="bargain-countdown-content-right data-v-7b3eebdb"><block wx:if="{{!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="col-f f-24 t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view><view class="countdownTime-box dis-flex flex-x-center data-v-7b3eebdb"><view class="countdownTime-style countdownTime-style-color2 countdownTime-hh col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view><view class="countdownTime-style countdownTime-style-color2 countdownTime-ss col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view><view class="countdownTime-style countdownTime-style-color2 countdownTime-mm col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text></view></view></block></block><block wx:if="{{dataInfo['isTimeOver']}}"><block class="data-v-7b3eebdb"><view class="f-28 col-6 data-v-7b3eebdb">{{"活动"+(dataInfo['stateTime']===1?'已结束':'未开始')}}</view></block></block><block wx:else><block wx:if="{{!!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="bargain-countdown-right-loading p-r data-v-7b3eebdb"><part-loading vue-id="2" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading></view></block></block></block></view></view></view></block></block><block wx:if="{{goodsType==='1'}}"><block class="data-v-7b3eebdb"><view class="group-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(' url('+imageRoot+'rush_bg.png)')+';'}}"><view class="bargain-countdown-content dis-flex flex-x-between flex-box data-v-7b3eebdb"><view class="bargain-countdown-content-left data-v-7b3eebdb"><view class="dis-flex flex-y-center dis-flex flex-y-center data-v-7b3eebdb"><image class="rush_logo m-right30 data-v-7b3eebdb" src="/static/images/goods/rush_logo.png" mode></image><view class="data-v-7b3eebdb"><view class="bargain-label dis-flex flex-y-center data-v-7b3eebdb"><view class="bargain-countdown-nowPrice f-44 col-f m-right30 data-v-7b3eebdb"><text class="col-f f-24 data-v-7b3eebdb">¥</text>{{''+dataInfo['price']+''}}</view><block wx:if="{{dataInfo['vipstatus']==='1'}}"><block class="data-v-7b3eebdb"><view class="rush-label-box p-r f-24 data-v-7b3eebdb">{{'会员价¥'+dataInfo['vipprice']+''}}<view class="bargain-label-icon bargain-label-icon-rush iconfont icon-triangledownfill data-v-7b3eebdb"></view></view></block></block></view><view class="bargain-countdown-oldPrice f-24 col-f data-v-7b3eebdb">原价<text class="data-v-7b3eebdb">{{"¥"+dataInfo['oldprice']}}</text></view></view></view></view><block wx:if="{{!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="bargain-countdown-content-right data-v-7b3eebdb"><view class="color-f02 f-24 t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view><view class="countdownTime-box dis-flex flex-x-center flex-y-center data-v-7b3eebdb"><view class="countdownTime-style countdownTime-style-color1 countdownTime-hh color-f02 data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view><view class="countdownTime-style countdownTime-style-color1 countdownTime-ss color-f02 data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view><view class="countdownTime-style countdownTime-style-color1 countdownTime-mm color-f02 data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text></view></view></view></block></block><block wx:if="{{dataInfo['isTimeOver']}}"><block class="data-v-7b3eebdb"><view class="f-28 col-9 dis-flex flex-y-center data-v-7b3eebdb">{{"活动"+(dataInfo['stateTime']===1?'已结束':'未开始')}}</view></block></block><block wx:else><block wx:if="{{!!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="bargain-countdown-right-loading p-r data-v-7b3eebdb"><part-loading vue-id="3" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading></view></block></block></block></view></view></block></block><block wx:if="{{goodsType==='3'}}"><block class="data-v-7b3eebdb"><view class="group-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(dataInfo['isTimeOver']?' url('+imageRoot+'group_bg2.png)':'url('+imageRoot+'group_bg.png)')+';'}}"><view class="group-countdown-content dis-flex flex-x-between flex-y-center flex-box data-v-7b3eebdb"><view class="group-countdown-content-left data-v-7b3eebdb"><view class="dis-flex flex-y-center data-v-7b3eebdb"><view class="group-countdown-nowPrice col-f f-58 m-right30 data-v-7b3eebdb"><text class="f-30 m-right10 data-v-7b3eebdb">¥</text>{{''+(dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price'])+''}}</view><view class="group-countdown-num_oldPrice data-v-7b3eebdb"><view class="group-countdown-num dis-flex flex-y-center data-v-7b3eebdb"><view class="group-countdown-num-logo b-f data-v-7b3eebdb"><image src="/static/images/goods/groupnum.png" mode class="data-v-7b3eebdb"></image></view><view class="group-countdown-numGroup f-24 col-f data-v-7b3eebdb">{{dataInfo['peoplenum']+"人团"}}</view></view><view class="group-countdown-oldPrice f-24 col-f data-v-7b3eebdb">{{"单价买 ¥"+dataInfo['aloneprice']}}</view></view></view></view><view class="bargain-countdown-content-right data-v-7b3eebdb"><block wx:if="{{!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="col-f f-24 group-countdown-title t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view><view class="countdownTime-box dis-flex flex-x-center flex-y-center data-v-7b3eebdb"><view class="groupcountdownTime-style countdownTime-hh col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view><view class="groupcountdownTime-style countdownTime-ss col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view><view class="groupcountdownTime-style countdownTime-mm col-f data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text></view></view></block></block><block wx:if="{{dataInfo['isTimeOver']}}"><block class="data-v-7b3eebdb"><view class="f-28 col-9 data-v-7b3eebdb">活动已结束</view></block></block><block wx:else><block wx:if="{{!!!countDown['timeobj']}}"><block class="data-v-7b3eebdb"><view class="bargain-countdown-right-loading p-r data-v-7b3eebdb"><part-loading vue-id="4" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading></view></block></block></block></view></view></view></block></block><view class="goods-info m-btm20 data-v-7b3eebdb"><view class="goods-content module-content data-v-7b3eebdb"><block wx:if="{{goodsType!=='1'&&goodsType!=='7'&&goodsType!=='3'}}"><block class="data-v-7b3eebdb"><view class="goods-price-box dis-flex flex-dir-row flex-y-end flex-x-between data-v-7b3eebdb"><view class="goods-price dis-flex flex-dir-row flex-y-end data-v-7b3eebdb"><block wx:if="{{goodsType==='5'}}"><block class="data-v-7b3eebdb"><view class="goods-price-now price-font-family data-v-7b3eebdb"><text class="f-32 data-v-7b3eebdb">{{!!dataInfo.is_charge&&dataInfo.is_charge==='1'?dataInfo['price']:'免费'}}</text></view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="goods-price-now price-font-family data-v-7b3eebdb"><view class="money-label f-24 data-v-7b3eebdb">¥</view><text class="f-58 data-v-7b3eebdb">{{dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price']}}</text></view></block></block><block wx:if="{{!!dataInfo['oldprice']}}"><view class="goods-price-old data-v-7b3eebdb"><text class="money-label data-v-7b3eebdb">¥</text>{{''+dataInfo['oldprice']+''}}</view></block></view><view class="goods-browse data-v-7b3eebdb">{{'已'+(goodsType==='5'&&dataInfo['is_charge']==='0'?'领':'售')+dataInfo['buy_num']+"/仅剩"+dataInfo['stk']+''}}</view></view></block></block><view class="goods-title m-btm30 data-v-7b3eebdb"><view class="goods-title-mian f-36 col-3 m-btm15 data-v-7b3eebdb">{{dataInfo['goods_name']}}</view><view class="goods-activity dis-flex flex-y-center flex-warp m-btm20 data-v-7b3eebdb"><block wx:for="{{dataInfo['tag_list']}}" wx:for-item="tagItem" wx:for-index="index" wx:key="index"><view class="activity-item dis-flex flex-y-center m-right30 data-v-7b3eebdb"><image src="/static/images/goods/activityImage.png" mode class="data-v-7b3eebdb"></image><view class="f-24 col-9 data-v-7b3eebdb">{{tagItem}}</view></view></block></view><block wx:if="{{goodsType==='7'}}"><block class="data-v-7b3eebdb"><view class="bargain-buy-box padding-box-all data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="bargain-buy-top dis-flex flex-y-center flex-x-between data-v-7b3eebdb" bindtap="__e"><view class="bargain-buy-top-title f-24 m-btm15 data-v-7b3eebdb">[砍价购]</view><view class="f-24 col-9 data-v-7b3eebdb">玩法详情<text class="iconfont icon-right icon-right-buybarainIcon data-v-7b3eebdb"></text></view></view><view class="bargain-buy-top f-24 col-9 data-v-7b3eebdb">邀请好友砍价，超低价购买心仪商品！</view></view></block></block><block wx:if="{{dataInfo['retainage']&&dataInfo['retainage']!=='0.00'}}"><view class="f-28 col-9 data-v-7b3eebdb">{{"商品核销尾款:"+dataInfo['retainage']+"元"}}</view></block></view><block wx:if="{{dataInfo.is_open_vip===1}}"><view class="member-box dis-flex flex-y-center flex-x-between m-btm40 data-v-7b3eebdb"><view class="member-left dis-flex flex-y-center data-v-7b3eebdb"><image src="/static/images/goods/member.png" mode class="data-v-7b3eebdb"></image><view class="f-24 member-fontColor data-v-7b3eebdb">{{Textbuff['halfcardtext']}}</view><view class="member-fontColor-cut data-v-7b3eebdb"></view><view class="member-title f-24 member-fontColor onelist-hidden data-v-7b3eebdb">{{''+(dataInfo.is_vip>0?'续费'+Textbuff['halfcardtext']+',继续立享优惠折扣':'开通'+Textbuff['halfcardtext']+',立享优惠折扣')+''}}</view></view><view data-event-opts="{{[['tap',[['member']]]]}}" class="member-right t-c f-24 data-v-7b3eebdb" bindtap="__e">{{''+(dataInfo.is_vip>0?'去续费':'去开通')+''}}<text class="iconfont icon-right data-v-7b3eebdb"></text></view></view></block><view class="{{['goods-already-box m-btm20 data-v-7b3eebdb',!!dataInfo['community']?'padding-box-all':'already-box-padding']}}"><view class="{{['goods-already dis-flex flex-dir-row flex-y-end flex-x-between p-r data-v-7b3eebdb',((goodsType==='1'||goodsType==='2')&&!!dataInfo['community'])?'border-bottom border-line':'']}}"><view class="goods-already-buy data-v-7b3eebdb"><block wx:if="{{goodsType!=='1'&&goodsType!=='7'&&goodsType!=='3'}}"><block class="data-v-7b3eebdb"><view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">TA们都在逛</view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">{{'已'+(goodsType==='5'&&dataInfo['is_charge']==='0'?'领':'售')+dataInfo['buy_num']+"/仅剩"+dataInfo['stk']+''}}</view></block></block><view class="goods-already-user data-v-7b3eebdb"><block wx:for="{{dataInfo['user_list']}}" wx:for-item="userItem" wx:for-index="index" wx:key="index"><image class="user-avatar data-v-7b3eebdb" style="{{'z-index:'+(dataInfo['user_list']['length']*2-index)+';'}}" src="{{userItem}}"></image></block><view class="user-avatar user-more f-24 data-v-7b3eebdb">···</view></view></view><block wx:if="{{dataInfo['dis_assistant']['is_show']===1}}"><view class="goods-invite-reward data-v-7b3eebdb">{{'最高赚¥'+dataInfo['dis_assistant']['max_commission']+''}}</view></block><view data-event-opts="{{[['tap',[['posterShare',['$0'],['dataInfo']]]]]}}" class="goods-invite data-v-7b3eebdb" bindtap="__e">邀请好友</view></view><block wx:if="{{!!dataInfo['community']}}"><block class="data-v-7b3eebdb"><view class="goods-community dis-flex flex-x-between flex-y-center m-top20 data-v-7b3eebdb"><view class="community-user dis-flex flex-y-center flex-box  data-v-7b3eebdb"><image class="community-user-img data-v-7b3eebdb" src="{{dataInfo['community']['imgUrl']}}"></image><view class="community-user-info flex-box data-v-7b3eebdb"><view class="community-user-name col-0 f-28 data-v-7b3eebdb">{{dataInfo['community']['name']}}</view><view class="community-user-des f-24 col-9 onelist-hidden data-v-7b3eebdb">{{dataInfo['community']['introduce']}}</view></view></view><view class="community-btn data-v-7b3eebdb"><block wx:if="{{!!dataInfo['community']}}"><button data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="community-add community-add-bgcolor f-24 col-f data-v-7b3eebdb" bindtap="__e">添加</button></block></view></view></block></block><block wx:if="{{!!dataInfo['community']}}"><popup-view vue-id="5" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e2']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}"><view class="community-detail b-f t-c data-v-7b3eebdb"><view class="community-header f-w f-36 p-r col-f data-v-7b3eebdb"><text class="community-header-text p-r data-v-7b3eebdb">{{dataInfo['community']['name']}}</text></view><view class="community-body f-26 col-3 data-v-7b3eebdb">有任何疑问，点击“<text class="col-m data-v-7b3eebdb">去回复</text>”发送“<text class="col-m data-v-7b3eebdb">{{dataInfo['community']['community_id']}}</text>{{'”,即可添加'+dataInfo['community']['name']+''}}</view><block wx:if="{{!!dataInfo['community']&&!!dataInfo['community']['phone']}}"><view class="community-phone dis-flex flex-y-center flex-x-between data-v-7b3eebdb"><view class="community-number dis-flex flex-y-center data-v-7b3eebdb"><image class="community-number-icon data-v-7b3eebdb" src="/static/images/goods/community.png"></image><view class="f-24 col-3 data-v-7b3eebdb">{{dataInfo['community']['phone']}}</view></view><view data-event-opts="{{[['tap',[['callPhone',['$0'],['dataInfo.community.phone']]]]]}}" class="community-bdial f-24 data-v-7b3eebdb" bindtap="__e">拨号</view></view></block><block wx:if="{{clienType==='3'}}"><button class="community-reply f-24 col-f data-v-7b3eebdb" open-type="contact">去回复</button></block></view></popup-view></block></view><block wx:if="{{dataInfo.lp_status!='0'&&dataInfo.type==='1'}}"><view class="limit-rushBox p-left-right-30 data-v-7b3eebdb"><view class="limit-rushList m-left-right-30 data-v-7b3eebdb"><block wx:for="{{dataInfo.lp_set}}" wx:for-item="limitItem" wx:for-index="index" wx:key="index"><view class="limit-item border-line border-bottom dis-flex flex-y-center flex-x-between p-top-bom-30 data-v-7b3eebdb"><view class="limit-left data-v-7b3eebdb"><view class="limitPrice-goodNum dis-flex flex-y-center m-btm20 data-v-7b3eebdb"><view class="col-f4 f-30 m-right30 data-v-7b3eebdb"><text class="f-24 data-v-7b3eebdb">¥</text>{{''+limitItem.price+''}}</view><view class="f-24 col-3 data-v-7b3eebdb">{{"(第"+limitItem.min+"~"+limitItem.max+"件)"}}</view></view><view class="progress-box p-r data-v-7b3eebdb"><view class="progress-bar data-v-7b3eebdb" style="{{'width:'+(limitItem.proportion+'%')+';'}}"></view><view class="default-progress-bar dis-flex flex-y-center data-v-7b3eebdb"><view class="col-f f-22 shrink data-v-7b3eebdb">{{"已卖"+limitItem.buy_num+"件"}}</view></view></view></view><block wx:if="{{limitItem.proportion<100}}"><block class="data-v-7b3eebdb"><view class="limit-right f-24 col-3 data-v-7b3eebdb">{{"仅剩"+limitItem.surplus+"件"}}</view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="f-24 col-f4 data-v-7b3eebdb">已卖清</view></block></block></view></block></view></view></block></view></view><block wx:if="{{goodsType==='3'&&dataInfo['is_pool']!=='1'&&dataInfo['group_list'].length>0}}"><block class="data-v-7b3eebdb"><view class="group-list p-top-bom-40 b-f m-btm20 data-v-7b3eebdb"><view class="group-list-content m-left-right-30 data-v-7b3eebdb"><view class="dis-flex flex-y-center flex-x-between data-v-7b3eebdb"><view class="group-list-title f-30 col-3 data-v-7b3eebdb">参与拼团，享受优惠</view></view><block wx:for="{{dataInfo['group_list']}}" wx:for-item="groupItem" wx:for-index="index" wx:key="index"><view class="group-list-item p-top-bom-30 border-line border-bottom data-v-7b3eebdb"><view class="dis-flex flex-x-between flex-y-center data-v-7b3eebdb"><view class="group-detail dis-flex flex-y-center data-v-7b3eebdb"><view class="group-item-logo m-right10 data-v-7b3eebdb" style="{{'background-image:'+(' url('+groupItem['avatar']+')')+';'}}"></view><view class="group-item-name f-28 col-3 data-v-7b3eebdb">{{groupItem['nickname']}}</view></view><view class="dis-flex flex-y-center data-v-7b3eebdb"><view class="clustering-dateTime-num m-right30 data-v-7b3eebdb"><view class="clustering-num f-24 data-v-7b3eebdb">还差<text class="data-v-7b3eebdb">{{groupItem['lacknum']+"人"}}</text>成团</view><view class="f-24 col-9 data-v-7b3eebdb">{{'剩余 '+(!!groupItem['groupTime']?groupItem['groupTime']['hh']:'00')+":\n\t\t\t\t\t\t\t\t\t\t\t"+(!!groupItem['groupTime']?groupItem['groupTime']['mm']:'00')+":\n\t\t\t\t\t\t\t\t\t\t\t"+(!!groupItem['groupTime']?groupItem['groupTime']['ss']:'00')+''}}</view></view><view data-event-opts="{{[['tap',[['navbargin',['$0'],[[['dataInfo.group_list','',index]]]]]]]}}" class="{{['group-list-item-btn t-c f-24 col-f data-v-7b3eebdb',groupItem['isTimeOver']?'group-list-item-btn-isEndTimeTrue':'group-list-item-btn-isEndTimefalse']}}" bindtap="__e">去参团</view></view></view></view></block></view></view></block></block><view class="b-f padding-box-all m-btm20 data-v-7b3eebdb"><goods-header-title vue-id="6" titleName="使用流程" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><block wx:if="{{strings}}"><view class="data-v-7b3eebdb"><u-parse vue-id="7" content="{{strings}}" class="data-v-7b3eebdb" bind:__l="__l"></u-parse></view></block><block wx:else><view class="use-flow dis-flex flex-x-between p-r data-v-7b3eebdb"><view class="use-flow-item t-c data-v-7b3eebdb"><view class="use-order t-c col-f f-24 data-v-7b3eebdb">1</view><view class="use-detail data-v-7b3eebdb"><view class="f-24 col-3 data-v-7b3eebdb">选择商品</view><view class="f-24 col-9 data-v-7b3eebdb">点击立即购买</view></view></view><view class="use-flow-item t-c data-v-7b3eebdb"><view class="use-order t-c col-f f-24 data-v-7b3eebdb">2</view><view class="use-detail data-v-7b3eebdb"><view class="f-24 col-3 data-v-7b3eebdb">购买完成</view><view class="f-24 col-9 data-v-7b3eebdb">在订单页使用</view></view></view><view class="use-flow-item t-c data-v-7b3eebdb"><view class="use-order t-c col-f f-24 data-v-7b3eebdb">3</view><view class="use-detail data-v-7b3eebdb"><view class="f-24 col-3 data-v-7b3eebdb">获取核销码</view><view class="f-24 col-9 data-v-7b3eebdb">等待商家发货</view></view></view><view class="use-cut use-cut-left data-v-7b3eebdb"></view><view class="use-cut use-cut-right data-v-7b3eebdb"></view></view></block></view><block wx:if="{{!!dataInfo['shop']}}"><view class="store padding-box-all b-f m-btm20 data-v-7b3eebdb"><goods-header-title vue-id="8" titleName="商家信息" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><view data-event-opts="{{[['tap',[['naviStore',['$0'],['dataInfo.shop']]]]]}}" class="store-detail data-v-7b3eebdb" bindtap="__e"><view class="m-btm20 col-3 f-28 data-v-7b3eebdb">{{dataInfo['shop']['storename']}}</view><view class="f-24 col-9  m-btm30 lxPack data-v-7b3eebdb"><text class="data-v-7b3eebdb">{{"营业时间："+dataInfo['shop']['storehours']}}</text><view data-event-opts="{{[['tap',[['goLt',['$event']]]]]}}" class="lx data-v-7b3eebdb" catchtap="__e"><image class="lxImg _img data-v-7b3eebdb" src="{{$root.m0}}"></image></view></view><view class="dis-flex flex-x-between m-btm20 data-v-7b3eebdb"><view class="store-addressInfo f-24 col-9 data-v-7b3eebdb">{{"商家电话："+dataInfo['shop']['mobile']}}</view><view data-event-opts="{{[['tap',[['supple',['$0','mobile'],['dataInfo.shop']]]]]}}" class="store-addressInfo-icon t-c col-f iconfont icon-dianhua data-v-7b3eebdb" catchtap="__e"></view></view><view class="dis-flex flex-x-between data-v-7b3eebdb"><view class="store-addressInfo store-addressInfo-onelist onelist-hidden f-24 col-9 data-v-7b3eebdb">{{dataInfo['shop']['address']}}</view><view data-event-opts="{{[['tap',[['supple',['$0','address'],['dataInfo.shop']]]]]}}" class="store-addressInfo-icon t-c col-f iconfont icon-daohang data-v-7b3eebdb" catchtap="__e"></view></view></view></view></block><view class="goods-contentInfo b-f padding-box-all m-btm20 data-v-7b3eebdb"><view class="goods-detail-nav dis-flex flex-dir-row flex-y-center flex-x-between m-btm30 data-v-7b3eebdb"><block wx:for="{{InfoTabBar}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['detailTypeChange',['$0'],[[['InfoTabBar','',index,'tabBarType']]]]]]]}}" class="{{['goods-detail-nav-item data-v-7b3eebdb',(detailType===item.tabBarType)?'active':'']}}" bindtap="__e">{{''+item.title+''}}<block wx:if="{{detailType===item.tabBarType}}"><view class="select-nav-items data-v-7b3eebdb"><image src="/static/images/goods/br.png" mode class="data-v-7b3eebdb"></image></view></block></view></block></view><view hidden="{{!(detailType==='comment')}}" class="goods-detail-evaluation b-f data-v-7b3eebdb"><block wx:if="{{!!dataInfo['comment']&&dataInfo['comment']['length']>0}}"><block class="data-v-7b3eebdb"><block wx:for="{{dataInfo['comment']}}" wx:for-item="commentItem" wx:for-index="index" wx:key="index"><view class="evaluation-item border-line border-bottom data-v-7b3eebdb"><view class="evaluation-hd dis-flex flex-dir-row flex-y-center flex-x-between data-v-7b3eebdb"><view class="evaluation-user dis-flex flex-dir-row flex-y-center data-v-7b3eebdb"><image src="{{commentItem['headimg']}}" mode class="data-v-7b3eebdb"></image><view class="evaluation-user-name data-v-7b3eebdb"><view class="user-name f-24 data-v-7b3eebdb">{{commentItem['nickname']}}</view><view class="evaluation-time f-24 col-9 data-v-7b3eebdb">{{commentItem['createtime']}}</view></view></view><view class="evaluation-grade dis-flex flex-dir-row flex-y-center data-v-7b3eebdb"><block wx:for="{{commentItem['star']}}" wx:for-item="score" wx:for-index="scoreIndex" wx:key="scoreIndex"><view class="iconfont icon-shoucangxiao select data-v-7b3eebdb"></view></block><block wx:for="{{5-commentItem['star']}}" wx:for-item="score" wx:for-index="scoreIndex" wx:key="scoreIndex"><view class="iconfont icon-shoucangxiao data-v-7b3eebdb"></view></block></view></view><view class="evaluation-bd data-v-7b3eebdb"><view class="evaluation-content f-26 col-9 data-v-7b3eebdb">{{commentItem['text']}}</view><view class="picImage_view data-v-7b3eebdb"><block wx:for="{{commentItem['pic']}}" wx:for-item="picItem" wx:for-index="picIndex"><image class="picImage data-v-7b3eebdb" src="{{picItem}}"></image></block></view><block wx:if="{{!!commentItem['replypicone']&&commentItem['replypicone']['length']>0}}"><block class="data-v-7b3eebdb"><view class="evaluation-imgs dis-flex flex-warp data-v-7b3eebdb"><block wx:for="{{commentItem['replypicone']}}" wx:for-item="comment_image_item" wx:for-index="index" wx:key="index"><block class="data-v-7b3eebdb"><image src="{{comment_image_item}}" mode class="data-v-7b3eebdb"></image></block></block></view></block></block></view><block wx:if="{{!!commentItem['replytextone']}}"><block class="data-v-7b3eebdb"><view class="store-reply data-v-7b3eebdb"><view class="reply-content data-v-7b3eebdb"><view class="reply-content-item f-24 col-9 data-v-7b3eebdb"><text class="reply-content-itemfont f-24 col-9 iconfont icon-pinglun data-v-7b3eebdb"></text>商家回复:<text class="col-3 data-v-7b3eebdb">{{commentItem['replytextone']}}</text></view></view></view></block></block></view></block></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="evaluation-all dis-flex flex-dir-row flex-y-center flex-x-center data-v-7b3eebdb"><text class="f-28 data-v-7b3eebdb">暂无评价</text></view></block></block></view><view hidden="{{!(detailType==='detail'||detailType==='notice')}}" class="b-f data-v-7b3eebdb"><weixin-parse vue-id="9" content="{{detailType==='detail'?dataInfo['detail']:dataInfo['describe']}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse></view></view><view class="b-f padding-box-all m-btm20 data-v-7b3eebdb"><goods-header-title vue-id="10" titleName="价格说明" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><block wx:if="{{nodes}}"><view class="data-v-7b3eebdb"><u-parse vue-id="11" content="{{nodes}}" class="data-v-7b3eebdb" bind:__l="__l"></u-parse></view></block><block wx:else><view class="data-v-7b3eebdb"><view class="f-24 col-6 m-btm20 data-v-7b3eebdb"><text style="color:#CCBF66;" class="data-v-7b3eebdb">·划线价格：</text>划线的价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，并非原价，仅供您参考。</view><view class="f-24 col-6 m-btm20 data-v-7b3eebdb"><text style="color:#CCBF66;" class="data-v-7b3eebdb">·未划线价格：</text>未划线的价格是商品的销售标价，不因表述差异改变性质具体的成交价格可能因会员使用优惠券、积分等发生变化，最终以订单结算价格为准。</view><view class="f-24 data-v-7b3eebdb" style="color:#CCBF66;">·若商家针对划线价格进行说明，以商家的表述为准。</view></view></block></view><view class="b-f padding-box-all m-btm40 data-v-7b3eebdb"><goods-header-title vue-id="12" titleName="推荐商品" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><recommend-goods vue-id="13" goods_type="{{dataInfo.type}}" goods_id="{{dataInfo.id}}" class="data-v-7b3eebdb" bind:__l="__l"></recommend-goods></view><view class="goods-footer dis-flex flex-dir-row flex-y-center border-line border-top data-v-7b3eebdb" style="{{'padding-bottom:'+(isPadding?'20px':'')+';'+('z-index:'+(getTipShow?'9998':'30')+';')}}"><view class="dis-flex flex-y-center data-v-7b3eebdb" style="width:50%;"><view data-event-opts="{{[['tap',[['footerNav',['home']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center p-r data-v-7b3eebdb" bindtap="__e"><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button><image src="/static/images/goods/home.png" class="data-v-7b3eebdb"></image><view class="goods-footer-item-text data-v-7b3eebdb">首页</view></view><view data-event-opts="{{[['tap',[['footerNav',['order']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center p-r data-v-7b3eebdb" bindtap="__e"><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button><image src="/static/images/goods/flow.png" class="data-v-7b3eebdb"></image><view class="goods-footer-item-text data-v-7b3eebdb">订单</view></view><view data-event-opts="{{[['tap',[['footerNav',['user']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e"><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button><image src="/static/images/goods/my.png" class="data-v-7b3eebdb"></image><view class="goods-footer-item-text data-v-7b3eebdb">我的</view></view></view><block wx:if="{{goodsType==='1'||goodsType==='2'}}"><block class="data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['onToggleTrade',['$0','$1'],['dataInfo.sales_status','dataInfo']]]]]}}" class="{{['go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box data-v-7b3eebdb',dataInfo['sales_status']!==2?goodsType==='1'&&dataInfo.status==='1'?dataInfo.is_follow===0?'remind-go-buy':'alrea-remind-go-buy':'end-go-buy':dataInfo.stk===0?'alrea-remind-go-buy':'star-go-buy']}}" bindtap="__e"><block wx:if="{{goodsType==='1'&&dataInfo.status==='1'}}"><block class="data-v-7b3eebdb"><text class="f-28 col-f data-v-7b3eebdb">{{dataInfo.is_follow===0?'提醒我':'已关注'}}</text></block></block><block wx:else><block class="data-v-7b3eebdb"><text class="f-28 col-f data-v-7b3eebdb">{{getTipShow==false?dataInfo.stk===0?'已售罄':'立即购买':'同意并且购买'}}</text></block></block><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view></block></block><block wx:if="{{goodsType==='5'}}"><block class="data-v-7b3eebdb"><block wx:if="{{dataInfo['is_charge']==='1'&&dataInfo.sales_status===2}}"><block class="data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['onToggleTrade',['$0','$1'],['dataInfo.sales_status','dataInfo']]]]]}}" class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb" bindtap="__e"><text class="f-28 col-f data-v-7b3eebdb">{{getTipShow==false?'立即购买':'同意并且购买'}}</text><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view></block></block><block wx:else><block class="data-v-7b3eebdb"><block wx:if="{{(dataInfo.buy_limit>=0||_this.dataInfouser_limit_num>0)&&dataInfo.sales_status===2}}"><block class="data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['getCouponDicont']]]]}}" class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb" bindtap="__e"><text class="f-28 col-f data-v-7b3eebdb">立即领取</text></view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="unqualified-gobuy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box data-v-7b3eebdb"><block wx:if="{{dataInfo.sales_status===1}}"><text class="f-28 col-f data-v-7b3eebdb">活动未开始</text></block><block wx:if="{{dataInfo.sales_status===3}}"><text class="f-28 col-f data-v-7b3eebdb">活动已结束</text></block></view></block></block></block></block></block></block><block wx:if="{{goodsType==='3'}}"><block class="data-v-7b3eebdb"><view class="group-go-buy dis-flex flex-box flex-y-center data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['isGroupToggleTrade',['1','$0'],['dataInfo']]]]]}}" class="out_buy-left p-r dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e"><view class="out_buy-leftTop f-24 col-f data-v-7b3eebdb">{{"¥"+dataInfo['aloneprice']}}</view><view class="out_buy-leftbom f-24 col-f data-v-7b3eebdb">直接购买</view><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view><block wx:if="{{!!countDown['timeobj']&&dataInfo['sales_status']===2}}"><block class="data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['isGroupToggleTrade',['2','$0'],['dataInfo']]]]]}}" class="out_buy-right starbtn dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e"><view class="out_buy-leftTop f-24 data-v-7b3eebdb" style="color:black;">{{"¥"+dataInfo['price']}}</view><view class="out_buy-leftbom f-24 data-v-7b3eebdb" style="color:black;">{{dataInfo['peoplenum']+"人团"}}</view></view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="out_buy-right havebtn data-v-7b3eebdb"><view class="havenot-btn f-24 col-9 data-v-7b3eebdb">{{dataInfo['isTimeOver']?'已结束':dataInfo['stateTime']===1?'已结束':'未开始'}}</view></view></block></block></view></block></block><block wx:if="{{goodsType==='7'}}"><block class="data-v-7b3eebdb"><block wx:if="{{dataInfo['sales_status']===2}}"><block class="data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['sorbargin',['$0'],['dataInfo.is_participate']]]]]}}" class="group-go-buy dis-flex data-v-7b3eebdb" bindtap="__e"><view class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb"><text class="f-28 col-f data-v-7b3eebdb">{{!!dataInfo['is_participate']&&dataInfo['is_participate']>0?'查看砍价':'发起砍价'}}</text><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view></view></block></block><block wx:else><block class="data-v-7b3eebdb"><view class="group-go-buy dis-flex data-v-7b3eebdb"><view class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box end-go-buy data-v-7b3eebdb"><text class="f-28 col-f data-v-7b3eebdb">发起砍价</text><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view></view></block></block></block></block></view></block></block><block wx:else><block class="data-v-7b3eebdb"><block wx:if="{{barrageList.length>0}}"><block class="data-v-7b3eebdb"><view class="{{['success-tips dis-flex flex-y-center data-v-7b3eebdb',(showTips)?'show':'']}}"><image class="success-avatar data-v-7b3eebdb" src="{{barrageList[tipsIndex]?barrageList[tipsIndex]['avatar']:''}}"></image><view class="onelist-hidden success-goods f-24 col-f m-left12 data-v-7b3eebdb">{{(barrageList[tipsIndex]?barrageList[tipsIndex]['nickname']:'')+"刚刚兑换的此商品"}}</view></view></block></block><view class="goods-header data-v-7b3eebdb"><swiper class="goods-swiper goodSwiper data-v-7b3eebdb" style="{{'height:'+(bannerHeightList[currentBannerHeight]+'rpx')+';'}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" data-event-opts="{{[['change',[['bindchange',['$event']]]]]}}" bindchange="__e"><block wx:for="{{dataInfo['advs']}}" wx:for-item="banner_item" wx:for-index="index" wx:key="index"><swiper-item class="swiper-item data-v-7b3eebdb"><image src="{{banner_item}}" data-id="{{index}}" data-event-opts="{{[['load',[['imageLoad',['$event']]]]]}}" bindload="__e" class="data-v-7b3eebdb"></image></swiper-item></block></swiper><view class="goods-viewed data-v-7b3eebdb">{{dataInfo['pv']+"人喜欢"}}</view></view><view class="goods-info m-btm20 data-v-7b3eebdb"><view class="goods-content module-content data-v-7b3eebdb"><view class="goods-price-box dis-flex flex-dir-row flex-y-end flex-x-between data-v-7b3eebdb"><view class="goods-price dis-flex flex-dir-row flex-y-end data-v-7b3eebdb"><view class="goods-price-now price-font-family dis-flex flex-y-center data-v-7b3eebdb"><image class="m-right10 data-v-7b3eebdb" src="/static/images/integral/integral_logo.png" mode></image><view class="credit f-36 data-v-7b3eebdb">{{dataInfo['price']>0?dataInfo['use_credit1']+TextSubstitution.data.credittext+'+'+dataInfo['price']+'元':dataInfo['use_credit1']+TextSubstitution.data.credittext}}</view></view><block wx:if="{{!!dataInfo['old_price']}}"><view class="goods-price-old data-v-7b3eebdb"><text class="money-label data-v-7b3eebdb">¥</text>{{''+dataInfo['old_price']+''}}</view></block></view></view><view class="goods-title m-btm30 data-v-7b3eebdb"><view class="goods-title-mian f-36 col-3 m-btm40 data-v-7b3eebdb">{{dataInfo['title']}}</view><block wx:if="{{dataInfo['is_open_vip']===1}}"><view class="member-box dis-flex flex-y-center flex-x-between m-btm40 data-v-7b3eebdb"><view class="member-left dis-flex flex-y-center data-v-7b3eebdb"><image src="/static/images/goods/member.png" mode class="data-v-7b3eebdb"></image><view class="f-24 member-fontColor data-v-7b3eebdb">{{dataInfo['halfcard_text']}}</view><view class="member-fontColor-cut data-v-7b3eebdb"></view><view class="member-title f-24 member-fontColor onelist-hidden data-v-7b3eebdb">{{''+(dataInfo.is_vip>0?'续费'+dataInfo['halfcard_text']+',继续立享优惠折扣':'开通'+dataInfo['halfcard_text']+',立享优惠折扣')+''}}</view></view><view data-event-opts="{{[['tap',[['member']]]]}}" class="member-right t-c f-24 data-v-7b3eebdb" bindtap="__e">{{''+(dataInfo.is_vip>0?'去续费':'去开通')+''}}<text class="iconfont icon-right data-v-7b3eebdb"></text></view></view></block><view class="goods-already-box padding-box-all data-v-7b3eebdb"><view class="goods-already dis-flex flex-dir-row flex-y-end flex-x-between p-r border-bottom border-line data-v-7b3eebdb"><view class="goods-already-buy data-v-7b3eebdb"><view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">TA们都在逛</view><view class="goods-already-user data-v-7b3eebdb"><block wx:for="{{dataInfo['avatar_list']}}" wx:for-item="userItem" wx:for-index="index" wx:key="index"><image class="user-avatar data-v-7b3eebdb" style="{{'z-index:'+(dataInfo['avatar_list']['length']*2-index)+';'}}" src="{{userItem}}"></image></block><view class="user-avatar user-more f-24 data-v-7b3eebdb">···</view></view></view><block wx:if="{{dataInfo['dis_assistant']['is_show']===1}}"><view class="goods-invite-reward data-v-7b3eebdb">{{'最高赚:¥'+dataInfo['dis_assistant']['max_commission']+''}}</view></block><view data-event-opts="{{[['tap',[['posterShare',['$0'],['dataInfo']]]]]}}" class="goods-invite data-v-7b3eebdb" bindtap="__e">邀请好友一起抢</view></view><block wx:if="{{!!dataInfo['community']}}"><block class="data-v-7b3eebdb"><view class="goods-community dis-flex flex-x-between flex-y-center m-top20 data-v-7b3eebdb"><view class="community-user dis-flex flex-y-center flex-box  data-v-7b3eebdb"><image class="community-user-img data-v-7b3eebdb" src="{{dataInfo['community']['imgUrl']}}"></image><view class="community-user-info flex-box data-v-7b3eebdb"><view class="community-user-name col-0 f-28 data-v-7b3eebdb">{{dataInfo['community']['name']}}</view><view class="community-user-des f-24 col-9 onelist-hidden data-v-7b3eebdb">{{dataInfo['community']['introduce']}}</view></view></view><view class="community-btn data-v-7b3eebdb"><button data-event-opts="{{[['tap',[['e3',['$event']]]]]}}" class="community-add community-add-bgcolor f-24 col-f data-v-7b3eebdb" bindtap="__e">添加</button></view></view></block></block><block wx:if="{{!!dataInfo['community']}}"><popup-view vue-id="14" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e4']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}"><view class="community-detail b-f t-c data-v-7b3eebdb"><view class="community-header f-w f-36 p-r col-f data-v-7b3eebdb"><text class="community-header-text p-r data-v-7b3eebdb">{{dataInfo['community']['name']}}</text></view><view class="community-body f-26 col-3 data-v-7b3eebdb">有任何疑问，点击“<text class="col-m data-v-7b3eebdb">去回复</text>”发送“<text class="col-m data-v-7b3eebdb">{{dataInfo['community']['community_id']}}</text>{{'”,即可添加'+dataInfo['community']['name']+''}}</view><block wx:if="{{!!dataInfo['community']&&!!dataInfo['community']['phone']}}"><view class="community-phone dis-flex flex-y-center flex-x-between data-v-7b3eebdb"><view class="community-number dis-flex flex-y-center data-v-7b3eebdb"><image class="community-number-icon data-v-7b3eebdb" src="/static/images/goods/community.png"></image><view class="f-24 col-3 data-v-7b3eebdb">{{dataInfo['community']['phone']}}</view></view><view data-event-opts="{{[['tap',[['callPhone',['$0'],['dataInfo.community.phone']]]]]}}" class="community-bdial f-24 col-3 data-v-7b3eebdb" bindtap="__e">拨号</view></view></block><block wx:if="{{clienType==='3'}}"><button class="community-reply f-24 col-f data-v-7b3eebdb" open-type="contact">去回复</button></block></view></popup-view></block></view></view></view></view><view class="goods-detail-evaluation b-f padding-box-all m-btm20  data-v-7b3eebdb"><goods-header-title vue-id="15" titleName="商品详情" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><view class="b-f data-v-7b3eebdb"><weixin-parse vue-id="16" content="{{dataInfo.description}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse></view></view><view class="b-f padding-box-all m-btm80 data-v-7b3eebdb"><goods-header-title vue-id="17" titleName="价格说明" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title><view class="f-24 col-6 m-btm20 data-v-7b3eebdb"><text style="color:#CCBF66;" class="data-v-7b3eebdb">·划线价格：</text>划线的价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，并非原价，仅供您参考。</view><view class="f-24 col-6 m-btm20 data-v-7b3eebdb"><text style="color:#CCBF66;" class="data-v-7b3eebdb">·未划线价格：</text>未划线的价格是商品的销售标价，不因表述差异改变性质具体的成交价格可能因会员使用优惠券、积分等发生变化，最终以订单结算价格为准。</view><view class="f-24 data-v-7b3eebdb" style="color:#CCBF66;">·若商家针对划线价格进行说明，以商家的表述为准。</view></view><view class="goods-footer-crted data-v-7b3eebdb"><view data-event-opts="{{[['tap',[['converlink']]]]}}" class="go-buy-crted data-v-7b3eebdb" bindtap="__e"><text class="f-28 col-f data-v-7b3eebdb">立即兑换</text><button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button></view></view></block></block></view></block><block wx:if="{{!!dataInfo.bgmusic}}"><view data-event-opts="{{[['tap',[['playAudio',['$event']]]]]}}" class="audio-main data-v-7b3eebdb" bindtap="__e"><view class="{{['audio-bg data-v-7b3eebdb',(!play_Audio)?'stop-audio':'']}}"><view class="audio-gif data-v-7b3eebdb" style="{{'background-image:'+('url('+imageRoot+'musicgif.gif)')+';'}}"><view class="audio-png data-v-7b3eebdb" style="{{'background-image:'+('url('+imageRoot+'music.png)')+';'}}"></view></view></view></view></block><block wx:if="{{goodsType!=='integral'}}"><block class="data-v-7b3eebdb"><goods-buy-menu vue-id="18" goods-detail="{{dataInfo}}" goods-spec="{{specData}}" group-buy-type="{{group_buy_type}}" data-ref="goodsBuyMenu" data-event-opts="{{[['^submit',[['goodsSubmit']]]]}}" bind:submit="__e" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></goods-buy-menu></block></block><follow vue-id="19" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" shareId="{{shareId}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}" bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-7b3eebdb" bind:__l="__l"></follow><share-bottom vue-id="20" shareBottomShow="{{popOpenShare}}" postType="{{dataInfo.postertype}}" postId="{{dataInfo.id}}" shareShow="{{popShareImage}}" data-event-opts="{{[['^shareImgShow',[['shareImgShow']]],['^clickmask',[['clearPopShare']]],['^closeShareShow',[['onImgShow']]]]}}" bind:shareImgShow="__e" bind:clickmask="__e" bind:closeShareShow="__e" class="data-v-7b3eebdb" bind:__l="__l"></share-bottom><pop-manager vue-id="21" show="{{wfShow}}" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}"><view class="wfView data-v-7b3eebdb"><view class="wfViewMain data-v-7b3eebdb"><view class="wfTitle data-v-7b3eebdb"><image class="wfTitleImage data-v-7b3eebdb" src="{{wfBack}}"></image></view><view class="wfBody data-v-7b3eebdb"><view class="wfBodyPackage data-v-7b3eebdb"><text class="wfBodyText data-v-7b3eebdb">{{'1、活动期间消费者可邀请好友帮忙砍价，好友砍到底价'+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+"后，即可按"+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+'购买商品；'}}</text><text class="wfBodyText data-v-7b3eebdb">{{'2、好友帮忙砍到底价'+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+'后，消费者需要在有效期内购买砍价商品，逾期商品将恢复原价；'}}</text><text class="wfBodyText data-v-7b3eebdb">3、同一商品，同一用户仅可享受一次优惠价格；</text><text class="wfBodyText data-v-7b3eebdb">4、同一商品，同一用户仅能帮好友砍价一次；</text><text class="wfBodyText data-v-7b3eebdb">5、砍价商品数量有限，商品售罄后，商品将无法购买，即使你已经成功发起砍价；</text><text class="wfBodyText data-v-7b3eebdb">{{"6、本活动解释权在法律范围内归"+TextSubstitution.data.sysname+"所有。"}}</text></view></view></view><view data-event-opts="{{[['tap',[['e5',['$event']]]]]}}" class="wfViewClose data-v-7b3eebdb" bindtap="__e"><image class="closeImg data-v-7b3eebdb" src="/static/images/merchant/close.png"></image></view></view></pop-manager><pop-manager vue-id="22" show="{{getTipShow}}" type="{{getTipType}}" data-event-opts="{{[['^clickmask',[['closegetTip']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}"><view class="getTip data-v-7b3eebdb"><view class="getTip_package data-v-7b3eebdb"><view class="getTip_title data-v-7b3eebdb">购买须知</view><scroll-view class="getTip_main data-v-7b3eebdb" scroll-x="{{false}}" scroll-y><weixin-parse vue-id="{{('23')+','+('22')}}" content="{{dataInfo.describe}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse></scroll-view></view></view><view class="popFull data-v-7b3eebdb"></view></pop-manager><phone-mask vue-id="24" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-7b3eebdb" bind:__l="__l"></phone-mask></view>
+<view class="data-v-7b3eebdb">
+  <block wx:if="{{loadlogo}}">
+    <loading vue-id="1" class="data-v-7b3eebdb" bind:__l="__l"></loading>
+  </block>
+  <block wx:if="{{!loadlogo}}">
+    <view class="container data-v-7b3eebdb" style="overflow:hidden !important;padding-bottom:20px;">
+      <block wx:if="{{goodsType!=='integral'}}">
+        <block class="data-v-7b3eebdb">
+          <block wx:if="{{barrageList.length>0}}">
+            <block class="data-v-7b3eebdb">
+              <view class="{{['success-tips dis-flex flex-y-center data-v-7b3eebdb',(showTips)?'show':'']}}">
+                <image class="success-avatar data-v-7b3eebdb" src="{{barrageList[tipsIndex]?barrageList[tipsIndex]['avatar']:''}}"></image>
+                <view class="onelist-hidden success-goods f-24 col-f m-left12 data-v-7b3eebdb">{{(barrageList[tipsIndex]?barrageList[tipsIndex]['nickname']:'')+"\n\t\t\t\t\t\t刚刚"+(goodsType==='7'?'为本商品砍价'+barrageList[tipsIndex]['bargainprice']+'元':goodsType==='5'?dataInfo.is_charge==='1'?'购买了此卡券':'领取了此卡券':'购买了此商品')+''}}</view>
+              </view>
+            </block>
+          </block>
+          <block wx:if="{{goodsType==='5'&&dataInfo['logo'].length!=0||goodsType!=='5'&&dataInfo['thumbs'].length!=0}}">
+            <view class="goods-header data-v-7b3eebdb">
+              <block wx:if="{{goodsType==='5'}}">
+                <block class="data-v-7b3eebdb">
+                  <image class="coupon-Image data-v-7b3eebdb" src="{{dataInfo['logo']}}"></image>
+                </block>
+              </block>
+              <block wx:else>
+                <block class="data-v-7b3eebdb">
+                  <swiper class="goods-swiper data-v-7b3eebdb" style="{{'height:'+(bannerHeightList[currentBannerHeight]+'rpx')+';'}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" data-event-opts="{{[['change',[['bindchange',['$event']]]]]}}"
+                    bindchange="__e">
+                    <block wx:for="{{dataInfo['thumbs']}}" wx:for-item="banner_item" wx:for-index="index" wx:key="index">
+                      <swiper-item class="swiper-item data-v-7b3eebdb">
+                        <image src="{{banner_item}}" data-id="{{index}}" data-event-opts="{{[['load',[['imageLoad',['$event']]]]]}}" bindload="__e" class="data-v-7b3eebdb"></image>
+                      </swiper-item>
+                    </block>
+                  </swiper>
+                </block>
+              </block>
+              <view class="goods-viewed data-v-7b3eebdb">{{dataInfo['pv']+"人喜欢"}}</view>
+            </view>
+          </block>
+          <block wx:if="{{goodsType==='7'}}">
+            <block class="data-v-7b3eebdb">
+              <view class="bargain-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(' url('+imageRoot+'bargain_bg.png)')+';'}}">
+                <view class="bargain-countdown-content dis-flex flex-x-between flex-y-center flex-box data-v-7b3eebdb">
+                  <view class="bargain-countdown-content-left data-v-7b3eebdb">
+                    <view class="bargain-label dis-flex flex-y-center data-v-7b3eebdb">
+                      <view class="bargain-countdown-nowPrice f-44 col-f m-right30 data-v-7b3eebdb">
+                        <text class="col-f f-24 data-v-7b3eebdb">¥</text>{{''+(dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price'])+''}}</view>
+                      <view class="bargain-label-box dis-flex b-f p-r data-v-7b3eebdb">
+                        <image src="{{imageRoot}}/static/images/goods/bargin_count_bg.png" mode class="data-v-7b3eebdb"></image>
+                        <view class="f-24  data-v-7b3eebdb">砍价享</view>
+                        <view class="bargain-label-icon bargain-label-icon-bargin iconfont icon-triangledownfill data-v-7b3eebdb"></view>
+                      </view>
+                    </view>
+                    <view class="bargain-countdown-oldPrice f-24 col-f data-v-7b3eebdb">原价
+                      <text class="data-v-7b3eebdb">{{"¥"+dataInfo['oldprice']}}</text>
+                    </view>
+                  </view>
+                  <view class="bargain-countdown-content-right data-v-7b3eebdb">
+                    <block wx:if="{{!!countDown['timeobj']}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="col-f f-24 t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view>
+                        <view class="countdownTime-box dis-flex flex-x-center data-v-7b3eebdb">
+                          <view class="countdownTime-style countdownTime-style-color2 countdownTime-hh col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view>
+                          <view class="countdownTime-style countdownTime-style-color2 countdownTime-ss col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view>
+                          <view class="countdownTime-style countdownTime-style-color2 countdownTime-mm col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text>
+                          </view>
+                        </view>
+                      </block>
+                    </block>
+                    <block wx:if="{{dataInfo['isTimeOver']}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="f-28 col-6 data-v-7b3eebdb">{{"活动"+(dataInfo['stateTime']===1?'已结束':'未开始')}}</view>
+                      </block>
+                    </block>
+                    <block wx:else>
+                      <block wx:if="{{!!!countDown['timeobj']}}">
+                        <block class="data-v-7b3eebdb">
+                          <view class="bargain-countdown-right-loading p-r data-v-7b3eebdb">
+                            <part-loading vue-id="2" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading>
+                          </view>
+                        </block>
+                      </block>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </block>
+          <block wx:if="{{goodsType==='1'}}">
+            <block class="data-v-7b3eebdb">
+              <view class="group-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(' url('+imageRoot+'rush_bg.png)')+';'}}">
+                <view class="bargain-countdown-content dis-flex flex-x-between flex-box data-v-7b3eebdb">
+                  <view class="bargain-countdown-content-left data-v-7b3eebdb">
+                    <view class="dis-flex flex-y-center dis-flex flex-y-center data-v-7b3eebdb">
+                      <image class="rush_logo m-right30 data-v-7b3eebdb" src="{{imageRoot}}/static/images/goods/rush_logo.png" mode></image>
+                      <view class="data-v-7b3eebdb">
+                        <view class="bargain-label dis-flex flex-y-center data-v-7b3eebdb">
+                          <view class="bargain-countdown-nowPrice f-44 col-f m-right30 data-v-7b3eebdb">
+                            <text class="col-f f-24 data-v-7b3eebdb">¥</text>{{''+dataInfo['price']+''}}</view>
+                          <block wx:if="{{dataInfo['vipstatus']==='1'}}">
+                            <block class="data-v-7b3eebdb">
+                              <view class="rush-label-box p-r f-24 data-v-7b3eebdb">{{'会员价¥'+dataInfo['vipprice']+''}}
+                                <view class="bargain-label-icon bargain-label-icon-rush iconfont icon-triangledownfill data-v-7b3eebdb"></view>
+                              </view>
+                            </block>
+                          </block>
+                        </view>
+                        <view class="bargain-countdown-oldPrice f-24 col-f data-v-7b3eebdb">原价
+                          <text class="data-v-7b3eebdb">{{"¥"+dataInfo['oldprice']}}</text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <block wx:if="{{!!countDown['timeobj']}}">
+                    <block class="data-v-7b3eebdb">
+                      <view class="bargain-countdown-content-right data-v-7b3eebdb">
+                        <view class="color-f02 f-24 t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view>
+                        <view class="countdownTime-box dis-flex flex-x-center flex-y-center data-v-7b3eebdb">
+                          <view class="countdownTime-style countdownTime-style-color1 countdownTime-hh color-f02 data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view>
+                          <view class="countdownTime-style countdownTime-style-color1 countdownTime-ss color-f02 data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view>
+                          <view class="countdownTime-style countdownTime-style-color1 countdownTime-mm color-f02 data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text>
+                          </view>
+                        </view>
+                      </view>
+                    </block>
+                  </block>
+                  <block wx:if="{{dataInfo['isTimeOver']}}">
+                    <block class="data-v-7b3eebdb">
+                      <view class="f-28 col-9 dis-flex flex-y-center data-v-7b3eebdb">{{"活动"+(dataInfo['stateTime']===1?'已结束':'未开始')}}</view>
+                    </block>
+                  </block>
+                  <block wx:else>
+                    <block wx:if="{{!!!countDown['timeobj']}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="bargain-countdown-right-loading p-r data-v-7b3eebdb">
+                          <part-loading vue-id="3" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading>
+                        </view>
+                      </block>
+                    </block>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </block>
+          <block wx:if="{{goodsType==='3'}}">
+            <block class="data-v-7b3eebdb">
+              <view class="group-countdown dis-flex flex-y-center data-v-7b3eebdb" style="{{'background-image:'+(dataInfo['isTimeOver']?' url('+imageRoot+'group_bg2.png)':'url('+imageRoot+'group_bg.png)')+';'}}">
+                <view class="group-countdown-content dis-flex flex-x-between flex-y-center flex-box data-v-7b3eebdb">
+                  <view class="group-countdown-content-left data-v-7b3eebdb">
+                    <view class="dis-flex flex-y-center data-v-7b3eebdb">
+                      <view class="group-countdown-nowPrice col-f f-58 m-right30 data-v-7b3eebdb">
+                        <text class="f-30 m-right10 data-v-7b3eebdb">¥</text>{{''+(dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price'])+''}}</view>
+                      <view class="group-countdown-num_oldPrice data-v-7b3eebdb">
+                        <view class="group-countdown-num dis-flex flex-y-center data-v-7b3eebdb">
+                          <view class="group-countdown-num-logo b-f data-v-7b3eebdb">
+                            <image src="{{imageRoot}}/static/images/goods/groupnum.png" mode class="data-v-7b3eebdb"></image>
+                          </view>
+                          <view class="group-countdown-numGroup f-24 col-f data-v-7b3eebdb">{{dataInfo['peoplenum']+"人团"}}</view>
+                        </view>
+                        <view class="group-countdown-oldPrice f-24 col-f data-v-7b3eebdb">{{"单价买 ¥"+dataInfo['aloneprice']}}</view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="bargain-countdown-content-right data-v-7b3eebdb">
+                    <block wx:if="{{!!countDown['timeobj']}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="col-f f-24 group-countdown-title t-c data-v-7b3eebdb">{{"距离"+(dataInfo['stateTime']===1?'结束':'开始')+"还剩:"}}</view>
+                        <view class="countdownTime-box dis-flex flex-x-center flex-y-center data-v-7b3eebdb">
+                          <view class="groupcountdownTime-style countdownTime-hh col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['hh']}}</text>:</view>
+                          <view class="groupcountdownTime-style countdownTime-ss col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['mm']}}</text>:</view>
+                          <view class="groupcountdownTime-style countdownTime-mm col-f data-v-7b3eebdb">
+                            <text class="f-24 data-v-7b3eebdb">{{countDown['timeobj']['ss']}}</text>
+                          </view>
+                        </view>
+                      </block>
+                    </block>
+                    <block wx:if="{{dataInfo['isTimeOver']}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="f-28 col-9 data-v-7b3eebdb">活动已结束</view>
+                      </block>
+                    </block>
+                    <block wx:else>
+                      <block wx:if="{{!!!countDown['timeobj']}}">
+                        <block class="data-v-7b3eebdb">
+                          <view class="bargain-countdown-right-loading p-r data-v-7b3eebdb">
+                            <part-loading vue-id="4" backgroundType="goods" data-ref="partLoading" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></part-loading>
+                          </view>
+                        </block>
+                      </block>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </block>
+          <view class="goods-info m-btm20 data-v-7b3eebdb">
+            <view class="goods-content module-content data-v-7b3eebdb">
+              <block wx:if="{{goodsType!=='1'&&goodsType!=='7'&&goodsType!=='3'}}">
+                <block class="data-v-7b3eebdb">
+                  <view class="goods-price-box dis-flex flex-dir-row flex-y-end flex-x-between data-v-7b3eebdb">
+                    <view class="goods-price dis-flex flex-dir-row flex-y-end data-v-7b3eebdb">
+                      <block wx:if="{{goodsType==='5'}}">
+                        <block class="data-v-7b3eebdb">
+                          <view class="goods-price-now price-font-family data-v-7b3eebdb">
+                            <text class="f-32 data-v-7b3eebdb">{{!!dataInfo.is_charge&&dataInfo.is_charge==='1'?dataInfo['price']:'免费'}}</text>
+                          </view>
+                        </block>
+                      </block>
+                      <block wx:else>
+                        <block class="data-v-7b3eebdb">
+                          <view class="goods-price-now price-font-family data-v-7b3eebdb">
+                            <view class="money-label f-24 data-v-7b3eebdb">¥</view>
+                            <text class="f-58 data-v-7b3eebdb">{{dataInfo.is_vip>0&&dataInfo['vipstatus']==='1'?dataInfo['vipprice']:dataInfo['price']}}</text>
+                          </view>
+                        </block>
+                      </block>
+                      <block wx:if="{{!!dataInfo['oldprice']}}">
+                        <view class="goods-price-old data-v-7b3eebdb">
+                          <text class="money-label data-v-7b3eebdb">¥</text>{{''+dataInfo['oldprice']+''}}</view>
+                      </block>
+                    </view>
+                    <view class="goods-browse data-v-7b3eebdb">{{'已'+(goodsType==='5'&&dataInfo['is_charge']==='0'?'领':'售')+dataInfo['buy_num']+"/仅剩"+dataInfo['stk']+''}}</view>
+                  </view>
+                </block>
+              </block>
+              <view class="goods-title m-btm30 data-v-7b3eebdb">
+                <view class="goods-title-mian f-36 col-3 m-btm15 data-v-7b3eebdb">{{dataInfo['goods_name']}}</view>
+                <view class="goods-activity dis-flex flex-y-center flex-warp m-btm20 data-v-7b3eebdb">
+                  <block wx:for="{{dataInfo['tag_list']}}" wx:for-item="tagItem" wx:for-index="index" wx:key="index">
+                    <view class="activity-item dis-flex flex-y-center m-right30 data-v-7b3eebdb">
+                      <image src="{{imageRoot}}/static/images/goods/activityImage.png" mode class="data-v-7b3eebdb"></image>
+                      <view class="f-24 col-9 data-v-7b3eebdb">{{tagItem}}</view>
+                    </view>
+                  </block>
+                </view>
+                <block wx:if="{{goodsType==='7'}}">
+                  <block class="data-v-7b3eebdb">
+                    <view class="bargain-buy-box padding-box-all data-v-7b3eebdb">
+                      <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="bargain-buy-top dis-flex flex-y-center flex-x-between data-v-7b3eebdb" bindtap="__e">
+                        <view class="bargain-buy-top-title f-24 m-btm15 data-v-7b3eebdb">[砍价购]</view>
+                        <view class="f-24 col-9 data-v-7b3eebdb">玩法详情
+                          <text class="iconfont icon-right icon-right-buybarainIcon data-v-7b3eebdb"></text>
+                        </view>
+                      </view>
+                      <view class="bargain-buy-top f-24 col-9 data-v-7b3eebdb">邀请好友砍价，超低价购买心仪商品！</view>
+                    </view>
+                  </block>
+                </block>
+                <block wx:if="{{dataInfo['retainage']&&dataInfo['retainage']!=='0.00'}}">
+                  <view class="f-28 col-9 data-v-7b3eebdb">{{"商品核销尾款:"+dataInfo['retainage']+"元"}}</view>
+                </block>
+              </view>
+              <block wx:if="{{dataInfo.is_open_vip===1}}">
+                <view class="member-box dis-flex flex-y-center flex-x-between m-btm40 data-v-7b3eebdb">
+                  <view class="member-left dis-flex flex-y-center data-v-7b3eebdb">
+                    <image src="{{imageRoot}}/static/images/goods/member.png" mode class="data-v-7b3eebdb"></image>
+                    <view class="f-24 member-fontColor data-v-7b3eebdb">{{Textbuff['halfcardtext']}}</view>
+                    <view class="member-fontColor-cut data-v-7b3eebdb"></view>
+                    <view class="member-title f-24 member-fontColor onelist-hidden data-v-7b3eebdb">{{''+(dataInfo.is_vip>0?'续费'+Textbuff['halfcardtext']+',继续立享优惠折扣':'开通'+Textbuff['halfcardtext']+',立享优惠折扣')+''}}</view>
+                  </view>
+                  <view data-event-opts="{{[['tap',[['member']]]]}}" class="member-right t-c f-24 data-v-7b3eebdb" bindtap="__e">{{''+(dataInfo.is_vip>0?'去续费':'去开通')+''}}
+                    <text class="iconfont icon-right data-v-7b3eebdb"></text>
+                  </view>
+                </view>
+              </block>
+              <view class="{{['goods-already-box m-btm20 data-v-7b3eebdb',!!dataInfo['community']?'padding-box-all':'already-box-padding']}}">
+                <view class="{{['goods-already dis-flex flex-dir-row flex-y-end flex-x-between p-r data-v-7b3eebdb',((goodsType==='1'||goodsType==='2')&&!!dataInfo['community'])?'border-bottom border-line':'']}}">
+                  <view class="goods-already-buy data-v-7b3eebdb">
+                    <block wx:if="{{goodsType!=='1'&&goodsType!=='7'&&goodsType!=='3'}}">
+                      <block class="data-v-7b3eebdb">
+                        <view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">TA们都在逛</view>
+                      </block>
+                    </block>
+                    <block wx:else>
+                      <block class="data-v-7b3eebdb">
+                        <view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">{{'已'+(goodsType==='5'&&dataInfo['is_charge']==='0'?'领':'售')+dataInfo['buy_num']+"/仅剩"+dataInfo['stk']+''}}</view>
+                      </block>
+                    </block>
+                    <view class="goods-already-user data-v-7b3eebdb">
+                      <block wx:for="{{dataInfo['user_list']}}" wx:for-item="userItem" wx:for-index="index" wx:key="index">
+                        <image class="user-avatar data-v-7b3eebdb" style="{{'z-index:'+(dataInfo['user_list']['length']*2-index)+';'}}" src="{{userItem}}"></image>
+                      </block>
+                      <view class="user-avatar user-more f-24 data-v-7b3eebdb">···</view>
+                    </view>
+                  </view>
+                  <block wx:if="{{dataInfo['dis_assistant']['is_show']===1}}">
+                    <view class="goods-invite-reward data-v-7b3eebdb">{{'最高赚¥'+dataInfo['dis_assistant']['max_commission']+''}}</view>
+                  </block>
+                  <view data-event-opts="{{[['tap',[['posterShare',['$0'],['dataInfo']]]]]}}" class="goods-invite data-v-7b3eebdb" bindtap="__e">邀请好友</view>
+                </view>
+                <block wx:if="{{!!dataInfo['community']}}">
+                  <block class="data-v-7b3eebdb">
+                    <view class="goods-community dis-flex flex-x-between flex-y-center m-top20 data-v-7b3eebdb">
+                      <view class="community-user dis-flex flex-y-center flex-box  data-v-7b3eebdb">
+                        <image class="community-user-img data-v-7b3eebdb" src="{{dataInfo['community']['imgUrl']}}"></image>
+                        <view class="community-user-info flex-box data-v-7b3eebdb">
+                          <view class="community-user-name col-0 f-28 data-v-7b3eebdb">{{dataInfo['community']['name']}}</view>
+                          <view class="community-user-des f-24 col-9 onelist-hidden data-v-7b3eebdb">{{dataInfo['community']['introduce']}}</view>
+                        </view>
+                      </view>
+                      <view class="community-btn data-v-7b3eebdb">
+                        <block wx:if="{{!!dataInfo['community']}}">
+                          <button data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="community-add community-add-bgcolor f-24 col-f data-v-7b3eebdb" bindtap="__e">添加</button>
+                        </block>
+                      </view>
+                    </view>
+                  </block>
+                </block>
+                <block wx:if="{{!!dataInfo['community']}}">
+                  <popup-view vue-id="5" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e2']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}">
+                    <view class="community-detail b-f t-c data-v-7b3eebdb">
+                      <view class="community-header f-w f-36 p-r col-f data-v-7b3eebdb">
+                        <text class="community-header-text p-r data-v-7b3eebdb">{{dataInfo['community']['name']}}</text>
+                      </view>
+                      <view class="community-body f-26 col-3 data-v-7b3eebdb">有任何疑问，点击“
+                        <text class="col-m data-v-7b3eebdb">去回复</text>”发送“
+                        <text class="col-m data-v-7b3eebdb">{{dataInfo['community']['community_id']}}</text>{{'”,即可添加'+dataInfo['community']['name']+''}}</view>
+                      <block wx:if="{{!!dataInfo['community']&&!!dataInfo['community']['phone']}}">
+                        <view class="community-phone dis-flex flex-y-center flex-x-between data-v-7b3eebdb">
+                          <view class="community-number dis-flex flex-y-center data-v-7b3eebdb">
+                            <image class="community-number-icon data-v-7b3eebdb" src="{{imageRoot}}/static/images/goods/community.png"></image>
+                            <view class="f-24 col-3 data-v-7b3eebdb">{{dataInfo['community']['phone']}}</view>
+                          </view>
+                          <view data-event-opts="{{[['tap',[['callPhone',['$0'],['dataInfo.community.phone']]]]]}}" class="community-bdial f-24 data-v-7b3eebdb" bindtap="__e">拨号</view>
+                        </view>
+                      </block>
+                      <block wx:if="{{clienType==='3'}}">
+                        <button class="community-reply f-24 col-f data-v-7b3eebdb" open-type="contact">去回复</button>
+                      </block>
+                    </view>
+                  </popup-view>
+                </block>
+              </view>
+              <block wx:if="{{dataInfo.lp_status!='0'&&dataInfo.type==='1'}}">
+                <view class="limit-rushBox p-left-right-30 data-v-7b3eebdb">
+                  <view class="limit-rushList m-left-right-30 data-v-7b3eebdb">
+                    <block wx:for="{{dataInfo.lp_set}}" wx:for-item="limitItem" wx:for-index="index" wx:key="index">
+                      <view class="limit-item border-line border-bottom dis-flex flex-y-center flex-x-between p-top-bom-30 data-v-7b3eebdb">
+                        <view class="limit-left data-v-7b3eebdb">
+                          <view class="limitPrice-goodNum dis-flex flex-y-center m-btm20 data-v-7b3eebdb">
+                            <view class="col-f4 f-30 m-right30 data-v-7b3eebdb">
+                              <text class="f-24 data-v-7b3eebdb">¥</text>{{''+limitItem.price+''}}</view>
+                            <view class="f-24 col-3 data-v-7b3eebdb">{{"(第"+limitItem.min+"~"+limitItem.max+"件)"}}</view>
+                          </view>
+                          <view class="progress-box p-r data-v-7b3eebdb">
+                            <view class="progress-bar data-v-7b3eebdb" style="{{'width:'+(limitItem.proportion+'%')+';'}}"></view>
+                            <view class="default-progress-bar dis-flex flex-y-center data-v-7b3eebdb">
+                              <view class="col-f f-22 shrink data-v-7b3eebdb">{{"已卖"+limitItem.buy_num+"件"}}</view>
+                            </view>
+                          </view>
+                        </view>
+                        <block wx:if="{{limitItem.proportion<100}}">
+                          <block class="data-v-7b3eebdb">
+                            <view class="limit-right f-24 col-3 data-v-7b3eebdb">{{"仅剩"+limitItem.surplus+"件"}}</view>
+                          </block>
+                        </block>
+                        <block wx:else>
+                          <block class="data-v-7b3eebdb">
+                            <view class="f-24 col-f4 data-v-7b3eebdb">已卖清</view>
+                          </block>
+                        </block>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <block wx:if="{{goodsType==='3'&&dataInfo['is_pool']!=='1'&&dataInfo['group_list'].length>0}}">
+            <block class="data-v-7b3eebdb">
+              <view class="group-list p-top-bom-40 b-f m-btm20 data-v-7b3eebdb">
+                <view class="group-list-content m-left-right-30 data-v-7b3eebdb">
+                  <view class="dis-flex flex-y-center flex-x-between data-v-7b3eebdb">
+                    <view class="group-list-title f-30 col-3 data-v-7b3eebdb">参与拼团，享受优惠</view>
+                  </view>
+                  <block wx:for="{{dataInfo['group_list']}}" wx:for-item="groupItem" wx:for-index="index" wx:key="index">
+                    <view class="group-list-item p-top-bom-30 border-line border-bottom data-v-7b3eebdb">
+                      <view class="dis-flex flex-x-between flex-y-center data-v-7b3eebdb">
+                        <view class="group-detail dis-flex flex-y-center data-v-7b3eebdb">
+                          <view class="group-item-logo m-right10 data-v-7b3eebdb" style="{{'background-image:'+(' url('+groupItem['avatar']+')')+';'}}"></view>
+                          <view class="group-item-name f-28 col-3 data-v-7b3eebdb">{{groupItem['nickname']}}</view>
+                        </view>
+                        <view class="dis-flex flex-y-center data-v-7b3eebdb">
+                          <view class="clustering-dateTime-num m-right30 data-v-7b3eebdb">
+                            <view class="clustering-num f-24 data-v-7b3eebdb">还差
+                              <text class="data-v-7b3eebdb">{{groupItem['lacknum']+"人"}}</text>成团</view>
+                            <view class="f-24 col-9 data-v-7b3eebdb">{{'剩余 '+(!!groupItem['groupTime']?groupItem['groupTime']['hh']:'00')+":\n\t\t\t\t\t\t\t\t\t\t\t"+(!!groupItem['groupTime']?groupItem['groupTime']['mm']:'00')+":\n\t\t\t\t\t\t\t\t\t\t\t"+(!!groupItem['groupTime']?groupItem['groupTime']['ss']:'00')+''}}</view>
+                          </view>
+                          <view data-event-opts="{{[['tap',[['navbargin',['$0'],[[['dataInfo.group_list','',index]]]]]]]}}" class="{{['group-list-item-btn t-c f-24 col-f data-v-7b3eebdb',groupItem['isTimeOver']?'group-list-item-btn-isEndTimeTrue':'group-list-item-btn-isEndTimefalse']}}"
+                            bindtap="__e">去参团</view>
+                        </view>
+                      </view>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </block>
+          <view class="b-f padding-box-all m-btm20 data-v-7b3eebdb">
+            <goods-header-title vue-id="6" titleName="使用流程" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+            <block wx:if="{{strings}}">
+              <view class="data-v-7b3eebdb">
+                <u-parse vue-id="7" content="{{strings}}" class="data-v-7b3eebdb" bind:__l="__l"></u-parse>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="use-flow dis-flex flex-x-between p-r data-v-7b3eebdb">
+                <view class="use-flow-item t-c data-v-7b3eebdb">
+                  <view class="use-order t-c col-f f-24 data-v-7b3eebdb">1</view>
+                  <view class="use-detail data-v-7b3eebdb">
+                    <view class="f-24 col-3 data-v-7b3eebdb">选择商品</view>
+                    <view class="f-24 col-9 data-v-7b3eebdb">点击立即购买</view>
+                  </view>
+                </view>
+                <view class="use-flow-item t-c data-v-7b3eebdb">
+                  <view class="use-order t-c col-f f-24 data-v-7b3eebdb">2</view>
+                  <view class="use-detail data-v-7b3eebdb">
+                    <view class="f-24 col-3 data-v-7b3eebdb">购买完成</view>
+                    <view class="f-24 col-9 data-v-7b3eebdb">在订单页使用</view>
+                  </view>
+                </view>
+                <view class="use-flow-item t-c data-v-7b3eebdb">
+                  <view class="use-order t-c col-f f-24 data-v-7b3eebdb">3</view>
+                  <view class="use-detail data-v-7b3eebdb">
+                    <view class="f-24 col-3 data-v-7b3eebdb">获取核销码</view>
+                    <view class="f-24 col-9 data-v-7b3eebdb">等待商家发货</view>
+                  </view>
+                </view>
+                <view class="use-cut use-cut-left data-v-7b3eebdb"></view>
+                <view class="use-cut use-cut-right data-v-7b3eebdb"></view>
+              </view>
+            </block>
+          </view>
+          <block wx:if="{{!!dataInfo['shop']}}">
+            <view class="store padding-box-all b-f m-btm20 data-v-7b3eebdb">
+              <goods-header-title vue-id="8" titleName="商家信息" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+              <view data-event-opts="{{[['tap',[['naviStore',['$0'],['dataInfo.shop']]]]]}}" class="store-detail data-v-7b3eebdb" bindtap="__e">
+                <view class="m-btm20 col-3 f-28 data-v-7b3eebdb">{{dataInfo['shop']['storename']}}</view>
+                <view class="f-24 col-9  m-btm30 lxPack data-v-7b3eebdb">
+                  <text class="data-v-7b3eebdb">{{"营业时间："+dataInfo['shop']['storehours']}}</text>
+                  <view data-event-opts="{{[['tap',[['goLt',['$event']]]]]}}" class="lx data-v-7b3eebdb" catchtap="__e">
+                    <image class="lxImg _img data-v-7b3eebdb" src="{{$root.m0}}"></image>
+                  </view>
+                </view>
+                <view class="dis-flex flex-x-between m-btm20 data-v-7b3eebdb">
+                  <view class="store-addressInfo f-24 col-9 data-v-7b3eebdb">{{"商家电话："+dataInfo['shop']['mobile']}}</view>
+                  <view data-event-opts="{{[['tap',[['supple',['$0','mobile'],['dataInfo.shop']]]]]}}" class="store-addressInfo-icon t-c col-f iconfont icon-dianhua data-v-7b3eebdb" catchtap="__e"></view>
+                </view>
+                <view class="dis-flex flex-x-between data-v-7b3eebdb">
+                  <view class="store-addressInfo store-addressInfo-onelist onelist-hidden f-24 col-9 data-v-7b3eebdb">{{dataInfo['shop']['address']}}</view>
+                  <view data-event-opts="{{[['tap',[['supple',['$0','address'],['dataInfo.shop']]]]]}}" class="store-addressInfo-icon t-c col-f iconfont icon-daohang data-v-7b3eebdb" catchtap="__e"></view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="goods-contentInfo b-f padding-box-all m-btm20 data-v-7b3eebdb">
+            <view class="goods-detail-nav dis-flex flex-dir-row flex-y-center flex-x-between m-btm30 data-v-7b3eebdb">
+              <block wx:for="{{InfoTabBar}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                <view data-event-opts="{{[['tap',[['detailTypeChange',['$0'],[[['InfoTabBar','',index,'tabBarType']]]]]]]}}" class="{{['goods-detail-nav-item data-v-7b3eebdb',(detailType===item.tabBarType)?'active':'']}}" bindtap="__e">{{''+item.title+''}}
+                  <block wx:if="{{detailType===item.tabBarType}}">
+                    <view class="select-nav-items data-v-7b3eebdb">
+                      <image src="{{imageRoot}}/static/images/goods/br.png" mode class="data-v-7b3eebdb"></image>
+                    </view>
+                  </block>
+                </view>
+              </block>
+            </view>
+            <view hidden="{{!(detailType==='comment')}}" class="goods-detail-evaluation b-f data-v-7b3eebdb">
+              <block wx:if="{{!!dataInfo['comment']&&dataInfo['comment']['length']>0}}">
+                <block class="data-v-7b3eebdb">
+                  <block wx:for="{{dataInfo['comment']}}" wx:for-item="commentItem" wx:for-index="index" wx:key="index">
+                    <view class="evaluation-item border-line border-bottom data-v-7b3eebdb">
+                      <view class="evaluation-hd dis-flex flex-dir-row flex-y-center flex-x-between data-v-7b3eebdb">
+                        <view class="evaluation-user dis-flex flex-dir-row flex-y-center data-v-7b3eebdb">
+                          <image src="{{commentItem['headimg']}}" mode class="data-v-7b3eebdb"></image>
+                          <view class="evaluation-user-name data-v-7b3eebdb">
+                            <view class="user-name f-24 data-v-7b3eebdb">{{commentItem['nickname']}}</view>
+                            <view class="evaluation-time f-24 col-9 data-v-7b3eebdb">{{commentItem['createtime']}}</view>
+                          </view>
+                        </view>
+                        <view class="evaluation-grade dis-flex flex-dir-row flex-y-center data-v-7b3eebdb">
+                          <block wx:for="{{commentItem['star']}}" wx:for-item="score" wx:for-index="scoreIndex" wx:key="scoreIndex">
+                            <view class="iconfont icon-shoucangxiao select data-v-7b3eebdb"></view>
+                          </block>
+                          <block wx:for="{{5-commentItem['star']}}" wx:for-item="score" wx:for-index="scoreIndex" wx:key="scoreIndex">
+                            <view class="iconfont icon-shoucangxiao data-v-7b3eebdb"></view>
+                          </block>
+                        </view>
+                      </view>
+                      <view class="evaluation-bd data-v-7b3eebdb">
+                        <view class="evaluation-content f-26 col-9 data-v-7b3eebdb">{{commentItem['text']}}</view>
+                        <view class="picImage_view data-v-7b3eebdb">
+                          <block wx:for="{{commentItem['pic']}}" wx:for-item="picItem" wx:for-index="picIndex">
+                            <image class="picImage data-v-7b3eebdb" src="{{picItem}}"></image>
+                          </block>
+                        </view>
+                        <block wx:if="{{!!commentItem['replypicone']&&commentItem['replypicone']['length']>0}}">
+                          <block class="data-v-7b3eebdb">
+                            <view class="evaluation-imgs dis-flex flex-warp data-v-7b3eebdb">
+                              <block wx:for="{{commentItem['replypicone']}}" wx:for-item="comment_image_item" wx:for-index="index" wx:key="index">
+                                <block class="data-v-7b3eebdb">
+                                  <image src="{{comment_image_item}}" mode class="data-v-7b3eebdb"></image>
+                                </block>
+                              </block>
+                            </view>
+                          </block>
+                        </block>
+                      </view>
+                      <block wx:if="{{!!commentItem['replytextone']}}">
+                        <block class="data-v-7b3eebdb">
+                          <view class="store-reply data-v-7b3eebdb">
+                            <view class="reply-content data-v-7b3eebdb">
+                              <view class="reply-content-item f-24 col-9 data-v-7b3eebdb">
+                                <text class="reply-content-itemfont f-24 col-9 iconfont icon-pinglun data-v-7b3eebdb"></text>商家回复:
+                                <text class="col-3 data-v-7b3eebdb">{{commentItem['replytextone']}}</text>
+                              </view>
+                            </view>
+                          </view>
+                        </block>
+                      </block>
+                    </view>
+                  </block>
+                </block>
+              </block>
+              <block wx:else>
+                <block class="data-v-7b3eebdb">
+                  <view class="evaluation-all dis-flex flex-dir-row flex-y-center flex-x-center data-v-7b3eebdb">
+                    <text class="f-28 data-v-7b3eebdb">暂无评价</text>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view hidden="{{!(detailType==='detail'||detailType==='notice')}}" class="b-f data-v-7b3eebdb">
+              <weixin-parse vue-id="9" content="{{detailType==='detail'?dataInfo['detail']:dataInfo['describe']}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse>
+            </view>
+          </view>
+          <view class="b-f padding-box-all m-btm20 data-v-7b3eebdb">
+            <goods-header-title vue-id="10" titleName="价格说明" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+            <block wx:if="{{nodes}}">
+              <view class="data-v-7b3eebdb">
+                <u-parse vue-id="11" content="{{nodes}}" class="data-v-7b3eebdb" bind:__l="__l"></u-parse>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="data-v-7b3eebdb">
+                <view class="f-24 col-6 m-btm20 data-v-7b3eebdb">
+                  <text style="color:#CCBF66;" class="data-v-7b3eebdb">·划线价格：</text>划线的价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，并非原价，仅供您参考。</view>
+                <view class="f-24 col-6 m-btm20 data-v-7b3eebdb">
+                  <text style="color:#CCBF66;" class="data-v-7b3eebdb">·未划线价格：</text>未划线的价格是商品的销售标价，不因表述差异改变性质具体的成交价格可能因会员使用优惠券、积分等发生变化，最终以订单结算价格为准。</view>
+                <view class="f-24 data-v-7b3eebdb" style="color:#CCBF66;">·若商家针对划线价格进行说明，以商家的表述为准。</view>
+              </view>
+            </block>
+          </view>
+          <view class="b-f padding-box-all m-btm40 data-v-7b3eebdb">
+            <goods-header-title vue-id="12" titleName="推荐商品" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+            <recommend-goods vue-id="13" goods_type="{{dataInfo.type}}" goods_id="{{dataInfo.id}}" class="data-v-7b3eebdb" bind:__l="__l"></recommend-goods>
+          </view>
+          <view class="goods-footer dis-flex flex-dir-row flex-y-center border-line border-top data-v-7b3eebdb" style="{{'padding-bottom:'+(isPadding?'20px':'')+';'+('z-index:'+(getTipShow?'9998':'30')+';')}}">
+            <view class="dis-flex flex-y-center data-v-7b3eebdb" style="width:50%;">
+              <view data-event-opts="{{[['tap',[['footerNav',['home']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center p-r data-v-7b3eebdb" bindtap="__e">
+                <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                <image src="{{imageRoot}}/static/images/goods/home.png" class="data-v-7b3eebdb"></image>
+                <view class="goods-footer-item-text data-v-7b3eebdb">首页</view>
+              </view>
+              <view data-event-opts="{{[['tap',[['footerNav',['order']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center p-r data-v-7b3eebdb" bindtap="__e">
+                <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                <image src="{{imageRoot}}/static/images/goods/flow.png" class="data-v-7b3eebdb"></image>
+                <view class="goods-footer-item-text data-v-7b3eebdb">订单</view>
+              </view>
+              <view data-event-opts="{{[['tap',[['footerNav',['user']]]]]}}" class="goods-footer-item dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e">
+                <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                <image src="{{imageRoot}}/static/images/goods/my.png" class="data-v-7b3eebdb"></image>
+                <view class="goods-footer-item-text data-v-7b3eebdb">我的</view>
+              </view>
+            </view>
+            <block wx:if="{{goodsType==='1'||goodsType==='2'}}">
+              <block class="data-v-7b3eebdb">
+                <view data-event-opts="{{[['tap',[['onToggleTrade',['$0','$1'],['dataInfo.sales_status','dataInfo']]]]]}}" class="{{['go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box data-v-7b3eebdb',dataInfo['sales_status']!==2?goodsType==='1'&&dataInfo.status==='1'?dataInfo.is_follow===0?'remind-go-buy':'alrea-remind-go-buy':'end-go-buy':dataInfo.stk===0?'alrea-remind-go-buy':'star-go-buy']}}"
+                  bindtap="__e">
+                  <block wx:if="{{goodsType==='1'&&dataInfo.status==='1'}}">
+                    <block class="data-v-7b3eebdb">
+                      <text class="f-28 col-f data-v-7b3eebdb">{{dataInfo.is_follow===0?'提醒我':'已关注'}}</text>
+                    </block>
+                  </block>
+                  <block wx:else>
+                    <block class="data-v-7b3eebdb">
+                      <text class="f-28 col-f data-v-7b3eebdb">{{getTipShow==false?dataInfo.stk===0?'已售罄':'立即购买':'同意并且购买'}}</text>
+                    </block>
+                  </block>
+                  <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                </view>
+              </block>
+            </block>
+            <block wx:if="{{goodsType==='5'}}">
+              <block class="data-v-7b3eebdb">
+                <block wx:if="{{dataInfo['is_charge']==='1'&&dataInfo.sales_status===2}}">
+                  <block class="data-v-7b3eebdb">
+                    <view data-event-opts="{{[['tap',[['onToggleTrade',['$0','$1'],['dataInfo.sales_status','dataInfo']]]]]}}" class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb" bindtap="__e">
+                      <text class="f-28 col-f data-v-7b3eebdb">{{getTipShow==false?'立即购买':'同意并且购买'}}</text>
+                      <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                    </view>
+                  </block>
+                </block>
+                <block wx:else>
+                  <block class="data-v-7b3eebdb">
+                    <block wx:if="{{(dataInfo.buy_limit>=0||_this.dataInfouser_limit_num>0)&&dataInfo.sales_status===2}}">
+                      <block class="data-v-7b3eebdb">
+                        <view data-event-opts="{{[['tap',[['getCouponDicont']]]]}}" class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb" bindtap="__e">
+                          <text class="f-28 col-f data-v-7b3eebdb">立即领取</text>
+                        </view>
+                      </block>
+                    </block>
+                    <block wx:else>
+                      <block class="data-v-7b3eebdb">
+                        <view class="unqualified-gobuy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box data-v-7b3eebdb">
+                          <block wx:if="{{dataInfo.sales_status===1}}">
+                            <text class="f-28 col-f data-v-7b3eebdb">活动未开始</text>
+                          </block>
+                          <block wx:if="{{dataInfo.sales_status===3}}">
+                            <text class="f-28 col-f data-v-7b3eebdb">活动已结束</text>
+                          </block>
+                        </view>
+                      </block>
+                    </block>
+                  </block>
+                </block>
+              </block>
+            </block>
+            <block wx:if="{{goodsType==='3'}}">
+              <block class="data-v-7b3eebdb">
+                <view class="group-go-buy dis-flex flex-box flex-y-center data-v-7b3eebdb">
+                  <view data-event-opts="{{[['tap',[['isGroupToggleTrade',['1','$0'],['dataInfo']]]]]}}" class="out_buy-left p-r dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e">
+                    <view class="out_buy-leftTop f-24 col-f data-v-7b3eebdb">{{"¥"+dataInfo['aloneprice']}}</view>
+                    <view class="out_buy-leftbom f-24 col-f data-v-7b3eebdb">直接购买</view>
+                    <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                  </view>
+                  <block wx:if="{{!!countDown['timeobj']&&dataInfo['sales_status']===2}}">
+                    <block class="data-v-7b3eebdb">
+                      <view data-event-opts="{{[['tap',[['isGroupToggleTrade',['2','$0'],['dataInfo']]]]]}}" class="out_buy-right starbtn dis-flex flex-dir-column flex-x-center data-v-7b3eebdb" bindtap="__e">
+                        <view class="out_buy-leftTop f-24 data-v-7b3eebdb" style="color:black;">{{"¥"+dataInfo['price']}}</view>
+                        <view class="out_buy-leftbom f-24 data-v-7b3eebdb" style="color:black;">{{dataInfo['peoplenum']+"人团"}}</view>
+                      </view>
+                    </block>
+                  </block>
+                  <block wx:else>
+                    <block class="data-v-7b3eebdb">
+                      <view class="out_buy-right havebtn data-v-7b3eebdb">
+                        <view class="havenot-btn f-24 col-9 data-v-7b3eebdb">{{dataInfo['isTimeOver']?'已结束':dataInfo['stateTime']===1?'已结束':'未开始'}}</view>
+                      </view>
+                    </block>
+                  </block>
+                </view>
+              </block>
+            </block>
+            <block wx:if="{{goodsType==='7'}}">
+              <block class="data-v-7b3eebdb">
+                <block wx:if="{{dataInfo['sales_status']===2}}">
+                  <block class="data-v-7b3eebdb">
+                    <view data-event-opts="{{[['tap',[['sorbargin',['$0'],['dataInfo.is_participate']]]]]}}" class="group-go-buy dis-flex data-v-7b3eebdb" bindtap="__e">
+                      <view class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box star-go-buy data-v-7b3eebdb">
+                        <text class="f-28 col-f data-v-7b3eebdb">{{!!dataInfo['is_participate']&&dataInfo['is_participate']>0?'查看砍价':'发起砍价'}}</text>
+                        <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                      </view>
+                    </view>
+                  </block>
+                </block>
+                <block wx:else>
+                  <block class="data-v-7b3eebdb">
+                    <view class="group-go-buy dis-flex data-v-7b3eebdb">
+                      <view class="go-buy dis-flex flex-dir-column flex-y-center flex-x-center p-r flex-box end-go-buy data-v-7b3eebdb">
+                        <text class="f-28 col-f data-v-7b3eebdb">发起砍价</text>
+                        <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+                      </view>
+                    </view>
+                  </block>
+                </block>
+              </block>
+            </block>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+        <block class="data-v-7b3eebdb">
+          <block wx:if="{{barrageList.length>0}}">
+            <block class="data-v-7b3eebdb">
+              <view class="{{['success-tips dis-flex flex-y-center data-v-7b3eebdb',(showTips)?'show':'']}}">
+                <image class="success-avatar data-v-7b3eebdb" src="{{barrageList[tipsIndex]?barrageList[tipsIndex]['avatar']:''}}"></image>
+                <view class="onelist-hidden success-goods f-24 col-f m-left12 data-v-7b3eebdb">{{(barrageList[tipsIndex]?barrageList[tipsIndex]['nickname']:'')+"刚刚兑换的此商品"}}</view>
+              </view>
+            </block>
+          </block>
+          <view class="goods-header data-v-7b3eebdb">
+            <swiper class="goods-swiper goodSwiper data-v-7b3eebdb" style="{{'height:'+(bannerHeightList[currentBannerHeight]+'rpx')+';'}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" data-event-opts="{{[['change',[['bindchange',['$event']]]]]}}"
+              bindchange="__e">
+              <block wx:for="{{dataInfo['advs']}}" wx:for-item="banner_item" wx:for-index="index" wx:key="index">
+                <swiper-item class="swiper-item data-v-7b3eebdb">
+                  <image src="{{banner_item}}" data-id="{{index}}" data-event-opts="{{[['load',[['imageLoad',['$event']]]]]}}" bindload="__e" class="data-v-7b3eebdb"></image>
+                </swiper-item>
+              </block>
+            </swiper>
+            <view class="goods-viewed data-v-7b3eebdb">{{dataInfo['pv']+"人喜欢"}}</view>
+          </view>
+          <view class="goods-info m-btm20 data-v-7b3eebdb">
+            <view class="goods-content module-content data-v-7b3eebdb">
+              <view class="goods-price-box dis-flex flex-dir-row flex-y-end flex-x-between data-v-7b3eebdb">
+                <view class="goods-price dis-flex flex-dir-row flex-y-end data-v-7b3eebdb">
+                  <view class="goods-price-now price-font-family dis-flex flex-y-center data-v-7b3eebdb">
+                    <image class="m-right10 data-v-7b3eebdb" src="{{imageRoot}}/static/images/integral/integral_logo.png" mode></image>
+                    <view class="credit f-36 data-v-7b3eebdb">{{dataInfo['price']>0?dataInfo['use_credit1']+TextSubstitution.data.credittext+'+'+dataInfo['price']+'元':dataInfo['use_credit1']+TextSubstitution.data.credittext}}</view>
+                  </view>
+                  <block wx:if="{{!!dataInfo['old_price']}}">
+                    <view class="goods-price-old data-v-7b3eebdb">
+                      <text class="money-label data-v-7b3eebdb">¥</text>{{''+dataInfo['old_price']+''}}</view>
+                  </block>
+                </view>
+              </view>
+              <view class="goods-title m-btm30 data-v-7b3eebdb">
+                <view class="goods-title-mian f-36 col-3 m-btm40 data-v-7b3eebdb">{{dataInfo['title']}}</view>
+                <block wx:if="{{dataInfo['is_open_vip']===1}}">
+                  <view class="member-box dis-flex flex-y-center flex-x-between m-btm40 data-v-7b3eebdb">
+                    <view class="member-left dis-flex flex-y-center data-v-7b3eebdb">
+                      <image src="{{imageRoot}}/static/images/goods/member.png" mode class="data-v-7b3eebdb"></image>
+                      <view class="f-24 member-fontColor data-v-7b3eebdb">{{dataInfo['halfcard_text']}}</view>
+                      <view class="member-fontColor-cut data-v-7b3eebdb"></view>
+                      <view class="member-title f-24 member-fontColor onelist-hidden data-v-7b3eebdb">{{''+(dataInfo.is_vip>0?'续费'+dataInfo['halfcard_text']+',继续立享优惠折扣':'开通'+dataInfo['halfcard_text']+',立享优惠折扣')+''}}</view>
+                    </view>
+                    <view data-event-opts="{{[['tap',[['member']]]]}}" class="member-right t-c f-24 data-v-7b3eebdb" bindtap="__e">{{''+(dataInfo.is_vip>0?'去续费':'去开通')+''}}
+                      <text class="iconfont icon-right data-v-7b3eebdb"></text>
+                    </view>
+                  </view>
+                </block>
+                <view class="goods-already-box padding-box-all data-v-7b3eebdb">
+                  <view class="goods-already dis-flex flex-dir-row flex-y-end flex-x-between p-r border-bottom border-line data-v-7b3eebdb">
+                    <view class="goods-already-buy data-v-7b3eebdb">
+                      <view class="goods-already-num f-24 m-btm20 data-v-7b3eebdb">TA们都在逛</view>
+                      <view class="goods-already-user data-v-7b3eebdb">
+                        <block wx:for="{{dataInfo['avatar_list']}}" wx:for-item="userItem" wx:for-index="index" wx:key="index">
+                          <image class="user-avatar data-v-7b3eebdb" style="{{'z-index:'+(dataInfo['avatar_list']['length']*2-index)+';'}}" src="{{userItem}}"></image>
+                        </block>
+                        <view class="user-avatar user-more f-24 data-v-7b3eebdb">···</view>
+                      </view>
+                    </view>
+                    <block wx:if="{{dataInfo['dis_assistant']['is_show']===1}}">
+                      <view class="goods-invite-reward data-v-7b3eebdb">{{'最高赚:¥'+dataInfo['dis_assistant']['max_commission']+''}}</view>
+                    </block>
+                    <view data-event-opts="{{[['tap',[['posterShare',['$0'],['dataInfo']]]]]}}" class="goods-invite data-v-7b3eebdb" bindtap="__e">邀请好友一起抢</view>
+                  </view>
+                  <block wx:if="{{!!dataInfo['community']}}">
+                    <block class="data-v-7b3eebdb">
+                      <view class="goods-community dis-flex flex-x-between flex-y-center m-top20 data-v-7b3eebdb">
+                        <view class="community-user dis-flex flex-y-center flex-box  data-v-7b3eebdb">
+                          <image class="community-user-img data-v-7b3eebdb" src="{{dataInfo['community']['imgUrl']}}"></image>
+                          <view class="community-user-info flex-box data-v-7b3eebdb">
+                            <view class="community-user-name col-0 f-28 data-v-7b3eebdb">{{dataInfo['community']['name']}}</view>
+                            <view class="community-user-des f-24 col-9 onelist-hidden data-v-7b3eebdb">{{dataInfo['community']['introduce']}}</view>
+                          </view>
+                        </view>
+                        <view class="community-btn data-v-7b3eebdb">
+                          <button data-event-opts="{{[['tap',[['e3',['$event']]]]]}}" class="community-add community-add-bgcolor f-24 col-f data-v-7b3eebdb" bindtap="__e">添加</button>
+                        </view>
+                      </view>
+                    </block>
+                  </block>
+                  <block wx:if="{{!!dataInfo['community']}}">
+                    <popup-view vue-id="14" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e4']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}">
+                      <view class="community-detail b-f t-c data-v-7b3eebdb">
+                        <view class="community-header f-w f-36 p-r col-f data-v-7b3eebdb">
+                          <text class="community-header-text p-r data-v-7b3eebdb">{{dataInfo['community']['name']}}</text>
+                        </view>
+                        <view class="community-body f-26 col-3 data-v-7b3eebdb">有任何疑问，点击“
+                          <text class="col-m data-v-7b3eebdb">去回复</text>”发送“
+                          <text class="col-m data-v-7b3eebdb">{{dataInfo['community']['community_id']}}</text>{{'”,即可添加'+dataInfo['community']['name']+''}}</view>
+                        <block wx:if="{{!!dataInfo['community']&&!!dataInfo['community']['phone']}}">
+                          <view class="community-phone dis-flex flex-y-center flex-x-between data-v-7b3eebdb">
+                            <view class="community-number dis-flex flex-y-center data-v-7b3eebdb">
+                              <image class="community-number-icon data-v-7b3eebdb" src="{{imageRoot}}/static/images/goods/community.png"></image>
+                              <view class="f-24 col-3 data-v-7b3eebdb">{{dataInfo['community']['phone']}}</view>
+                            </view>
+                            <view data-event-opts="{{[['tap',[['callPhone',['$0'],['dataInfo.community.phone']]]]]}}" class="community-bdial f-24 col-3 data-v-7b3eebdb" bindtap="__e">拨号</view>
+                          </view>
+                        </block>
+                        <block wx:if="{{clienType==='3'}}">
+                          <button class="community-reply f-24 col-f data-v-7b3eebdb" open-type="contact">去回复</button>
+                        </block>
+                      </view>
+                    </popup-view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="goods-detail-evaluation b-f padding-box-all m-btm20  data-v-7b3eebdb">
+            <goods-header-title vue-id="15" titleName="商品详情" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+            <view class="b-f data-v-7b3eebdb">
+              <weixin-parse vue-id="16" content="{{dataInfo.description}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse>
+            </view>
+          </view>
+          <view class="b-f padding-box-all m-btm80 data-v-7b3eebdb">
+            <goods-header-title vue-id="17" titleName="价格说明" class="data-v-7b3eebdb" bind:__l="__l"></goods-header-title>
+            <view class="f-24 col-6 m-btm20 data-v-7b3eebdb">
+              <text style="color:#CCBF66;" class="data-v-7b3eebdb">·划线价格：</text>划线的价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，并非原价，仅供您参考。</view>
+            <view class="f-24 col-6 m-btm20 data-v-7b3eebdb">
+              <text style="color:#CCBF66;" class="data-v-7b3eebdb">·未划线价格：</text>未划线的价格是商品的销售标价，不因表述差异改变性质具体的成交价格可能因会员使用优惠券、积分等发生变化，最终以订单结算价格为准。</view>
+            <view class="f-24 data-v-7b3eebdb" style="color:#CCBF66;">·若商家针对划线价格进行说明，以商家的表述为准。</view>
+          </view>
+          <view class="goods-footer-crted data-v-7b3eebdb">
+            <view data-event-opts="{{[['tap',[['converlink']]]]}}" class="go-buy-crted data-v-7b3eebdb" bindtap="__e">
+              <text class="f-28 col-f data-v-7b3eebdb">立即兑换</text>
+              <button class="btn-normal report-btn data-v-7b3eebdb" form-type="submit"></button>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </block>
+  <block wx:if="{{!!dataInfo.bgmusic}}">
+    <view data-event-opts="{{[['tap',[['playAudio',['$event']]]]]}}" class="audio-main data-v-7b3eebdb" bindtap="__e">
+      <view class="{{['audio-bg data-v-7b3eebdb',(!play_Audio)?'stop-audio':'']}}">
+        <view class="audio-gif data-v-7b3eebdb" style="{{'background-image:'+('url('+imageRoot+'musicgif.gif)')+';'}}">
+          <view class="audio-png data-v-7b3eebdb" style="{{'background-image:'+('url('+imageRoot+'music.png)')+';'}}"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{goodsType!=='integral'}}">
+    <block class="data-v-7b3eebdb">
+      <goods-buy-menu vue-id="18" goods-detail="{{dataInfo}}" goods-spec="{{specData}}" group-buy-type="{{group_buy_type}}" data-ref="goodsBuyMenu" data-event-opts="{{[['^submit',[['goodsSubmit']]]]}}" bind:submit="__e" class="data-v-7b3eebdb vue-ref" bind:__l="__l"></goods-buy-menu>
+    </block>
+  </block>
+  <follow vue-id="19" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" shareId="{{shareId}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+    bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-7b3eebdb" bind:__l="__l"></follow>
+  <share-bottom vue-id="20" shareBottomShow="{{popOpenShare}}" postType="{{dataInfo.postertype}}" postId="{{dataInfo.id}}" shareShow="{{popShareImage}}" data-event-opts="{{[['^shareImgShow',[['shareImgShow']]],['^clickmask',[['clearPopShare']]],['^closeShareShow',[['onImgShow']]]]}}"
+    bind:shareImgShow="__e" bind:clickmask="__e" bind:closeShareShow="__e" class="data-v-7b3eebdb" bind:__l="__l"></share-bottom>
+  <pop-manager vue-id="21" show="{{wfShow}}" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="wfView data-v-7b3eebdb">
+      <view class="wfViewMain data-v-7b3eebdb">
+        <view class="wfTitle data-v-7b3eebdb">
+          <image class="wfTitleImage data-v-7b3eebdb" src="{{wfBack}}"></image>
+        </view>
+        <view class="wfBody data-v-7b3eebdb">
+          <view class="wfBodyPackage data-v-7b3eebdb">
+            <text class="wfBodyText data-v-7b3eebdb">{{'1、活动期间消费者可邀请好友帮忙砍价，好友砍到底价'+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+"后，即可按"+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+'购买商品；'}}</text>
+            <text class="wfBodyText data-v-7b3eebdb">{{'2、好友帮忙砍到底价'+(dataInfo.vipstatus=='1'&&dataInfo.is_vip!='0'?'￥'+dataInfo.vipprice:'￥'+dataInfo.price)+'后，消费者需要在有效期内购买砍价商品，逾期商品将恢复原价；'}}</text>
+            <text class="wfBodyText data-v-7b3eebdb">3、同一商品，同一用户仅可享受一次优惠价格；</text>
+            <text class="wfBodyText data-v-7b3eebdb">4、同一商品，同一用户仅能帮好友砍价一次；</text>
+            <text class="wfBodyText data-v-7b3eebdb">5、砍价商品数量有限，商品售罄后，商品将无法购买，即使你已经成功发起砍价；</text>
+            <text class="wfBodyText data-v-7b3eebdb">{{"6、本活动解释权在法律范围内归"+TextSubstitution.data.sysname+"所有。"}}</text>
+          </view>
+        </view>
+      </view>
+      <view data-event-opts="{{[['tap',[['e5',['$event']]]]]}}" class="wfViewClose data-v-7b3eebdb" bindtap="__e">
+        <image class="closeImg data-v-7b3eebdb" src="{{imageRoot}}/static/images/merchant/close.png"></image>
+      </view>
+    </view>
+  </pop-manager>
+  <pop-manager vue-id="22" show="{{getTipShow}}" type="{{getTipType}}" data-event-opts="{{[['^clickmask',[['closegetTip']]]]}}" bind:clickmask="__e" class="data-v-7b3eebdb" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="getTip data-v-7b3eebdb">
+      <view class="getTip_package data-v-7b3eebdb">
+        <view class="getTip_title data-v-7b3eebdb">购买须知</view>
+        <scroll-view class="getTip_main data-v-7b3eebdb" scroll-x="{{false}}" scroll-y>
+          <weixin-parse vue-id="{{('23')+','+('22')}}" content="{{dataInfo.describe}}" class="data-v-7b3eebdb" bind:__l="__l"></weixin-parse>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="popFull data-v-7b3eebdb"></view>
+  </pop-manager>
+  <phone-mask vue-id="24" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-7b3eebdb" bind:__l="__l"></phone-mask>
+</view>

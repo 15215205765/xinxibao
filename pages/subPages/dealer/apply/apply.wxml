@@ -1,1 +1,68 @@
-<view class="page"><block wx:if="{{!loadlogo}}"><loadlogo vue-id="1" bind:__l="__l"></loadlogo></block><block wx:if="{{loadlogo}}"><view class="container"><view class="header-bg" style="{{'background-image:'+(' url('+imageRoot+'hezuo.jpg)')+';'}}"></view><view class="apply-content"><view class="rich-part m-btm40"><view class="parse-rich"><view class="title-content dis-flex flex-y-center flex-x-center m-btm40"><view class="title-iconLeft title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleRight.png)')+';'}}"></view><view class="f-30 col-3 m-left-right-20">{{"申请"+dealer_Info.fxstext+"说明"}}</view><view class="title-iconRight title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleLeft.png)')+';'}}"></view></view><view class="p-left-right-30"><weixin-parse vue-id="2" content="{{appdetail}}" bind:__l="__l"></weixin-parse></view></view><view class="box-btm-shade"></view></view><block wx:if="{{rollstatus!=='3'&&!!list&&list.length>0}}"><view class="withdraw-msg"><view class="withdrawTop-style p-r"><view class="withdrawTop-style-with"></view></view><view class="withdraw-part"><view class="withdraw-content"><view class="title-content dis-flex flex-y-center flex-x-center m-btm50"><view class="title-iconLeft title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleRight.png)')+';'}}"></view><view class="f-30 col-3 m-left-right-20">最近提现</view><view class="title-iconRight title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleLeft.png)')+';'}}"></view></view><view class="scroll"><swiper class="scroll-view" interval="{{interval}}" duration="{{duration}}" vertical="{{true}}" autoplay="{{true}}" display-multiple-items="{{7}}"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><swiper-item class="sizeSwiper"><view class="swiper-item uni-bg-red"><view class="withdraw-item dis-flex flex-y-center flex-x-between border-line border-bottom"><view class="withdrawerName col-3 f-24">{{item['nickname']}}</view><view class="withdrawerPrice col-9 f-24">{{"申请提现￥"+item['applymoney']}}</view></view></view></swiper-item></block></swiper></view></view></view></view></block></view><form report-submit="true" data-event-opts="{{[['submit',[['applydealer',['$event']]]]]}}" bindsubmit="__e"><view class="confirmApply"><view class="{{['Apply-button f-28 col-3 t-c f-w',(is_apply===1)?'isapply-style':'']}}">{{''+(is_apply===0?'申请'+dealer_Info.fxstext:'已申请，请等待审核')+''}}<button formType="submit"></button></view><block wx:if="{{is_apply===0}}"><view class="Apply-buttom-shade"></view></block></view></form></view></block><follow vue-id="3" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}" bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" bind:__l="__l"></follow><phone-mask vue-id="4" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" bind:__l="__l"></phone-mask></view>
+<view class="page">
+  <block wx:if="{{!loadlogo}}">
+    <loadlogo vue-id="1" bind:__l="__l"></loadlogo>
+  </block>
+  <block wx:if="{{loadlogo}}">
+    <view class="container">
+      <view class="header-bg" style="{{'background-image:'+(' url('+imageRoot+'hezuo.jpg)')+';'}}"></view>
+      <view class="apply-content">
+        <view class="rich-part m-btm40">
+          <view class="parse-rich">
+            <view class="title-content dis-flex flex-y-center flex-x-center m-btm40">
+              <view class="title-iconLeft title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleRight.png)')+';'}}"></view>
+              <view class="f-30 col-3 m-left-right-20">“三网合一”，边省边赚，共享众赢</view>
+              <view class="title-iconRight title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleLeft.png)')+';'}}"></view>
+            </view>
+            <view class="p-left-right-30">
+              <weixin-parse vue-id="2" content="{{appdetail}}" bind:__l="__l"></weixin-parse>
+            </view>
+          </view>
+          <view class="box-btm-shade"></view>
+        </view>
+        <block wx:if="{{rollstatus!=='3'&&!!list&&list.length>0}}">
+          <view class="withdraw-msg">
+            <view class="withdrawTop-style p-r">
+              <view class="withdrawTop-style-with"></view>
+            </view>
+            <view class="withdraw-part">
+              <view class="withdraw-content">
+                <view class="title-content dis-flex flex-y-center flex-x-center m-btm50">
+                  <view class="title-iconLeft title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleRight.png)')+';'}}"></view>
+                  <view class="f-30 col-3 m-left-right-20">最近提现</view>
+                  <view class="title-iconRight title-iconStyle" style="{{'background-image:'+(' url('+imageRoot+'titleLeft.png)')+';'}}"></view>
+                </view>
+                <view class="scroll">
+                  <swiper class="scroll-view" interval="{{interval}}" duration="{{duration}}" vertical="{{true}}" autoplay="{{true}}" display-multiple-items="{{7}}">
+                    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                      <swiper-item class="sizeSwiper">
+                        <view class="swiper-item uni-bg-red">
+                          <view class="withdraw-item dis-flex flex-y-center flex-x-between border-line border-bottom">
+                            <view class="withdrawerName col-3 f-24">{{item['nickname']}}</view>
+                            <view class="withdrawerPrice col-9 f-24">{{"申请提现￥"+item['applymoney']}}</view>
+                          </view>
+                        </view>
+                      </swiper-item>
+                    </block>
+                  </swiper>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <form report-submit="true" data-event-opts="{{[['submit',[['applydealer',['$event']]]]]}}" bindsubmit="__e">
+        <view class="confirmApply">
+          <view class="{{['Apply-button f-28 col-3 t-c f-w',(is_apply===1)?'isapply-style':'']}}">{{''+(is_apply===0?'免费注册':'已申请，请等待审核')+''}}
+            <button formType="submit"></button>
+          </view>
+          <block wx:if="{{is_apply===0}}">
+            <view class="Apply-buttom-shade"></view>
+          </block>
+        </view>
+      </form>
+    </view>
+  </block>
+  <follow vue-id="3" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+    bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" bind:__l="__l"></follow>
+  <phone-mask vue-id="4" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" bind:__l="__l"></phone-mask>
+</view>

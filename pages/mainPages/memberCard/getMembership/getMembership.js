@@ -68,7 +68,8 @@
                 loading: !0,
                 phoneHight: null,
                 client: null,
-                scollHeight: null
+                scollHeight: null,
+                title:''
               }
             },
             onLoad: function(t) {
@@ -160,7 +161,7 @@
                 var t = this,
                   a = {};
                 n.default._post_form("&p=halfcard&do=cardList", a, function(a) {
-                  t.loading = !1, t.cardList = a.data, t.id = a.data.list[0].id, t.price = a.data.list[0].price, t.vipDetail = a.data.list[0].detail, t.username = a.data.realname, t.mobile = a.data.mobile, t.payclose = a.data.payclose, console.info("滴滴", t.model, t.client, t.payclose), console.info("操了", "1" != t.payclose && "3" != t.client && "ios" != t.model);
+                  t.loading = !1, t.cardList = a.data, t.id = a.data.list[0].id, t.price = a.data.list[0].price, t.title = a.data.list[0].name, t.vipDetail = a.data.list[0].detail, t.username = a.data.realname, t.mobile = a.data.mobile, t.payclose = a.data.payclose, console.info("滴滴", t.model, t.client, t.payclose), console.info("操了", "1" != t.payclose && "3" != t.client && "ios" != t.model);
                   var n = "";
                   n = "nhave" == t.card ? "开通" : "续费", e.setNavigationBarTitle({
                     title: n + t.halfcardtext
@@ -169,7 +170,8 @@
               },
               checkMb: function(e, t, a, n) {
                 var o = this;
-                o.mbChck = e, o.price = t, o.id = a, o.vipDetail = n
+                console.log(n)
+                o.mbChck = e, o.price = t, o.id = a, o.vipDetail = n,o.title=o.cardList.list[e].name
               },
               closePop: function() {
                 var e = this;

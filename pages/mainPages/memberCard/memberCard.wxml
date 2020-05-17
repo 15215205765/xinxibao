@@ -1,1 +1,455 @@
-<block wx:if="{{!HomeType}}"><loadlogo vue-id="1" class="data-v-35686eb0" bind:__l="__l"></loadlogo></block><block wx:else><view class="memberCard data-v-35686eb0" style="{{'height:'+(phoneHight)+';'}}"><scroll-view style="{{'height:'+(phoneHight)+';'}}" scroll-y="{{true}}" lower-threshold="{{0}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e" class="data-v-35686eb0"><view class="memberCardTitle data-v-35686eb0" style="{{'background-image:'+('url('+imageRoot+'memberBacImg.png)')+';'}}"><search-view vue-id="2" type="{{1}}" class="data-v-35686eb0" bind:__l="__l"></search-view><view class="memberCardInfo data-v-35686eb0" style="{{(memberCardInfoImg)}}"><view class="memberCardInfoPackage data-v-35686eb0"><block wx:if="{{card=='have'}}"><view class="cardInfoLeft data-v-35686eb0"><view class="cardInfoLeftTitle data-v-35686eb0"><view class="data-v-35686eb0"><image src="{{memberCardHomeInfo.info.avatar}}" class="data-v-35686eb0"></image></view><view class="data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.username}}</label></view><block wx:if="{{memberCardHomeInfo.switch_set.levelstatus=='1'}}"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.name}}</label></view></block></view></view><view class="cardInfoLeftFoot data-v-35686eb0"><label class="_span data-v-35686eb0">{{"到期时间："+memberCardHomeInfo.info.endtime}}</label></view><block wx:if="{{!!memberCardHomeInfo.info.cardsn}}"><view class="cardInfoLeftFoot1 data-v-35686eb0"><label class="_span data-v-35686eb0">{{"No."+memberCardHomeInfo.info.cardsn}}</label></view></block></view></block><block wx:if="{{card=='have'}}"><view class="cardInfoRight data-v-35686eb0"><view class="cardInfoRightTitle data-v-35686eb0"><image src="/static/images/merchant/qrS.png" data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" bindtap="__e" class="data-v-35686eb0"></image></view><view class="cardInfoRightFoot data-v-35686eb0"><label class="_span data-v-35686eb0"></label></view></view></block><block wx:if="{{card=='nhave'}}"><view class="memberPrice data-v-35686eb0"><label class="_span data-v-35686eb0">{{"开通新的"+halfcardtext+",享受更多"+privilege}}</label></view></block></view></view></view><view class="memberEquity data-v-35686eb0"><view class="memberEquityPackage data-v-35686eb0"><block wx:if="{{card=='have'&&memberCardHomeInfo.switch_set.statistics=='1'}}"><view class="memberEquityTitle data-v-35686eb0"><view class="memberEquityMoney data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.total_price}}</label></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">已消费(元)</label></view></view><view class="line data-v-35686eb0"></view><view class="memberEquityMoney data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.price}}</label></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">已为您节省(元)</label></view></view></view></block><view class="{{['data-v-35686eb0',card=='have'?'memberEquityBody':'nMargin']}}"><view class="equityBodyTitle data-v-35686eb0"><image src="{{equityMemberImg}}" class="data-v-35686eb0"></image></view><view class="equityBodyFoot data-v-35686eb0"><block wx:for="{{memberCardHomeInfo.list}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['goEquity',['$0'],[[['memberCardHomeInfo.list','',index,'link']]]]]]]}}" bindtap="__e" class="data-v-35686eb0"><view class="data-v-35686eb0"><image src="{{item.thumb}}" class="data-v-35686eb0"></image></view><view class="data-v-35686eb0"><label style="{{(colorEquity[index])}}" class="_span data-v-35686eb0">{{item.name}}</label></view></view></block></view></view><block wx:if="{{card=='have'}}"><view data-event-opts="{{[['tap',[['goGetMember',['$event']]]]]}}" class="renewButton data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">立即续费</label></view></block><block wx:if="{{card=='nhave'}}"><view data-event-opts="{{[['tap',[['goGetMember',['$event']]]]]}}" class="renewButton data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">立即开通</label></view></block></view></view><block wx:if="{{memberCardHomeInfo.switch_set.option_switch===1}}"><view class="discount data-v-35686eb0"><view class="discountPackage data-v-35686eb0"><view class="discountTitle data-v-35686eb0" scroll-x="true"><block wx:for="{{tabBarSetList}}" wx:for-item="item" wx:for-index="index"><block wx:if="{{item.status==1}}"><view data-event-opts="{{[['tap',[['checkDiscount',[index,'$0','$1'],[[['tabBarSetList','',index,'type']],[['tabBarSetList','',index,'sort']]]]]]]}}" class="{{['data-v-35686eb0',isActive==index?'acactiveClass':'errorClass']}}" bindtap="__e"><label class="_span data-v-35686eb0">{{item.name}}</label><view class="data-v-35686eb0"></view></view></block></block></view><view class="discountBdoy data-v-35686eb0"></view><block wx:if="{{type=='zk'}}"><view class="mbTwoTitle data-v-35686eb0"><block wx:for="{{timeList}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['checkMbTwoData',[index,'$0'],[[['timeList','',index,'timeData']]]]]]]}}" class="{{['data-v-35686eb0',mbTwoChecks==index?'mbTwoCheck':'mbTwoNCheck']}}" bindtap="__e"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{weekList[index]}}</label></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{timeList[index].time}}</label></view></view></block></view></block><block wx:if="{{type=='pr'&&memberCardHomeInfo.switch_set.halfcard=='1'}}"><view class="mbThreeTitle1 data-v-35686eb0"><view class="data-v-35686eb0"><view data-event-opts="{{[['tap',[['checkPr',[0,'']]]]]}}" class="{{['data-v-35686eb0',mbPr==0?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e"><label class="_span data-v-35686eb0">全部</label></view><block wx:for="{{homeList}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['checkPr',[index+1,'$0'],[[['homeList','',index,'id']]]]]]]}}" class="{{['data-v-35686eb0',mbPr==index+1?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e"><label class="_span data-v-35686eb0">{{item.name}}</label></view></block></view></view></block><block wx:if="{{!!memberCardHomeInfo.switch_set&&memberCardHomeInfo.switch_set.package=='1'&&type=='lb'}}"><view class="mbThreeTitle1 data-v-35686eb0"><view class="data-v-35686eb0"><view data-event-opts="{{[['tap',[['checkMbThree',[0,'']]]]]}}" class="{{['data-v-35686eb0',mbThreeChecks==0?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e"><label class="_span data-v-35686eb0">全部</label></view><block wx:for="{{homeList}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['checkMbThree',[index+1,'$0'],[[['homeList','',index,'id']]]]]]]}}" class="{{['data-v-35686eb0',mbThreeChecks==index+1?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e"><label class="_span data-v-35686eb0">{{item.name}}</label></view></block></view></view></block></view></view></block><block wx:if="{{memberCardHomeInfo.switch_set.option_switch===1}}"><view class="data-v-35686eb0"><block wx:if="{{type=='qg'}}"><view class="mbPackage data-v-35686eb0"><block wx:for="{{qgList}}" wx:for-item="item" wx:for-index="index"><view class="mbOne  data-v-35686eb0"><view class="mbOneImg data-v-35686eb0"><image src="{{item.logo}}" class="data-v-35686eb0"></image></view><view class="mbOneInfo data-v-35686eb0"><view class="mbOneInfoPackage data-v-35686eb0"><veiw class="mbOneInfoTitle data-v-35686eb0" vue-id="{{'3-'+index}}" bind:__l="__l" vue-slots="{{['default']}}"><label class="_span data-v-35686eb0">{{item.goods_name}}</label></veiw><veiw class="mbOneInfoBody data-v-35686eb0" vue-id="{{'4-'+index}}" bind:__l="__l" vue-slots="{{['default']}}"><label class="_span data-v-35686eb0">{{item.storename}}</label></veiw><veiw class="mbOneInfoFoot data-v-35686eb0" vue-id="{{'5-'+index}}" bind:__l="__l" vue-slots="{{['default']}}"><view class="mbOneInfoFootLeft data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.vipprice}}</label></view><view class="data-v-35686eb0"><view style="{{'width:'+(item.buy_percentage+'%')+';'}}" class="data-v-35686eb0"></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{"已售"+item.buy_num+"份"}}</label><label class="_span data-v-35686eb0">{{item.buy_percentage+"%"}}</label></view></view></view><view data-event-opts="{{[['tap',[['go',['$0'],[[['qgList','',index,'url']]]]]]]}}" class="mbOneInfoFootRight data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">去购买</label></view></veiw></view></view></view></block></view></block><block wx:if="{{type=='kq'}}"><view class="mbPackage data-v-35686eb0"><block wx:for="{{kqList}}" wx:for-item="item" wx:for-index="index"><view class="mbOne  data-v-35686eb0"><view class="mbOneImg data-v-35686eb0"><image src="{{item.logo}}" class="data-v-35686eb0"></image></view><view class="mbOneInfo data-v-35686eb0"><view class="mbOneInfoPackage data-v-35686eb0"><veiw class="mbOneInfoTitle data-v-35686eb0" vue-id="{{'6-'+index}}" bind:__l="__l" vue-slots="{{['default']}}"><label class="_span data-v-35686eb0">{{item.goods_name}}</label></veiw><veiw class="mbOneInfoFoot data-v-35686eb0" vue-id="{{'7-'+index}}" bind:__l="__l" vue-slots="{{['default']}}"><view class="mbOneInfoFootLeft data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.price}}</label></view><view class="data-v-35686eb0"><view style="{{'width:'+(item.buy_percentage+'%')+';'}}" class="data-v-35686eb0"></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{"已售"+item.buy_num+"份"}}</label><label class="_span data-v-35686eb0">{{item.buy_percentage+"%"}}</label></view></view></view><view data-event-opts="{{[['tap',[['go',['$0'],[[['kqList','',index,'url']]]]]]]}}" class="mbOneInfoFootRight data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">{{item.price=='0'?'去领取':'去购买'}}</label></view></veiw></view></view></view></block></view></block><block wx:if="{{type=='pr'||type=='zk'}}"><view class="mbPackage data-v-35686eb0"><view class="mbTwoPackage data-v-35686eb0"><block wx:for="{{zkList}}" wx:for-item="item" wx:for-index="index"><view class="mbTwo data-v-35686eb0"><view class="mbTwoImg data-v-35686eb0"><image src="{{item.logo}}" class="data-v-35686eb0"></image></view><view class="mbTwoInfo data-v-35686eb0"><view class="mbOneInfoPackage data-v-35686eb0"><view class="mbTwoInfoTitle data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.name}}</label><view class="data-v-35686eb0"><image src class="data-v-35686eb0"></image><label class="_span data-v-35686eb0">{{item.distance}}</label></view></view><view class="mbTwoInfoBody data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.limit}}</label></view><view class="mbTwoInfoFoot data-v-35686eb0"><label class="_span data-v-35686eb0">{{''+item.discount+''}}<label class="_span data-v-35686eb0">折</label></label><view data-event-opts="{{[['tap',[['getInfo',['$0','$1',0,'$2','$3','$4','$5'],[[['zkList','',index,'is_link']],[['zkList','',index,'id']],[['zkList','',index,'url']],[['zkList','',index,'use_where']],[['zkList','',index,'payonline']],[['zkList','',index,'sid']]]]]]]}}" bindtap="__e" class="data-v-35686eb0"><label class="_span data-v-35686eb0">去使用</label></view></view></view></view></view></block></view></view></block><block wx:if="{{type=='lb'}}"><view class="mbPackage data-v-35686eb0"><view class="mbTwoPackage data-v-35686eb0"><view class="mbTwoBody data-v-35686eb0"><block wx:for="{{lbList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block class="data-v-35686eb0"><block wx:if="{{item.surplus!='0'}}"><view class="mbThree  data-v-35686eb0"><view class="mbThreeTitle data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.name}}</label><label class="_span data-v-35686eb0">{{"价值"+item.price+"元"}}</label></view><block wx:if="{{item.exttype==='0'}}"><view class="mbThreeBody data-v-35686eb0"><label class="_span data-v-35686eb0">{{''+(item.datestatus==1?'共':item.datestatus==2?'每周':item.datestatus==3?'每月':item.datestatus==4?'每年':'')+item.usetimes+"次\n\t\t\t\t\t\t\t\t\t\t当前剩余"+item.surplus+'次'}}</label></view></block><view class="mbThreeFoot data-v-35686eb0"><view class="mbThreeFootLeft data-v-35686eb0"><view class="data-v-35686eb0"><image src="{{item.shop_logo}}" class="data-v-35686eb0"></image></view><label class="_span data-v-35686eb0">{{item.storename}}</label></view><view data-event-opts="{{[['tap',[['getInfo',['$0','$1',1,'$2','$3','$4','$5'],[[['lbList','',index,'is_link']],[['lbList','',index,'id']],[['lbList','',index,'url']],[['lbList','',index,'use_where']],[['lbList','',index,'payonline']],[['lbList','',index,'id']]]]]]]}}" class="mbThreeFootRight data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">去使用</label></view></view></view></block></block></block></view></view></view></block><block wx:if="{{type=='jf'}}"><view class="mbPackage data-v-35686eb0"><block wx:for="{{jfList}}" wx:for-item="item" wx:for-index="index"><view class="mbFour  data-v-35686eb0"><view class="mbFourImg data-v-35686eb0"><image src="{{item.thumb}}" class="data-v-35686eb0"></image></view><view class="mbFourInfo data-v-35686eb0"><view class="mbOneInfoPackage data-v-35686eb0"><view class="mbFourInfoTitle data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.title}}</label></view><view class="mbFourInfoFoot data-v-35686eb0"><view class="mbFourInfoFootLeft data-v-35686eb0"><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.use_credit1}}<block wx:if="{{credittext}}"><text class="data-v-35686eb0">{{credittext}}</text></block><block wx:else><text class="data-v-35686eb0">{{credittext}}</text></block>{{'+ '+item.use_credit2+"元"}}</label></view><view class="data-v-35686eb0"><label class="_span data-v-35686eb0">{{"原价:"+item.old_price+"元"}}</label></view></view><view data-event-opts="{{[['tap',[['go',['$0'],[[['jfList','',index,'url']]]]]]]}}" class="mbFourInfoFootRight data-v-35686eb0" bindtap="__e"><label class="_span data-v-35686eb0">去兑换</label></view></view></view></view></view></block></view></block><block wx:if="{{type=='tg'}}"><view class="mbPackage data-v-35686eb0"><block wx:for="{{tgList}}" wx:for-item="item" wx:for-index="index"><view class="mbFive  data-v-35686eb0"><view class="mbFiveBody data-v-35686eb0"><view class="mbFiveImg data-v-35686eb0"><image src="{{item.logo}}" class="data-v-35686eb0"></image></view><view class="mbFiveInfo data-v-35686eb0"><view class="mbFiveInfoTitle data-v-35686eb0"><label class="_span data-v-35686eb0">{{item.goods_name}}</label></view><view class="mbFiveInfoBody data-v-35686eb0"><label class="_span data-v-35686eb0"><label class="_span data-v-35686eb0">¥</label>{{''+item.price+''}}</label></view><view class="mbFiveInfoFoot data-v-35686eb0"><label class="_span data-v-35686eb0">{{"原价：¥ "+item.oldprice}}</label><view data-event-opts="{{[['tap',[['go',['$0'],[[['tgList','',index,'url']]]]]]]}}" bindtap="__e" class="data-v-35686eb0"><label class="_span data-v-35686eb0">去购买</label></view></view></view></view></view></block></view></block><loadmore vue-id="8" isMore="{{isMore}}" class="data-v-35686eb0" bind:__l="__l"></loadmore><view class="full data-v-35686eb0"></view></view></block><pop-manager vue-id="9" show="{{show}}" data-event-opts="{{[['^clickmask',[['closeShow']]]]}}" bind:clickmask="__e" class="data-v-35686eb0" bind:__l="__l" vue-slots="{{['default']}}"><view class="popPackage data-v-35686eb0"><view class="popMain data-v-35686eb0"><view class="popMainTitle data-v-35686eb0"><view class="popMainImg data-v-35686eb0"><image src="{{itemInfo.shop_logo}}" class="data-v-35686eb0"></image></view><view class="storeName data-v-35686eb0"><label class="_span data-v-35686eb0">{{itemInfo.storename}}</label></view><scroll-view class="storeMeal data-v-35686eb0" scroll-y="{{true}}"><text class="scorlltext data-v-35686eb0">{{itemInfo.limit}}</text></scroll-view></view><view class="radiusDot data-v-35686eb0"><view class="data-v-35686eb0"></view><view class="data-v-35686eb0"></view></view><view class="popMainBody data-v-35686eb0"><view class="checkPopBotton data-v-35686eb0"><view data-event-opts="{{[['tap',[['popChecks',[0]]]]]}}" class="{{['data-v-35686eb0',popChecked==0?'popCheck':'']}}" bindtap="__e"><label class="_span data-v-35686eb0">使用</label></view><view data-event-opts="{{[['tap',[['popChecks',[1]]]]]}}" class="{{['data-v-35686eb0',popChecked==1?'popCheck':'']}}" bindtap="__e"><label class="_span data-v-35686eb0">说明</label></view></view><block wx:if="{{popChecked==0}}"><view class="qrCodeType data-v-35686eb0"><block wx:if="{{!!itemInfo.discount}}"><view class="qrCodeTypeTitle data-v-35686eb0"><label class="_span data-v-35686eb0">{{itemInfo.discount+"折(特权日)"}}</label></view></block><view class="qrCode data-v-35686eb0"><image src="{{itemInfo.qrcode}}" class="data-v-35686eb0"></image></view><view class="qrCodeTypeFoot data-v-35686eb0"><label class="_span data-v-35686eb0">{{"该服务项目由"+itemInfo.storename+"提供"}}</label></view></view></block><block wx:if="{{popChecked==1}}"><view class="qrCodeType data-v-35686eb0"><scroll-view class="qrCodeTypeFoot1 data-v-35686eb0" scroll-y><rich-text class="font24 color255 data-v-35686eb0" nodes="{{itemInfo.describe}}"></rich-text></scroll-view></view></block></view></view><view data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="closeButton data-v-35686eb0" bindtap="__e"><image src="/static/images/merchant/close.png" class="data-v-35686eb0"></image></view></view></pop-manager><block wx:if="{{card=='have'}}"><pop-manager vue-id="10" show="{{payQrcodeShow}}" type="{{center}}" data-event-opts="{{[['^clickmask',[['closePayQr']]]]}}" bind:clickmask="__e" class="data-v-35686eb0" bind:__l="__l" vue-slots="{{['default']}}"><view class="payQrcodeView data-v-35686eb0"><image src="{{memberCardHomeInfo.info.qrcode}}" class="data-v-35686eb0"></image></view></pop-manager></block><block wx:if="{{!!memberCardHomeInfo.switch_set&&memberCardHomeInfo.switch_set.noticestatus=='1'&&barrageType==true}}"><barrage vue-id="11" barrageList="{{barrageList}}" barrageType="{{barrageType}}" data-ref="getset" class="data-v-35686eb0 vue-ref" bind:__l="__l"></barrage></block><tab-bars vue-id="12" tabBarAct="{{0}}" pageType="2" class="data-v-35686eb0" bind:__l="__l"></tab-bars><follow vue-id="13" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}" bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-35686eb0" bind:__l="__l"></follow></scroll-view></view></block>
+<block wx:if="{{!HomeType}}">
+  <loadlogo vue-id="1" class="data-v-35686eb0" bind:__l="__l"></loadlogo>
+</block>
+<block wx:else>
+  <view class="memberCard data-v-35686eb0" style="{{'height:'+(phoneHight)+';'}}">
+    <scroll-view style="{{'height:'+(phoneHight)+';'}}" scroll-y="{{true}}" lower-threshold="{{0}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e" class="data-v-35686eb0">
+      <view class="memberCardTitle data-v-35686eb0" style="{{'background-image:'+('url('+imageRoot+'memberBacImg.png)')+';'}}">
+        <search-view vue-id="2" type="{{1}}" class="data-v-35686eb0" bind:__l="__l"></search-view>
+        <view class="memberCardInfo data-v-35686eb0" style="{{(memberCardInfoImg)}}">
+          <view class="memberCardInfoPackage data-v-35686eb0">
+            <block wx:if="{{card=='have'}}">
+              <view class="cardInfoLeft data-v-35686eb0">
+                <view class="cardInfoLeftTitle data-v-35686eb0">
+                  <view class="data-v-35686eb0">
+                    <image src="{{memberCardHomeInfo.info.avatar}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="data-v-35686eb0">
+                    <view class="data-v-35686eb0">
+                      <label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.username}}</label>
+                    </view>
+                    <block wx:if="{{memberCardHomeInfo.switch_set.levelstatus=='1'}}">
+                      <view class="data-v-35686eb0">
+                        <label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.name}}</label>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+                <view class="cardInfoLeftFoot data-v-35686eb0">
+                  <label class="_span data-v-35686eb0">{{"到期时间："+memberCardHomeInfo.info.endtime}}</label>
+                </view>
+                <block wx:if="{{!!memberCardHomeInfo.info.cardsn}}">
+                  <view class="cardInfoLeftFoot1 data-v-35686eb0">
+                    <label class="_span data-v-35686eb0">{{"No."+memberCardHomeInfo.info.cardsn}}</label>
+                  </view>
+                </block>
+              </view>
+            </block>
+            <block wx:if="{{card=='have'}}">
+              <view class="cardInfoRight data-v-35686eb0">
+                <view class="cardInfoRightTitle data-v-35686eb0">
+                  <image src="{{imageRoot}}/static/images/merchant/qrS.png" data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" bindtap="__e" class="data-v-35686eb0"></image>
+                </view>
+                <view class="cardInfoRightFoot data-v-35686eb0">
+                  <label class="_span data-v-35686eb0"></label>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{card=='nhave'}}">
+              <view class="memberPrice data-v-35686eb0">
+                <label class="_span data-v-35686eb0">{{"开通新的"+halfcardtext+",享受更多"+privilege}}</label>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="memberEquity data-v-35686eb0">
+        <view class="memberEquityPackage data-v-35686eb0">
+          <block wx:if="{{card=='have'&&memberCardHomeInfo.switch_set.statistics=='1'}}">
+            <view class="memberEquityTitle data-v-35686eb0">
+              <view class="memberEquityMoney data-v-35686eb0">
+                <view class="data-v-35686eb0">
+                  <label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.total_price}}</label>
+                </view>
+                <view class="data-v-35686eb0">
+                  <label class="_span data-v-35686eb0">已消费(元)</label>
+                </view>
+              </view>
+              <view class="line data-v-35686eb0"></view>
+              <view class="memberEquityMoney data-v-35686eb0">
+                <view class="data-v-35686eb0">
+                  <label class="_span data-v-35686eb0">{{memberCardHomeInfo.info.price}}</label>
+                </view>
+                <view class="data-v-35686eb0">
+                  <label class="_span data-v-35686eb0">已为您节省(元)</label>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="{{['data-v-35686eb0',card=='have'?'memberEquityBody':'nMargin']}}">
+            <view class="equityBodyTitle data-v-35686eb0">
+              <image src="{{equityMemberImg}}" class="data-v-35686eb0"></image>
+            </view>
+            <view class="equityBodyFoot data-v-35686eb0">
+              <block wx:for="{{memberCardHomeInfo.list}}" wx:for-item="item" wx:for-index="index">
+                <view data-event-opts="{{[['tap',[['goEquity',['$0'],[[['memberCardHomeInfo.list','',index,'link']]]]]]]}}" bindtap="__e" class="data-v-35686eb0">
+                  <view class="data-v-35686eb0">
+                    <image src="{{item.thumb}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="data-v-35686eb0">
+                    <label style="{{(colorEquity[index])}}" class="_span data-v-35686eb0">{{item.name}}</label>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <block wx:if="{{card=='have'}}">
+            <view data-event-opts="{{[['tap',[['goGetMember',['$event']]]]]}}" class="renewButton data-v-35686eb0" bindtap="__e">
+              <label class="_span data-v-35686eb0">立即续费</label>
+            </view>
+          </block>
+          <block wx:if="{{card=='nhave'}}">
+            <view data-event-opts="{{[['tap',[['goGetMember',['$event']]]]]}}" class="renewButton data-v-35686eb0" bindtap="__e">
+              <label class="_span data-v-35686eb0">立即开通</label>
+            </view>
+          </block>
+        </view>
+      </view>
+      <block wx:if="{{memberCardHomeInfo.switch_set.option_switch===1}}">
+        <view class="discount data-v-35686eb0">
+          <view class="discountPackage data-v-35686eb0">
+            <view class="discountTitle data-v-35686eb0" scroll-x="true">
+              <block wx:for="{{tabBarSetList}}" wx:for-item="item" wx:for-index="index">
+                <block wx:if="{{item.status==1}}">
+                  <view data-event-opts="{{[['tap',[['checkDiscount',[index,'$0','$1'],[[['tabBarSetList','',index,'type']],[['tabBarSetList','',index,'sort']]]]]]]}}" class="{{['data-v-35686eb0',isActive==index?'acactiveClass':'errorClass']}}" bindtap="__e">
+                    <label class="_span data-v-35686eb0">{{item.name}}</label>
+                    <view class="data-v-35686eb0"></view>
+                  </view>
+                </block>
+              </block>
+            </view>
+            <view class="discountBdoy data-v-35686eb0"></view>
+            <block wx:if="{{type=='zk'}}">
+              <view class="mbTwoTitle data-v-35686eb0">
+                <block wx:for="{{timeList}}" wx:for-item="item" wx:for-index="index">
+                  <view data-event-opts="{{[['tap',[['checkMbTwoData',[index,'$0'],[[['timeList','',index,'timeData']]]]]]]}}" class="{{['data-v-35686eb0',mbTwoChecks==index?'mbTwoCheck':'mbTwoNCheck']}}" bindtap="__e">
+                    <view class="data-v-35686eb0">
+                      <label class="_span data-v-35686eb0">{{weekList[index]}}</label>
+                    </view>
+                    <view class="data-v-35686eb0">
+                      <label class="_span data-v-35686eb0">{{timeList[index].time}}</label>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </block>
+            <block wx:if="{{type=='pr'&&memberCardHomeInfo.switch_set.halfcard=='1'}}">
+              <view class="mbThreeTitle1 data-v-35686eb0">
+                <view class="data-v-35686eb0">
+                  <view data-event-opts="{{[['tap',[['checkPr',[0,'']]]]]}}" class="{{['data-v-35686eb0',mbPr==0?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e">
+                    <label class="_span data-v-35686eb0">全部</label>
+                  </view>
+                  <block wx:for="{{homeList}}" wx:for-item="item" wx:for-index="index">
+                    <view data-event-opts="{{[['tap',[['checkPr',[index+1,'$0'],[[['homeList','',index,'id']]]]]]]}}" class="{{['data-v-35686eb0',mbPr==index+1?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e">
+                      <label class="_span data-v-35686eb0">{{item.name}}</label>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{!!memberCardHomeInfo.switch_set&&memberCardHomeInfo.switch_set.package=='1'&&type=='lb'}}">
+              <view class="mbThreeTitle1 data-v-35686eb0">
+                <view class="data-v-35686eb0">
+                  <view data-event-opts="{{[['tap',[['checkMbThree',[0,'']]]]]}}" class="{{['data-v-35686eb0',mbThreeChecks==0?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e">
+                    <label class="_span data-v-35686eb0">全部</label>
+                  </view>
+                  <block wx:for="{{homeList}}" wx:for-item="item" wx:for-index="index">
+                    <view data-event-opts="{{[['tap',[['checkMbThree',[index+1,'$0'],[[['homeList','',index,'id']]]]]]]}}" class="{{['data-v-35686eb0',mbThreeChecks==index+1?'mbThreeCheck':'mbThreeNCheck']}}" bindtap="__e">
+                      <label class="_span data-v-35686eb0">{{item.name}}</label>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{memberCardHomeInfo.switch_set.option_switch===1}}">
+        <view class="data-v-35686eb0">
+          <block wx:if="{{type=='qg'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <block wx:for="{{qgList}}" wx:for-item="item" wx:for-index="index">
+                <view class="mbOne  data-v-35686eb0">
+                  <view class="mbOneImg data-v-35686eb0">
+                    <image src="{{item.logo}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="mbOneInfo data-v-35686eb0">
+                    <view class="mbOneInfoPackage data-v-35686eb0">
+                      <veiw class="mbOneInfoTitle data-v-35686eb0" vue-id="{{'3-'+index}}" bind:__l="__l" vue-slots="{{['default']}}">
+                        <label class="_span data-v-35686eb0">{{item.goods_name}}</label>
+                      </veiw>
+                      <veiw class="mbOneInfoBody data-v-35686eb0" vue-id="{{'4-'+index}}" bind:__l="__l" vue-slots="{{['default']}}">
+                        <label class="_span data-v-35686eb0">{{item.storename}}</label>
+                      </veiw>
+                      <veiw class="mbOneInfoFoot data-v-35686eb0" vue-id="{{'5-'+index}}" bind:__l="__l" vue-slots="{{['default']}}">
+                        <view class="mbOneInfoFootLeft data-v-35686eb0">
+                          <view class="data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">{{item.vipprice}}</label>
+                          </view>
+                          <view class="data-v-35686eb0">
+                            <view style="{{'width:'+(item.buy_percentage+'%')+';'}}" class="data-v-35686eb0"></view>
+                            <view class="data-v-35686eb0">
+                              <label class="_span data-v-35686eb0">{{"已售"+item.buy_num+"份"}}</label>
+                              <label class="_span data-v-35686eb0">{{item.buy_percentage+"%"}}</label>
+                            </view>
+                          </view>
+                        </view>
+                        <view data-event-opts="{{[['tap',[['go',['$0'],[[['qgList','',index,'url']]]]]]]}}" class="mbOneInfoFootRight data-v-35686eb0" bindtap="__e">
+                          <label class="_span data-v-35686eb0">去购买</label>
+                        </view>
+                      </veiw>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:if="{{type=='kq'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <block wx:for="{{kqList}}" wx:for-item="item" wx:for-index="index">
+                <view class="mbOne  data-v-35686eb0">
+                  <view class="mbOneImg data-v-35686eb0">
+                    <image src="{{item.logo}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="mbOneInfo data-v-35686eb0">
+                    <view class="mbOneInfoPackage data-v-35686eb0">
+                      <veiw class="mbOneInfoTitle data-v-35686eb0" vue-id="{{'6-'+index}}" bind:__l="__l" vue-slots="{{['default']}}">
+                        <label class="_span data-v-35686eb0">{{item.goods_name}}</label>
+                      </veiw>
+                      <veiw class="mbOneInfoFoot data-v-35686eb0" vue-id="{{'7-'+index}}" bind:__l="__l" vue-slots="{{['default']}}">
+                        <view class="mbOneInfoFootLeft data-v-35686eb0">
+                          <view class="data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">{{item.price}}</label>
+                          </view>
+                          <view class="data-v-35686eb0">
+                            <view style="{{'width:'+(item.buy_percentage+'%')+';'}}" class="data-v-35686eb0"></view>
+                            <view class="data-v-35686eb0">
+                              <label class="_span data-v-35686eb0">{{"已售"+item.buy_num+"份"}}</label>
+                              <label class="_span data-v-35686eb0">{{item.buy_percentage+"%"}}</label>
+                            </view>
+                          </view>
+                        </view>
+                        <view data-event-opts="{{[['tap',[['go',['$0'],[[['kqList','',index,'url']]]]]]]}}" class="mbOneInfoFootRight data-v-35686eb0" bindtap="__e">
+                          <label class="_span data-v-35686eb0">{{item.price=='0'?'去领取':'去购买'}}</label>
+                        </view>
+                      </veiw>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:if="{{type=='pr'||type=='zk'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <view class="mbTwoPackage data-v-35686eb0">
+                <block wx:for="{{zkList}}" wx:for-item="item" wx:for-index="index">
+                  <view class="mbTwo data-v-35686eb0">
+                    <view class="mbTwoImg data-v-35686eb0">
+                      <image src="{{item.logo}}" class="data-v-35686eb0"></image>
+                    </view>
+                    <view class="mbTwoInfo data-v-35686eb0">
+                      <view class="mbOneInfoPackage data-v-35686eb0">
+                        <view class="mbTwoInfoTitle data-v-35686eb0">
+                          <label class="_span data-v-35686eb0">{{item.name}}</label>
+                          <view class="data-v-35686eb0">
+                            <image src class="data-v-35686eb0"></image>
+                            <label class="_span data-v-35686eb0">{{item.distance}}</label>
+                          </view>
+                        </view>
+                        <view class="mbTwoInfoBody data-v-35686eb0">
+                          <label class="_span data-v-35686eb0">{{item.limit}}</label>
+                        </view>
+                        <view class="mbTwoInfoFoot data-v-35686eb0">
+                          <label class="_span data-v-35686eb0">{{''+item.discount+''}}
+                            <label class="_span data-v-35686eb0">折</label>
+                          </label>
+                          <view data-event-opts="{{[['tap',[['getInfo',['$0','$1',0,'$2','$3','$4','$5'],[[['zkList','',index,'is_link']],[['zkList','',index,'id']],[['zkList','',index,'url']],[['zkList','',index,'use_where']],[['zkList','',index,'payonline']],[['zkList','',index,'sid']]]]]]]}}"
+                            bindtap="__e" class="data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">去使用</label>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{type=='lb'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <view class="mbTwoPackage data-v-35686eb0">
+                <view class="mbTwoBody data-v-35686eb0">
+                  <block wx:for="{{lbList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                    <block class="data-v-35686eb0">
+                      <block wx:if="{{item.surplus!='0'}}">
+                        <view class="mbThree  data-v-35686eb0">
+                          <view class="mbThreeTitle data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">{{item.name}}</label>
+                            <label class="_span data-v-35686eb0">{{"价值"+item.price+"元"}}</label>
+                          </view>
+                          <block wx:if="{{item.exttype==='0'}}">
+                            <view class="mbThreeBody data-v-35686eb0">
+                              <label class="_span data-v-35686eb0">{{''+(item.datestatus==1?'共':item.datestatus==2?'每周':item.datestatus==3?'每月':item.datestatus==4?'每年':'')+item.usetimes+"次\n\t\t\t\t\t\t\t\t\t\t当前剩余"+item.surplus+'次'}}</label>
+                            </view>
+                          </block>
+                          <view class="mbThreeFoot data-v-35686eb0">
+                            <view class="mbThreeFootLeft data-v-35686eb0">
+                              <view class="data-v-35686eb0">
+                                <image src="{{item.shop_logo}}" class="data-v-35686eb0"></image>
+                              </view>
+                              <label class="_span data-v-35686eb0">{{item.storename}}</label>
+                            </view>
+                            <view data-event-opts="{{[['tap',[['getInfo',['$0','$1',1,'$2','$3','$4','$5'],[[['lbList','',index,'is_link']],[['lbList','',index,'id']],[['lbList','',index,'url']],[['lbList','',index,'use_where']],[['lbList','',index,'payonline']],[['lbList','',index,'id']]]]]]]}}"
+                              class="mbThreeFootRight data-v-35686eb0" bindtap="__e">
+                              <label class="_span data-v-35686eb0">去使用</label>
+                            </view>
+                          </view>
+                        </view>
+                      </block>
+                    </block>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{type=='jf'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <block wx:for="{{jfList}}" wx:for-item="item" wx:for-index="index">
+                <view class="mbFour  data-v-35686eb0">
+                  <view class="mbFourImg data-v-35686eb0">
+                    <image src="{{item.thumb}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="mbFourInfo data-v-35686eb0">
+                    <view class="mbOneInfoPackage data-v-35686eb0">
+                      <view class="mbFourInfoTitle data-v-35686eb0">
+                        <label class="_span data-v-35686eb0">{{item.title}}</label>
+                      </view>
+                      <view class="mbFourInfoFoot data-v-35686eb0">
+                        <view class="mbFourInfoFootLeft data-v-35686eb0">
+                          <view class="data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">{{item.use_credit1}}
+                              <block wx:if="{{credittext}}">
+                                <text class="data-v-35686eb0">{{credittext}}</text>
+                              </block>
+                              <block wx:else>
+                                <text class="data-v-35686eb0">{{credittext}}</text>
+                              </block>{{'+ '+item.use_credit2+"元"}}</label>
+                          </view>
+                          <view class="data-v-35686eb0">
+                            <label class="_span data-v-35686eb0">{{"原价:"+item.old_price+"元"}}</label>
+                          </view>
+                        </view>
+                        <view data-event-opts="{{[['tap',[['go',['$0'],[[['jfList','',index,'url']]]]]]]}}" class="mbFourInfoFootRight data-v-35686eb0" bindtap="__e">
+                          <label class="_span data-v-35686eb0">去兑换</label>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <block wx:if="{{type=='tg'}}">
+            <view class="mbPackage data-v-35686eb0">
+              <block wx:for="{{tgList}}" wx:for-item="item" wx:for-index="index">
+                <view class="mbFive  data-v-35686eb0">
+                  <view class="mbFiveBody data-v-35686eb0">
+                    <view class="mbFiveImg data-v-35686eb0">
+                      <image src="{{item.logo}}" class="data-v-35686eb0"></image>
+                    </view>
+                    <view class="mbFiveInfo data-v-35686eb0">
+                      <view class="mbFiveInfoTitle data-v-35686eb0">
+                        <label class="_span data-v-35686eb0">{{item.goods_name}}</label>
+                      </view>
+                      <view class="mbFiveInfoBody data-v-35686eb0">
+                        <label class="_span data-v-35686eb0">
+                          <label class="_span data-v-35686eb0">¥</label>{{''+item.price+''}}</label>
+                      </view>
+                      <view class="mbFiveInfoFoot data-v-35686eb0">
+                        <label class="_span data-v-35686eb0">{{"原价：¥ "+item.oldprice}}</label>
+                        <view data-event-opts="{{[['tap',[['go',['$0'],[[['tgList','',index,'url']]]]]]]}}" bindtap="__e" class="data-v-35686eb0">
+                          <label class="_span data-v-35686eb0">去购买</label>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <loadmore vue-id="8" isMore="{{isMore}}" class="data-v-35686eb0" bind:__l="__l"></loadmore>
+          <view class="full data-v-35686eb0"></view>
+        </view>
+      </block>
+      <pop-manager vue-id="9" show="{{show}}" data-event-opts="{{[['^clickmask',[['closeShow']]]]}}" bind:clickmask="__e" class="data-v-35686eb0" bind:__l="__l" vue-slots="{{['default']}}">
+        <view class="popPackage data-v-35686eb0">
+          <view class="popMain data-v-35686eb0">
+            <view class="popMainTitle data-v-35686eb0">
+              <view class="popMainImg data-v-35686eb0">
+                <image src="{{itemInfo.shop_logo}}" class="data-v-35686eb0"></image>
+              </view>
+              <view class="storeName data-v-35686eb0">
+                <label class="_span data-v-35686eb0">{{itemInfo.storename}}</label>
+              </view>
+              <scroll-view class="storeMeal data-v-35686eb0" scroll-y="{{true}}">
+                <text class="scorlltext data-v-35686eb0">{{itemInfo.limit}}</text>
+              </scroll-view>
+            </view>
+            <view class="radiusDot data-v-35686eb0">
+              <view class="data-v-35686eb0"></view>
+              <view class="data-v-35686eb0"></view>
+            </view>
+            <view class="popMainBody data-v-35686eb0">
+              <view class="checkPopBotton data-v-35686eb0">
+                <view data-event-opts="{{[['tap',[['popChecks',[0]]]]]}}" class="{{['data-v-35686eb0',popChecked==0?'popCheck':'']}}" bindtap="__e">
+                  <label class="_span data-v-35686eb0">使用</label>
+                </view>
+                <view data-event-opts="{{[['tap',[['popChecks',[1]]]]]}}" class="{{['data-v-35686eb0',popChecked==1?'popCheck':'']}}" bindtap="__e">
+                  <label class="_span data-v-35686eb0">说明</label>
+                </view>
+              </view>
+              <block wx:if="{{popChecked==0}}">
+                <view class="qrCodeType data-v-35686eb0">
+                  <block wx:if="{{!!itemInfo.discount}}">
+                    <view class="qrCodeTypeTitle data-v-35686eb0">
+                      <label class="_span data-v-35686eb0">{{itemInfo.discount+"折(特权日)"}}</label>
+                    </view>
+                  </block>
+                  <view class="qrCode data-v-35686eb0">
+                    <image src="{{itemInfo.qrcode}}" class="data-v-35686eb0"></image>
+                  </view>
+                  <view class="qrCodeTypeFoot data-v-35686eb0">
+                    <label class="_span data-v-35686eb0">{{"该服务项目由"+itemInfo.storename+"提供"}}</label>
+                  </view>
+                </view>
+              </block>
+              <block wx:if="{{popChecked==1}}">
+                <view class="qrCodeType data-v-35686eb0">
+                  <scroll-view class="qrCodeTypeFoot1 data-v-35686eb0" scroll-y>
+                    <rich-text class="font24 color255 data-v-35686eb0" nodes="{{itemInfo.describe}}"></rich-text>
+                  </scroll-view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <view data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="closeButton data-v-35686eb0" bindtap="__e">
+            <image src="{{imageRoot}}/static/images/merchant/close.png" class="data-v-35686eb0"></image>
+          </view>
+        </view>
+      </pop-manager>
+      <block wx:if="{{card=='have'}}">
+        <pop-manager vue-id="10" show="{{payQrcodeShow}}" type="{{center}}" data-event-opts="{{[['^clickmask',[['closePayQr']]]]}}" bind:clickmask="__e" class="data-v-35686eb0" bind:__l="__l" vue-slots="{{['default']}}">
+          <view class="payQrcodeView data-v-35686eb0">
+            <image src="{{memberCardHomeInfo.info.qrcode}}" class="data-v-35686eb0"></image>
+          </view>
+        </pop-manager>
+      </block>
+      <block wx:if="{{!!memberCardHomeInfo.switch_set&&memberCardHomeInfo.switch_set.noticestatus=='1'&&barrageType==true}}">
+        <barrage vue-id="11" barrageList="{{barrageList}}" barrageType="{{barrageType}}" data-ref="getset" class="data-v-35686eb0 vue-ref" bind:__l="__l"></barrage>
+      </block>
+      <tab-bars vue-id="12" tabBarAct="{{0}}" pageType="2" class="data-v-35686eb0" bind:__l="__l"></tab-bars>
+      <follow vue-id="13" followShow="{{followShow}}" followType="{{followType}}" followTitleShow="{{followTitleShow}}" data-event-opts="{{[['^clickmask',[['openQrShow']]],['^closeFollowPop',[['closeFollowPop']]],['^closeFollowTitle',[['closeFollowTitle']]]]}}"
+        bind:clickmask="__e" bind:closeFollowPop="__e" bind:closeFollowTitle="__e" class="data-v-35686eb0" bind:__l="__l"></follow>
+    </scroll-view>
+  </view>
+</block>

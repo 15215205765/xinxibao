@@ -1,1 +1,81 @@
-<view><view class="container"><view class="pages-header p-r" style="{{'background-image:'+(' url('+imageRoot+'merchantBg1.png)')+';'}}"></view><view class="merchantuserCenter p-r p-left-right-30"><view class="usercenter-start dis-flex flex-x-between flex-y-center"><view class="dis-flex"><image class="usercenter-img" src="{{userInfo.storelogo}}"></image><view class="dis-flex flex-dir-column f-24"><view class="f-30 m-btm10 font-blod">{{userInfo.storename}}</view><view class="dis-flex"><view>{{userInfo.endtime+"到期"}}</view><view class="dis-flex usercenter-xf flex-y-center"><view data-event-opts="{{[['tap',[['go',['pages/mainPages/Settled/Settled?page=2']]]]]}}" bindtap="__e">续费</view><view class="i icon iconfont icon-jinrujiantou"></view></view></view></view></view><view data-event-opts="{{[['tap',[['goSet',['$event']]]]]}}" class="f-24 dis-flex flex-y-center" bindtap="__e"><view>编辑店铺</view><view class="i icon iconfont icon-jinrujiantou usercenter-edit-icon"></view></view></view><view class="userCenter-header bor-radius-10upx b-f"><view class="dis-flex flex-y-center"><view class="dis-flex flex-dir-column" style="width:50%;"><view class="f-24 color-99 m-top4">店铺余额（元）</view><view class="f-50 font-blod price">{{userInfo.nowmoney}}</view></view><view class="userCenter-header-income"><view class="f-24 userCenter-header-btn dis-flex flex-x-center"><view data-event-opts="{{[['tap',[['goCash',['$event']]]]]}}" class="text" bindtap="__e">提现</view><view class="i icon iconfont icon-jinrujiantou"></view></view></view></view></view><view class="tool-tab m-top20"><view class="tool-list dis-flex flex-dir-column"><block wx:for="{{tab_list}}" wx:for-item="tool_item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],[[['tab_list','',index,'item_navType']]]]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e"><image class="tool-item-icon" src="{{tool_item.item_icon}}" mode></image><view class="dis-flex flex-x-between flex-y-center tool-item-right"><view class="f-28 color-33">{{tool_item.item_name}}</view><view class="dis-flex flex-y-center flex-x-end"><view class="i icon iconfont icon-jinrujiantouxiao1"></view></view></view></view></block><block wx:if="{{userInfo.switch==1}}"><view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/index?rzType=2']]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e"><image class="tool-item-icon" src="/static/images/merchant/qyrk.png" mode></image><view class="dis-flex flex-x-between flex-y-center tool-item-right"><view class="f-28 color-33">企业认证</view><view class="dis-flex flex-y-center flex-x-end"><view class="rztext">{{''+(userInfo.attestation.attestation==0?'未认证':userInfo.attestation.attestation==1?'待审核':userInfo.attestation.attestation==2?'已审核':'被驳回')+''}}</view><view class="i icon iconfont icon-jinrujiantouxiao1"></view></view></view></view></block></view></view><view class="tool-tab m-top20"><view class="tool-list dis-flex flex-dir-column"><view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],['tool_item.item_navType']]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e"><image class="tool-item-icon" src="/static/images/centerMerchant/back.png" alt></image><view data-event-opts="{{[['tap',[['go',['pages/mainPages/index/index']]]]]}}" class="dis-flex flex-x-between flex-y-center tool-item-right" bindtap="__e"><view class="f-28 color-33">返回首页</view><view class="dis-flex flex-y-center flex-x-end"><view class="i icon iconfont icon-jinrujiantouxiao1"></view></view></view></view></view></view></view></view><nav-bar vue-id="1" tabBarAct="{{4}}" bind:__l="__l"></nav-bar></view>
+<view>
+  <view class="container">
+    <view class="pages-header p-r" style="{{'background-image:'+(' url('+imageRoot+'merchantBg1.png)')+';'}}"></view>
+    <view class="merchantuserCenter p-r p-left-right-30">
+      <view class="usercenter-start dis-flex flex-x-between flex-y-center">
+        <view class="dis-flex">
+          <image class="usercenter-img" src="{{userInfo.storelogo}}"></image>
+          <view class="dis-flex flex-dir-column f-24">
+            <view class="f-30 m-btm10 font-blod">{{userInfo.storename}}</view>
+            <view class="dis-flex">
+              <view>{{userInfo.endtime+"到期"}}</view>
+              <view class="dis-flex usercenter-xf flex-y-center">
+                <view data-event-opts="{{[['tap',[['go',['pages/mainPages/Settled/Settled?page=2']]]]]}}" bindtap="__e">续费</view>
+                <view class="i icon iconfont icon-jinrujiantou"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view data-event-opts="{{[['tap',[['goSet',['$event']]]]]}}" class="f-24 dis-flex flex-y-center" bindtap="__e">
+          <view>编辑店铺</view>
+          <view class="i icon iconfont icon-jinrujiantou usercenter-edit-icon"></view>
+        </view>
+      </view>
+      <view class="userCenter-header bor-radius-10upx b-f">
+        <view class="dis-flex flex-y-center">
+          <view class="dis-flex flex-dir-column" style="width:50%;">
+            <view class="f-24 color-99 m-top4">店铺余额（元）</view>
+            <view class="f-50 font-blod price">{{userInfo.nowmoney}}</view>
+          </view>
+          <view class="userCenter-header-income">
+            <view class="f-24 userCenter-header-btn dis-flex flex-x-center">
+              <view data-event-opts="{{[['tap',[['goCash',['$event']]]]]}}" class="text" bindtap="__e">提现</view>
+              <view class="i icon iconfont icon-jinrujiantou"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="tool-tab m-top20">
+        <view class="tool-list dis-flex flex-dir-column">
+          <block wx:for="{{tab_list}}" wx:for-item="tool_item" wx:for-index="index" wx:key="index">
+            <view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],[[['tab_list','',index,'item_navType']]]]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e">
+              <image class="tool-item-icon" src="{{imageRoot+tool_item.item_icon}}" mode></image>
+              <view class="dis-flex flex-x-between flex-y-center tool-item-right">
+                <view class="f-28 color-33">{{tool_item.item_name}}</view>
+                <view class="dis-flex flex-y-center flex-x-end">
+                  <view class="i icon iconfont icon-jinrujiantouxiao1"></view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{userInfo.switch==1}}">
+            <view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/index?rzType=2']]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e">
+              <image class="tool-item-icon" src="{{imageRoot}}/static/images/merchant/qyrk.png" mode></image>
+              <view class="dis-flex flex-x-between flex-y-center tool-item-right">
+                <view class="f-28 color-33">企业认证</view>
+                <view class="dis-flex flex-y-center flex-x-end">
+                  <view class="rztext">{{''+(userInfo.attestation.attestation==0?'未认证':userInfo.attestation.attestation==1?'待审核':userInfo.attestation.attestation==2?'已审核':'被驳回')+''}}</view>
+                  <view class="i icon iconfont icon-jinrujiantouxiao1"></view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="tool-tab m-top20">
+        <view class="tool-list dis-flex flex-dir-column">
+          <view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],['tool_item.item_navType']]]]]}}" class="tool-item flex-box t-c dis-flex" bindtap="__e">
+            <image class="tool-item-icon" src="{{imageRoot}}/static/images/centerMerchant/back.png" alt></image>
+            <view data-event-opts="{{[['tap',[['go',['pages/mainPages/index/index']]]]]}}" class="dis-flex flex-x-between flex-y-center tool-item-right" bindtap="__e">
+              <view class="f-28 color-33">返回首页</view>
+              <view class="dis-flex flex-y-center flex-x-end">
+                <view class="i icon iconfont icon-jinrujiantouxiao1"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <nav-bar vue-id="1" tabBarAct="{{4}}" bind:__l="__l"></nav-bar>
+</view>

@@ -1,1 +1,145 @@
-<view><view class="container"><block wx:if="{{filterDialog}}"><view class="record-dialog dis-flex flex-x-center flex-y-center"><view class="record-dialog-main"><view class="m-top40 f-30 color-33 m-btm40 t-c">筛选时间</view><view class="color-33 f-24 m-left30">起始时间</view><block wx:if="{{visible}}"><picker-view class="record-picker-view" indicator-style="{{indicatorStyle}}" value="{{value}}" data-event-opts="{{[['change',[['starChange',['$event']]]]]}}" bindchange="__e"><picker-view-column><block wx:for="{{years}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"年"}}</view></block></picker-view-column><picker-view-column><block wx:for="{{months}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"月"}}</view></block></picker-view-column><picker-view-column><block wx:for="{{days}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"日"}}</view></block></picker-view-column></picker-view></block><view class="color-33 f-24 m-left30">结束时间</view><block wx:if="{{visible}}"><picker-view class="record-picker-view" indicator-style="{{indicatorStyle}}" value="{{value}}" data-event-opts="{{[['change',[['endChange',['$event']]]]]}}" bindchange="__e"><picker-view-column><block wx:for="{{years}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"年"}}</view></block></picker-view-column><picker-view-column><block wx:for="{{months}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"月"}}</view></block></picker-view-column><picker-view-column><block wx:for="{{days}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item">{{item+"日"}}</view></block></picker-view-column></picker-view></block><view class="record-dialog-btns dis-flex flex-y-center"><view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="btn cancel" bindtap="__e">取消</view><view class="line"></view><view data-event-opts="{{[['tap',[['checkBind',['$event']]]]]}}" class="btn confirm" bindtap="__e">确认</view></view></view></view></block><view class="pages-header p-r" style="{{'background-image:'+('url('+imageRoot+'delaer_bg.png)')+';'}}"><view class="person-content dis-flex flex-y-center flex-x-around"><view class="user-referrer-name flex-x-center"><view class="dis-flex flex-dir-column flex-y-center"><view class="user-name col-f f-50 f-w">{{storeInfo.todaymoney}}</view></view><view class="referrer-name col-9 f-24 m-top10">今日交易额(元)</view></view><view class="user-referrer-name flex-x-center"><view class="dis-flex flex-dir-column flex-y-center"><view class="user-name col-f f-50 f-w">{{storeInfo.todayordernum}}</view></view><view class="referrer-name col-9 f-24 m-top10">今日订单数(单)</view></view></view></view><view class="dealer-content p-r p-left-right-30"><view class="tool-tab bor-radius-10upx b-f"><view class="tool-list dis-flex"><block wx:for="{{tab_list}}" wx:for-item="tool_item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],[[['tab_list','',index,'item_navType']]]]]]]}}" class="tool-item flex-box t-c" bindtap="__e"><image class="tool-item-icon" src="{{tool_item.item_icon}}" mode></image><view class="f-24 col-3">{{tool_item.item_name}}</view></view></block></view></view><block wx:if="{{!!typeList[index1]&&!!pluginList[index2]}}"><view class="dealer-menu m-top-btm30"><view class="menu-style"><view class="select-box dis-flex flex-x-between f-24"><picker value="{{index1}}" range="{{typeList}}" range-key="label" data-event-opts="{{[['change',[['changeType',['$event']]]]]}}" bindchange="__e"><view class="dis-flex">{{''+typeList[index1].label+''}}<view class="i icon iconfont icon-unfold"></view></view></picker><picker value="{{index2}}" range="{{pluginList}}" range-key="label" data-event-opts="{{[['change',[['changePlugin',['$event']]]]]}}" bindchange="__e"><view class="dis-flex">{{''+pluginList[index2].label+''}}<view class="i icon iconfont icon-unfold"></view></view></picker></view><view class="merchant-radio-group dis-flex"><view data-event-opts="{{[['tap',[['tabClick',[1]]]]]}}" class="{{['merchant-radio',(tabCheck===1)?'check':'']}}" bindtap="__e">今日</view><view data-event-opts="{{[['tap',[['tabClick',[2]]]]]}}" class="{{['merchant-radio',(tabCheck===2)?'check':'']}}" bindtap="__e">昨日</view><view data-event-opts="{{[['tap',[['tabClick',[3]]]]]}}" class="{{['merchant-radio',(tabCheck===3)?'check':'']}}" bindtap="__e">7日</view><view data-event-opts="{{[['tap',[['tabClick',[4]]]]]}}" class="{{['merchant-radio',(tabCheck===4)?'check':'']}}" bindtap="__e">30日</view><view data-event-opts="{{[['tap',[['tabClick',[5]]]]]}}" class="{{['merchant-radio',(tabCheck===5)?'check':'']}}" bindtap="__e">自定义</view></view></view><canvas hidden="{{!(filterDialog==false)}}" class="charts" canvas-id="canvasLineA" id="canvasLineA" data-event-opts="{{[['touchstart',[['touchLineA',['$event']]]],['touchmove',[['moveLineA',['$event']]]],['touchend',[['touchEndLineA',['$event']]]]]}}" bindtouchstart="__e" bindtouchmove="__e" bindtouchend="__e"></canvas></view></block></view><pop-view vue-id="1" show="{{showTabbar}}" type="top" data-event-opts="{{[['^clickmask',[['e1']]]]}}" bind:clickmask="__e" bind:__l="__l" vue-slots="{{['default']}}"><view class="tabbar-main b-f"><view class="tabBar-list dis-flex border-line border-bottom"><view data-event-opts="{{[['tap',[['swichClass',['classfly']]]]]}}" class="tabBar-item dis-flex flex-x-center flex-y-center f-28 col-3" bindtap="__e"><view>{{class_one}}</view><view class="{{['iconfont',classType==='classfly'?'icon-unfold':'icon-fold']}}"></view></view><view data-event-opts="{{[['tap',[['swichClass',['sort']]]]]}}" class="tabBar-item dis-flex flex-x-center flex-y-center f-28 col-3" bindtap="__e"><view>{{class_two}}</view><view class="{{['iconfont',classType==='sort'?'icon-unfold':'icon-fold']}}"></view></view></view><block wx:if="{{classType==='classfly'}}"><block><view class="control-list padding-box-all"><block wx:for="{{Control_sort}}" wx:for-item="tabItem" wx:for-index="index" wx:key="type"><view data-event-opts="{{[['tap',[['swichClassType',['classfly','$0'],[[['Control_sort','type',tabItem.type]]]]]]]}}" class="{{['f-28 col-3 m-btm40',(tabItem.name===class_one)?'selectTabbar':'']}}" bindtap="__e">{{''+tabItem.name+''}}</view></block></view></block></block><block wx:else><block><view class="control-list padding-box-all"><view data-event-opts="{{[['tap',[['swichClassType',['classfly','all']]]]]}}" class="{{['f-28 col-3 m-btm40',('全部'===class_one)?'selectTabbar':'']}}" bindtap="__e">全部</view><block wx:for="{{qmj}}" wx:for-item="tabItem" wx:for-index="index" wx:key="type"><view data-event-opts="{{[['tap',[['swichClassType',['sort','$0'],[[['qmj','type',tabItem.type]]]]]]]}}" class="{{['f-28 col-3 m-btm40',(tabItem.name===class_two)?'selectTabbar':'']}}" bindtap="__e">{{''+tabItem.name+''}}</view></block></view></block></block></view></pop-view></view><nav-bar vue-id="2" tabBarAct="{{0}}" bind:__l="__l"></nav-bar></view>
+<view>
+  <view class="container">
+    <block wx:if="{{filterDialog}}">
+      <view class="record-dialog dis-flex flex-x-center flex-y-center">
+        <view class="record-dialog-main">
+          <view class="m-top40 f-30 color-33 m-btm40 t-c">筛选时间</view>
+          <view class="color-33 f-24 m-left30">起始时间</view>
+          <block wx:if="{{visible}}">
+            <picker-view class="record-picker-view" indicator-style="{{indicatorStyle}}" value="{{value}}" data-event-opts="{{[['change',[['starChange',['$event']]]]]}}" bindchange="__e">
+              <picker-view-column>
+                <block wx:for="{{years}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"年"}}</view>
+                </block>
+              </picker-view-column>
+              <picker-view-column>
+                <block wx:for="{{months}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"月"}}</view>
+                </block>
+              </picker-view-column>
+              <picker-view-column>
+                <block wx:for="{{days}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"日"}}</view>
+                </block>
+              </picker-view-column>
+            </picker-view>
+          </block>
+          <view class="color-33 f-24 m-left30">结束时间</view>
+          <block wx:if="{{visible}}">
+            <picker-view class="record-picker-view" indicator-style="{{indicatorStyle}}" value="{{value}}" data-event-opts="{{[['change',[['endChange',['$event']]]]]}}" bindchange="__e">
+              <picker-view-column>
+                <block wx:for="{{years}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"年"}}</view>
+                </block>
+              </picker-view-column>
+              <picker-view-column>
+                <block wx:for="{{months}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"月"}}</view>
+                </block>
+              </picker-view-column>
+              <picker-view-column>
+                <block wx:for="{{days}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                  <view class="item">{{item+"日"}}</view>
+                </block>
+              </picker-view-column>
+            </picker-view>
+          </block>
+          <view class="record-dialog-btns dis-flex flex-y-center">
+            <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="btn cancel" bindtap="__e">取消</view>
+            <view class="line"></view>
+            <view data-event-opts="{{[['tap',[['checkBind',['$event']]]]]}}" class="btn confirm" bindtap="__e">确认</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="pages-header p-r" style="{{'background-image:'+('url('+imageRoot+'delaer_bg.png)')+';'}}">
+      <view class="person-content dis-flex flex-y-center flex-x-around">
+        <view class="user-referrer-name flex-x-center">
+          <view class="dis-flex flex-dir-column flex-y-center">
+            <view class="user-name col-f f-50 f-w">{{storeInfo.todaymoney}}</view>
+          </view>
+          <view class="referrer-name col-9 f-24 m-top10">今日交易额(元)</view>
+        </view>
+        <view class="user-referrer-name flex-x-center">
+          <view class="dis-flex flex-dir-column flex-y-center">
+            <view class="user-name col-f f-50 f-w">{{storeInfo.todayordernum}}</view>
+          </view>
+          <view class="referrer-name col-9 f-24 m-top10">今日订单数(单)</view>
+        </view>
+      </view>
+    </view>
+    <view class="dealer-content p-r p-left-right-30">
+      <view class="tool-tab bor-radius-10upx b-f">
+        <view class="tool-list dis-flex">
+          <block wx:for="{{tab_list}}" wx:for-item="tool_item" wx:for-index="index" wx:key="index">
+            <view data-event-opts="{{[['tap',[['navgateTo',['$event','$0'],[[['tab_list','',index,'item_navType']]]]]]]}}" class="tool-item flex-box t-c" bindtap="__e">
+              <image class="tool-item-icon" src="{{imageRoot+tool_item.item_icon}}" mode></image>
+              <view class="f-24 col-3">{{tool_item.item_name}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <block wx:if="{{!!typeList[index1]&&!!pluginList[index2]}}">
+        <view class="dealer-menu m-top-btm30">
+          <view class="menu-style">
+            <view class="select-box dis-flex flex-x-between f-24">
+              <picker value="{{index1}}" range="{{typeList}}" range-key="label" data-event-opts="{{[['change',[['changeType',['$event']]]]]}}" bindchange="__e">
+                <view class="dis-flex">{{''+typeList[index1].label+''}}
+                  <view class="i icon iconfont icon-unfold"></view>
+                </view>
+              </picker>
+              <picker value="{{index2}}" range="{{pluginList}}" range-key="label" data-event-opts="{{[['change',[['changePlugin',['$event']]]]]}}" bindchange="__e">
+                <view class="dis-flex">{{''+pluginList[index2].label+''}}
+                  <view class="i icon iconfont icon-unfold"></view>
+                </view>
+              </picker>
+            </view>
+            <view class="merchant-radio-group dis-flex">
+              <view data-event-opts="{{[['tap',[['tabClick',[1]]]]]}}" class="{{['merchant-radio',(tabCheck===1)?'check':'']}}" bindtap="__e">今日</view>
+              <view data-event-opts="{{[['tap',[['tabClick',[2]]]]]}}" class="{{['merchant-radio',(tabCheck===2)?'check':'']}}" bindtap="__e">昨日</view>
+              <view data-event-opts="{{[['tap',[['tabClick',[3]]]]]}}" class="{{['merchant-radio',(tabCheck===3)?'check':'']}}" bindtap="__e">7日</view>
+              <view data-event-opts="{{[['tap',[['tabClick',[4]]]]]}}" class="{{['merchant-radio',(tabCheck===4)?'check':'']}}" bindtap="__e">30日</view>
+              <view data-event-opts="{{[['tap',[['tabClick',[5]]]]]}}" class="{{['merchant-radio',(tabCheck===5)?'check':'']}}" bindtap="__e">自定义</view>
+            </view>
+          </view>
+          <canvas hidden="{{!(filterDialog==false)}}" class="charts" canvas-id="canvasLineA" id="canvasLineA" data-event-opts="{{[['touchstart',[['touchLineA',['$event']]]],['touchmove',[['moveLineA',['$event']]]],['touchend',[['touchEndLineA',['$event']]]]]}}"
+            bindtouchstart="__e" bindtouchmove="__e" bindtouchend="__e"></canvas>
+        </view>
+      </block>
+    </view>
+    <pop-view vue-id="1" show="{{showTabbar}}" type="top" data-event-opts="{{[['^clickmask',[['e1']]]]}}" bind:clickmask="__e" bind:__l="__l" vue-slots="{{['default']}}">
+      <view class="tabbar-main b-f">
+        <view class="tabBar-list dis-flex border-line border-bottom">
+          <view data-event-opts="{{[['tap',[['swichClass',['classfly']]]]]}}" class="tabBar-item dis-flex flex-x-center flex-y-center f-28 col-3" bindtap="__e">
+            <view>{{class_one}}</view>
+            <view class="{{['iconfont',classType==='classfly'?'icon-unfold':'icon-fold']}}"></view>
+          </view>
+          <view data-event-opts="{{[['tap',[['swichClass',['sort']]]]]}}" class="tabBar-item dis-flex flex-x-center flex-y-center f-28 col-3" bindtap="__e">
+            <view>{{class_two}}</view>
+            <view class="{{['iconfont',classType==='sort'?'icon-unfold':'icon-fold']}}"></view>
+          </view>
+        </view>
+        <block wx:if="{{classType==='classfly'}}">
+          <block>
+            <view class="control-list padding-box-all">
+              <block wx:for="{{Control_sort}}" wx:for-item="tabItem" wx:for-index="index" wx:key="type">
+                <view data-event-opts="{{[['tap',[['swichClassType',['classfly','$0'],[[['Control_sort','type',tabItem.type]]]]]]]}}" class="{{['f-28 col-3 m-btm40',(tabItem.name===class_one)?'selectTabbar':'']}}" bindtap="__e">{{''+tabItem.name+''}}</view>
+              </block>
+            </view>
+          </block>
+        </block>
+        <block wx:else>
+          <block>
+            <view class="control-list padding-box-all">
+              <view data-event-opts="{{[['tap',[['swichClassType',['classfly','all']]]]]}}" class="{{['f-28 col-3 m-btm40',('全部'===class_one)?'selectTabbar':'']}}" bindtap="__e">全部</view>
+              <block wx:for="{{qmj}}" wx:for-item="tabItem" wx:for-index="index" wx:key="type">
+                <view data-event-opts="{{[['tap',[['swichClassType',['sort','$0'],[[['qmj','type',tabItem.type]]]]]]]}}" class="{{['f-28 col-3 m-btm40',(tabItem.name===class_two)?'selectTabbar':'']}}" bindtap="__e">{{''+tabItem.name+''}}</view>
+              </block>
+            </view>
+          </block>
+        </block>
+      </view>
+    </pop-view>
+  </view>
+  <nav-bar vue-id="2" tabBarAct="{{0}}" bind:__l="__l"></nav-bar>
+</view>

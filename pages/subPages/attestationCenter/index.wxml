@@ -1,1 +1,73 @@
-<view class="attestationCenter"><view class="mainPackage margin20"><block wx:if="{{rzType==1&&infoList.switch==1}}"><view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/personAttestation/personAttestation']]]]]}}" class="mainView  back12CC53" bindtap="__e"><view class="p43p35 flex"><view class="inlineBlock verticalM"><image class="rzImage verticalM" src="/static/images/merchant/rzgr.png"></image><view class="inlineBlock verticalM marginLeft20"><view><text class="colorW font28">个人认证</text></view><view><text class="colorW font24">Personal authentication</text></view></view></view><view class="inlineBlock verticalM"><view class="inlineBlock verticalM"><text class="font24 colorW lineHeight70">{{infoList.is_attestation==0?'未认证':infoList.is_attestation==1?'待审核':infoList.is_attestation==2?'已审核':'被驳回'}}</text></view><image class="rzimage verticalM marginLeft10" src="{{rzimage}}"></image></view></view></view></block><block wx:if="{{rzType==2&&infoList.switch==1}}"><view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/enterpriseAttestation/enterpriseAttestation']]]]]}}" class="mainView  backFD8834" bindtap="__e"><view class="p43p35 flex"><view class="inlineBlock verticalM"><image class="rzImage verticalM" src="/static/images/merchant/rzqy.png"></image><view class="inlineBlock verticalM marginLeft20"><view><text class="colorW font28">企业认证</text></view><view><text class="colorW font24">Enterprise certification</text></view></view></view><view class="inlineBlock verticalM"><view class="inlineBlock verticalM"><text class="font24 colorW lineHeight70">{{infoList.is_attestation==0?'未认证':infoList.is_attestation==1?'待审核':infoList.is_attestation==2?'已审核':'被驳回'}}</text></view><image class="rzimage verticalM marginLeft10" src="{{rzimage}}"></image></view></view></view></block><block wx:if="{{infoList.money_switch==1}}"><view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/bond/bond']]]]]}}" class="mainView  back297FF3 marginTop30" bindtap="__e"><view class="p43p35 flex"><view class="inlineBlock verticalM"><image class="rzImage verticalM" src="/static/images/merchant/rzbzj.png"></image><view class="inlineBlock verticalM marginLeft20"><view><text class="colorW font28">诚信保证金</text></view><view><text class="colorW font24">Good faith deposit</text></view></view></view><view class="inlineBlock verticalM"><view class="inlineBlock verticalM"><text class="font24 colorW lineHeight70">{{infoList.is_money==0?'未缴费':'已缴费'}}</text></view><image class="rzimage verticalM marginLeft10" src="{{bzjimage}}"></image></view></view></view></block></view></view>
+<view class="attestationCenter">
+  <view class="mainPackage margin20">
+    <block wx:if="{{rzType==1&&infoList.switch==1}}">
+      <view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/personAttestation/personAttestation']]]]]}}" class="mainView  back12CC53" bindtap="__e">
+        <view class="p43p35 flex">
+          <view class="inlineBlock verticalM">
+            <image class="rzImage verticalM" src="{{imageRoot}}/static/images/merchant/rzgr.png"></image>
+            <view class="inlineBlock verticalM marginLeft20">
+              <view>
+                <text class="colorW font28">个人认证</text>
+              </view>
+              <view>
+                <text class="colorW font24">Personal authentication</text>
+              </view>
+            </view>
+          </view>
+          <view class="inlineBlock verticalM">
+            <view class="inlineBlock verticalM">
+              <text class="font24 colorW lineHeight70">{{infoList.is_attestation==0?'未认证':infoList.is_attestation==1?'待审核':infoList.is_attestation==2?'已审核':'被驳回'}}</text>
+            </view>
+            <image class="rzimage verticalM marginLeft10" src="{{rzimage}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{rzType==2&&infoList.switch==1}}">
+      <view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/enterpriseAttestation/enterpriseAttestation']]]]]}}" class="mainView  backFD8834" bindtap="__e">
+        <view class="p43p35 flex">
+          <view class="inlineBlock verticalM">
+            <image class="rzImage verticalM" src="{{imageRoot}}/static/images/merchant/rzqy.png"></image>
+            <view class="inlineBlock verticalM marginLeft20">
+              <view>
+                <text class="colorW font28">企业认证</text>
+              </view>
+              <view>
+                <text class="colorW font24">Enterprise certification</text>
+              </view>
+            </view>
+          </view>
+          <view class="inlineBlock verticalM">
+            <view class="inlineBlock verticalM">
+              <text class="font24 colorW lineHeight70">{{infoList.is_attestation==0?'未认证':infoList.is_attestation==1?'待审核':infoList.is_attestation==2?'已审核':'被驳回'}}</text>
+            </view>
+            <image class="rzimage verticalM marginLeft10" src="{{rzimage}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{infoList.money_switch==1}}">
+      <view data-event-opts="{{[['tap',[['go',['pages/subPages/attestationCenter/bond/bond']]]]]}}" class="mainView  back297FF3 marginTop30" bindtap="__e">
+        <view class="p43p35 flex">
+          <view class="inlineBlock verticalM">
+            <image class="rzImage verticalM" src="{{imageRoot}}/static/images/merchant/rzbzj.png"></image>
+            <view class="inlineBlock verticalM marginLeft20">
+              <view>
+                <text class="colorW font28">诚信保证金</text>
+              </view>
+              <view>
+                <text class="colorW font24">Good faith deposit</text>
+              </view>
+            </view>
+          </view>
+          <view class="inlineBlock verticalM">
+            <view class="inlineBlock verticalM">
+              <text class="font24 colorW lineHeight70">{{infoList.is_money==0?'未缴费':'已缴费'}}</text>
+            </view>
+            <image class="rzimage verticalM marginLeft10" src="{{bzjimage}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,1 +1,191 @@
-<view class="postList data-v-adfbab8a"><view data-event-opts="{{[['tap',[['goPostDetails',['$event']]]]]}}" class="postListMb data-v-adfbab8a" bindtap="__e"><block wx:if="{{itemInfos.top>0}}"><view class="zd data-v-adfbab8a"><text class="data-v-adfbab8a"></text><image src="/static/images/merchant/zd.png" class="data-v-adfbab8a"></image></view></block><view class="postListMbPackage data-v-adfbab8a"><view data-event-opts="{{[['tap',[['goHome',['$0'],['itemInfos.mid']]]]]}}" class="postListMbTitle data-v-adfbab8a" catchtap="__e"><view class="postListMbTitleLeft data-v-adfbab8a"><view class="postListHead data-v-adfbab8a"><image src="{{itemInfos.avatar}}" class="data-v-adfbab8a"></image></view><text class="data-v-adfbab8a">{{itemInfos.nickname}}</text><view class="post-label data-v-adfbab8a"><block wx:if="{{!!itemInfos.attestation&&itemInfos.attestation.attestation==1}}"><image src="/static/images/merchant/smrz.png" class="data-v-adfbab8a"></image></block><block wx:if="{{!!itemInfos.attestation&&itemInfos.attestation.bondflag==1}}"><image src="/static/images/merchant/gfrz.png" class="data-v-adfbab8a"></image></block></view><block wx:if="{{itemInfos.package>0}}"><view class="hb data-v-adfbab8a"><text class="data-v-adfbab8a">红包</text></view></block></view><view class="postListMbTitleRight data-v-adfbab8a"><text class="data-v-adfbab8a">{{itemInfos.type==''?itemInfos.onetype:itemInfos.type}}</text></view></view><view class="labelList data-v-adfbab8a"><block wx:for="{{itemInfos.keyword}}" wx:for-item="items" wx:for-index="indexs"><view class="labelMb data-v-adfbab8a" style="{{'color:'+(textTip_color[indexs%textTip_color.length].color)+';'+('border:'+(textTip_color[indexs%textTip_color.length].border)+';')}}"><text class="data-v-adfbab8a">{{items}}</text></view></block></view><view class="postListText data-v-adfbab8a"><view class="{{['data-v-adfbab8a',$root.g0!==-1?'fullText':'postListTextMain']}}"><text class="data-v-adfbab8a">{{itemInfos.content}}</text></view><block wx:if="{{itemInfos.content.length>50}}"><text data-event-opts="{{[['tap',[['fullText',['$0'],['indexNumber']]]]]}}" catchtap="__e" class="data-v-adfbab8a">{{textTips}}</text></block></view><view class="postListMbImg data-v-adfbab8a"><block wx:for="{{itemInfos.img}}" wx:for-item="items" wx:for-index="indexs"><view data-event-opts="{{[['tap',[['imgPre',[indexs,'$0'],['itemInfos.img']]]]]}}" class="postListMbImgShow data-v-adfbab8a" catchtap="__e"><image src="{{items}}" mode="aspectFill" class="data-v-adfbab8a"></image></view></block><block wx:if="{{!!itemInfos.video_link&&itemInfos.img.length!=0}}"><video class="postListMbImgShow data-v-adfbab8a" src="{{itemInfos.video_link}}" poster="{{itemInfos.video_img_link}}" data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e"></video></block></view><block wx:if="{{!!itemInfos.video_link&&itemInfos.img.length==0}}"><view data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a"><video class="videoPlay data-v-adfbab8a" src="{{itemInfos.video_link}}" poster="{{itemInfos.video_img_link}}"></video></view></block><view class="postListMbFlow data-v-adfbab8a"><view class="postListMbFlowLeft data-v-adfbab8a"><text class="data-v-adfbab8a">阅读<text class="data-v-adfbab8a">{{itemInfos.look}}</text></text><text class="data-v-adfbab8a">分享<text class="data-v-adfbab8a">{{itemInfos.share}}</text></text><text class="data-v-adfbab8a">{{itemInfos.createtime+"发布"}}</text></view><view class="postListMbFlowRight data-v-adfbab8a"><view data-event-opts="{{[['tap',[['show1',['$event']]]]]}}" class="postListMbFlowRightPackage data-v-adfbab8a" catchtap="__e"><view class="dot data-v-adfbab8a"></view><view class="dot data-v-adfbab8a"></view></view><block wx:if="{{indexShow==indexNumber}}"><view class="operationShow data-v-adfbab8a"><view data-event-opts="{{[['tap',[['fabulous',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a"><block wx:if="{{itemInfos.is_fabulous=='0'}}"><image src="/static/images/merchant/xx.png" class="data-v-adfbab8a"></image></block><block wx:else><image src="/static/images/merchant/xin.png" class="data-v-adfbab8a"></image></block><label class="_span data-v-adfbab8a">赞</label></view><view data-event-opts="{{[['tap',[['replyShow',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a"><image src="/static/images/merchant/pl.png" class="data-v-adfbab8a"></image><label class="_span data-v-adfbab8a">评论</label></view><view data-event-opts="{{[['tap',[['kfPhone',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a"><image src="/static/images/merchant/dh.png" class="data-v-adfbab8a"></image><label class="_span data-v-adfbab8a">电话</label></view><view class="operationView data-v-adfbab8a"></view></view></block></view></view><block wx:if="{{!!itemInfos.fabulous_num&&itemInfos.fabulous_num!==0||itemInfos.comment_list&&!!itemInfos.comment_list.list&&itemInfos.comment_list.list.length!==0}}"><view class="postListMbComment data-v-adfbab8a"><view class="sj data-v-adfbab8a"></view><block wx:if="{{!!itemInfos.fabulous_num&&itemInfos.fabulous_num!==0}}"><view class="postListMbCommentTitle data-v-adfbab8a"><view class="postListMbCommentTitlePackage data-v-adfbab8a"><view class="col-9 dianzan-icon iconfont icon-zan1 data-v-adfbab8a"></view><text class="data-v-adfbab8a">{{itemInfos.fabulous_num+"人"}}</text><block wx:for="{{itemInfos.fabulous_avatar}}" wx:for-item="item" wx:for-index="index"><view class="zanHead data-v-adfbab8a"><image src="{{item}}" class="data-v-adfbab8a"></image></view></block><view class="zanHeadFd data-v-adfbab8a"></view></view></view></block><block wx:if="{{!!itemInfos.comment_list&&!!itemInfos.comment_list.list&&itemInfos.comment_list.list.length!==0}}"><view class="postListMbCommentBody data-v-adfbab8a"><view class="postListMbCommentBodyPackage data-v-adfbab8a"><block wx:for="{{comment_list.list}}" wx:for-item="items" wx:for-index="indexs"><view data-event-opts="{{[['tap',[['answerPop',['$0','$1','$2','$3'],[[['comment_list.list','',indexs,'id']],[['comment_list.list','',indexs,'mid']],[['comment_list.list','',indexs]],[['comment_list.list','',indexs,'nickname']]]]]]]}}" class="marB5 data-v-adfbab8a" catchtap="__e"><text class="member data-v-adfbab8a">{{items.nickname}}</text><text class="maohao data-v-adfbab8a">:</text><text class="memberMain data-v-adfbab8a">{{items.content}}</text><block wx:for="{{items.list}}" wx:for-item="itemss" wx:for-index="indexss"><view data-event-opts="{{[['tap',[['answerPop',['$0','$1','$2','$3'],[[['comment_list.list','',indexs,'id']],[['comment_list.list','',indexs],['list','',indexss,'smid']],[['comment_list.list','',indexs]],[['comment_list.list','',indexs],['list','',indexss,'reply_name']]]]]]]}}" class="marB5 data-v-adfbab8a" catchtap="__e"><text class="member data-v-adfbab8a">{{itemss.reply_name}}</text><text class="hf data-v-adfbab8a">回复</text><text class="member1 data-v-adfbab8a">{{itemss.name}}</text><text class="maohao data-v-adfbab8a">:</text><text class="memberMain data-v-adfbab8a">{{itemss.content}}</text></view></block></view></block></view></view></block></view></block></view></view><pop-manager vue-id="1" show="{{replyShow1}}" type="{{replyType}}" data-event-opts="{{[['^clickmask',[['replyClose']]]]}}" bind:clickmask="__e" class="data-v-adfbab8a" bind:__l="__l" vue-slots="{{['default']}}"><block wx:if="{{replyShow1}}"><view class="replyView data-v-adfbab8a"><block wx:if="{{replyShow1}}"><view class="replyViewPackage data-v-adfbab8a"><block wx:if="{{replyShow1}}"><view class="replyInput data-v-adfbab8a"><block wx:if="{{replyShow1}}"><textarea placeholder="评论" data-event-opts="{{[['blur',[['lose',['$event']]]],['input',[['__set_model',['','text','$event',[]]]]]]}}" value="{{text}}" bindblur="__e" bindinput="__e" class="data-v-adfbab8a"></textarea></block></view></block><block wx:if="{{replyShow1}}"><view data-event-opts="{{[['tap',[['comment',['$event']]]]]}}" class="sendButton data-v-adfbab8a" bindtap="__e"><text class="data-v-adfbab8a">发送</text></view></block></view></block></view></block></pop-manager><pop-manager vue-id="2" show="{{answerShow1}}" type="{{replyType}}" data-event-opts="{{[['^clickmask',[['replyClose']]]]}}" bind:clickmask="__e" class="data-v-adfbab8a" bind:__l="__l" vue-slots="{{['default']}}"><block wx:if="{{answerShow1}}"><view class="replyView data-v-adfbab8a"><block wx:if="{{answerShow1}}"><view class="replyViewPackage data-v-adfbab8a"><block wx:if="{{answerShow1}}"><view class="replyInput data-v-adfbab8a"><block wx:if="{{answerShow1}}"><textarea placeholder="回复:" data-event-opts="{{[['blur',[['lose',['$event']]]],['input',[['__set_model',['','answerText','$event',[]]]]]]}}" value="{{answerText}}" bindblur="__e" bindinput="__e" class="data-v-adfbab8a"></textarea></block></view></block><block wx:if="{{answerShow1}}"><view data-event-opts="{{[['tap',[['reply',['$event']]]]]}}" class="sendButton data-v-adfbab8a" bindtap="__e"><text class="data-v-adfbab8a">发送</text></view></block></view></block></view></block></pop-manager><block wx:if="{{coverShow==true}}"><view data-event-opts="{{[['tap',[['coverClosePop',['$event']]]]]}}" class="coverView data-v-adfbab8a" style="{{'height:'+(phoneHight)+';'}}" bindtap="__e"></view></block></view>
+<view class="postList data-v-adfbab8a">
+  <view data-event-opts="{{[['tap',[['goPostDetails',['$event']]]]]}}" class="postListMb data-v-adfbab8a" bindtap="__e">
+    <block wx:if="{{itemInfos.top>0}}">
+      <view class="zd data-v-adfbab8a">
+        <text class="data-v-adfbab8a"></text>
+        <image src="{{imageRoot}}/static/images/merchant/zd.png" class="data-v-adfbab8a"></image>
+      </view>
+    </block>
+    <view class="postListMbPackage data-v-adfbab8a">
+      <view data-event-opts="{{[['tap',[['goHome',['$0'],['itemInfos.mid']]]]]}}" class="postListMbTitle data-v-adfbab8a" catchtap="__e">
+        <view class="postListMbTitleLeft data-v-adfbab8a">
+          <view class="postListHead data-v-adfbab8a">
+            <image src="{{itemInfos.avatar}}" class="data-v-adfbab8a"></image>
+          </view>
+          <text class="data-v-adfbab8a">{{itemInfos.nickname}}</text>
+          <view class="post-label data-v-adfbab8a">
+            <block wx:if="{{!!itemInfos.attestation&&itemInfos.attestation.attestation==1}}">
+              <image src="{{imageRoot}}/static/images/merchant/smrz.png" class="data-v-adfbab8a"></image>
+            </block>
+            <block wx:if="{{!!itemInfos.attestation&&itemInfos.attestation.bondflag==1}}">
+              <image src="{{imageRoot}}/static/images/merchant/gfrz.png" class="data-v-adfbab8a"></image>
+            </block>
+          </view>
+          <block wx:if="{{itemInfos.package>0}}">
+            <view class="hb data-v-adfbab8a">
+              <text class="data-v-adfbab8a">红包</text>
+            </view>
+          </block>
+        </view>
+        <view class="postListMbTitleRight data-v-adfbab8a">
+          <text class="data-v-adfbab8a">{{itemInfos.type==''?itemInfos.onetype:itemInfos.type}}</text>
+        </view>
+      </view>
+      <view class="labelList data-v-adfbab8a">
+        <block wx:for="{{itemInfos.keyword}}" wx:for-item="items" wx:for-index="indexs">
+          <view class="labelMb data-v-adfbab8a" style="{{'color:'+(textTip_color[indexs%textTip_color.length].color)+';'+('border:'+(textTip_color[indexs%textTip_color.length].border)+';')}}">
+            <text class="data-v-adfbab8a">{{items}}</text>
+          </view>
+        </block>
+      </view>
+      <view class="postListText data-v-adfbab8a">
+        <view class="{{['data-v-adfbab8a',$root.g0!==-1?'fullText':'postListTextMain']}}">
+          <text class="data-v-adfbab8a">{{itemInfos.content}}</text>
+        </view>
+        <block wx:if="{{itemInfos.content.length>50}}">
+          <text data-event-opts="{{[['tap',[['fullText',['$0'],['indexNumber']]]]]}}" catchtap="__e" class="data-v-adfbab8a">{{textTips}}</text>
+        </block>
+      </view>
+      <view class="postListMbImg data-v-adfbab8a">
+        <block wx:for="{{itemInfos.img}}" wx:for-item="items" wx:for-index="indexs">
+          <view data-event-opts="{{[['tap',[['imgPre',[indexs,'$0'],['itemInfos.img']]]]]}}" class="postListMbImgShow data-v-adfbab8a" catchtap="__e">
+            <image src="{{items}}" mode="aspectFill" class="data-v-adfbab8a"></image>
+          </view>
+        </block>
+        <block wx:if="{{!!itemInfos.video_link&&itemInfos.img.length!=0}}">
+          <video class="postListMbImgShow data-v-adfbab8a" src="{{itemInfos.video_link}}" poster="{{itemInfos.video_img_link}}" data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e"></video>
+        </block>
+      </view>
+      <block wx:if="{{!!itemInfos.video_link&&itemInfos.img.length==0}}">
+        <view data-event-opts="{{[['tap',[['',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a">
+          <video class="videoPlay data-v-adfbab8a" src="{{itemInfos.video_link}}" poster="{{itemInfos.video_img_link}}"></video>
+        </view>
+      </block>
+      <view class="postListMbFlow data-v-adfbab8a">
+        <view class="postListMbFlowLeft data-v-adfbab8a">
+          <text class="data-v-adfbab8a">阅读<text class="data-v-adfbab8a">{{itemInfos.look}}</text></text>
+          <text class="data-v-adfbab8a">分享<text class="data-v-adfbab8a">{{itemInfos.share}}</text></text>
+          <text class="data-v-adfbab8a">{{itemInfos.createtime+"发布"}}</text>
+        </view>
+        <view class="postListMbFlowRight data-v-adfbab8a">
+          <view data-event-opts="{{[['tap',[['show1',['$event']]]]]}}" class="postListMbFlowRightPackage data-v-adfbab8a" catchtap="__e">
+            <view class="dot data-v-adfbab8a"></view>
+            <view class="dot data-v-adfbab8a"></view>
+          </view>
+          <block wx:if="{{indexShow==indexNumber}}">
+            <view class="operationShow data-v-adfbab8a">
+              <view data-event-opts="{{[['tap',[['fabulous',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a">
+                <block wx:if="{{itemInfos.is_fabulous=='0'}}">
+                  <image src="{{imageRoot}}/static/images/merchant/xx.png" class="data-v-adfbab8a"></image>
+                </block>
+                <block wx:else>
+                  <image src="{{imageRoot}}/static/images/merchant/xin.png" class="data-v-adfbab8a"></image>
+                </block>
+                <label class="_span data-v-adfbab8a">赞</label>
+              </view>
+              <view data-event-opts="{{[['tap',[['replyShow',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a">
+                <image src="{{imageRoot}}/static/images/merchant/pl.png" class="data-v-adfbab8a"></image>
+                <label class="_span data-v-adfbab8a">评论</label>
+              </view>
+              <view data-event-opts="{{[['tap',[['kfPhone',['$event']]]]]}}" catchtap="__e" class="data-v-adfbab8a">
+                <image src="{{imageRoot}}/static/images/merchant/dh.png" class="data-v-adfbab8a"></image>
+                <label class="_span data-v-adfbab8a">电话</label>
+              </view>
+              <view class="operationView data-v-adfbab8a"></view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <block wx:if="{{!!itemInfos.fabulous_num&&itemInfos.fabulous_num!==0||itemInfos.comment_list&&!!itemInfos.comment_list.list&&itemInfos.comment_list.list.length!==0}}">
+        <view class="postListMbComment data-v-adfbab8a">
+          <view class="sj data-v-adfbab8a"></view>
+          <block wx:if="{{!!itemInfos.fabulous_num&&itemInfos.fabulous_num!==0}}">
+            <view class="postListMbCommentTitle data-v-adfbab8a">
+              <view class="postListMbCommentTitlePackage data-v-adfbab8a">
+                <view class="col-9 dianzan-icon iconfont icon-zan1 data-v-adfbab8a"></view>
+                <text class="data-v-adfbab8a">{{itemInfos.fabulous_num+"人"}}</text>
+                <block wx:for="{{itemInfos.fabulous_avatar}}" wx:for-item="item" wx:for-index="index">
+                  <view class="zanHead data-v-adfbab8a">
+                    <image src="{{item}}" class="data-v-adfbab8a"></image>
+                  </view>
+                </block>
+                <view class="zanHeadFd data-v-adfbab8a"></view>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{!!itemInfos.comment_list&&!!itemInfos.comment_list.list&&itemInfos.comment_list.list.length!==0}}">
+            <view class="postListMbCommentBody data-v-adfbab8a">
+              <view class="postListMbCommentBodyPackage data-v-adfbab8a">
+                <block wx:for="{{comment_list.list}}" wx:for-item="items" wx:for-index="indexs">
+                  <view data-event-opts="{{[['tap',[['answerPop',['$0','$1','$2','$3'],[[['comment_list.list','',indexs,'id']],[['comment_list.list','',indexs,'mid']],[['comment_list.list','',indexs]],[['comment_list.list','',indexs,'nickname']]]]]]]}}"
+                    class="marB5 data-v-adfbab8a" catchtap="__e">
+                    <text class="member data-v-adfbab8a">{{items.nickname}}</text>
+                    <text class="maohao data-v-adfbab8a">:</text>
+                    <text class="memberMain data-v-adfbab8a">{{items.content}}</text>
+                    <block wx:for="{{items.list}}" wx:for-item="itemss" wx:for-index="indexss">
+                      <view data-event-opts="{{[['tap',[['answerPop',['$0','$1','$2','$3'],[[['comment_list.list','',indexs,'id']],[['comment_list.list','',indexs],['list','',indexss,'smid']],[['comment_list.list','',indexs]],[['comment_list.list','',indexs],['list','',indexss,'reply_name']]]]]]]}}"
+                        class="marB5 data-v-adfbab8a" catchtap="__e">
+                        <text class="member data-v-adfbab8a">{{itemss.reply_name}}</text>
+                        <text class="hf data-v-adfbab8a">回复</text>
+                        <text class="member1 data-v-adfbab8a">{{itemss.name}}</text>
+                        <text class="maohao data-v-adfbab8a">:</text>
+                        <text class="memberMain data-v-adfbab8a">{{itemss.content}}</text>
+                      </view>
+                    </block>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+  <pop-manager vue-id="1" show="{{replyShow1}}" type="{{replyType}}" data-event-opts="{{[['^clickmask',[['replyClose']]]]}}" bind:clickmask="__e" class="data-v-adfbab8a" bind:__l="__l" vue-slots="{{['default']}}">
+    <block wx:if="{{replyShow1}}">
+      <view class="replyView data-v-adfbab8a">
+        <block wx:if="{{replyShow1}}">
+          <view class="replyViewPackage data-v-adfbab8a">
+            <block wx:if="{{replyShow1}}">
+              <view class="replyInput data-v-adfbab8a">
+                <block wx:if="{{replyShow1}}">
+                  <textarea placeholder="评论" data-event-opts="{{[['blur',[['lose',['$event']]]],['input',[['__set_model',['','text','$event',[]]]]]]}}" value="{{text}}" bindblur="__e" bindinput="__e" class="data-v-adfbab8a"></textarea>
+                </block>
+              </view>
+            </block>
+            <block wx:if="{{replyShow1}}">
+              <view data-event-opts="{{[['tap',[['comment',['$event']]]]]}}" class="sendButton data-v-adfbab8a" bindtap="__e">
+                <text class="data-v-adfbab8a">发送</text>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </pop-manager>
+  <pop-manager vue-id="2" show="{{answerShow1}}" type="{{replyType}}" data-event-opts="{{[['^clickmask',[['replyClose']]]]}}" bind:clickmask="__e" class="data-v-adfbab8a" bind:__l="__l" vue-slots="{{['default']}}">
+    <block wx:if="{{answerShow1}}">
+      <view class="replyView data-v-adfbab8a">
+        <block wx:if="{{answerShow1}}">
+          <view class="replyViewPackage data-v-adfbab8a">
+            <block wx:if="{{answerShow1}}">
+              <view class="replyInput data-v-adfbab8a">
+                <block wx:if="{{answerShow1}}">
+                  <textarea placeholder="回复:" data-event-opts="{{[['blur',[['lose',['$event']]]],['input',[['__set_model',['','answerText','$event',[]]]]]]}}" value="{{answerText}}" bindblur="__e" bindinput="__e" class="data-v-adfbab8a"></textarea>
+                </block>
+              </view>
+            </block>
+            <block wx:if="{{answerShow1}}">
+              <view data-event-opts="{{[['tap',[['reply',['$event']]]]]}}" class="sendButton data-v-adfbab8a" bindtap="__e">
+                <text class="data-v-adfbab8a">发送</text>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </pop-manager>
+  <block wx:if="{{coverShow==true}}">
+    <view data-event-opts="{{[['tap',[['coverClosePop',['$event']]]]]}}" class="coverView data-v-adfbab8a" style="{{'height:'+(phoneHight)+';'}}" bindtap="__e"></view>
+  </block>
+</view>

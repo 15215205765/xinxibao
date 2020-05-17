@@ -1,1 +1,708 @@
-<view class="data-v-368d8b5d"><view class="diypages data-v-368d8b5d"><block wx:for="{{diypagesData}}" wx:for-item="item" wx:for-index="key" wx:key="key"><view class="diypages-i data-v-368d8b5d"><block wx:if="{{item.id=='notice'}}"><view class="notice dis-flex flex-y-center padding-box data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom*2+'rpx')}}"><view class="diy-notice-icon data-v-368d8b5d" style="{{'background-image:'+('url('+imageRoot+'diynotice.png)')+';'}}"></view><view class="notice-r data-v-368d8b5d"><swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><swiper-item class="data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view></swiper-item></block></swiper></view></view></block><block wx:if="{{item.id=='notice2'}}"><view class="notice notice2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom*2+'rpx')}}"><view class="notice-l style2 data-v-368d8b5d"><view class="span data-v-368d8b5d">公告</view></view><view class="notice-r data-v-368d8b5d"><swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><swiper-item class="data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view></swiper-item></block></swiper></view></view></block><block wx:if="{{item.id=='notice3'}}"><view class="notice notice3 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom+'upx')}}"><view class="notice-l style3 data-v-368d8b5d"><view class="span data-v-368d8b5d">{{item.params.title}}</view></view><view class="notice-r data-v-368d8b5d"><swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><swiper-item class="data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view></swiper-item></block></swiper></view></view></block><block wx:if="{{item.id=='magic_cube'}}"><view class="magic_cube data-v-368d8b5d" style="{{('height: calc(100vw * ('+item.height+' / '+item.style.width+') + '+item.style.padding*2+'rpx);background-color: '+item.style.bgColor+';')}}"><view class="magic_cube-d-f data-v-368d8b5d" style="{{('padding-top: '+item.style.padding+'upx;')}}"><view class="magic_cube-d data-v-368d8b5d" style="{{('width: calc(100vw - '+item.style.padding*4+'rpx);height: calc(100vw - '+item.style.padding*4+'rpx);margin: '+item.style.padding*2+'rpx;')}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'url']]]]]]]}}" class="a magic_cube-i data-v-368d8b5d" style="{{('width: calc(100% * ('+item2.width+' / '+item.style.width+'));height: calc(100% * ('+item2.height+' / '+item.style.width+')); padding: '+item.style.padding*2+'rpx; top: calc(100% * ('+item2.top+' / '+item.style.width+')); left: calc(100% * ('+item2.left+' / '+item.style.width+'));')}}" bindtap="__e"><view class="magic_cube-i-d data-v-368d8b5d"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}"></image></view></view></block></view></view></view></block><block wx:if="{{item.id=='picturew'}}"><view class="imgwindow data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a imgwindow-i data-v-368d8b5d" bindtap="__e"><view class="imgwindow-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image></view></view></block></view></block><block wx:if="{{item.id=='picturew2'}}"><view class="picturew2 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew2-i data-v-368d8b5d" bindtap="__e"><view class="picturew2-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image></view></view></block></view></block><block wx:if="{{item.id=='picturew3'}}"><view class="picturew3 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew3-i data-v-368d8b5d" bindtap="__e"><view class="picturew3-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image></view></view></block></view></block><block wx:if="{{item.id=='picturew4'}}"><view class="picturew4 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew4-i data-v-368d8b5d" bindtap="__e"><block wx:if="{{key2==0}}"><view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-right: 0;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block><block wx:if="{{key2==1}}"><view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-bottom: '+item.style.marginTopBottom/2*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block><block wx:if="{{key2==2}}"><view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block></view></block></view></block><block wx:if="{{item.id=='picturew5'}}"><view class="picturew5 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew5-i data-v-368d8b5d" bindtap="__e"><block wx:if="{{key2==0}}"><view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-right: 0;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block><block wx:if="{{key2==1}}"><view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-bottom: '+item.style.marginTopBottom/2*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block><block wx:if="{{key2==2}}"><view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx; padding-right: '+item.style.marginLeftRight/2*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block><block wx:if="{{key2==3}}"><view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx; padding-left: '+item.style.marginLeftRight/2*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image></view></block></view></block></view></block><block wx:if="{{item.id=='picturew6'}}"><view class="picturew6 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew6-i data-v-368d8b5d" bindtap="__e"><view class="picturew6-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image></view></view></block></view></block><block wx:if="{{item.id=='pictures'}}"><view class="pictures data-v-368d8b5d" style="{{('background-color: '+item.style.background)}}"><block wx:if="{{item.params.showtype=='1'}}"><scroll-view class="pictures-scroll data-v-368d8b5d" style="{{('height: ((((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+') * '+item.data.length+') * ('+item.max_height+' / '+item.max_width+') + '+item.style.paddingleft*2+');')}}" scroll-x><view class="{{['pictures-d data-v-368d8b5d',(item.params.showtype=='0')?'picturesd':'']}}" style="{{('width: calc(((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+') * '+item.data.length+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d','a pictures-i row-'+item.params.rownum]}}" style="{{('width: calc((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}" bindtap="__e"><view class="image data-v-368d8b5d"><view class="image data-v-368d8b5d" style="{{'background-image:'+('url('+item2.imgurl+')')+';'+('height:'+('calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')+('background-size:'+('100% '+'calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')}}"></view><block wx:if="{{item2.title!==''&&item2.title!==null}}"><view class="title data-v-368d8b5d" style="{{('color: '+item.style.titlecolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.title}}</view></block></view><block wx:if="{{item2.text!==''&&item2.text!==null}}"><view class="text data-v-368d8b5d" style="{{('color: '+item.style.textcolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.text}}</view></block></view></block></view></scroll-view></block><block wx:else><view class="pictures-scroll data-v-368d8b5d" style="{{('padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}"><view class="{{['pictures-d data-v-368d8b5d',(item.params.showtype=='0')?'picturesd':'']}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d','a pictures-i pictures-i-two row-'+item.params.rownum]}}" style="{{('width: calc((100vw - '+item.style.paddingleft*4+'rpx) / '+item.params.rownum+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}" bindtap="__e"><view class="image data-v-368d8b5d"><view class="image data-v-368d8b5d" style="{{'background-image:'+('url('+item2.imgurl+')')+';'+('height:'+('calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')+('background-size:'+('100% '+'calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')}}"></view><block wx:if="{{item2.title!==''&&item2.title!==null}}"><view class="title data-v-368d8b5d" style="{{('color: '+item.style.titlecolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.title}}</view></block></view><block wx:if="{{item2.text!==''&&item2.text!==null}}"><view class="text data-v-368d8b5d" style="{{('color: '+item.style.textcolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.text}}</view></block></view></block></view></view></block></view></block><block wx:if="{{item.id=='banner'}}"><view class="imgswiper data-v-368d8b5d" style="{{('margin-bottom: '+item.style.bottom*2+'rpx')}}"><block wx:if="{{!!item.data}}"><swiper class="{{['swiper swiperBanner-marbtm default-swh data-v-368d8b5d',(item.style.side_margin=='1')?'imgmarginlr':'',(item.style.dotstyle==='rectangle')?'swiperBanner_rectangle':'',(item.style.dotstyle==='square')?'swiperBanner_dotsquare':'',(item.style.dotalign==='left')?'swiperBanner_left':'',(item.style.dotalign==='right')?'swiperBanner_right':'']}}" style="{{'height:'+(item.autoHeight+'px')+';'}}" indicator-dots="{{banner.indicatorDots}}" indicator-color="rgba(255,255,255,.4)" indicator-active-color="rgba(255,255,255,.85)" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}" duration="{{banner.duration}}" data-event-opts="{{[['change',[['bannerChange',['$event']]]]]}}" bindchange="__e"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><swiper-item data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d',(item.style.side_margin=='1')?'banner-swiper-Item':'']}}" bindtap="__e"><image class="image data-v-368d8b5d" style="{{'height:'+(item.autoHeight+'px')+';'}}" data-key="{{item2.order}}" data-id="{{item2.order}}" src="{{item2.imgurl}}"></image></swiper-item></block></swiper></block></view></block><block wx:if="{{item.id=='banner2'}}"><view class="{{['imgswiper2 data-v-368d8b5d',item.style.dotstyle]}}" style="{{('margin-bottom: '+item.style.marginBottom+'upx; background-color: '+item.style.bgColor)}}"><imgswipertwo vue-id="{{'1-'+key}}" imgswipertwoData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></imgswipertwo></view></block><block wx:if="{{item.id=='richtext'}}"><view class="richtext data-v-368d8b5d" style="{{('padding: '+item.style.padding*2+'rpx; background-color: '+item.style.background)}}"><weixin-parse vue-id="{{'2-'+key}}" content="{{item.params['content']}}" class="data-v-368d8b5d" bind:__l="__l"></weixin-parse></view></block><block wx:if="{{item.id=='title'}}"><view class="titlebar data-v-368d8b5d" style="{{('margin-bottom: '+item.style.paddingBottom*2+'rpx; background-color: '+item.style.background+'; text-align: '+item.style.textalign)}}"><view class="titlebar-d data-v-368d8b5d" style="{{('color: '+item.style.color)}}"><block wx:if="{{item.params.icon!==''&&item.params.icon!==null}}"><view class="{{['i data-v-368d8b5d',item.params.icon]}}"></view></block><view class="text data-v-368d8b5d">{{item.params.title}}</view></view><block wx:if="{{item.params.link&&item.params.link!==null}}"><view class="more data-v-368d8b5d"><block wx:if="{{item.params.butname&&item.params.butname!==null}}"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e"><view class="span data-v-368d8b5d">{{item.params.butname}}</view><view class="i icon iconfont icon-right data-v-368d8b5d"></view></view></block><block wx:else><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">更多<view class="i icon iconfont icon-right data-v-368d8b5d"></view></view></block></view></block></view></block><block wx:if="{{item.id=='title2'}}"><view class="titlebar2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor+'; text-align: '+item.style.textalign)}}"><view class="titlebar2-t data-v-368d8b5d"><view class="h1 data-v-368d8b5d" style="{{('color: '+item.style.mainColor+';text-align: '+item.style.mainAlign)}}">{{item.params.mainText}}</view><view class="p data-v-368d8b5d" style="{{('color: '+item.style.viceColor+';text-align: '+item.style.mainAlign)}}">{{item.params.viceText}}</view></view><block wx:if="{{item.params.link&&item.params.link!==null}}"><view class="more data-v-368d8b5d"><block wx:if="{{item.params.butname&&item.params.butname!==null}}"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e"><view class="span data-v-368d8b5d">{{item.params.butname}}</view><view class="i icon iconfont icon-right data-v-368d8b5d"></view></view></block><block wx:else><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">更多<view class="i icon iconfont icon-right data-v-368d8b5d"></view></view></block></view></block></view></block><block wx:if="{{item.id=='search'||item.id=='search2'}}"><view class="searchbox data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.background)}}"><block wx:if="{{item.id=='search'}}"><view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/search/search']]]]]}}" class="{{['a searchbox-d data-v-368d8b5d',(item.style.searchstyle=='radius')?'radius':'',(item.style.searchstyle=='round')?'round':'']}}" style="{{('background-color: '+item.style.inputbackground+'; text-align: '+item.style.textalign)}}" bindtap="__e"><view class="searchbox-d-inl data-v-368d8b5d"><view class="i icon iconfont icon-search data-v-368d8b5d" style="{{('color: '+item.style.iconcolor)}}"></view><view class="text data-v-368d8b5d" style="{{('color: '+item.style.color)}}">{{item.params.placeholder}}</view></view></view></block><block wx:if="{{item.id=='search2'}}"><view class="searchbox2 dis-flex flex-y-center data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/city/city']]]]]}}" class="searchbox2-l dis-flex flex-y-center data-v-368d8b5d" style="{{('color: '+item.style.areaColor)}}" bindtap="__e"><image src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/diypage/city.png" class="data-v-368d8b5d"></image><view class="span f-28 onelist-hidden data-v-368d8b5d">{{!!switchCity?switchCity:currentaidCity}}</view></view><view class="searchbox2-r data-v-368d8b5d"><view class="{{['a searchbox-d data-v-368d8b5d',(item.style.searchstyle=='radius')?'radius':'',(item.style.searchstyle=='round')?'round':'']}}" style="{{('background-color: '+item.style.inputbackground+'; text-align: '+item.style.textalign)}}"><view class="searchbox-d-inl data-v-368d8b5d" style="display:flex;"><view class="i icon iconfont icon-search data-v-368d8b5d" style="{{('color: '+item.style.iconcolor)}}"></view><input class="text data-v-368d8b5d" style="width:400rpx;margin-top:6rpx;" type="text" placeholder="{{titleName}}" data-event-opts="{{[['focus',[['naviGa',['$event']]]],['input',[['__set_model',['','bussiKey','$event',[]]]]]]}}" value="{{bussiKey}}" bindfocus="__e" bindinput="__e"/><block wx:if="{{showS}}"><text data-event-opts="{{[['tap',[['searchBussi',['$event']]]]]}}" class="showSea data-v-368d8b5d" style="{{('color:'+item.style.iconcolor+';margin-top:5rpx;font-size:28rpx')}}" bindtap="__e">搜索</text></block></view></view></view></view></block></view></block><block wx:if="{{item.id=='search3'}}"><view class="searchbox3 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.background)}}"><view class="searchbox3-d data-v-368d8b5d"><view class="searchbox3-l data-v-368d8b5d" style="{{('color: '+item.style.titlecolor)}}">{{''+item.params.textcontent+''}}</view><view class="searchbox3-r data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/search/search']]]]]}}" class="a data-v-368d8b5d" bindtap="__e"><view class="searchbox3-r-d dis-flex flex-x-center data-v-368d8b5d" style="{{('color: '+item.style.iconcolor+';background-color: '+item.style.inputbackground+'')}}"><view class="i icon iconfont icon-search inline data-v-368d8b5d"></view><view class="f-24 data-v-368d8b5d">搜索</view></view></view></view></view><view class="search-wave data-v-368d8b5d"><view class="search-wave-d data-v-368d8b5d"><view class="search-wave-i wave-i1 data-v-368d8b5d"><image class="image data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/wave-i1.png" mode="aspectFit"></image></view><view class="search-wave-i wave-i2 data-v-368d8b5d"><image class="image data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/wave-i2.png" mode="aspectFit"></image></view><view class="search-wave-i wave-i3 data-v-368d8b5d"><image class="image data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/wave-i1.png" mode="aspectFit"></image></view></view></view></view></block><block wx:if="{{item.id=='line'}}"><view class="subline data-v-368d8b5d" style="{{('padding: '+item.style.padding*2+'rpx '+item.style.leftpadding*2+'rpx; background-color: '+item.style.background)}}"><view class="subline-d data-v-368d8b5d" style="{{('border-top: 2rpx '+item.style.linestyle+' '+item.style.bordercolor+';')}}"></view></view></block><block wx:if="{{item.id=='menu'}}"><view class="btngroup data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginbottom*2+'rpx')+';'+('background-color:'+(item.btngroupData.backgroundColor)+';')+('padding:'+('0'+' '+item.style.leftRight*2+'rpx')+';')}}"><tab-menu vue-id="{{'3-'+key}}" btngroupData="{{item.btngroupData}}" class="data-v-368d8b5d" bind:__l="__l"></tab-menu></view></block><block wx:if="{{item.id=='blank'}}"><view class="sublank data-v-368d8b5d" style="{{('height: '+item.style.height*2+'rpx; background-color: '+item.style.background+';')}}"></view></block><block wx:if="{{item.id=='picture'}}"><view class="oneimgroup data-v-368d8b5d"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><navigator class="a oneimgroup-i data-v-368d8b5d" url="{{item2.linkurl}}" open-type="{{item2.url_type}}" hover-class="none"><image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image></navigator></block></view></block><block wx:if="{{item.id=='rush_goods'}}"><view class="rush_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'4-'+key}}" goodsStyleType="rush" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" data-event-opts="{{[['^remindSuccess',[['remindSuccess']]]]}}" bind:remindSuccess="__e" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='rush_goods2'}}"><view class="rush_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'5-'+key}}" goodsStyleType="rush2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='rush_goods3'||item.id=='groupon_goods3'||item.id=='bargain_goods3'||item.id=='fightgroup_goods4'}}"><view class="rush_goods3 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'6-'+key}}" goodsStyleType="goodsStyle3" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='packages'}}"><block class="data-v-368d8b5d"><view style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx;')+';'+('background-color:'+(item.style.bgColor)+';')}}" class="data-v-368d8b5d"><giftbag-components vue-id="{{'7-'+key}}" giftData="{{item}}" giftType="gift_type1" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></giftbag-components></view></block></block><block wx:if="{{item.id=='discount_card'}}"><block class="data-v-368d8b5d"><view style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx;')+';'+('background-color:'+(item.style.background)+';')}}" class="data-v-368d8b5d"><card-components vue-id="{{'8-'+key}}" disCardData="{{item}}" disCardType="disCard1" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></card-components></view></block></block><block wx:if="{{item.id=='area_select'}}"><block class="data-v-368d8b5d"><region vue-id="{{'9-'+key}}" regionStyle="{{item.style}}" regionParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></region></block></block><block wx:if="{{item.id=='options'}}"><block class="data-v-368d8b5d"><tab-contro vue-id="{{'10-'+key}}" tabData="{{item.data}}" tabStyle="{{item.style}}" controType="{{item.id}}" tabParmsType="{{[item.params]}}" class="data-v-368d8b5d" bind:__l="__l"></tab-contro></block></block><block wx:if="{{item.id=='options2'}}"><block class="data-v-368d8b5d"><tab-contro vue-id="{{'11-'+key}}" tabData="{{item.data}}" tabStyle="{{item.style}}" controType="{{item.id}}" tabParmsType="{{[item.params]}}" class="data-v-368d8b5d" bind:__l="__l"></tab-contro></block></block><block wx:if="{{item.id=='shop_join'}}"><block class="data-v-368d8b5d"><shop-enter vue-id="{{'12-'+key}}" swiperContainer="{{item.data}}" swiperParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></shop-enter></block></block><block wx:if="{{item.id=='bargain_goods'}}"><view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'13-'+key}}" goodsStyleType="bargain" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='bargain_goods2'}}"><view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'14-'+key}}" goodsStyleType="bargain2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='groupon_goods'}}"><view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'15-'+key}}" goodsStyleType="groupon" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='groupon_goods2'}}"><view class="groupon_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'16-'+key}}" goodsStyleType="rush2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='groupon_goods4'||item.id=='bargain_goods4'||item.id=='fightgroup_goods3'||item.id=='rush_goods4'}}"><view class="rush_goods4 data-v-368d8b5d"><goods-components vue-id="{{'17-'+key}}" goodsData="{{item}}" goodsType="goods_type1" class="data-v-368d8b5d" bind:__l="__l"></goods-components></view></block><block wx:if="{{item.id=='coupon_goods'}}"><view class="coupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'18-'+key}}" goodsStyleType="coupon" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='fightgroup_goods'}}"><view class="fightgroup_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'19-'+key}}" goodsStyleType="fight" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='fightgroup_goods2'}}"><view class="fightgroup_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}"><goods-style vue-id="{{'20-'+key}}" goodsStyleType="fight2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style></view></block><block wx:if="{{item.id=='public_goods'}}"><view class="public_goods data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}"><view class="transverse data-v-368d8b5d"><scroll-view class="transverse_list data-v-368d8b5d" scroll-x><view class="goods_father data-v-368d8b5d"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view class="goods_item data-v-368d8b5d"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'url']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e"><view class="goods_img data-v-368d8b5d"><image class="image data-v-368d8b5d" src="{{item2.logo}}" mode="aspectFill"></image><block wx:if="{{item2.goods_state&&(item2.goods_state==2||item2.stk==0)&&item2.plugin=='rush'}}"><view class="rush_goods_mask data-v-368d8b5d"><view class="rush_goods_mask_img data-v-368d8b5d"><block wx:if="{{item2.goods_state==2&&item2.stk>0}}"><image class="img data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/rush_goods_end.png" mode="scaleToFill"></image></block><block wx:if="{{item2.stk===0}}"><image class="img data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/rush_goods_sell_out.png" mode="scaleToFill"></image></block></view></view></block><block wx:if="{{item2.stk===0&&item2.plugin!=='rush'}}"><view class="rush_goods_mask data-v-368d8b5d"><view class="rush_goods_mask_img data-v-368d8b5d"><image class="img data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/rush_goods_sell_out.png" mode="scaleToFill"></image></view></view></block></view><view class="goods_tit data-v-368d8b5d">{{''+item2.goods_name+''}}</view><view class="public_goods_goods-price dis-flex flex-y-center data-v-368d8b5d"><view class="now-price f-32 data-v-368d8b5d">{{"￥"+item2['price']}}</view><view class="old-price f-24 data-v-368d8b5d">{{"￥"+item2['oldprice']}}</view></view></view></view></block></view></scroll-view></view></view></block><block wx:if="{{item.id=='public_goods2'}}"><view class="public_goods2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}"><publicgoodstwo vue-id="{{'21-'+key}}" publicgoodstwoData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></publicgoodstwo></view></block><block wx:if="{{item.id=='shop'}}"><view class="shop data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*40+'rpx;')}}"><view class="shangjia data-v-368d8b5d"><block wx:for="{{item.shopArr}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view class="{{['shangjia-i data-v-368d8b5d',(item2.goods.length==0)?'shangjiaISty':'']}}"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['shopArr','',key2,'shop_url']]]]]]]}}" class="a shangjia-i-t data-v-368d8b5d" bindtap="__e"><view class="shangjia-i-l data-v-368d8b5d"><image class="image data-v-368d8b5d" src="{{item2.logo}}" mode="aspectFill"></image></view><view class="shangjia-i-r data-v-368d8b5d"><view class="shangjia-i-r-d data-v-368d8b5d"><view class="shangjia-i-r-t1 over-omit data-v-368d8b5d">{{item2.storename}}</view><view class="shangjia-i-r-t2 over-omit data-v-368d8b5d"><view class="star star-dark data-v-368d8b5d"><block wx:for="{{5}}" wx:for-item="item3" wx:for-index="key3" wx:key="key3"><view class="i icon iconfont icon-shoucangxiao data-v-368d8b5d"></view></block></view><view class="star star-light data-v-368d8b5d"><view class="star-width data-v-368d8b5d" style="{{('width:'+item2.score/5*100+'%;')}}"><block wx:for="{{5}}" wx:for-item="item3" wx:for-index="key3" wx:key="key3"><view class="i icon iconfont icon-shoucangxiao data-v-368d8b5d"></view></block></view></view><block wx:if="{{item2.distance}}"><view style="font-size:24rpx;color:#999;width:120rpx;margin-left:396rpx;" class="data-v-368d8b5d">{{''+item2.distance+''}}</view></block></view><view class="shangjia-i-r-t3 over-omit data-v-368d8b5d"><view class="p data-v-368d8b5d"><rich-text nodes="{{item2.storehours}}"></rich-text></view></view><view class="shangjia-i-r-t4 over-omit data-v-368d8b5d"><block wx:for="{{item2.tags}}" wx:for-item="item3" wx:for-index="index3"><view class="tags_view data-v-368d8b5d">{{item3}}</view></block></view></view></view></view><block wx:if="{{(shopFold&&shopFoldIndex==key2||shopFoldIndex!==key2||diyDataFoldIndex!==key)&&item2.goods.length>0}}"><view class="shangjia-i-b data-v-368d8b5d"><block wx:if="{{item2.goods.length<=2}}"><view class="shangjia-i-b-t1 data-v-368d8b5d"><block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3"><block wx:if="{{key3==0}}"><view class="shangjia-i-b-i data-v-368d8b5d"><view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view><view class="span data-v-368d8b5d">{{tag.name}}</view></view></block></block></view></block><block wx:if="{{item2.goods.length>2}}"><view data-event-opts="{{[['tap',[['shangjiaFold',[key,key2]]]]]}}" class="shangjia-i-b-t1 data-v-368d8b5d" bindtap="__e"><view class="i icon iconfont icon-unfold data-v-368d8b5d"></view><block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3"><block wx:if="{{key3==0}}"><view class="shangjia-i-b-i data-v-368d8b5d"><view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view><view class="span data-v-368d8b5d">{{tag.name}}</view></view></block></block></view></block><block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3"><block wx:if="{{item2.goods.length==2&&key3==1}}"><view class="shangjia-i-b-i data-v-368d8b5d"><view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view><view class="span data-v-368d8b5d">{{tag.name}}</view></view></block></block><block wx:if="{{item2.goods.length>2}}"><view class="shangjia-i-b-t2 data-v-368d8b5d"><block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3"><block wx:if="{{key3>0}}"><view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view></block></block></view></block></view></block><block wx:if="{{!shopFold&&shopFoldIndex==key2&&diyDataFoldIndex==key&&item2.goods.length>2}}"><view class="shangjia-i-b data-v-368d8b5d"><view data-event-opts="{{[['tap',[['shangjiaUpFold',[key,key2]]]]]}}" class="shangjia-i-b-t1 data-v-368d8b5d" bindtap="__e"><view class="i icon iconfont icon-fold data-v-368d8b5d"></view><block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3"><view class="shangjia-i-b-i data-v-368d8b5d"><view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view><view class="span data-v-368d8b5d">{{tag.name}}</view></view></block></view></view></block></view></block></view></view></block><block wx:if="{{item.id=='shop2'}}"><view class="store-two data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2"><view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',index2,'shop_url']]]]]]]}}" class="store-two-main dis-flex padding-box-all border-line border-bottom data-v-368d8b5d" bindtap="__e"><view class="store-two-left bor-radius-10upx m-right20 data-v-368d8b5d" style="{{('background-image:url('+item2.logo+');')}}"></view><view class="store-two-right data-v-368d8b5d"><view class="dis-flex flex-x-between data-v-368d8b5d"><view class="store-two-title twolist-hidden f-28 data-v-368d8b5d">{{item2.storename}}</view><view class="f-26 col-f4 data-v-368d8b5d">{{!!item2.distance?item2.distance:'未定位'}}</view></view><view class="store-two-score dis-flex flex-y-center data-v-368d8b5d"><view class="iconfont icon-shoucangxiao m-right20 data-v-368d8b5d"><text class="score-grade data-v-368d8b5d">{{item2.score}}</text></view><view class="store-sales f-24 data-v-368d8b5d">{{"月售:"+item2.salesVolume}}</view></view><view class="store-two-storehours f-24 col-3 data-v-368d8b5d">{{item2.storehours}}</view></view></view></block></view></block><block wx:if="{{item.id=='options3'}}"><view class="data-v-368d8b5d"><shop-info vue-id="{{'22-'+key}}" shopinfoData="{{item.data}}" shopinfoStyle="{{item.style}}" data-ref="shopInfo" class="data-v-368d8b5d vue-ref-in-for" bind:__l="__l"></shop-info></view></block><block wx:if="{{item.id=='headline'}}"><view class="headline data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2"><view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/headline/headlineDetail?headline_id='+item2.id]]]]]}}" class="goodstop-i data-v-368d8b5d" style="{{('background-color: '+item.style.bgColor)}}" bindtap="__e"><view class="h1 data-v-368d8b5d">{{item2.title}}</view><view class="goodstop-i-t data-v-368d8b5d"><view class="goodstop-i-t-tag data-v-368d8b5d"><view class="i data-v-368d8b5d">{{item2.one_name}}</view><view class="i data-v-368d8b5d">{{item2.two_name}}</view></view><image class="image data-v-368d8b5d" src="{{item2.display_img}}" mode="aspectFill"></image></view><view class="goodstop-i-c data-v-368d8b5d"><view class="h2 data-v-368d8b5d">{{item2.summary}}</view><view class="p data-v-368d8b5d"><view class="span data-v-368d8b5d"><view class="i data-v-368d8b5d"><image class="image data-v-368d8b5d" src="{{item2.author_img}}" mode="aspectFill"></image></view><view class="b data-v-368d8b5d">{{item2.author}}</view></view><view class="em data-v-368d8b5d">{{"阅读 "+item2.browse}}</view></view></view></view></block></view></block><block wx:if="{{item.id=='headline2'}}"><view class="headline2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}"><haodiantoutiao vue-id="{{'23-'+key}}" hdttData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></haodiantoutiao></view></block><block wx:if="{{item.id=='community'}}"><view class="data-v-368d8b5d"><view class="diyPages-community dis-flex flex-x-between flex-y-center data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom+'rpx')+';'+('background-color:'+(item.style.bgColor)+';')}}"><view class="community-user dis-flex flex-y-center flex-box  data-v-368d8b5d"><image class="community-user-img data-v-368d8b5d" src="{{item.params.imgUrl}}"></image><view class="community-user-info flex-box data-v-368d8b5d"><view class="community-user-name col-0 f-28 data-v-368d8b5d">{{item.params.name}}</view><view class="community-user-des f-24 col-9 onelist-hidden data-v-368d8b5d">{{item.params.introduce}}</view></view></view><view class="community-btn data-v-368d8b5d"><button data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="community-add f-24 data-v-368d8b5d" style="{{'color:'+(item.style.buttonColor)+';'+('background-color:'+(item.style.buttonbg)+';')}}" bindtap="__e">{{item.params.title}}</button></view></view><popup-view vue-id="{{'24-'+key}}" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e1']]]]}}" bind:clickmask="__e" class="data-v-368d8b5d" bind:__l="__l" vue-slots="{{['default']}}"><view class="community-detail b-f t-c data-v-368d8b5d"><view class="community-header f-w f-36 p-r col-f data-v-368d8b5d"><text class="community-header-text p-r data-v-368d8b5d">{{item.params.name}}</text></view><view class="community-body f-26 col-3 data-v-368d8b5d">有任何疑问，点击“<text class="col-m data-v-368d8b5d">去回复</text>”发送“<text class="col-m data-v-368d8b5d">{{item.params.community_id}}</text>{{"”,即可添加"+item.params.name+''}}</view><block wx:if="{{!!item.params.phone}}"><view class="community-phone dis-flex flex-y-center flex-x-between data-v-368d8b5d"><view class="community-number dis-flex flex-y-center data-v-368d8b5d"><image class="community-number-icon data-v-368d8b5d" src="https://yun.cqyanyu.com/addons/weliam_smartcity/h5/static/images/goods/community.png"></image><view class="f-24 col-3 data-v-368d8b5d">{{item.params.phone}}</view></view><view data-event-opts="{{[['tap',[['callPhone',['$0'],[[['diypagesData','',key,'params.phone']]]]]]]}}" class="community-bdial f-24 data-v-368d8b5d" bindtap="__e">拨号</view></view></block><block wx:if="{{clienType==='3'}}"><button class="community-reply f-24 col-f data-v-368d8b5d" open-type="contact">去回复</button></block></view></popup-view></view></block></view></block></view></view>
+<view class="data-v-368d8b5d">
+  <view class="diypages data-v-368d8b5d">
+    <block wx:for="{{diypagesData}}" wx:for-item="item" wx:for-index="key" wx:key="key">
+      <view class="diypages-i data-v-368d8b5d">
+        <block wx:if="{{item.id=='notice'}}">
+          <view class="notice dis-flex flex-y-center padding-box data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom*2+'rpx')}}">
+            <view class="diy-notice-icon data-v-368d8b5d" style="{{'background-image:'+('url('+imageRoot+'diynotice.png)')+';'}}"></view>
+            <view class="notice-r data-v-368d8b5d">
+              <swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d">
+                <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                  <swiper-item class="data-v-368d8b5d">
+                    <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='notice2'}}">
+          <view class="notice notice2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom*2+'rpx')}}">
+            <view class="notice-l style2 data-v-368d8b5d">
+              <view class="span data-v-368d8b5d">公告</view>
+            </view>
+            <view class="notice-r data-v-368d8b5d">
+              <swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d">
+                <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                  <swiper-item class="data-v-368d8b5d">
+                    <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='notice3'}}">
+          <view class="notice notice3 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginbottom+'upx')}}">
+            <view class="notice-l style3 data-v-368d8b5d">
+              <view class="span data-v-368d8b5d">{{item.params.title}}</view>
+            </view>
+            <view class="notice-r data-v-368d8b5d">
+              <swiper autoplay="{{notice.autoplay}}" vertical="{{notice.vertical}}" circular="{{notice.circular}}" interval="{{notice.interval}}" duration="{{notice.duration}}" class="data-v-368d8b5d">
+                <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                  <swiper-item class="data-v-368d8b5d">
+                    <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">{{item2.title}}</view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='magic_cube'}}">
+          <view class="magic_cube data-v-368d8b5d" style="{{('height: calc(100vw * ('+item.height+' / '+item.style.width+') + '+item.style.padding*2+'rpx);background-color: '+item.style.bgColor+';')}}">
+            <view class="magic_cube-d-f data-v-368d8b5d" style="{{('padding-top: '+item.style.padding+'upx;')}}">
+              <view class="magic_cube-d data-v-368d8b5d" style="{{('width: calc(100vw - '+item.style.padding*4+'rpx);height: calc(100vw - '+item.style.padding*4+'rpx);margin: '+item.style.padding*2+'rpx;')}}">
+                <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'url']]]]]]]}}" class="a magic_cube-i data-v-368d8b5d" style="{{('width: calc(100% * ('+item2.width+' / '+item.style.width+'));height: calc(100% * ('+item2.height+' / '+item.style.width+')); padding: '+item.style.padding*2+'rpx; top: calc(100% * ('+item2.top+' / '+item.style.width+')); left: calc(100% * ('+item2.left+' / '+item.style.width+'));')}}"
+                    bindtap="__e">
+                    <view class="magic_cube-i-d data-v-368d8b5d">
+                      <image class="image data-v-368d8b5d" src="{{item2.imgurl}}"></image>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew'}}">
+          <view class="imgwindow data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a imgwindow-i data-v-368d8b5d" bindtap="__e">
+                <view class="imgwindow-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}">
+                  <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew2'}}">
+          <view class="picturew2 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew2-i data-v-368d8b5d" bindtap="__e">
+                <view class="picturew2-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}">
+                  <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew3'}}">
+          <view class="picturew3 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew3-i data-v-368d8b5d" bindtap="__e">
+                <view class="picturew3-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}">
+                  <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew4'}}">
+          <view class="picturew4 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew4-i data-v-368d8b5d" bindtap="__e">
+                <block wx:if="{{key2==0}}">
+                  <view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-right: 0;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:if="{{key2==1}}">
+                  <view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-bottom: '+item.style.marginTopBottom/2*2+'rpx;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:if="{{key2==2}}">
+                  <view class="picturew4-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew5'}}">
+          <view class="picturew5 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew5-i data-v-368d8b5d" bindtap="__e">
+                <block wx:if="{{key2==0}}">
+                  <view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-right: 0;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:if="{{key2==1}}">
+                  <view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-bottom: '+item.style.marginTopBottom/2*2+'rpx;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:if="{{key2==2}}">
+                  <view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx; padding-right: '+item.style.marginLeftRight/2*2+'rpx;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:if="{{key2==3}}">
+                  <view class="picturew5-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; padding-top: '+item.style.marginTopBottom/2*2+'rpx; padding-left: '+item.style.marginLeftRight/2*2+'rpx;')}}">
+                    <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='picturew6'}}">
+          <view class="picturew6 data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx; margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="a picturew6-i data-v-368d8b5d" bindtap="__e">
+                <view class="picturew6-i-d data-v-368d8b5d" style="{{('padding: '+item.style.marginTopBottom*2+'rpx '+item.style.marginLeftRight*2+'rpx;')}}">
+                  <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='pictures'}}">
+          <view class="pictures data-v-368d8b5d" style="{{('background-color: '+item.style.background)}}">
+            <block wx:if="{{item.params.showtype=='1'}}">
+              <scroll-view class="pictures-scroll data-v-368d8b5d" style="{{('height: ((((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+') * '+item.data.length+') * ('+item.max_height+' / '+item.max_width+') + '+item.style.paddingleft*2+');')}}"
+                scroll-x>
+                <view class="{{['pictures-d data-v-368d8b5d',(item.params.showtype=='0')?'picturesd':'']}}" style="{{('width: calc(((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+') * '+item.data.length+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}">
+                  <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                    <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d','a pictures-i row-'+item.params.rownum]}}" style="{{('width: calc((100vw - '+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}"
+                      bindtap="__e">
+                      <view class="image data-v-368d8b5d">
+                        <view class="image data-v-368d8b5d" style="{{'background-image:'+('url('+item2.imgurl+')')+';'+('height:'+('calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')+('background-size:'+('100% '+'calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')}}"></view>
+                        <block wx:if="{{item2.title!==''&&item2.title!==null}}">
+                          <view class="title data-v-368d8b5d" style="{{('color: '+item.style.titlecolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.title}}</view>
+                        </block>
+                      </view>
+                      <block wx:if="{{item2.text!==''&&item2.text!==null}}">
+                        <view class="text data-v-368d8b5d" style="{{('color: '+item.style.textcolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.text}}</view>
+                      </block>
+                    </view>
+                  </block>
+                </view>
+              </scroll-view>
+            </block>
+            <block wx:else>
+              <view class="pictures-scroll data-v-368d8b5d" style="{{('padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}">
+                <view class="{{['pictures-d data-v-368d8b5d',(item.params.showtype=='0')?'picturesd':'']}}">
+                  <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                    <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d','a pictures-i pictures-i-two row-'+item.params.rownum]}}" style="{{('width: calc((100vw - '+item.style.paddingleft*4+'rpx) / '+item.params.rownum+'); padding: '+item.style.paddingtop*2+'rpx '+item.style.paddingleft*2+'rpx;')}}"
+                      bindtap="__e">
+                      <view class="image data-v-368d8b5d">
+                        <view class="image data-v-368d8b5d" style="{{'background-image:'+('url('+item2.imgurl+')')+';'+('height:'+('calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')+('background-size:'+('100% '+'calc((100vw -'+(item.style.paddingleft*4+item.style.paddingleft*4)+'rpx) / '+item.params.rownum+')')+';')}}"></view>
+                        <block wx:if="{{item2.title!==''&&item2.title!==null}}">
+                          <view class="title data-v-368d8b5d" style="{{('color: '+item.style.titlecolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.title}}</view>
+                        </block>
+                      </view>
+                      <block wx:if="{{item2.text!==''&&item2.text!==null}}">
+                        <view class="text data-v-368d8b5d" style="{{('color: '+item.style.textcolor+'; text-align: '+item.style.titlealign+';')}}">{{item2.text}}</view>
+                      </block>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='banner'}}">
+          <view class="imgswiper data-v-368d8b5d" style="{{('margin-bottom: '+item.style.bottom*2+'rpx')}}">
+            <block wx:if="{{!!item.data}}">
+              <swiper class="{{['swiper swiperBanner-marbtm default-swh data-v-368d8b5d',(item.style.side_margin=='1')?'imgmarginlr':'',(item.style.dotstyle==='rectangle')?'swiperBanner_rectangle':'',(item.style.dotstyle==='square')?'swiperBanner_dotsquare':'',(item.style.dotalign==='left')?'swiperBanner_left':'',(item.style.dotalign==='right')?'swiperBanner_right':'']}}"
+                style="{{'height:'+(item.autoHeight+'px')+';'}}" indicator-dots="{{banner.indicatorDots}}" indicator-color="rgba(255,255,255,.4)" indicator-active-color="rgba(255,255,255,.85)" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}"
+                duration="{{banner.duration}}" data-event-opts="{{[['change',[['bannerChange',['$event']]]]]}}" bindchange="__e">
+                <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                  <swiper-item data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'linkurl']]]]]]]}}" class="{{['data-v-368d8b5d',(item.style.side_margin=='1')?'banner-swiper-Item':'']}}" bindtap="__e">
+                    <image class="image data-v-368d8b5d" style="{{'height:'+(item.autoHeight+'px')+';'}}" data-key="{{item2.order}}" data-id="{{item2.order}}" src="{{item2.imgurl}}"></image>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='banner2'}}">
+          <view class="{{['imgswiper2 data-v-368d8b5d',item.style.dotstyle]}}" style="{{('margin-bottom: '+item.style.marginBottom+'upx; background-color: '+item.style.bgColor)}}">
+            <imgswipertwo vue-id="{{'1-'+key}}" imgswipertwoData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></imgswipertwo>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='richtext'}}">
+          <view class="richtext data-v-368d8b5d" style="{{('padding: '+item.style.padding*2+'rpx; background-color: '+item.style.background)}}">
+            <weixin-parse vue-id="{{'2-'+key}}" content="{{item.params['content']}}" class="data-v-368d8b5d" bind:__l="__l"></weixin-parse>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='title'}}">
+          <view class="titlebar data-v-368d8b5d" style="{{('margin-bottom: '+item.style.paddingBottom*2+'rpx; background-color: '+item.style.background+'; text-align: '+item.style.textalign)}}">
+            <view class="titlebar-d data-v-368d8b5d" style="{{('color: '+item.style.color)}}">
+              <block wx:if="{{item.params.icon!==''&&item.params.icon!==null}}">
+                <view class="{{['i data-v-368d8b5d',item.params.icon]}}"></view>
+              </block>
+              <view class="text data-v-368d8b5d">{{item.params.title}}</view>
+            </view>
+            <block wx:if="{{item.params.link&&item.params.link!==null}}">
+              <view class="more data-v-368d8b5d">
+                <block wx:if="{{item.params.butname&&item.params.butname!==null}}">
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">
+                    <view class="span data-v-368d8b5d">{{item.params.butname}}</view>
+                    <view class="i icon iconfont icon-right data-v-368d8b5d"></view>
+                  </view>
+                </block>
+                <block wx:else>
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">更多
+                    <view class="i icon iconfont icon-right data-v-368d8b5d"></view>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='title2'}}">
+          <view class="titlebar2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor+'; text-align: '+item.style.textalign)}}">
+            <view class="titlebar2-t data-v-368d8b5d">
+              <view class="h1 data-v-368d8b5d" style="{{('color: '+item.style.mainColor+';text-align: '+item.style.mainAlign)}}">{{item.params.mainText}}</view>
+              <view class="p data-v-368d8b5d" style="{{('color: '+item.style.viceColor+';text-align: '+item.style.mainAlign)}}">{{item.params.viceText}}</view>
+            </view>
+            <block wx:if="{{item.params.link&&item.params.link!==null}}">
+              <view class="more data-v-368d8b5d">
+                <block wx:if="{{item.params.butname&&item.params.butname!==null}}">
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">
+                    <view class="span data-v-368d8b5d">{{item.params.butname}}</view>
+                    <view class="i icon iconfont icon-right data-v-368d8b5d"></view>
+                  </view>
+                </block>
+                <block wx:else>
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key,'params.link']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">更多
+                    <view class="i icon iconfont icon-right data-v-368d8b5d"></view>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='search'||item.id=='search2'}}">
+          <view class="searchbox data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.background)}}">
+            <block wx:if="{{item.id=='search'}}">
+              <view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/search/search']]]]]}}" class="{{['a searchbox-d data-v-368d8b5d',(item.style.searchstyle=='radius')?'radius':'',(item.style.searchstyle=='round')?'round':'']}}" style="{{('background-color: '+item.style.inputbackground+'; text-align: '+item.style.textalign)}}"
+                bindtap="__e">
+                <view class="searchbox-d-inl data-v-368d8b5d">
+                  <view class="i icon iconfont icon-search data-v-368d8b5d" style="{{('color: '+item.style.iconcolor)}}"></view>
+                  <view class="text data-v-368d8b5d" style="{{('color: '+item.style.color)}}">{{item.params.placeholder}}</view>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{item.id=='search2'}}">
+              <view class="searchbox2 dis-flex flex-y-center data-v-368d8b5d">
+                <view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/city/city']]]]]}}" class="searchbox2-l dis-flex flex-y-center data-v-368d8b5d" style="{{('color: '+item.style.areaColor)}}" bindtap="__e">
+                  <image src="{{imageRoot}}/static/images/diypage/city.png" class="data-v-368d8b5d"></image>
+                  <view class="span f-28 onelist-hidden data-v-368d8b5d">{{!!switchCity?switchCity:currentaidCity}}</view>
+                </view>
+                <view class="searchbox2-r data-v-368d8b5d">
+                  <view class="{{['a searchbox-d data-v-368d8b5d',(item.style.searchstyle=='radius')?'radius':'',(item.style.searchstyle=='round')?'round':'']}}" style="{{('background-color: '+item.style.inputbackground+'; text-align: '+item.style.textalign)}}">
+                    <view class="searchbox-d-inl data-v-368d8b5d" style="display:flex;">
+                      <view class="i icon iconfont icon-search data-v-368d8b5d" style="{{('color: '+item.style.iconcolor)}}"></view>
+                      <input class="text data-v-368d8b5d" style="width:400rpx;margin-top:6rpx;" type="text" placeholder="{{titleName}}" data-event-opts="{{[['focus',[['naviGa',['$event']]]],['input',[['__set_model',['','bussiKey','$event',[]]]]]]}}"
+                        value="{{bussiKey}}" bindfocus="__e" bindinput="__e" />
+                      <block wx:if="{{showS}}">
+                        <text data-event-opts="{{[['tap',[['searchBussi',['$event']]]]]}}" class="showSea data-v-368d8b5d" style="{{('color:'+item.style.iconcolor+';margin-top:5rpx;font-size:28rpx')}}" bindtap="__e">搜索</text>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='search3'}}">
+          <view class="searchbox3 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.background)}}">
+            <view class="searchbox3-d data-v-368d8b5d">
+              <view class="searchbox3-l data-v-368d8b5d" style="{{('color: '+item.style.titlecolor)}}">{{''+item.params.textcontent+''}}</view>
+              <view class="searchbox3-r data-v-368d8b5d">
+                <view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/search/search']]]]]}}" class="a data-v-368d8b5d" bindtap="__e">
+                  <view class="searchbox3-r-d dis-flex flex-x-center data-v-368d8b5d" style="{{('color: '+item.style.iconcolor+';background-color: '+item.style.inputbackground+'')}}">
+                    <view class="i icon iconfont icon-search inline data-v-368d8b5d"></view>
+                    <view class="f-24 data-v-368d8b5d">搜索</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="search-wave data-v-368d8b5d">
+              <view class="search-wave-d data-v-368d8b5d">
+                <view class="search-wave-i wave-i1 data-v-368d8b5d">
+                  <image class="image data-v-368d8b5d" src="{{imageRoot}}/static/images/wave-i1.png" mode="aspectFit"></image>
+                </view>
+                <view class="search-wave-i wave-i2 data-v-368d8b5d">
+                  <image class="image data-v-368d8b5d" src="{{imageRoot}}/static/images/wave-i2.png" mode="aspectFit"></image>
+                </view>
+                <view class="search-wave-i wave-i3 data-v-368d8b5d">
+                  <image class="image data-v-368d8b5d" src="{{imageRoot}}/static/images/wave-i1.png" mode="aspectFit"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='line'}}">
+          <view class="subline data-v-368d8b5d" style="{{('padding: '+item.style.padding*2+'rpx '+item.style.leftpadding*2+'rpx; background-color: '+item.style.background)}}">
+            <view class="subline-d data-v-368d8b5d" style="{{('border-top: 2rpx '+item.style.linestyle+' '+item.style.bordercolor+';')}}"></view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='menu'}}">
+          <view class="btngroup data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginbottom*2+'rpx')+';'+('background-color:'+(item.btngroupData.backgroundColor)+';')+('padding:'+('0'+' '+item.style.leftRight*2+'rpx')+';')}}">
+            <tab-menu vue-id="{{'3-'+key}}" btngroupData="{{item.btngroupData}}" class="data-v-368d8b5d" bind:__l="__l"></tab-menu>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='blank'}}">
+          <view class="sublank data-v-368d8b5d" style="{{('height: '+item.style.height*2+'rpx; background-color: '+item.style.background+';')}}"></view>
+        </block>
+        <block wx:if="{{item.id=='picture'}}">
+          <view class="oneimgroup data-v-368d8b5d">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <navigator class="a oneimgroup-i data-v-368d8b5d" url="{{item2.linkurl}}" open-type="{{item2.url_type}}" hover-class="none">
+                <image class="image data-v-368d8b5d" src="{{item2.imgurl}}" mode="widthFix"></image>
+              </navigator>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='rush_goods'}}">
+          <view class="rush_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'4-'+key}}" goodsStyleType="rush" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" data-event-opts="{{[['^remindSuccess',[['remindSuccess']]]]}}" bind:remindSuccess="__e" class="data-v-368d8b5d"
+              bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='rush_goods2'}}">
+          <view class="rush_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'5-'+key}}" goodsStyleType="rush2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='rush_goods3'||item.id=='groupon_goods3'||item.id=='bargain_goods3'||item.id=='fightgroup_goods4'}}">
+          <view class="rush_goods3 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'6-'+key}}" goodsStyleType="goodsStyle3" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='packages'}}">
+          <block class="data-v-368d8b5d">
+            <view style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx;')+';'+('background-color:'+(item.style.bgColor)+';')}}" class="data-v-368d8b5d">
+              <giftbag-components vue-id="{{'7-'+key}}" giftData="{{item}}" giftType="gift_type1" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></giftbag-components>
+            </view>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='discount_card'}}">
+          <block class="data-v-368d8b5d">
+            <view style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx;')+';'+('background-color:'+(item.style.background)+';')}}" class="data-v-368d8b5d">
+              <card-components vue-id="{{'8-'+key}}" disCardData="{{item}}" disCardType="disCard1" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></card-components>
+            </view>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='area_select'}}">
+          <block class="data-v-368d8b5d">
+            <region vue-id="{{'9-'+key}}" regionStyle="{{item.style}}" regionParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></region>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='options'}}">
+          <block class="data-v-368d8b5d">
+            <tab-contro vue-id="{{'10-'+key}}" tabData="{{item.data}}" tabStyle="{{item.style}}" controType="{{item.id}}" tabParmsType="{{[item.params]}}" class="data-v-368d8b5d" bind:__l="__l"></tab-contro>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='options2'}}">
+          <block class="data-v-368d8b5d">
+            <tab-contro vue-id="{{'11-'+key}}" tabData="{{item.data}}" tabStyle="{{item.style}}" controType="{{item.id}}" tabParmsType="{{[item.params]}}" class="data-v-368d8b5d" bind:__l="__l"></tab-contro>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='shop_join'}}">
+          <block class="data-v-368d8b5d">
+            <shop-enter vue-id="{{'12-'+key}}" swiperContainer="{{item.data}}" swiperParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></shop-enter>
+          </block>
+        </block>
+        <block wx:if="{{item.id=='bargain_goods'}}">
+          <view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'13-'+key}}" goodsStyleType="bargain" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='bargain_goods2'}}">
+          <view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'14-'+key}}" goodsStyleType="bargain2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='groupon_goods'}}">
+          <view class="groupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'15-'+key}}" goodsStyleType="groupon" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='groupon_goods2'}}">
+          <view class="groupon_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'16-'+key}}" goodsStyleType="rush2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='groupon_goods4'||item.id=='bargain_goods4'||item.id=='fightgroup_goods3'||item.id=='rush_goods4'}}">
+          <view class="rush_goods4 data-v-368d8b5d">
+            <goods-components vue-id="{{'17-'+key}}" goodsData="{{item}}" goodsType="goods_type1" class="data-v-368d8b5d" bind:__l="__l"></goods-components>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='coupon_goods'}}">
+          <view class="coupon_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'18-'+key}}" goodsStyleType="coupon" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='fightgroup_goods'}}">
+          <view class="fightgroup_goods data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'19-'+key}}" goodsStyleType="fight" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='fightgroup_goods2'}}">
+          <view class="fightgroup_goods2 data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom*2+'rpx')+';'+('padding:'+(item.style.margin*2+'rpx')+';')+('background-color:'+(item.style.bgColor)+';')}}">
+            <goods-style vue-id="{{'20-'+key}}" goodsStyleType="fight2" goodslistData="{{item.data}}" isdiyPageStyle="{{item.style}}" isdiyPage="{{true}}" isdiyPageParams="{{item.params}}" class="data-v-368d8b5d" bind:__l="__l"></goods-style>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='public_goods'}}">
+          <view class="public_goods data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}">
+            <view class="transverse data-v-368d8b5d">
+              <scroll-view class="transverse_list data-v-368d8b5d" scroll-x>
+                <view class="goods_father data-v-368d8b5d">
+                  <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                    <view class="goods_item data-v-368d8b5d">
+                      <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',key2,'url']]]]]]]}}" class="a data-v-368d8b5d" bindtap="__e">
+                        <view class="goods_img data-v-368d8b5d">
+                          <image class="image data-v-368d8b5d" src="{{item2.logo}}" mode="aspectFill"></image>
+                          <block wx:if="{{item2.goods_state&&(item2.goods_state==2||item2.stk==0)&&item2.plugin=='rush'}}">
+                            <view class="rush_goods_mask data-v-368d8b5d">
+                              <view class="rush_goods_mask_img data-v-368d8b5d">
+                                <block wx:if="{{item2.goods_state==2&&item2.stk>0}}">
+                                  <image class="img data-v-368d8b5d" src="{{imageRoot}}/static/images/rush_goods_end.png" mode="scaleToFill"></image>
+                                </block>
+                                <block wx:if="{{item2.stk===0}}">
+                                  <image class="img data-v-368d8b5d" src="{{imageRoot}}/static/images/rush_goods_sell_out.png" mode="scaleToFill"></image>
+                                </block>
+                              </view>
+                            </view>
+                          </block>
+                          <block wx:if="{{item2.stk===0&&item2.plugin!=='rush'}}">
+                            <view class="rush_goods_mask data-v-368d8b5d">
+                              <view class="rush_goods_mask_img data-v-368d8b5d">
+                                <image class="img data-v-368d8b5d" src="{{imageRoot}}/static/images/rush_goods_sell_out.png" mode="scaleToFill"></image>
+                              </view>
+                            </view>
+                          </block>
+                        </view>
+                        <view class="goods_tit data-v-368d8b5d">{{''+item2.goods_name+''}}</view>
+                        <view class="public_goods_goods-price dis-flex flex-y-center data-v-368d8b5d">
+                          <view class="now-price f-32 data-v-368d8b5d">{{"￥"+item2['price']}}</view>
+                          <view class="old-price f-24 data-v-368d8b5d">{{"￥"+item2['oldprice']}}</view>
+                        </view>
+                      </view>
+                    </view>
+                  </block>
+                </view>
+              </scroll-view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='public_goods2'}}">
+          <view class="public_goods2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}">
+            <publicgoodstwo vue-id="{{'21-'+key}}" publicgoodstwoData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></publicgoodstwo>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='shop'}}">
+          <view class="shop data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*40+'rpx;')}}">
+            <view class="shangjia data-v-368d8b5d">
+              <block wx:for="{{item.shopArr}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+                <view class="{{['shangjia-i data-v-368d8b5d',(item2.goods.length==0)?'shangjiaISty':'']}}">
+                  <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['shopArr','',key2,'shop_url']]]]]]]}}" class="a shangjia-i-t data-v-368d8b5d" bindtap="__e">
+                    <view class="shangjia-i-l data-v-368d8b5d">
+                      <image class="image data-v-368d8b5d" src="{{item2.logo}}" mode="aspectFill"></image>
+                    </view>
+                    <view class="shangjia-i-r data-v-368d8b5d">
+                      <view class="shangjia-i-r-d data-v-368d8b5d">
+                        <view class="shangjia-i-r-t1 over-omit data-v-368d8b5d">{{item2.storename}}</view>
+                        <view class="shangjia-i-r-t2 over-omit data-v-368d8b5d">
+                          <view class="star star-dark data-v-368d8b5d">
+                            <block wx:for="{{5}}" wx:for-item="item3" wx:for-index="key3" wx:key="key3">
+                              <view class="i icon iconfont icon-shoucangxiao data-v-368d8b5d"></view>
+                            </block>
+                          </view>
+                          <view class="star star-light data-v-368d8b5d">
+                            <view class="star-width data-v-368d8b5d" style="{{('width:'+item2.score/5*100+'%;')}}">
+                              <block wx:for="{{5}}" wx:for-item="item3" wx:for-index="key3" wx:key="key3">
+                                <view class="i icon iconfont icon-shoucangxiao data-v-368d8b5d"></view>
+                              </block>
+                            </view>
+                          </view>
+                          <block wx:if="{{item2.distance}}">
+                            <view style="font-size:24rpx;color:#999;width:120rpx;margin-left:396rpx;" class="data-v-368d8b5d">{{''+item2.distance+''}}</view>
+                          </block>
+                        </view>
+                        <view class="shangjia-i-r-t3 over-omit data-v-368d8b5d">
+                          <view class="p data-v-368d8b5d">
+                            <rich-text nodes="{{item2.storehours}}"></rich-text>
+                          </view>
+                        </view>
+                        <view class="shangjia-i-r-t4 over-omit data-v-368d8b5d">
+                          <block wx:for="{{item2.tags}}" wx:for-item="item3" wx:for-index="index3">
+                            <view class="tags_view data-v-368d8b5d">{{item3}}</view>
+                          </block>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <block wx:if="{{(shopFold&&shopFoldIndex==key2||shopFoldIndex!==key2||diyDataFoldIndex!==key)&&item2.goods.length>0}}">
+                    <view class="shangjia-i-b data-v-368d8b5d">
+                      <block wx:if="{{item2.goods.length<=2}}">
+                        <view class="shangjia-i-b-t1 data-v-368d8b5d">
+                          <block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3">
+                            <block wx:if="{{key3==0}}">
+                              <view class="shangjia-i-b-i data-v-368d8b5d">
+                                <view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view>
+                                <view class="span data-v-368d8b5d">{{tag.name}}</view>
+                              </view>
+                            </block>
+                          </block>
+                        </view>
+                      </block>
+                      <block wx:if="{{item2.goods.length>2}}">
+                        <view data-event-opts="{{[['tap',[['shangjiaFold',[key,key2]]]]]}}" class="shangjia-i-b-t1 data-v-368d8b5d" bindtap="__e">
+                          <view class="i icon iconfont icon-unfold data-v-368d8b5d"></view>
+                          <block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3">
+                            <block wx:if="{{key3==0}}">
+                              <view class="shangjia-i-b-i data-v-368d8b5d">
+                                <view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view>
+                                <view class="span data-v-368d8b5d">{{tag.name}}</view>
+                              </view>
+                            </block>
+                          </block>
+                        </view>
+                      </block>
+                      <block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3">
+                        <block wx:if="{{item2.goods.length==2&&key3==1}}">
+                          <view class="shangjia-i-b-i data-v-368d8b5d">
+                            <view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view>
+                            <view class="span data-v-368d8b5d">{{tag.name}}</view>
+                          </view>
+                        </block>
+                      </block>
+                      <block wx:if="{{item2.goods.length>2}}">
+                        <view class="shangjia-i-b-t2 data-v-368d8b5d">
+                          <block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3">
+                            <block wx:if="{{key3>0}}">
+                              <view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view>
+                            </block>
+                          </block>
+                        </view>
+                      </block>
+                    </view>
+                  </block>
+                  <block wx:if="{{!shopFold&&shopFoldIndex==key2&&diyDataFoldIndex==key&&item2.goods.length>2}}">
+                    <view class="shangjia-i-b data-v-368d8b5d">
+                      <view data-event-opts="{{[['tap',[['shangjiaUpFold',[key,key2]]]]]}}" class="shangjia-i-b-t1 data-v-368d8b5d" bindtap="__e">
+                        <view class="i icon iconfont icon-fold data-v-368d8b5d"></view>
+                        <block wx:for="{{item2.goods}}" wx:for-item="tag" wx:for-index="key3" wx:key="key3">
+                          <view class="shangjia-i-b-i data-v-368d8b5d">
+                            <view class="{{['em data-v-368d8b5d',tag.css]}}">{{tag.tag}}</view>
+                            <view class="span data-v-368d8b5d">{{tag.name}}</view>
+                          </view>
+                        </block>
+                      </view>
+                    </view>
+                  </block>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='shop2'}}">
+          <view class="store-two data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx;')}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['$0'],[[['diypagesData','',key],['data','',index2,'shop_url']]]]]]]}}" class="store-two-main dis-flex padding-box-all border-line border-bottom data-v-368d8b5d" bindtap="__e">
+                <view class="store-two-left bor-radius-10upx m-right20 data-v-368d8b5d" style="{{('background-image:url('+item2.logo+');')}}"></view>
+                <view class="store-two-right data-v-368d8b5d">
+                  <view class="dis-flex flex-x-between data-v-368d8b5d">
+                    <view class="store-two-title twolist-hidden f-28 data-v-368d8b5d">{{item2.storename}}</view>
+                    <view class="f-26 col-f4 data-v-368d8b5d">{{!!item2.distance?item2.distance:'未定位'}}</view>
+                  </view>
+                  <view class="store-two-score dis-flex flex-y-center data-v-368d8b5d">
+                    <view class="iconfont icon-shoucangxiao m-right20 data-v-368d8b5d">
+                      <text class="score-grade data-v-368d8b5d">{{item2.score}}</text>
+                    </view>
+                    <view class="store-sales f-24 data-v-368d8b5d">{{"月售:"+item2.salesVolume}}</view>
+                  </view>
+                  <view class="store-two-storehours f-24 col-3 data-v-368d8b5d">{{item2.storehours}}</view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='options3'}}">
+          <view class="data-v-368d8b5d">
+            <shop-info vue-id="{{'22-'+key}}" shopinfoData="{{item.data}}" shopinfoStyle="{{item.style}}" data-ref="shopInfo" class="data-v-368d8b5d vue-ref-in-for" bind:__l="__l"></shop-info>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='headline'}}">
+          <view class="headline data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <block wx:for="{{item.data}}" wx:for-item="item2" wx:for-index="key2" wx:key="key2">
+              <view data-event-opts="{{[['tap',[['navigateTo',['pages/mainPages/headline/headlineDetail?headline_id='+item2.id]]]]]}}" class="goodstop-i data-v-368d8b5d" style="{{('background-color: '+item.style.bgColor)}}" bindtap="__e">
+                <view class="h1 data-v-368d8b5d">{{item2.title}}</view>
+                <view class="goodstop-i-t data-v-368d8b5d">
+                  <view class="goodstop-i-t-tag data-v-368d8b5d">
+                    <view class="i data-v-368d8b5d">{{item2.one_name}}</view>
+                    <view class="i data-v-368d8b5d">{{item2.two_name}}</view>
+                  </view>
+                  <image class="image data-v-368d8b5d" src="{{item2.display_img}}" mode="aspectFill"></image>
+                </view>
+                <view class="goodstop-i-c data-v-368d8b5d">
+                  <view class="h2 data-v-368d8b5d">{{item2.summary}}</view>
+                  <view class="p data-v-368d8b5d">
+                    <view class="span data-v-368d8b5d">
+                      <view class="i data-v-368d8b5d">
+                        <image class="image data-v-368d8b5d" src="{{item2.author_img}}" mode="aspectFill"></image>
+                      </view>
+                      <view class="b data-v-368d8b5d">{{item2.author}}</view>
+                    </view>
+                    <view class="em data-v-368d8b5d">{{"阅读 "+item2.browse}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='headline2'}}">
+          <view class="headline2 data-v-368d8b5d" style="{{('margin-bottom: '+item.style.marginBottom*2+'rpx; background-color: '+item.style.bgColor)}}">
+            <haodiantoutiao vue-id="{{'23-'+key}}" hdttData="{{item}}" class="data-v-368d8b5d" bind:__l="__l"></haodiantoutiao>
+          </view>
+        </block>
+        <block wx:if="{{item.id=='community'}}">
+          <view class="data-v-368d8b5d">
+            <view class="diyPages-community dis-flex flex-x-between flex-y-center data-v-368d8b5d" style="{{'margin-bottom:'+(item.style.marginBottom+'rpx')+';'+('background-color:'+(item.style.bgColor)+';')}}">
+              <view class="community-user dis-flex flex-y-center flex-box  data-v-368d8b5d">
+                <image class="community-user-img data-v-368d8b5d" src="{{item.params.imgUrl}}"></image>
+                <view class="community-user-info flex-box data-v-368d8b5d">
+                  <view class="community-user-name col-0 f-28 data-v-368d8b5d">{{item.params.name}}</view>
+                  <view class="community-user-des f-24 col-9 onelist-hidden data-v-368d8b5d">{{item.params.introduce}}</view>
+                </view>
+              </view>
+              <view class="community-btn data-v-368d8b5d">
+                <button data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="community-add f-24 data-v-368d8b5d" style="{{'color:'+(item.style.buttonColor)+';'+('background-color:'+(item.style.buttonbg)+';')}}" bindtap="__e">{{item.params.title}}</button>
+              </view>
+            </view>
+            <popup-view vue-id="{{'24-'+key}}" show="{{showCommunity}}" type="center" data-event-opts="{{[['^clickmask',[['e1']]]]}}" bind:clickmask="__e" class="data-v-368d8b5d" bind:__l="__l" vue-slots="{{['default']}}">
+              <view class="community-detail b-f t-c data-v-368d8b5d">
+                <view class="community-header f-w f-36 p-r col-f data-v-368d8b5d">
+                  <text class="community-header-text p-r data-v-368d8b5d">{{item.params.name}}</text>
+                </view>
+                <view class="community-body f-26 col-3 data-v-368d8b5d">有任何疑问，点击“
+                  <text class="col-m data-v-368d8b5d">去回复</text>”发送“
+                  <text class="col-m data-v-368d8b5d">{{item.params.community_id}}</text>{{"”,即可添加"+item.params.name+''}}</view>
+                <block wx:if="{{!!item.params.phone}}">
+                  <view class="community-phone dis-flex flex-y-center flex-x-between data-v-368d8b5d">
+                    <view class="community-number dis-flex flex-y-center data-v-368d8b5d">
+                      <image class="community-number-icon data-v-368d8b5d" src="{{imageRoot}}/static/images/goods/community.png"></image>
+                      <view class="f-24 col-3 data-v-368d8b5d">{{item.params.phone}}</view>
+                    </view>
+                    <view data-event-opts="{{[['tap',[['callPhone',['$0'],[[['diypagesData','',key,'params.phone']]]]]]]}}" class="community-bdial f-24 data-v-368d8b5d" bindtap="__e">拨号</view>
+                  </view>
+                </block>
+                <block wx:if="{{clienType==='3'}}">
+                  <button class="community-reply f-24 col-f data-v-368d8b5d" open-type="contact">去回复</button>
+                </block>
+              </view>
+            </popup-view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

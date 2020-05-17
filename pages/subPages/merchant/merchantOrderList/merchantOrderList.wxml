@@ -1,1 +1,184 @@
-<view><view class="container"><view class="orderList"><view class="dis-flex flex-dir-column orderList-header"><view class="orderList-search"><view class="search-main"><view class="search-box dis-flex flex-y-center"><view class="search-input"><view class="i icon iconfont icon-sousuo"></view><input class="f-24" type="text" value="{{keyword}}" placeholder="请输入订单号进行搜索" placeholder-style="color:#999999;margin-left:10upx;" data-event-opts="{{[['blur',[['doSearch',['$event']]]],['input',[['__set_model',['','keyword','$event',[]]]]]]}}" bindblur="__e" bindinput="__e"/></view><picker value="{{indexs}}" range="{{typeList}}" range-key="label" data-event-opts="{{[['change',[['search',['$event']]]]]}}" bindchange="__e"><view class="dis-flex search-select f-28">{{''+typeList[indexs].label+''}}<view class="i icon iconfont icon-unfold"></view></view></picker></view></view></view><view class="topNav"><view data-event-opts="{{[['tap',[['changeStatus',[0]]]]]}}" bindtap="__e"><view class="{{[status==0?'check':'']}}"><label class="_span">全部</label><view class="line"></view></view></view><view data-event-opts="{{[['tap',[['changeStatus',[1]]]]]}}" bindtap="__e"><view class="{{[status==1?'check':'']}}"><label class="_span">待使用</label><view class="line"></view></view></view><view data-event-opts="{{[['tap',[['changeStatus',[8]]]]]}}" bindtap="__e"><view class="{{[status==8?'check':'']}}"><label class="_span">待发货</label><view class="line"></view></view></view><view data-event-opts="{{[['tap',[['changeStatus',[3]]]]]}}" bindtap="__e"><view class="{{[status==3?'check':'']}}"><label class="_span">已完成</label><view class="line"></view></view></view><view data-event-opts="{{[['tap',[['changeStatus',[9]]]]]}}" bindtap="__e"><view class="{{[status==9?'check':'']}}"><label class="_span">已过期</label><view class="line"></view></view></view></view></view><scroll-view class="scrollList" style="{{'height:'+(scrollHeight)+';'}}" scroll-y="{{true}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e"><block wx:if="{{pagetotal==0}}"><nonemores vue-id="1" bind:__l="__l"></nonemores></block><block wx:if="{{pagetotal!=0}}"><view class="orderList-body"><block wx:for="{{orderlist}}" wx:for-item="item" wx:for-index="index"><view class="orderList-list-item m-btm20"><view class="dis-flex flex-x-between f-24 orderList-list-item-header"><view class="dis-flex flex-y-center"><view class="tag">{{item.pluginname+"订单"}}</view><view class="f-24">{{item.orderno}}</view></view><view class="color-status f-28">{{item.statusname}}</view></view><view class="user-msg dis-flex f-24 flex-y-center"><view class="m-right30">{{item.nickname}}</view><view>{{item.mobile}}</view><image class="img" src="/static/images/centerMerchant/phone.png" alt></image><view data-event-opts="{{[['tap',[['kfPhone',['$0'],[[['orderlist','',index]]]]]]]}}" class="blue" bindtap="__e">联系客户</view></view><view class="orderList-list-item-content dis-flex"><image class="orderList-img" src="{{item.gimg}}"></image><view class="dis-flex flex-dir-column flex-x-between"><view class="goods-name f-24">{{item.gname}}</view><block wx:if="{{!item.goodsarray}}"><view class="dis-flex flex-x-between m-top10"><view class="dis-flex goods-sku f-24">{{''+item.optiontitle+''}}<view class="m-left10">{{"×"+item.num}}</view></view><view class="goods-price f-24">{{"￥"+item.price}}</view></view></block><block wx:for="{{item.goodsarray}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs"><block wx:if="{{item.goodsarray}}"><view class="dis-flex flex-x-between" style="margin-bottom:10rpx;"><view class="dis-flex goods-sku f-24">{{''+items.name+''}}<view class="m-left10">{{"×"+items.num}}</view></view><view class="goods-price f-24">{{"￥"+items.money}}</view></view></block></block></view></view><view class="orderList-list-item-footer f-24"><block wx:if="{{!!item.remark}}"><view class="footer-item dis-flex flex-x-between color-33"><view>备注:</view><view>{{item.remark}}</view></view></block><view class="footer-item dis-flex flex-x-end color-33"><view>{{"共"+item.num+"件商品，合计："}}</view><view class="color-red">{{"¥"+item.price}}</view></view><block wx:if="{{item.status==1&&item.plugin!=='citydelivery'}}"><view class="footer-item dis-flex flex-x-end color-33"><view data-event-opts="{{[['tap',[['goHx',['$event']]]]]}}" class="btn" bindtap="__e">去核销</view></view></block><block wx:if="{{item.plugin=='citydelivery'&&(item.status==1||item.status==4)}}"><view class="footer-item dis-flex flex-x-end color-33"><view data-event-opts="{{[['tap',[['accomplish',['$0'],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">完成</view></view></block><block wx:if="{{item.status==8&&item.plugin!=='citydelivery'}}"><view class="footer-item dis-flex flex-x-end color-33"><view data-event-opts="{{[['tap',[['showPop',['$0',8],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">去发货</view></view></block><block wx:if="{{item.status==4&&item.plugin!=='citydelivery'}}"><view class="footer-item dis-flex flex-x-end color-33"><view data-event-opts="{{[['tap',[['showPop',['$0',4],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">修改物流</view></view></block></view></view></block><view class="tips"><loadmore vue-id="2" isMore="{{isMore}}" bind:__l="__l"></loadmore></view></view></block></scroll-view></view></view><nav-bar vue-id="3" tabBarAct="{{3}}" bind:__l="__l"></nav-bar><pop-manager vue-id="4" show="{{popShow}}" type="{{popType}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" bind:__l="__l" vue-slots="{{['default']}}"><view class="popView"><view class="popViewPackage"><view class="popTitle"><view class="popTitlePackage"><label class="_span">填写发货信息</label></view><view class="popTitleBody dis-flex1"><block wx:if="{{!!items.express}}"><view class="titleBodyLeft1"><view><text class="textf">{{"姓名 "+items.express.name}}</text></view><view><text class="textf">{{"电话 "+items.express.tel}}</text></view><view><text class="textf">{{"地址 "+items.express.address}}</text></view></view></block><view data-event-opts="{{[['tap',[['fz',['$event']]]]]}}" class="titleBodyRight1" bindtap="__e"><text>复制发货信息</text></view></view></view><view class="popBody"><view class="popInput"><input placeholder="请输入快递单号" data-event-opts="{{[['input',[['__set_model',['','expresssn','$event',[]]]]]]}}" value="{{expresssn}}" bindinput="__e"/></view><picker class="popPicker" value="{{index}}" range="{{comparisonTable}}" range-key="name" data-event-opts="{{[['change',[['checkComparison',['$event']]]]]}}" bindchange="__e"><view class="popInput"><label class="_span">{{comparisonTable[index].name}}</label></view></picker><view data-event-opts="{{[['tap',[['sendGoods',['$event']]]]]}}" class="popButton" bindtap="__e"><label class="_span">确认发货</label></view></view></view></view></pop-manager></view>
+<view>
+  <view class="container">
+    <view class="orderList">
+      <view class="dis-flex flex-dir-column orderList-header">
+        <view class="orderList-search">
+          <view class="search-main">
+            <view class="search-box dis-flex flex-y-center">
+              <view class="search-input">
+                <view class="i icon iconfont icon-sousuo"></view>
+                <input class="f-24" type="text" value="{{keyword}}" placeholder="请输入订单号进行搜索" placeholder-style="color:#999999;margin-left:10upx;" data-event-opts="{{[['blur',[['doSearch',['$event']]]],['input',[['__set_model',['','keyword','$event',[]]]]]]}}"
+                  bindblur="__e" bindinput="__e" />
+              </view>
+              <picker value="{{indexs}}" range="{{typeList}}" range-key="label" data-event-opts="{{[['change',[['search',['$event']]]]]}}" bindchange="__e">
+                <view class="dis-flex search-select f-28">{{''+typeList[indexs].label+''}}
+                  <view class="i icon iconfont icon-unfold"></view>
+                </view>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <view class="topNav">
+          <view data-event-opts="{{[['tap',[['changeStatus',[0]]]]]}}" bindtap="__e">
+            <view class="{{[status==0?'check':'']}}">
+              <label class="_span">全部</label>
+              <view class="line"></view>
+            </view>
+          </view>
+          <view data-event-opts="{{[['tap',[['changeStatus',[1]]]]]}}" bindtap="__e">
+            <view class="{{[status==1?'check':'']}}">
+              <label class="_span">待使用</label>
+              <view class="line"></view>
+            </view>
+          </view>
+          <view data-event-opts="{{[['tap',[['changeStatus',[8]]]]]}}" bindtap="__e">
+            <view class="{{[status==8?'check':'']}}">
+              <label class="_span">待发货</label>
+              <view class="line"></view>
+            </view>
+          </view>
+          <view data-event-opts="{{[['tap',[['changeStatus',[3]]]]]}}" bindtap="__e">
+            <view class="{{[status==3?'check':'']}}">
+              <label class="_span">已完成</label>
+              <view class="line"></view>
+            </view>
+          </view>
+          <view data-event-opts="{{[['tap',[['changeStatus',[9]]]]]}}" bindtap="__e">
+            <view class="{{[status==9?'check':'']}}">
+              <label class="_span">已过期</label>
+              <view class="line"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <scroll-view class="scrollList" style="{{'height:'+(scrollHeight)+';'}}" scroll-y="{{true}}" data-event-opts="{{[['scrolltolower',[['load',['$event']]]]]}}" bindscrolltolower="__e">
+        <block wx:if="{{pagetotal==0}}">
+          <nonemores vue-id="1" bind:__l="__l"></nonemores>
+        </block>
+        <block wx:if="{{pagetotal!=0}}">
+          <view class="orderList-body">
+            <block wx:for="{{orderlist}}" wx:for-item="item" wx:for-index="index">
+              <view class="orderList-list-item m-btm20">
+                <view class="dis-flex flex-x-between f-24 orderList-list-item-header">
+                  <view class="dis-flex flex-y-center">
+                    <view class="tag">{{item.pluginname+"订单"}}</view>
+                    <view class="f-24">{{item.orderno}}</view>
+                  </view>
+                  <view class="color-status f-28">{{item.statusname}}</view>
+                </view>
+                <view class="user-msg dis-flex f-24 flex-y-center">
+                  <view class="m-right30">{{item.nickname}}</view>
+                  <view>{{item.mobile}}</view>
+                  <image class="img" src="{{imageRoot}}/static/images/centerMerchant/phone.png" alt></image>
+                  <view data-event-opts="{{[['tap',[['kfPhone',['$0'],[[['orderlist','',index]]]]]]]}}" class="blue" bindtap="__e">联系客户</view>
+                </view>
+                <view class="orderList-list-item-content dis-flex">
+                  <image class="orderList-img" src="{{item.gimg}}"></image>
+                  <view class="dis-flex flex-dir-column flex-x-between">
+                    <view class="goods-name f-24">{{item.gname}}</view>
+                    <block wx:if="{{!item.goodsarray}}">
+                      <view class="dis-flex flex-x-between m-top10">
+                        <view class="dis-flex goods-sku f-24">{{''+item.optiontitle+''}}
+                          <view class="m-left10">{{"×"+item.num}}</view>
+                        </view>
+                        <view class="goods-price f-24">{{"￥"+item.price}}</view>
+                      </view>
+                    </block>
+                    <block wx:for="{{item.goodsarray}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs">
+                      <block wx:if="{{item.goodsarray}}">
+                        <view class="dis-flex flex-x-between" style="margin-bottom:10rpx;">
+                          <view class="dis-flex goods-sku f-24">{{''+items.name+''}}
+                            <view class="m-left10">{{"×"+items.num}}</view>
+                          </view>
+                          <view class="goods-price f-24">{{"￥"+items.money}}</view>
+                        </view>
+                      </block>
+                    </block>
+                  </view>
+                </view>
+                <view class="orderList-list-item-footer f-24">
+                  <block wx:if="{{!!item.remark}}">
+                    <view class="footer-item dis-flex flex-x-between color-33">
+                      <view>备注:</view>
+                      <view>{{item.remark}}</view>
+                    </view>
+                  </block>
+                  <view class="footer-item dis-flex flex-x-end color-33">
+                    <view>{{"共"+item.num+"件商品，合计："}}</view>
+                    <view class="color-red">{{"¥"+item.price}}</view>
+                  </view>
+                  <block wx:if="{{item.status==1&&item.plugin!=='citydelivery'}}">
+                    <view class="footer-item dis-flex flex-x-end color-33">
+                      <view data-event-opts="{{[['tap',[['goHx',['$event']]]]]}}" class="btn" bindtap="__e">去核销</view>
+                    </view>
+                  </block>
+                  <block wx:if="{{item.plugin=='citydelivery'&&(item.status==1||item.status==4)}}">
+                    <view class="footer-item dis-flex flex-x-end color-33">
+                      <view data-event-opts="{{[['tap',[['accomplish',['$0'],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">完成</view>
+                    </view>
+                  </block>
+                  <block wx:if="{{item.status==8&&item.plugin!=='citydelivery'}}">
+                    <view class="footer-item dis-flex flex-x-end color-33">
+                      <view data-event-opts="{{[['tap',[['showPop',['$0',8],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">去发货</view>
+                    </view>
+                  </block>
+                  <block wx:if="{{item.status==4&&item.plugin!=='citydelivery'}}">
+                    <view class="footer-item dis-flex flex-x-end color-33">
+                      <view data-event-opts="{{[['tap',[['showPop',['$0',4],[[['orderlist','',index]]]]]]]}}" class="btn" bindtap="__e">修改物流</view>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+            <view class="tips">
+              <loadmore vue-id="2" isMore="{{isMore}}" bind:__l="__l"></loadmore>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <nav-bar vue-id="3" tabBarAct="{{3}}" bind:__l="__l"></nav-bar>
+  <pop-manager vue-id="4" show="{{popShow}}" type="{{popType}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="popView">
+      <view class="popViewPackage">
+        <view class="popTitle">
+          <view class="popTitlePackage">
+            <label class="_span">填写发货信息</label>
+          </view>
+          <view class="popTitleBody dis-flex1">
+            <block wx:if="{{!!items.express}}">
+              <view class="titleBodyLeft1">
+                <view>
+                  <text class="textf">{{"姓名 "+items.express.name}}</text>
+                </view>
+                <view>
+                  <text class="textf">{{"电话 "+items.express.tel}}</text>
+                </view>
+                <view>
+                  <text class="textf">{{"地址 "+items.express.address}}</text>
+                </view>
+              </view>
+            </block>
+            <view data-event-opts="{{[['tap',[['fz',['$event']]]]]}}" class="titleBodyRight1" bindtap="__e">
+              <text>复制发货信息</text>
+            </view>
+          </view>
+        </view>
+        <view class="popBody">
+          <view class="popInput">
+            <input placeholder="请输入快递单号" data-event-opts="{{[['input',[['__set_model',['','expresssn','$event',[]]]]]]}}" value="{{expresssn}}" bindinput="__e" />
+          </view>
+          <picker class="popPicker" value="{{index}}" range="{{comparisonTable}}" range-key="name" data-event-opts="{{[['change',[['checkComparison',['$event']]]]]}}" bindchange="__e">
+            <view class="popInput">
+              <label class="_span">{{comparisonTable[index].name}}</label>
+            </view>
+          </picker>
+          <view data-event-opts="{{[['tap',[['sendGoods',['$event']]]]]}}" class="popButton" bindtap="__e">
+            <label class="_span">确认发货</label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </pop-manager>
+</view>

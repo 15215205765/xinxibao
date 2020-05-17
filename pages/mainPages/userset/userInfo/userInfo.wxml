@@ -1,1 +1,41 @@
-<view class="userInfo"><scroll-view style="{{'height:'+(phoneHight)+';'}}" scroll-y="{{true}}"><view class="p30"><image class="tspng verCenter" src="/static/images/merchant/ts.png"></image><label class="font24 color666666 verCenter pL18 _span">请填写真实有效的信息！</label></view><view class="backColorW backColorW"><label class="font28 color333333 verCenter pL30 width148 disInline  _span">姓名：</label><input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入姓名" data-event-opts="{{[['input',[['__set_model',['$0','realname','$event',[]],['userInfo']]]]]}}" value="{{userInfo.realname}}" bindinput="__e"/></view><view class="inputView backColorW"><view class="backColorW marT20 height108"><label class="font28 color333333 verCenter pL30 width148 disInline  _span">开户行：</label><input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡开户行" data-event-opts="{{[['input',[['__set_model',['$0','bank_name','$event',[]],['userInfo']]]]]}}" value="{{userInfo.bank_name}}" bindinput="__e"/><view class="Bottline"></view></view><view class="backColorW height108"><label class="font28 color333333 verCenter pL30 width148 disInline  _span">开户人：</label><input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡开户行人姓名" data-event-opts="{{[['input',[['__set_model',['$0','bank_username','$event',[]],['userInfo']]]]]}}" value="{{userInfo.bank_username}}" bindinput="__e"/><view class="Bottline"></view></view><view class="backColorW height108"><label class="font28 color333333 verCenter pL30 width148 disInline  _span">银行卡账号：</label><input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡账号" data-event-opts="{{[['input',[['__set_model',['$0','card_number','$event',[]],['userInfo']]]]]}}" value="{{userInfo.card_number}}" bindinput="__e"/><view class="Bottline"></view></view><view class="backColorW height108"><label class="font28 color333333 verCenter pL30 width148 disInline  _span">支付宝账号：</label><input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入支付宝账号" data-event-opts="{{[['input',[['__set_model',['$0','alipay','$event',[]],['userInfo']]]]]}}" value="{{userInfo.alipay}}" bindinput="__e"/><view class="Bottline"></view></view><view data-event-opts="{{[['tap',[['setUserInfo',['$event']]]]]}}" class="submitBotton marT80 textC" bindtap="__e"><label class="line96 font30 colorW _span">保存</label></view></view></scroll-view></view>
+<view class="userInfo">
+  <scroll-view style="{{'height:'+(phoneHight)+';'}}" scroll-y="{{true}}">
+    <view class="p30">
+      <image class="tspng verCenter" src="{{imageRoot}}/static/images/merchant/ts.png"></image>
+      <label class="font24 color666666 verCenter pL18 _span">请填写真实有效的信息！</label>
+    </view>
+    <view class="backColorW backColorW">
+      <label class="font28 color333333 verCenter pL30 width148 disInline  _span">姓名：</label>
+      <input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入姓名" data-event-opts="{{[['input',[['__set_model',['$0','realname','$event',[]],['userInfo']]]]]}}" value="{{userInfo.realname}}" bindinput="__e" />
+    </view>
+    <view class="inputView backColorW">
+      <view class="backColorW marT20 height108">
+        <label class="font28 color333333 verCenter pL30 width148 disInline  _span">开户行：</label>
+        <input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡开户行" data-event-opts="{{[['input',[['__set_model',['$0','bank_name','$event',[]],['userInfo']]]]]}}" value="{{userInfo.bank_name}}" bindinput="__e"
+        />
+        <view class="Bottline"></view>
+      </view>
+      <view class="backColorW height108">
+        <label class="font28 color333333 verCenter pL30 width148 disInline  _span">开户人：</label>
+        <input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡开户行人姓名" data-event-opts="{{[['input',[['__set_model',['$0','bank_username','$event',[]],['userInfo']]]]]}}" value="{{userInfo.bank_username}}"
+          bindinput="__e" />
+        <view class="Bottline"></view>
+      </view>
+      <view class="backColorW height108">
+        <label class="font28 color333333 verCenter pL30 width148 disInline  _span">银行卡账号：</label>
+        <input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入银行卡账号" data-event-opts="{{[['input',[['__set_model',['$0','card_number','$event',[]],['userInfo']]]]]}}" value="{{userInfo.card_number}}" bindinput="__e"
+        />
+        <view class="Bottline"></view>
+      </view>
+      <view class="backColorW height108">
+        <label class="font28 color333333 verCenter pL30 width148 disInline  _span">支付宝账号：</label>
+        <input class="font28 height107 color333333 verCenter disInline pL30" placeholder="请输入支付宝账号" data-event-opts="{{[['input',[['__set_model',['$0','alipay','$event',[]],['userInfo']]]]]}}" value="{{userInfo.alipay}}" bindinput="__e"
+        />
+        <view class="Bottline"></view>
+      </view>
+      <view data-event-opts="{{[['tap',[['setUserInfo',['$event']]]]]}}" class="submitBotton marT80 textC" bindtap="__e">
+        <label class="line96 font30 colorW _span">保存</label>
+      </view>
+    </view>
+  </scroll-view>
+</view>

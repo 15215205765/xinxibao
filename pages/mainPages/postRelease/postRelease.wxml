@@ -1,1 +1,165 @@
-<block wx:if="{{!isWxaudit}}"><loadlogo vue-id="1" class="data-v-fea1c778" bind:__l="__l"></loadlogo></block><block wx:else><block class="data-v-fea1c778"><view class="postRelease data-v-fea1c778"><view class="postInfoInput data-v-fea1c778"><view class="postInfoInputPackage data-v-fea1c778"><view class="postMainInput data-v-fea1c778"><view class="postMainInputPackage data-v-fea1c778"><view class="postMainInputTitle data-v-fea1c778"><label class="_span data-v-fea1c778">内容描述</label></view><textarea placeholder="内容描述(可以文字和语音录入，语音请讲普通话)，请尽量避免使用特殊符号，字体表情，颜文字等特殊文本，防止无法储存造成内容空白。" maxlength="{{1800}}" placeholder-class="main_input" data-event-opts="{{[['input',[['__set_model',['$0','content','$event',[]],['info']]]]]}}" value="{{info.content}}" bindinput="__e" class="data-v-fea1c778"></textarea></view></view><view class="postImgTips data-v-fea1c778"><label class="_span data-v-fea1c778">有图有真相<label class="_span data-v-fea1c778">(最多上传6张图片、1个视频)</label></label></view><view class="upLoadFile data-v-fea1c778"><block wx:for="{{images}}" wx:for-item="item" wx:for-index="index"><view class="zsView data-v-fea1c778" style="fontSize:24rpx;"><image src="{{item}}" class="data-v-fea1c778"></image><image src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletImg',['$0'],[[['images','',index]]]]]]]}}" bindtap="__e" class="data-v-fea1c778"></image></view></block><block wx:if="{{info.img.length<6}}"><view data-event-opts="{{[['tap',[['uploadFiles',['$event']]]]]}}" class="upLoadImg data-v-fea1c778" bindtap="__e"><view class="data-v-fea1c778"><image src="/static/images/merchant/sctp.png" class="data-v-fea1c778"></image></view><text class="upText data-v-fea1c778">上传图片</text></view></block><view data-ref="input" class="input data-v-fea1c778 vue-ref" style="display:none;"></view><block wx:if="{{src==''}}"><block class="data-v-fea1c778"><view data-event-opts="{{[['tap',[['upButton',['$event']]]]]}}" class="upLoadVideo data-v-fea1c778" bindtap="__e"><view class="data-v-fea1c778"><image src="/static/images/merchant/scsp.png" class="data-v-fea1c778"></image></view><text class="upText data-v-fea1c778">上传视频</text></view></block></block></view><block wx:if="{{info.video_link!==''&&!!info.video_link}}"><view class="Zsvideo-main data-v-fea1c778"><block wx:if="{{isAndroid==='1'&&isAdclose}}"><view class="t-r data-v-fea1c778"><image class="adcloseImg data-v-fea1c778" src="../../../static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletVideo',['$event']]]]]}}" bindtap="__e"></image></view></block><block wx:if="{{info.video_link!==''&&!!info.video_link}}"><video class="zsVideo data-v-fea1c778" src="{{src}}"><block wx:if="{{isAndroid==='2'}}"><block class="data-v-fea1c778"><cover-image class="closeImg data-v-fea1c778" src="../../../static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletVideo',['$event']]]]]}}" bindtap="__e"></cover-image></block></block></video></block></view></block><view class="checkTips data-v-fea1c778"><block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['checkSecondsType',['$0'],[[['setInfo.label','',index]]]]]]]}}" class="{{['data-v-fea1c778',item.g0!==-1?'checked':'']}}" bindtap="__e"><label class="_span data-v-fea1c778">{{item.$orig}}</label></view></block></view></view></view><view class="userInfoInput data-v-fea1c778" style="{{'margin-top:'+(marginT.marginTop)+';'}}"><view class="userInfoInputPackage data-v-fea1c778"><view class="userInfoInputTitle data-v-fea1c778"><label class="_span data-v-fea1c778">填写信息</label></view><view class="userInput data-v-fea1c778"><view class="inputView data-v-fea1c778"><label class="_span data-v-fea1c778">联系人</label><input placeholder="请输入真实姓名" data-event-opts="{{[['input',[['__set_model',['$0','nickname','$event',[]],['info']]]]]}}" value="{{info.nickname}}" bindinput="__e" class="data-v-fea1c778"/></view><view class="inputView data-v-fea1c778"><label class="_span data-v-fea1c778">联系电话</label><input placeholder="请输入联系电话" type="number" data-event-opts="{{[['input',[['__set_model',['$0','phone','$event',[]],['info']]]]]}}" value="{{info.phone}}" bindinput="__e" class="data-v-fea1c778"/></view><view class="inputView data-v-fea1c778"><label class="_span data-v-fea1c778">分享标题</label><input placeholder="默认格式：XX发布的XX信息" data-event-opts="{{[['input',[['__set_model',['$0','share_title','$event',[]],['info']]]]]}}" value="{{info.share_title}}" bindinput="__e" class="data-v-fea1c778"/></view></view></view></view><block wx:if="{{locaStaus!==0}}"><view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="dwView data-v-fea1c778" bindtap="__e"><label class="_span data-v-fea1c778">{{dwText}}</label><image src="/static/images/merchant/right.svg" class="data-v-fea1c778"></image></view></block><button class="fbButton data-v-fea1c778" type="warn" disabled="{{HideDisabled}}" data-event-opts="{{[['tap',[['release',['$event']]]]]}}" bindtap="__e">确 认 发 布</button><view class="full data-v-fea1c778"></view><pop-manager vue-id="2" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-fea1c778" bind:__l="__l" vue-slots="{{['default']}}"><view class="yyView data-v-fea1c778"><view class="data-v-fea1c778"><block wx:if="{{ysStatus==0}}"><label class="_span data-v-fea1c778">开始录音</label></block><block wx:else><label class="_span data-v-fea1c778">{{str}}</label></block></view><view class="yyButtonPackage data-v-fea1c778"><block wx:if="{{ysStatus==0}}"><view data-event-opts="{{[['tap',[['start',['$event']]]]]}}" class="yyButton data-v-fea1c778" bindtap="__e"></view></block><block wx:else><view data-event-opts="{{[['tap',[['yyStop',['$event']]]]]}}" class="yyStopButton data-v-fea1c778" bindtap="__e"></view></block></view></view></pop-manager><pop-manager vue-id="3" show="{{locatShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeLocatShow']]]]}}" bind:clickmask="__e" class="data-v-fea1c778" bind:__l="__l" vue-slots="{{['default']}}"><view class="locatPop data-v-fea1c778"><view class="locatPopTitle data-v-fea1c778"><label class="_span data-v-fea1c778">所在位置</label></view><block wx:if="{{setInfo.set.locastatus!='2'}}"><view data-event-opts="{{[['tap',[['nochangeLocation',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e"><view class="buttonPackage data-v-fea1c778"><label class="_span data-v-fea1c778">不显示位置</label><block wx:if="{{info.locastatus=='0'}}"><image src="/static/images/merchant/checked.svg" class="data-v-fea1c778"></image></block></view></view></block><view data-event-opts="{{[['tap',[['changeLocation',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e"><view class="buttonPackage data-v-fea1c778"><label class="_span data-v-fea1c778">定位</label></view></view><block wx:if="{{info.address!==''}}"><view data-event-opts="{{[['tap',[['changeLoca',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e"><view class="buttonPackage data-v-fea1c778"><label class="_span data-v-fea1c778">{{info.address}}</label><block wx:if="{{info.locastatus=='1'}}"><image src="/static/images/merchant/checked.svg" class="data-v-fea1c778"></image></block></view></view></block><view class="buttonFull data-v-fea1c778"></view><view data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="closeButton data-v-fea1c778" bindtap="__e"><label class="_span data-v-fea1c778">关闭</label></view></view></pop-manager><phone-mask vue-id="4" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-fea1c778" bind:__l="__l"></phone-mask></view></block></block>
+<block wx:if="{{!isWxaudit}}">
+  <loadlogo vue-id="1" class="data-v-fea1c778" bind:__l="__l"></loadlogo>
+</block>
+<block wx:else>
+  <block class="data-v-fea1c778">
+    <view class="postRelease data-v-fea1c778">
+      <view class="postInfoInput data-v-fea1c778">
+        <view class="postInfoInputPackage data-v-fea1c778">
+          <view class="postMainInput data-v-fea1c778">
+            <view class="postMainInputPackage data-v-fea1c778">
+              <view class="postMainInputTitle data-v-fea1c778">
+                <label class="_span data-v-fea1c778">内容描述</label>
+              </view>
+              <textarea placeholder="内容描述(可以文字和语音录入，语音请讲普通话)，请尽量避免使用特殊符号，字体表情，颜文字等特殊文本，防止无法储存造成内容空白。" maxlength="{{1800}}" placeholder-class="main_input" data-event-opts="{{[['input',[['__set_model',['$0','content','$event',[]],['info']]]]]}}" value="{{info.content}}"
+                bindinput="__e" class="data-v-fea1c778"></textarea>
+            </view>
+          </view>
+          <view class="postImgTips data-v-fea1c778">
+            <label class="_span data-v-fea1c778">有图有真相
+              <label class="_span data-v-fea1c778">(最多上传6张图片、1个视频)</label>
+            </label>
+          </view>
+          <view class="upLoadFile data-v-fea1c778">
+            <block wx:for="{{images}}" wx:for-item="item" wx:for-index="index">
+              <view class="zsView data-v-fea1c778" style="fontSize:24rpx;">
+                <image src="{{item}}" class="data-v-fea1c778"></image>
+                <image src="{{imageRoot}}/static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletImg',['$0'],[[['images','',index]]]]]]]}}" bindtap="__e" class="data-v-fea1c778"></image>
+              </view>
+            </block>
+            <block wx:if="{{info.img.length<6}}">
+              <view data-event-opts="{{[['tap',[['uploadFiles',['$event']]]]]}}" class="upLoadImg data-v-fea1c778" bindtap="__e">
+                <view class="data-v-fea1c778">
+                  <image src="{{imageRoot}}/static/images/merchant/sctp.png" class="data-v-fea1c778"></image>
+                </view>
+                <text class="upText data-v-fea1c778">上传图片</text>
+              </view>
+            </block>
+            <view data-ref="input" class="input data-v-fea1c778 vue-ref" style="display:none;"></view>
+            <block wx:if="{{src==''}}">
+              <block class="data-v-fea1c778">
+                <view data-event-opts="{{[['tap',[['upButton',['$event']]]]]}}" class="upLoadVideo data-v-fea1c778" bindtap="__e">
+                  <view class="data-v-fea1c778">
+                    <image src="{{imageRoot}}/static/images/merchant/scsp.png" class="data-v-fea1c778"></image>
+                  </view>
+                  <text class="upText data-v-fea1c778">上传视频</text>
+                </view>
+              </block>
+            </block>
+          </view>
+          <block wx:if="{{info.video_link!==''&&!!info.video_link}}">
+            <view class="Zsvideo-main data-v-fea1c778">
+              <block wx:if="{{isAndroid==='1'&&isAdclose}}">
+                <view class="t-r data-v-fea1c778">
+                  <image class="adcloseImg data-v-fea1c778" src="../../..{{imageRoot}}/static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletVideo',['$event']]]]]}}" bindtap="__e"></image>
+                </view>
+              </block>
+              <block wx:if="{{info.video_link!==''&&!!info.video_link}}">
+                <video class="zsVideo data-v-fea1c778" src="{{src}}">
+                  <block wx:if="{{isAndroid==='2'}}">
+                    <block class="data-v-fea1c778">
+                      <cover-image class="closeImg data-v-fea1c778" src="../../..{{imageRoot}}/static/images/merchant/close.png" data-event-opts="{{[['tap',[['deletVideo',['$event']]]]]}}" bindtap="__e"></cover-image>
+                    </block>
+                  </block>
+                </video>
+              </block>
+            </view>
+          </block>
+          <view class="checkTips data-v-fea1c778">
+            <block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index">
+              <view data-event-opts="{{[['tap',[['checkSecondsType',['$0'],[[['setInfo.label','',index]]]]]]]}}" class="{{['data-v-fea1c778',item.g0!==-1?'checked':'']}}" bindtap="__e">
+                <label class="_span data-v-fea1c778">{{item.$orig}}</label>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="userInfoInput data-v-fea1c778" style="{{'margin-top:'+(marginT.marginTop)+';'}}">
+        <view class="userInfoInputPackage data-v-fea1c778">
+          <view class="userInfoInputTitle data-v-fea1c778">
+            <label class="_span data-v-fea1c778">填写信息</label>
+          </view>
+          <view class="userInput data-v-fea1c778">
+            <view class="inputView data-v-fea1c778">
+              <label class="_span data-v-fea1c778">联系人</label>
+              <input placeholder="请输入真实姓名" data-event-opts="{{[['input',[['__set_model',['$0','nickname','$event',[]],['info']]]]]}}" value="{{info.nickname}}" bindinput="__e" class="data-v-fea1c778" />
+            </view>
+            <view class="inputView data-v-fea1c778">
+              <label class="_span data-v-fea1c778">联系电话</label>
+              <input placeholder="请输入联系电话" type="number" data-event-opts="{{[['input',[['__set_model',['$0','phone','$event',[]],['info']]]]]}}" value="{{info.phone}}" bindinput="__e" class="data-v-fea1c778" />
+            </view>
+            <view class="inputView data-v-fea1c778">
+              <label class="_span data-v-fea1c778">分享标题</label>
+              <input placeholder="默认格式：XX发布的XX信息" data-event-opts="{{[['input',[['__set_model',['$0','share_title','$event',[]],['info']]]]]}}" value="{{info.share_title}}" bindinput="__e" class="data-v-fea1c778" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{locaStaus!==0}}">
+        <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="dwView data-v-fea1c778" bindtap="__e">
+          <label class="_span data-v-fea1c778">{{dwText}}</label>
+          <image src="{{imageRoot}}/static/images/merchant/right.svg" class="data-v-fea1c778"></image>
+        </view>
+      </block>
+      <button class="fbButton data-v-fea1c778" type="warn" disabled="{{HideDisabled}}" data-event-opts="{{[['tap',[['release',['$event']]]]]}}" bindtap="__e">确 认 发 布</button>
+      <view class="full data-v-fea1c778"></view>
+      <pop-manager vue-id="2" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-fea1c778" bind:__l="__l" vue-slots="{{['default']}}">
+        <view class="yyView data-v-fea1c778">
+          <view class="data-v-fea1c778">
+            <block wx:if="{{ysStatus==0}}">
+              <label class="_span data-v-fea1c778">开始录音</label>
+            </block>
+            <block wx:else>
+              <label class="_span data-v-fea1c778">{{str}}</label>
+            </block>
+          </view>
+          <view class="yyButtonPackage data-v-fea1c778">
+            <block wx:if="{{ysStatus==0}}">
+              <view data-event-opts="{{[['tap',[['start',['$event']]]]]}}" class="yyButton data-v-fea1c778" bindtap="__e"></view>
+            </block>
+            <block wx:else>
+              <view data-event-opts="{{[['tap',[['yyStop',['$event']]]]]}}" class="yyStopButton data-v-fea1c778" bindtap="__e"></view>
+            </block>
+          </view>
+        </view>
+      </pop-manager>
+      <pop-manager vue-id="3" show="{{locatShow}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closeLocatShow']]]]}}" bind:clickmask="__e" class="data-v-fea1c778" bind:__l="__l" vue-slots="{{['default']}}">
+        <view class="locatPop data-v-fea1c778">
+          <view class="locatPopTitle data-v-fea1c778">
+            <label class="_span data-v-fea1c778">所在位置</label>
+          </view>
+          <block wx:if="{{setInfo.set.locastatus!='2'}}">
+            <view data-event-opts="{{[['tap',[['nochangeLocation',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e">
+              <view class="buttonPackage data-v-fea1c778">
+                <label class="_span data-v-fea1c778">不显示位置</label>
+                <block wx:if="{{info.locastatus=='0'}}">
+                  <image src="{{imageRoot}}/static/images/merchant/checked.svg" class="data-v-fea1c778"></image>
+                </block>
+              </view>
+            </view>
+          </block>
+          <view data-event-opts="{{[['tap',[['changeLocation',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e">
+            <view class="buttonPackage data-v-fea1c778">
+              <label class="_span data-v-fea1c778">定位</label>
+            </view>
+          </view>
+          <block wx:if="{{info.address!==''}}">
+            <view data-event-opts="{{[['tap',[['changeLoca',['$event']]]]]}}" class="button data-v-fea1c778" bindtap="__e">
+              <view class="buttonPackage data-v-fea1c778">
+                <label class="_span data-v-fea1c778">{{info.address}}</label>
+                <block wx:if="{{info.locastatus=='1'}}">
+                  <image src="{{imageRoot}}/static/images/merchant/checked.svg" class="data-v-fea1c778"></image>
+                </block>
+              </view>
+            </view>
+          </block>
+          <view class="buttonFull data-v-fea1c778"></view>
+          <view data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="closeButton data-v-fea1c778" bindtap="__e">
+            <label class="_span data-v-fea1c778">关闭</label>
+          </view>
+        </view>
+      </pop-manager>
+      <phone-mask vue-id="4" show1="{{show1}}" data-event-opts="{{[['^clickmask1',[['closePop1']]]]}}" bind:clickmask1="__e" class="data-v-fea1c778" bind:__l="__l"></phone-mask>
+    </view>
+  </block>
+</block>

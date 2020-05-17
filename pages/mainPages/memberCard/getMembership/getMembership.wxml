@@ -11,7 +11,7 @@
         <view class="checkMemberMeal data-v-d6d9c3e8">
           <view class="checkMemberMealPackage data-v-d6d9c3e8">
             <view class="checkMemberTitle data-v-d6d9c3e8">
-              <image src="/static/images/merchant/Memship.png" class="data-v-d6d9c3e8"></image>
+              <image src="{{imageRoot}}/static/images/merchant/Memship.png" class="data-v-d6d9c3e8"></image>
               <label class="_span data-v-d6d9c3e8">{{halfcardtext+"会员专属充值"}}</label>
             </view>
             <view class="checkMemberBody data-v-d6d9c3e8">
@@ -23,7 +23,7 @@
                       <label class="_span data-v-d6d9c3e8">{{item.name}}</label>
                       <block wx:if="{{mbChck==index}}">
                         <view class="yCheck data-v-d6d9c3e8">
-                          <image src="/static/images/merchant/membercheck.png" class="data-v-d6d9c3e8"></image>
+                          <image src="{{imageRoot}}/static/images/merchant/membercheck.png" class="data-v-d6d9c3e8"></image>
                         </view>
                       </block>
                       <block wx:else>
@@ -50,7 +50,7 @@
       <block wx:if="{{cardList.activation_code==0}}">
         <view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="CDKEY data-v-d6d9c3e8" bindtap="__e">
           <label class="_span data-v-d6d9c3e8">使用激活码激活会员</label>
-          <image src="/static/images/merchant/right.svg" class="data-v-d6d9c3e8"></image>
+          <image src="{{imageRoot}}/static/images/merchant/right.svg" class="data-v-d6d9c3e8"></image>
         </view>
       </block>
       <view class="userInfoInput data-v-d6d9c3e8">
@@ -80,7 +80,7 @@
       <view class="bottomView data-v-d6d9c3e8">
         <block wx:if="{{cardList.list.length!==0}}">
           <view data-event-opts="{{[['tap',[['halfcardOrder',['$event']]]]]}}" class="submitMembership data-v-d6d9c3e8" bindtap="__e">
-            <label class="_span data-v-d6d9c3e8">{{price+"元"+(card=='nhave'?'开通':'续费')+halfcardtext}}</label>
+            <label class="_span data-v-d6d9c3e8">{{price+"元"+(card=='nhave'?'开通':'续费')+title}}</label>
           </view>
         </block>
       </view>
@@ -91,7 +91,7 @@
           <view class="popCDKEYTitle data-v-d6d9c3e8">
             <label class="_span data-v-d6d9c3e8"></label>
             <label class="_span data-v-d6d9c3e8">会员激活码</label>
-            <image src="/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" bindtap="__e" class="data-v-d6d9c3e8"></image>
+            <image src="{{imageRoot}}/static/images/merchant/close.png" data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" bindtap="__e" class="data-v-d6d9c3e8"></image>
           </view>
           <view class="popCDKEYInput data-v-d6d9c3e8">
             <input placeholder="请输入会员激活码" data-event-opts="{{[['input',[['__set_model',['','cardpa','$event',[]]]]]]}}" value="{{cardpa}}" bindinput="__e" class="data-v-d6d9c3e8" />

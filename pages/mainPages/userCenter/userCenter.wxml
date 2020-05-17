@@ -317,7 +317,7 @@
             <block wx:if="{{!!memberInfo.user_set&&memberInfo.user_set.length>0}}">
               <view class="mineTool data-v-3e529fd3">
                 <view class="mineToolTitle border-line diy-nav-list border-bottom data-v-3e529fd3">
-                  <label class="_span data-v-3e529fd3">我的工具</label>
+                  <label class="_span data-v-3e529fd3">我的宝箱</label>
                 </view>
                 <view class="mineToolBody  data-v-3e529fd3">
                   <view class="mineToolBodyPackage data-v-3e529fd3">

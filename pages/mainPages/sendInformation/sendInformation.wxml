@@ -1,1 +1,62 @@
-<view class="sendInformation data-v-0fc53e9c" style="{{'height:'+(phoneHight)+';'}}"><view class="sendInformationType data-v-0fc53e9c"><view class="sendInformationPackage data-v-0fc53e9c"><view class="typeTips data-v-0fc53e9c"><image src="/static/images/merchant/ts.png" class="data-v-0fc53e9c"></image><label class="_span data-v-0fc53e9c">{{"免责声明："+mzsmText}}</label></view><view data-event-opts="{{[['tap',[['goSettled',['$event']]]]]}}" class="goRz data-v-0fc53e9c" bindtap="__e"><view class="goRzPackage data-v-0fc53e9c"><view class="goRzleft data-v-0fc53e9c"><image src="/static/images/merchant/sjrz.png" class="data-v-0fc53e9c"></image><view class="data-v-0fc53e9c"><view class="data-v-0fc53e9c"><label class="_span data-v-0fc53e9c">{{"我是商家，点击入驻"+TextSubstitution.sysname}}</label></view><view class="data-v-0fc53e9c"><label class="_span data-v-0fc53e9c">超低成本、本地宣传、简单有效、方便快捷！</label></view></view></view><view class="goRzRight data-v-0fc53e9c"><image src="/static/images/merchant/right.svg" class="data-v-0fc53e9c"></image></view></view></view><view class="checkTips data-v-0fc53e9c"><label class="_span data-v-0fc53e9c">—— 请选择发布类别 ——</label></view><swiper class="classificationList data-v-0fc53e9c"><block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index"><swiper-item class="data-v-0fc53e9c"><block wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs"><view data-event-opts="{{[['tap',[['goPostRelease',['$0'],[[['arr','',index],['','',indexs]]]]]]]}}" class="classificationLists data-v-0fc53e9c" bindtap="__e"><view class="data-v-0fc53e9c"><image src="{{items.img}}" class="data-v-0fc53e9c"></image></view><view class="data-v-0fc53e9c"><label style="{{'color:'+(items.color)+';'}}" class="_span data-v-0fc53e9c">{{items.title}}</label></view></view></block></swiper-item></block></swiper></view></view><pop-manager vue-id="1" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-0fc53e9c" bind:__l="__l" vue-slots="{{['default']}}"><view class="checkSecond data-v-0fc53e9c"><scroll-view class="checkSecondPackage data-v-0fc53e9c" scroll-y="{{true}}"><block wx:for="{{itemsList}}" wx:for-item="item" wx:for-index="index"><view data-event-opts="{{[['tap',[['checkSecond',['$0'],[[['itemsList','',index]]]]]]]}}" class="checkSeconds data-v-0fc53e9c" bindtap="__e"><label class="_span data-v-0fc53e9c">{{item.title}}</label></view></block></scroll-view><view data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" class="closePopView data-v-0fc53e9c" bindtap="__e"><label class="_span data-v-0fc53e9c">关闭</label></view></view></pop-manager><tab-bars vue-id="2" tabBarAct="{{0}}" pageType="9" class="data-v-0fc53e9c" bind:__l="__l"></tab-bars></view>
+<view class="sendInformation data-v-0fc53e9c" style="{{'height:'+(phoneHight)+';'}}">
+  <view class="sendInformationType data-v-0fc53e9c">
+    <view class="sendInformationPackage data-v-0fc53e9c">
+      <view class="typeTips data-v-0fc53e9c">
+        <image src="{{imageRoot}}/static/images/merchant/ts.png" class="data-v-0fc53e9c"></image>
+        <label class="_span data-v-0fc53e9c">{{"免责声明："+mzsmText}}</label>
+      </view>
+      <view data-event-opts="{{[['tap',[['goSettled',['$event']]]]]}}" class="goRz data-v-0fc53e9c" bindtap="__e">
+        <view class="goRzPackage data-v-0fc53e9c">
+          <view class="goRzleft data-v-0fc53e9c">
+            <image src="{{imageRoot}}/static/images/merchant/sjrz.png" class="data-v-0fc53e9c"></image>
+            <view class="data-v-0fc53e9c">
+              <view class="data-v-0fc53e9c">
+                <label class="_span data-v-0fc53e9c">{{"我是商家，点击入驻"+TextSubstitution.sysname}}</label>
+              </view>
+              <view class="data-v-0fc53e9c">
+                <label class="_span data-v-0fc53e9c">超低成本、本地宣传、简单有效、方便快捷！</label>
+              </view>
+            </view>
+          </view>
+          <view class="goRzRight data-v-0fc53e9c">
+            <image src="{{imageRoot}}/static/images/merchant/right.svg" class="data-v-0fc53e9c"></image>
+          </view>
+        </view>
+      </view>
+      <view class="checkTips data-v-0fc53e9c">
+        <label class="_span data-v-0fc53e9c">—— 请选择发布类别 ——</label>
+      </view>
+      <swiper class="classificationList data-v-0fc53e9c">
+        <block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index">
+          <swiper-item class="data-v-0fc53e9c">
+            <block wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs">
+              <view data-event-opts="{{[['tap',[['goPostRelease',['$0'],[[['arr','',index],['','',indexs]]]]]]]}}" class="classificationLists data-v-0fc53e9c" bindtap="__e">
+                <view class="data-v-0fc53e9c">
+                  <image src="{{items.img}}" class="data-v-0fc53e9c"></image>
+                </view>
+                <view class="data-v-0fc53e9c">
+                  <label style="{{'color:'+(items.color)+';'}}" class="_span data-v-0fc53e9c">{{items.title}}</label>
+                </view>
+              </view>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <pop-manager vue-id="1" show="{{show}}" type="{{type}}" data-event-opts="{{[['^clickmask',[['closePop']]]]}}" bind:clickmask="__e" class="data-v-0fc53e9c" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="checkSecond data-v-0fc53e9c">
+      <scroll-view class="checkSecondPackage data-v-0fc53e9c" scroll-y="{{true}}">
+        <block wx:for="{{itemsList}}" wx:for-item="item" wx:for-index="index">
+          <view data-event-opts="{{[['tap',[['checkSecond',['$0'],[[['itemsList','',index]]]]]]]}}" class="checkSeconds data-v-0fc53e9c" bindtap="__e">
+            <label class="_span data-v-0fc53e9c">{{item.title}}</label>
+          </view>
+        </block>
+      </scroll-view>
+      <view data-event-opts="{{[['tap',[['closePop',['$event']]]]]}}" class="closePopView data-v-0fc53e9c" bindtap="__e">
+        <label class="_span data-v-0fc53e9c">关闭</label>
+      </view>
+    </view>
+  </pop-manager>
+  <tab-bars vue-id="2" tabBarAct="{{0}}" pageType="9" class="data-v-0fc53e9c" bind:__l="__l"></tab-bars>
+</view>
